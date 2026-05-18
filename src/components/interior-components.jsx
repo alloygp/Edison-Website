@@ -350,30 +350,37 @@ function TrustBadges({ eyebrow, title, sub, badges }) {
         <div style={{
           marginTop: 48,
           display: "flex", flexWrap: "wrap", justifyContent: "center",
-          gap: 24
+          gap: 20, alignItems: "center"
         }}>
           {badges.map((b, i) => (
-            <div key={i} title={b.label} style={{
+            <div key={i} style={{
               background: "#fff",
               border: "1px solid var(--border-hairline)",
-              borderRadius: 10,
-              width: 168, height: 96,
-              display: "flex", flexDirection: "column",
+              borderRadius: 12,
+              width: 160, height: 100,
+              display: "flex",
               alignItems: "center", justifyContent: "center",
-              padding: 12, textAlign: "center",
+              padding: "14px 18px",
               boxShadow: "var(--shadow-xs)"
             }}>
-              <div style={{
-                fontFamily: "var(--font-display)", fontWeight: 800,
-                fontSize: 11, letterSpacing: "0.06em",
-                color: b.color || "var(--edison-navy)",
-                textTransform: "uppercase",
-                marginBottom: 4
-              }}>{b.label}</div>
-              {b.sub && <div style={{
-                fontFamily: "var(--font-body)", fontSize: 10.5,
-                color: "var(--edison-gray-mid)", lineHeight: 1.3
-              }}>{b.sub}</div>}
+              {b.img
+                ? <img src={b.img} alt={b.label}
+                       style={{ maxWidth: "100%", maxHeight: "100%", objectFit: "contain", display: "block" }}/>
+                : (
+                  <div style={{ textAlign: "center" }}>
+                    <div style={{
+                      fontFamily: "var(--font-display)", fontWeight: 800,
+                      fontSize: 11, letterSpacing: "0.06em",
+                      color: b.color || "var(--edison-navy)",
+                      textTransform: "uppercase", marginBottom: 4
+                    }}>{b.label}</div>
+                    {b.sub && <div style={{
+                      fontFamily: "var(--font-body)", fontSize: 10.5,
+                      color: "var(--edison-gray-mid)", lineHeight: 1.3
+                    }}>{b.sub}</div>}
+                  </div>
+                )
+              }
             </div>
           ))}
         </div>
