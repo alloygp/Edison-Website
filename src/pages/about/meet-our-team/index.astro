@@ -1,11 +1,11 @@
 ---
 import SiteLayout from '../../../layouts/SiteLayout.astro';
-import { TeamPageA } from '../../../templates/team-template.jsx';
+import { TeamPageA, TEAM_CONTENT } from '../../../templates/team-template.jsx';
 ---
 
 <SiteLayout
   title="Meet Our Team | Edison Association Management"
   description="Meet the association managers and leadership team at Edison. PCAM-led, CAI-credentialed, and built for Central Florida communities."
 >
-  <TeamPageA client:only="react" />
+  <TeamPageA content={TEAM_CONTENT} client:only="react" />
 </SiteLayout>
