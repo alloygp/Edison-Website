@@ -1,0 +1,13 @@
+---
+import SiteLayout from '../../../../layouts/SiteLayout.astro';
+import { GeoPageB } from '../../../../templates/geo-template.jsx';
+import { GEO_CONTENT } from '../../../../content/geo-content.jsx';
+const content = GEO_CONTENT['kissimmee'];
+---
+
+<SiteLayout
+  title="HOA Management Kissimmee, FL | Edison"
+  description="HOA management in Kissimmee, FL. Edison serves Osceola County communities with full-service association management and dedicated back-office support."
+>
+  <GeoPageB content={content} client:load />
+</SiteLayout>

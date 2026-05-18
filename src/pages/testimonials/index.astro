@@ -1,0 +1,13 @@
+---
+import SiteLayout from '../../layouts/SiteLayout.astro';
+import { TestimonialsPageB } from '../../templates/testimonials-template.jsx';
+import { TESTIMONIALS_CONTENT } from '../../content/testimonials-content.jsx';
+const content = TESTIMONIALS_CONTENT;
+---
+
+<SiteLayout
+  title="HOA Management Reviews | Edison Association Management"
+  description="Read what HOA and condo boards say about Edison Association Management. 4.9★ Google rating — the highest-rated management company in Central Florida."
+>
+  <TestimonialsPageB content={content} client:load />
+</SiteLayout>

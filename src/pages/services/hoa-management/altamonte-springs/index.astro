@@ -1,0 +1,13 @@
+---
+import SiteLayout from '../../../../layouts/SiteLayout.astro';
+import { GeoPageB } from '../../../../templates/geo-template.jsx';
+import { GEO_CONTENT } from '../../../../content/geo-content.jsx';
+const content = GEO_CONTENT['altamonte-springs'];
+---
+
+<SiteLayout
+  title="HOA Management Altamonte Springs, FL | Edison"
+  description="HOA management in Altamonte Springs, FL. Edison serves communities across Seminole County with responsive boutique association management."
+>
+  <GeoPageB content={content} client:load />
+</SiteLayout>

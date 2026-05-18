@@ -1,0 +1,13 @@
+---
+import SiteLayout from '../../../../layouts/SiteLayout.astro';
+import { GeoPageB } from '../../../../templates/geo-template.jsx';
+import { GEO_CONTENT } from '../../../../content/geo-content.jsx';
+const content = GEO_CONTENT['orlando'];
+---
+
+<SiteLayout
+  title="HOA Management Orlando, FL | Edison Association Management"
+  description="HOA and condo association management in Orlando, FL. Edison delivers boutique, full-service management for communities across the Orlando metro."
+>
+  <GeoPageB content={content} client:load />
+</SiteLayout>

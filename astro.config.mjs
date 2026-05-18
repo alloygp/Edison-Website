@@ -6,7 +6,7 @@ import sitemap from '@astrojs/sitemap';
 
 export default defineConfig({
   // ── STEP 1: update to client's live domain ────────────────────
-  site: 'https://innoviaco-op.com',
+  site: 'https://edisonassociationmanagement.com',
 
   output: 'server',
   adapter: vercel(),

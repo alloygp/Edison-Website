@@ -6,22 +6,22 @@
 
 export const SITE = {
   /** Canonical base URL — no trailing slash. Must match astro.config.mjs site: */
-  url: 'https://innoviaco-op.com',
+  url: 'https://edisonassociationmanagement.com',
 
   /** Display name — used in og:site_name, JSON-LD, email footer */
-  name: 'Innovia',
+  name: 'Edison Association Management',
 
   /** Twitter/X handle — include the @ */
-  twitterHandle: '@innovia',
+  twitterHandle: '',
 
   /** og:locale */
   locale: 'en_US',
 
   /** Fallback <title> if a page doesn't pass its own */
-  defaultTitle: 'Innovia — Short tagline here',
+  defaultTitle: 'Edison Association Management — Lighting The Way',
 
   /** Fallback meta description */
-  defaultDescription: 'Professional HOA management for communities across coastal Virginia.',
+  defaultDescription: 'Boutique HOA and condo association management in Orlando, FL. Edison Association Management delivers full-service community management across Central Florida.',
 
   /**
    * Default OG image — place the file at public/assets/og.png
@@ -34,13 +34,13 @@ export const SITE = {
   /** Organization JSON-LD — emitted on every page */
   org: {
     type: 'LocalBusiness',         // or 'ProfessionalService', 'Organization', etc.
-    telephone: '+1-757-499-3200',
-    email: 'contact@innoviaco-op.com',
-    addressLocality: 'Virginia Beach',
-    addressRegion: 'VA',
+    telephone: '+1-407-317-5252',
+    email: 'contact@edisonassociationmanagement.com',
+    addressLocality: 'Orlando',
+    addressRegion: 'FL',
     addressCountry: 'US',
     areaServed: 'United States',
     priceRange: '$$',
-    logo: 'https://innoviaco-op.com/assets/logo.svg',
+    logo: 'https://edisonassociationmanagement.com/assets/logo.svg',
   },
 } as const;

@@ -1,0 +1,13 @@
+---
+import SiteLayout from '../../../../layouts/SiteLayout.astro';
+import { GeoPageB } from '../../../../templates/geo-template.jsx';
+import { GEO_CONTENT } from '../../../../content/geo-content.jsx';
+const content = GEO_CONTENT['clermont'];
+---
+
+<SiteLayout
+  title="HOA Management Clermont, FL | Edison"
+  description="HOA management in Clermont, FL. Edison serves Lake County communities with boutique, responsive association management."
+>
+  <GeoPageB content={content} client:load />
+</SiteLayout>

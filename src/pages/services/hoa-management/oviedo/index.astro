@@ -1,0 +1,13 @@
+---
+import SiteLayout from '../../../../layouts/SiteLayout.astro';
+import { GeoPageB } from '../../../../templates/geo-template.jsx';
+import { GEO_CONTENT } from '../../../../content/geo-content.jsx';
+const content = GEO_CONTENT['oviedo'];
+---
+
+<SiteLayout
+  title="HOA Management Oviedo, FL | Edison"
+  description="HOA management in Oviedo, FL. Edison serves Seminole County communities with dedicated association managers and full back-office support."
+>
+  <GeoPageB content={content} client:load />
+</SiteLayout>

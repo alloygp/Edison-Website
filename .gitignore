@@ -13,3 +13,8 @@ _build/
 
 # Raw data exports (Screaming Frog, Ahrefs CSVs) — large files, no need to commit
 exports/
+
+# Internal AGP docs — not for client repos
+AGP_New_Client_Site_SOP.docx
+ASTRO-SEO-FOUNDATION.md
+SEO-CHECKLIST.md

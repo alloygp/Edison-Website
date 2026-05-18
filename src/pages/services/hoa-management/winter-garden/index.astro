@@ -1,0 +1,13 @@
+---
+import SiteLayout from '../../../../layouts/SiteLayout.astro';
+import { GeoPageB } from '../../../../templates/geo-template.jsx';
+import { GEO_CONTENT } from '../../../../content/geo-content.jsx';
+const content = GEO_CONTENT['winter-garden'];
+---
+
+<SiteLayout
+  title="HOA Management Winter Garden, FL | Edison"
+  description="HOA management in Winter Garden, FL. Edison serves communities across West Orange County with responsive, boutique association management."
+>
+  <GeoPageB content={content} client:load />
+</SiteLayout>
