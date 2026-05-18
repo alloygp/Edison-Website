@@ -1,0 +1,1514 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BoardAttract™ Audit — Edison Association Management — Q2 2026</title>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800;900&family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --purple:       #150828;
+  --pink:         #E94560;
+  --green-dark:   #1B4D3E;
+  --green:        #1B7A4A;
+  --amber:        #D4850A;
+  --blue:         #1E40AF;
+  --bg:           #FAFAF8;
+  --surface:      #FFFFFF;
+  --alt:          #F5F3EF;
+  --rule:         #E6E1D9;
+  --ink:          #1A1414;
+  --muted:        #5A544F;
+  --dim:          #8C8680;
+  --amber-bg:     #FFF8EB;
+  --amber-border: #E8C894;
+  --green-bg:     #E8F5EE;
+  --green-border: #B5D9C1;
+  --blue-bg:      #EFF6FF;
+  --blue-border:  #B8D1EC;
+  --red:          #C0392B;
+  --red-bg:       #FFF0EE;
+  --red-border:   #F5C6C0;
+}
+*, *::before, *::after { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; scroll-behavior: smooth; }
+body { font-family: 'DM Sans', system-ui, sans-serif; background: var(--bg); color: var(--ink); line-height: 1.6; font-size: 16px; -webkit-font-smoothing: antialiased; }
+h1,h2,h3,h4 { font-family: 'Montserrat', sans-serif; font-weight: 800; line-height: 1.1; letter-spacing: -0.025em; margin: 0; color: var(--ink); }
+p { margin: 0 0 14px; } p:last-child { margin-bottom: 0; }
+.wrap { max-width: 960px; margin: 0 auto; padding: 0 48px; }
+
+/* ══ MODE TOGGLE ══ */
+.mode-bar { background: var(--purple); padding: 10px 0; }
+.mode-bar-inner { max-width: 960px; margin: 0 auto; padding: 0 48px; display: flex; align-items: center; justify-content: space-between; }
+.mode-bar-label { font-family: 'Montserrat', sans-serif; font-size: 10px; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: rgba(255,255,255,0.5); }
+.mode-toggle { display: flex; align-items: center; gap: 10px; }
+.mode-toggle-label { font-family: 'Montserrat', sans-serif; font-size: 10px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(255,255,255,0.7); }
+.toggle-switch { position: relative; width: 44px; height: 24px; cursor: pointer; }
+.toggle-switch input { opacity: 0; width: 0; height: 0; position: absolute; }
+.toggle-track { position: absolute; inset: 0; background: rgba(255,255,255,0.2); border-radius: 12px; transition: background 0.2s; }
+.toggle-track::after { content: ""; position: absolute; left: 3px; top: 3px; width: 18px; height: 18px; background: #fff; border-radius: 50%; transition: transform 0.2s; }
+.toggle-switch input:checked + .toggle-track { background: var(--pink); }
+.toggle-switch input:checked + .toggle-track::after { transform: translateX(20px); }
+.mode-active-label { font-family: 'JetBrains Mono', monospace; font-size: 10px; font-weight: 700; color: var(--pink); letter-spacing: 0.08em; text-transform: uppercase; }
+
+/* ══ COVER ══ */
+.cover { position: relative; width: 100vw; margin-left: calc(50% - 50vw); background: var(--bg); padding: 80px 48px 72px; overflow: hidden; }
+.cover::before { content: ""; position: absolute; inset: 0; background-image: repeating-linear-gradient(0deg, rgba(21,8,40,0.028) 0, rgba(21,8,40,0.028) 1px, transparent 1px, transparent 48px), repeating-linear-gradient(90deg, rgba(21,8,40,0.028) 0, rgba(21,8,40,0.028) 1px, transparent 1px, transparent 48px); pointer-events: none; }
+.cover::after { content: ""; position: absolute; top: -200px; right: -200px; width: 700px; height: 700px; background: radial-gradient(circle, rgba(233,69,96,0.09) 0%, transparent 68%); pointer-events: none; }
+.cover-inner { position: relative; z-index: 1; max-width: 960px; margin: 0 auto; }
+.cover-logo { display: block; height: 28px; width: auto; margin-bottom: 32px; }
+.cover-doc-type { display: inline-flex; align-items: center; gap: 10px; font-family: 'Montserrat', sans-serif; font-size: 10px; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: var(--green-dark); margin-bottom: 24px; }
+.cover-doc-type::before { content: ""; width: 24px; height: 2px; background: var(--green-dark); }
+.cover h1 { font-size: clamp(36px, 5.5vw, 62px); font-weight: 900; color: var(--purple); line-height: 1.04; letter-spacing: -0.04em; margin-bottom: 8px; max-width: 720px; }
+.cover h1 em { color: var(--pink); font-style: normal; }
+.cover-domain { font-family: 'JetBrains Mono', monospace; font-size: 14px; color: var(--dim); margin-bottom: 36px; letter-spacing: 0.02em; }
+.cover-meta-row { display: flex; align-items: center; gap: 40px; border-top: 2px solid var(--purple); padding-top: 22px; flex-wrap: wrap; }
+.cmi { }
+.cmi-label { font-family: 'Montserrat', sans-serif; font-size: 9px; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: var(--green-dark); margin-bottom: 4px; }
+.cmi-val { font-family: 'Montserrat', sans-serif; font-weight: 700; font-size: 14px; color: var(--purple); }
+.cover-mode-badge { margin-left: auto; display: inline-flex; align-items: center; gap: 8px; background: var(--purple); color: #fff; font-family: 'Montserrat', sans-serif; font-size: 10px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; padding: 8px 14px; border-radius: 6px; }
+.cover-mode-badge .dot { width: 7px; height: 7px; background: var(--pink); border-radius: 50%; }
+
+/* ══ NAV ══ */
+.topnav { position: sticky; top: 0; z-index: 50; background: rgba(250,250,248,0.96); backdrop-filter: blur(10px); border-bottom: 1px solid var(--rule); }
+.topnav-inner { max-width: 960px; margin: 0 auto; padding: 0 48px; display: flex; align-items: center; justify-content: space-between; height: 52px; }
+.topnav-brand { font-family: 'Montserrat', sans-serif; font-weight: 800; font-size: 11px; color: var(--purple); }
+.topnav-brand .pink { color: var(--pink); }
+.topnav-links { display: flex; gap: 20px; font-family: 'Montserrat', sans-serif; font-size: 9px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; }
+.topnav-links a { color: var(--muted); text-decoration: none; transition: color 0.15s; } 
+.topnav-links a:hover { color: var(--purple); }
+
+/* ══ OVERALL HEALTH SCORE ══ */
+.health-section { background: var(--alt); border-bottom: 1px solid var(--rule); padding: 80px 0; }
+.health-inner { max-width: 960px; margin: 0 auto; padding: 0 48px; }
+.health-top { display: grid; grid-template-columns: auto 1fr; gap: 56px; align-items: start; margin-bottom: 48px; }
+.health-score-col { text-align: center; }
+.score-ring { width: 200px; height: 200px; }
+.score-ring-text { font-family: 'Montserrat', sans-serif; }
+.health-copy { }
+.health-eyebrow { display: flex; align-items: center; gap: 10px; font-family: 'Montserrat', sans-serif; font-size: 10px; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: var(--green-dark); margin-bottom: 12px; }
+.health-eyebrow::before { content: ""; width: 24px; height: 2px; background: var(--green-dark); }
+.health-copy h2 { font-size: 30px; color: var(--purple); margin-bottom: 14px; }
+.health-copy .diagnosis { font-size: 16px; color: var(--muted); line-height: 1.65; margin-bottom: 20px; }
+
+/* Quarter comparison row - quarterly only */
+.q-compare { display: flex; gap: 24px; flex-wrap: wrap; }
+.q-compare-pill { display: flex; align-items: center; gap: 8px; background: var(--surface); border: 1px solid var(--rule); border-radius: 8px; padding: 8px 14px; }
+.qcp-label { font-family: 'Montserrat', sans-serif; font-size: 9px; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: var(--dim); }
+.qcp-val { font-family: 'JetBrains Mono', monospace; font-size: 13px; font-weight: 700; color: var(--purple); }
+.qcp-delta { font-family: 'JetBrains Mono', monospace; font-size: 11px; font-weight: 700; }
+.qcp-delta.up { color: var(--green); }
+.qcp-delta.down { color: var(--red); }
+
+/* Category score cards grid */
+.score-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; }
+.score-card { background: var(--surface); border: 1px solid var(--rule); border-radius: 12px; padding: 18px 16px; position: relative; overflow: hidden; }
+.score-card::before { content: ""; position: absolute; bottom: 0; left: 0; right: 0; height: 3px; }
+.score-card.grade-a::before { background: var(--green); }
+.score-card.grade-b::before { background: var(--green); opacity: 0.6; }
+.score-card.grade-c::before { background: var(--amber); }
+.score-card.grade-d::before { background: var(--red); }
+.score-card.grade-f::before { background: var(--red); }
+.sc-icon { font-size: 20px; margin-bottom: 10px; display: block; }
+.sc-cat-name { font-family: 'Montserrat', sans-serif; font-size: 10px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--dim); margin-bottom: 6px; }
+.sc-number { font-family: 'JetBrains Mono', monospace; font-size: 28px; font-weight: 700; line-height: 1; margin-bottom: 4px; }
+.sc-number.green { color: var(--green); }
+.sc-number.amber { color: var(--amber); }
+.sc-number.red { color: var(--red); }
+.sc-grade-badge { display: inline-block; font-family: 'Montserrat', sans-serif; font-size: 9px; font-weight: 800; letter-spacing: 0.1em; padding: 2px 7px; border-radius: 4px; margin-bottom: 8px; }
+.grade-a .sc-grade-badge { background: var(--green-bg); color: var(--green-dark); }
+.grade-b .sc-grade-badge { background: var(--green-bg); color: var(--green-dark); }
+.grade-c .sc-grade-badge { background: var(--amber-bg); color: var(--amber); }
+.grade-d .sc-grade-badge { background: var(--red-bg); color: var(--red); }
+.grade-f .sc-grade-badge { background: var(--red-bg); color: var(--red); }
+.sc-status { font-size: 11px; color: var(--dim); line-height: 1.4; }
+.sc-delta { font-family: 'JetBrains Mono', monospace; font-size: 10px; font-weight: 700; margin-left: 6px; }
+.sc-delta.up { color: var(--green); }
+.sc-delta.down { color: var(--red); }
+
+/* Strength badge */
+.strength-badge { display: inline-flex; align-items: center; gap: 5px; background: var(--green-bg); border: 1px solid var(--green-border); color: var(--green-dark); font-family: 'Montserrat', sans-serif; font-size: 9px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; padding: 3px 9px; border-radius: 20px; }
+.strength-badge::before { content: "●"; font-size: 6px; }
+
+/* Priority tags */
+.tag { display: inline-flex; align-items: center; font-family: 'Montserrat', sans-serif; font-size: 9px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; padding: 3px 8px; border-radius: 4px; }
+.tag-critical { background: var(--red-bg); color: var(--red); border: 1px solid var(--red-border); }
+.tag-high { background: var(--amber-bg); color: var(--amber); border: 1px solid var(--amber-border); }
+.tag-opportunity { background: var(--blue-bg); color: var(--blue); border: 1px solid var(--blue-border); }
+.tag-win { background: var(--green-bg); color: var(--green-dark); border: 1px solid var(--green-border); }
+
+/* Key findings + wins banners */
+.findings-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 40px; }
+.banner { border-radius: 12px; padding: 24px; }
+.banner-critical { background: var(--red-bg); border: 1px solid var(--red-border); }
+.banner-wins { background: var(--green-bg); border: 1px solid var(--green-border); }
+.banner-head { font-family: 'Montserrat', sans-serif; font-size: 11px; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; margin-bottom: 16px; }
+.banner-critical .banner-head { color: var(--red); }
+.banner-wins .banner-head { color: var(--green-dark); }
+.banner-item { display: flex; align-items: flex-start; gap: 10px; margin-bottom: 12px; font-size: 13px; line-height: 1.5; }
+.banner-item:last-child { margin-bottom: 0; }
+.banner-item .bi-icon { flex-shrink: 0; margin-top: 1px; font-size: 14px; }
+.banner-item .bi-text { color: var(--ink); }
+.banner-item .bi-id { font-family: 'JetBrains Mono', monospace; font-size: 10px; color: var(--dim); display: block; margin-top: 2px; }
+
+/* ══ AUDIT SECTIONS ══ */
+.audit-section { padding: 72px 0; border-bottom: 1px solid var(--rule); }
+.audit-section.alt { background: var(--surface); width: 100vw; margin-left: calc(50% - 50vw); }
+.audit-section.alt .wrap { max-width: 960px; margin: 0 auto; padding: 0 48px; }
+.section-eyebrow { display: flex; align-items: center; gap: 10px; font-family: 'Montserrat', sans-serif; font-size: 10px; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: var(--green-dark); margin-bottom: 10px; }
+.section-eyebrow::before { content: ""; width: 24px; height: 2px; background: var(--green-dark); }
+.section-eyebrow .sec-id { font-family: 'JetBrains Mono', monospace; font-size: 10px; color: var(--dim); }
+.section-title { font-size: clamp(22px, 3vw, 32px); color: var(--purple); margin-bottom: 8px; }
+.section-subtitle { font-size: 15px; color: var(--muted); max-width: 640px; line-height: 1.6; margin-bottom: 36px; }
+
+/* Metric row */
+.metric-row { display: grid; gap: 10px; margin-bottom: 32px; }
+.metric-row-3 { grid-template-columns: repeat(3, 1fr); }
+.metric-row-4 { grid-template-columns: repeat(4, 1fr); }
+.metric-row-2 { grid-template-columns: repeat(2, 1fr); }
+.metric-box { background: var(--surface); border: 1px solid var(--rule); border-radius: 10px; padding: 18px 20px; }
+.mb-label { font-family: 'Montserrat', sans-serif; font-size: 9px; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: var(--dim); margin-bottom: 6px; }
+.mb-val { font-family: 'JetBrains Mono', monospace; font-size: 22px; font-weight: 700; color: var(--purple); line-height: 1; margin-bottom: 4px; }
+.mb-val.green { color: var(--green); }
+.mb-val.amber { color: var(--amber); }
+.mb-val.red { color: var(--red); }
+.mb-sub { font-size: 12px; color: var(--dim); }
+.mb-delta { font-family: 'JetBrains Mono', monospace; font-size: 11px; font-weight: 700; }
+.mb-delta.up { color: var(--green); }
+.mb-delta.down { color: var(--red); }
+.mb-benchmark { font-family: 'JetBrains Mono', monospace; font-size: 10px; color: var(--dim); display: block; margin-top: 2px; }
+
+/* Findings list */
+.findings-list { display: flex; flex-direction: column; gap: 12px; margin-bottom: 32px; }
+.finding-item { background: var(--surface); border: 1px solid var(--rule); border-radius: 10px; padding: 18px 20px; display: grid; grid-template-columns: auto 1fr auto; gap: 14px; align-items: start; }
+.fi-id { font-family: 'JetBrains Mono', monospace; font-size: 10px; font-weight: 700; color: var(--dim); background: var(--alt); padding: 4px 8px; border-radius: 4px; white-space: nowrap; margin-top: 1px; }
+.fi-body { }
+.fi-title { font-family: 'Montserrat', sans-serif; font-size: 13px; font-weight: 700; color: var(--ink); margin-bottom: 4px; }
+.fi-desc { font-size: 13px; color: var(--muted); line-height: 1.5; margin-bottom: 8px; }
+.fi-tags { display: flex; gap: 6px; flex-wrap: wrap; }
+.fi-action { font-size: 12px; }
+
+/* Attribution box - quarterly only */
+.attribution-box { background: var(--blue-bg); border: 1px solid var(--blue-border); border-radius: 10px; padding: 18px 20px; margin-bottom: 12px; }
+.attribution-box .ab-head { font-family: 'Montserrat', sans-serif; font-size: 10px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--blue); margin-bottom: 10px; display: flex; align-items: center; gap: 8px; }
+.attribution-box .ab-head::before { content: "↑"; }
+.attribution-box .ab-items { display: flex; flex-wrap: wrap; gap: 8px; }
+.attribution-box .ab-item { font-size: 12px; color: var(--ink); background: var(--surface); border: 1px solid var(--blue-border); border-radius: 6px; padding: 4px 10px; font-family: 'JetBrains Mono', monospace; }
+
+/* Checklist table */
+.checklist { width: 100%; border-collapse: collapse; font-size: 13px; }
+.checklist thead tr { border-bottom: 2px solid var(--purple); }
+.checklist thead th { font-family: 'Montserrat', sans-serif; font-size: 9px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--dim); padding: 8px 12px; text-align: left; }
+.checklist tbody tr { border-bottom: 1px solid var(--rule); }
+.checklist tbody tr:hover { background: var(--alt); }
+.checklist td { padding: 12px 12px; vertical-align: top; }
+.cl-status { font-size: 16px; }
+.cl-item { font-weight: 600; color: var(--ink); margin-bottom: 2px; }
+.cl-detail { font-size: 12px; color: var(--muted); }
+.cl-value { font-family: 'JetBrains Mono', monospace; font-size: 12px; color: var(--purple); white-space: nowrap; }
+.cl-target { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--dim); white-space: nowrap; }
+
+/* Manual input section */
+.manual-section { background: var(--amber-bg); border: 1px solid var(--amber-border); border-radius: 12px; padding: 28px 32px; margin-top: 32px; }
+.ms-head { font-family: 'Montserrat', sans-serif; font-size: 11px; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: var(--amber); margin-bottom: 6px; }
+.ms-subhead { font-size: 13px; color: var(--muted); margin-bottom: 20px; }
+.ms-question { margin-bottom: 18px; }
+.ms-q-label { font-family: 'Montserrat', sans-serif; font-size: 12px; font-weight: 700; color: var(--ink); margin-bottom: 6px; }
+.ms-q-input { width: 100%; background: var(--surface); border: 1px solid var(--amber-border); border-radius: 8px; padding: 10px 14px; font-family: 'DM Sans', sans-serif; font-size: 13px; color: var(--ink); resize: vertical; min-height: 72px; outline: none; line-height: 1.5; }
+.ms-q-input:focus { border-color: var(--amber); box-shadow: 0 0 0 3px rgba(212,133,10,0.12); }
+
+/* Quarterly comparison table */
+.compare-table { width: 100%; border-collapse: collapse; font-size: 13px; margin-bottom: 24px; }
+.compare-table th { font-family: 'Montserrat', sans-serif; font-size: 9px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--dim); padding: 8px 12px; text-align: left; border-bottom: 2px solid var(--purple); }
+.compare-table th.highlight { color: var(--purple); }
+.compare-table td { padding: 11px 12px; border-bottom: 1px solid var(--rule); vertical-align: middle; }
+.compare-table tr:hover td { background: var(--alt); }
+.ct-metric { font-weight: 600; color: var(--ink); }
+.ct-bench { font-family: 'JetBrains Mono', monospace; font-size: 12px; color: var(--dim); }
+.ct-prev { font-family: 'JetBrains Mono', monospace; font-size: 12px; color: var(--muted); }
+.ct-now { font-family: 'JetBrains Mono', monospace; font-size: 13px; font-weight: 700; color: var(--purple); }
+.ct-delta { font-family: 'JetBrains Mono', monospace; font-size: 12px; font-weight: 700; white-space: nowrap; }
+.ct-delta.up { color: var(--green); }
+.ct-delta.down { color: var(--red); }
+.ct-delta.flat { color: var(--dim); }
+.ct-why { font-size: 11px; color: var(--muted); max-width: 220px; }
+
+/* Referring domains table */
+.rd-table { width: 100%; border-collapse: collapse; font-size: 13px; }
+.rd-table th { font-family: 'Montserrat', sans-serif; font-size: 9px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--dim); padding: 8px 12px; text-align: left; border-bottom: 2px solid var(--purple); }
+.rd-table td { padding: 10px 12px; border-bottom: 1px solid var(--rule); vertical-align: middle; }
+.rd-table tr:hover td { background: var(--alt); }
+.rd-domain { font-family: 'JetBrains Mono', monospace; font-size: 12px; color: var(--purple); }
+.rd-dr { font-family: 'JetBrains Mono', monospace; font-size: 12px; font-weight: 700; }
+.rd-spam { font-size: 11px; color: var(--red); font-weight: 600; }
+.dr-pill { display: inline-block; padding: 2px 8px; border-radius: 4px; font-family: 'JetBrains Mono', monospace; font-size: 11px; font-weight: 700; }
+.dr-high { background: var(--green-bg); color: var(--green-dark); }
+.dr-mid { background: var(--amber-bg); color: var(--amber); }
+.dr-low { background: var(--alt); color: var(--muted); }
+.dr-spam-pill { background: var(--red-bg); color: var(--red); }
+
+/* GBP placeholder */
+.gbp-check-prompt { background: var(--alt); border: 1px dashed var(--rule); border-radius: 10px; padding: 20px 24px; display: flex; align-items: center; gap: 16px; }
+.gbp-prompt-icon { font-size: 28px; flex-shrink: 0; }
+.gbp-prompt-text { font-size: 13px; color: var(--muted); }
+.gbp-prompt-text strong { color: var(--ink); }
+.gbp-prompt-link { display: inline-flex; align-items: center; gap: 6px; font-family: 'Montserrat', sans-serif; font-size: 10px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--pink); text-decoration: none; border-bottom: 1px solid rgba(233,69,96,0.3); padding-bottom: 1px; margin-top: 6px; }
+
+/* PageSpeed prompt */
+.psi-prompt { background: var(--alt); border: 1px solid var(--rule); border-radius: 10px; padding: 20px 24px; margin-bottom: 20px; }
+.psi-prompt a { color: var(--pink); }
+
+/* Keyword table */
+.kw-table { width: 100%; border-collapse: collapse; font-size: 13px; }
+.kw-table th { font-family: 'Montserrat', sans-serif; font-size: 9px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--dim); padding: 8px 12px; text-align: left; border-bottom: 2px solid var(--purple); }
+.kw-table td { padding: 10px 12px; border-bottom: 1px solid var(--rule); }
+.kw-table tr:hover td { background: var(--alt); }
+.kw-keyword { font-family: 'JetBrains Mono', monospace; font-size: 12px; color: var(--purple); }
+.kw-pos { font-family: 'JetBrains Mono', monospace; font-size: 13px; font-weight: 700; color: var(--green); }
+.kw-pos.mid { color: var(--amber); }
+.kw-vol { font-family: 'JetBrains Mono', monospace; font-size: 12px; color: var(--muted); }
+.kw-traffic { font-family: 'JetBrains Mono', monospace; font-size: 12px; color: var(--muted); }
+
+/* Quarterly mode visibility */
+.quarterly-only { display: none; }
+body.quarterly-mode .quarterly-only { display: block; }
+body.quarterly-mode .quarterly-only.flex { display: flex; }
+body.quarterly-mode .quarterly-only.grid { display: grid; }
+body.quarterly-mode .quarterly-only.table-row { display: table-row; }
+.new-client-note { display: block; }
+body.quarterly-mode .new-client-note { display: none; }
+
+/* DR history chart */
+.dr-history-chart { margin-bottom: 24px; }
+.dr-bar-row { display: flex; align-items: center; gap: 10px; margin-bottom: 7px; }
+.dr-bar-month { font-family: 'JetBrains Mono', monospace; font-size: 10px; color: var(--dim); width: 56px; flex-shrink: 0; text-align: right; }
+.dr-bar-track { flex: 1; background: var(--rule); border-radius: 3px; height: 16px; position: relative; overflow: hidden; }
+.dr-bar-fill { height: 100%; background: var(--purple); border-radius: 3px; display: flex; align-items: center; justify-content: flex-end; padding-right: 6px; transition: width 0.4s; }
+.dr-bar-fill.current { background: var(--pink); }
+.dr-bar-num { font-family: 'JetBrains Mono', monospace; font-size: 9px; font-weight: 700; color: #fff; }
+.dr-bar-val { font-family: 'JetBrains Mono', monospace; font-size: 11px; font-weight: 700; color: var(--purple); width: 28px; flex-shrink: 0; }
+
+/* NAP table */
+.nap-table { width: 100%; border-collapse: collapse; font-size: 13px; }
+.nap-table th { font-family: 'Montserrat', sans-serif; font-size: 9px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--dim); padding: 8px 12px; border-bottom: 2px solid var(--purple); text-align: left; }
+.nap-table td { padding: 11px 12px; border-bottom: 1px solid var(--rule); font-size: 12px; }
+.nap-table .source { font-weight: 600; color: var(--ink); }
+.nap-table .addr { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--muted); }
+.nap-conflict { color: var(--red); font-weight: 700; }
+
+/* Progress bar for section scores */
+.section-score-bar { display: flex; align-items: center; gap: 12px; margin-bottom: 24px; }
+.ssb-label { font-family: 'Montserrat', sans-serif; font-size: 10px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--dim); width: 120px; flex-shrink: 0; }
+.ssb-track { flex: 1; height: 8px; background: var(--rule); border-radius: 4px; overflow: hidden; }
+.ssb-fill { height: 100%; border-radius: 4px; }
+.ssb-fill.green { background: var(--green); }
+.ssb-fill.amber { background: var(--amber); }
+.ssb-fill.red { background: var(--red); }
+.ssb-val { font-family: 'JetBrains Mono', monospace; font-size: 13px; font-weight: 700; color: var(--purple); width: 36px; text-align: right; flex-shrink: 0; }
+
+/* Footer */
+.audit-footer { background: var(--purple); color: rgba(255,255,255,0.6); padding: 48px 0; }
+.footer-inner { max-width: 960px; margin: 0 auto; padding: 0 48px; display: flex; align-items: center; justify-content: space-between; flex-wrap: gap; }
+.footer-copy { font-family: 'Montserrat', sans-serif; font-size: 11px; font-weight: 600; letter-spacing: 0.08em; }
+.footer-copy span { color: rgba(255,255,255,0.3); }
+.footer-logo { height: 22px; width: auto; opacity: 0.6; }
+.back-top { position: fixed; bottom: 28px; right: 28px; width: 44px; height: 44px; background: var(--purple); border-radius: 50%; display: flex; align-items: center; justify-content: center; cursor: pointer; color: #fff; font-size: 18px; border: none; box-shadow: 0 4px 16px rgba(21,8,40,0.3); transition: background 0.2s; z-index: 99; }
+.back-top:hover { background: var(--pink); }
+
+/* Print / standalone note */
+.print-note { display: none; }
+
+/* Divider */
+.section-rule { border: none; border-top: 1px solid var(--rule); margin: 32px 0; }
+</style>
+</head>
+<body>
+
+<!-- MODE BAR -->
+<div class="mode-bar">
+  <div class="mode-bar-inner">
+    <span class="mode-bar-label">BoardAttract™ Audit System · Alloy Growth Partners</span>
+    <div class="mode-toggle">
+      <span class="mode-toggle-label">Baseline</span>
+      <label class="toggle-switch">
+        <input type="checkbox" id="modeToggle" onchange="toggleMode(this)">
+        <span class="toggle-track"></span>
+      </label>
+      <span class="mode-toggle-label">Quarterly</span>
+      <span class="mode-active-label" id="modeLabel">BASELINE</span>
+    </div>
+  </div>
+</div>
+
+<!-- COVER -->
+<div class="cover">
+  <div class="cover-inner">
+    <img src="https://alloygp.co/wp-content/uploads/2026/02/alloy-logo-logo-full-color-rgb-900px-w-72ppi.png" alt="Alloy Growth Partners" class="cover-logo">
+    <div class="cover-doc-type">BoardAttract™ Audit — Digital & Growth Assessment</div>
+    <h1>Edison<br><em>Association Management</em></h1>
+    <div class="cover-domain">edisonassociationmanagement.com</div>
+    <div class="cover-meta-row">
+      <div class="cmi"><div class="cmi-label">Client</div><div class="cmi-val">Edison Association Management</div></div>
+      <div class="cmi"><div class="cmi-label">Market</div><div class="cmi-val">Orlando + Central Florida</div></div>
+      <div class="cmi"><div class="cmi-label">Audit Date</div><div class="cmi-val">April 29, 2026</div></div>
+      <div class="cmi"><div class="cmi-label">Quarter</div><div class="cmi-val">Q2 2026</div></div>
+      <div class="cmi"><div class="cmi-label">Prepared By</div><div class="cmi-val">Alloy Growth Partners</div></div>
+      <div class="cover-mode-badge"><span class="dot"></span><span id="coverModeLabel">Baseline Audit</span></div>
+    </div>
+  </div>
+</div>
+
+<!-- NAV -->
+<nav class="topnav">
+  <div class="topnav-inner">
+    <div class="topnav-brand">Edison · <span class="pink">BoardAttract™ Audit</span></div>
+    <div class="topnav-links">
+      <a href="#health">Health Score</a>
+      <a href="#reach">Reach</a>
+      <a href="#match">Match</a>
+      <a href="#retain">Retain</a>
+      <a href="#media">Media & Education</a>
+      <a href="#priorities">Priorities</a>
+    </div>
+  </div>
+</nav>
+
+<!-- ══════════════════════════════════════════════
+     SECTION: OVERALL HEALTH SCORE
+══════════════════════════════════════════════ -->
+<section id="health" class="health-section">
+  <div class="health-inner">
+    <div class="health-top">
+      <div class="health-score-col">
+        <svg class="score-ring" viewBox="0 0 200 200">
+          <circle cx="100" cy="100" r="84" fill="none" stroke="#E6E1D9" stroke-width="14"/>
+          <!-- Score: 41/100 — circumference = 528 → offset = 528 * (1-0.41) = 311 -->
+          <circle cx="100" cy="100" r="84" fill="none" stroke="#D4850A" stroke-width="14"
+            stroke-dasharray="528" stroke-dashoffset="311"
+            stroke-linecap="round" transform="rotate(-90 100 100)"/>
+          <text x="100" y="88" text-anchor="middle" font-family="Montserrat,sans-serif" font-weight="900" font-size="48" fill="#150828">41</text>
+          <text x="100" y="114" text-anchor="middle" font-family="Montserrat,sans-serif" font-weight="700" font-size="13" fill="#D4850A" letter-spacing="3">C–</text>
+          <text x="100" y="136" text-anchor="middle" font-family="Montserrat,sans-serif" font-weight="600" font-size="10" fill="#8C8680" letter-spacing="2">OVERALL</text>
+        </svg>
+      </div>
+      <div class="health-copy">
+        <div class="health-eyebrow">Overall Digital Health</div>
+        <h2>Solid foundation. Real visibility gaps.</h2>
+        <p class="diagnosis">Edison has the brand signals, credentials, and content quality that most CAM companies take years to develop — but almost none of that is being found by boards who are actively searching. The site speaks to boards well, the credentials are strong, and the education content is genuinely useful. The critical gap is organic visibility: one ranking keyword, no non-branded search traffic, and a local presence that hasn't been fully activated. The opportunity here is significant and within close reach.</p>
+
+        <!-- Quarterly comparison — hidden in New Client mode -->
+        <div class="quarterly-only flex q-compare" style="gap:16px; flex-wrap:wrap;">
+          <div class="q-compare-pill"><span class="qcp-label">Benchmark</span><span class="qcp-val" style="margin:0 4px;">—</span></div>
+          <div class="q-compare-pill"><span class="qcp-label">Last Quarter</span><span class="qcp-val" style="margin:0 4px;">—</span></div>
+          <div class="q-compare-pill"><span class="qcp-label">This Quarter</span><span class="qcp-val" style="margin:0 4px;">41</span><span class="qcp-delta flat">→</span></div>
+        </div>
+
+        <div class="new-client-note" style="margin-top:12px;">
+          <span class="tag tag-win">Benchmark Established — Q2 2026</span>
+          <span style="font-size:12px;color:var(--dim);margin-left:10px;">Future quarterly audits will compare against this baseline.</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Category Score Grid -->
+    <div class="score-grid">
+      <div class="score-card grade-d">
+        <span class="sc-icon">🔍</span>
+        <div class="sc-cat-name">Technical SEO</div>
+        <div class="sc-number amber">52</div>
+        <span class="sc-grade-badge">C–</span>
+        <div class="sc-status">Site rebuilding. Core issues fixable.</div>
+      </div>
+      <div class="score-card grade-f">
+        <span class="sc-icon">📈</span>
+        <div class="sc-cat-name">Visibility & Rankings</div>
+        <div class="sc-number red">18</div>
+        <span class="sc-grade-badge">F</span>
+        <div class="sc-status">1 keyword ranking. No non-branded traffic.</div>
+      </div>
+      <div class="score-card grade-d">
+        <span class="sc-icon">📍</span>
+        <div class="sc-cat-name">Local & GBP</div>
+        <div class="sc-number amber">44</div>
+        <span class="sc-grade-badge">D</span>
+        <div class="sc-status">GBP verified. NAP conflict unresolved.</div>
+      </div>
+      <div class="score-card grade-d">
+        <span class="sc-icon">⭐</span>
+        <div class="sc-cat-name">Reputation</div>
+        <div class="sc-number amber">48</div>
+        <span class="sc-grade-badge">D+</span>
+        <div class="sc-status">BBB accredited. 111 reviews · 4.9 ★</div>
+      </div>
+      <div class="score-card grade-b">
+        <span class="sc-icon">🎯</span>
+        <div class="sc-cat-name">Conversion Readiness</div>
+        <div class="sc-number green">72</div>
+        <span class="sc-grade-badge">B–</span>
+        <div class="sc-status">Strong CTA. Board-focused messaging.</div>
+      </div>
+      <div class="score-card grade-c">
+        <span class="sc-icon">🔗</span>
+        <div class="sc-cat-name">Backlinks & Authority</div>
+        <div class="sc-number amber">55</div>
+        <span class="sc-grade-badge">C</span>
+        <div class="sc-status">DR 13. Mixed profile — spam to disavow.</div>
+      </div>
+      <div class="score-card grade-c">
+        <span class="sc-icon">📝</span>
+        <div class="sc-cat-name">Content & On-Page</div>
+        <div class="sc-number amber">62</div>
+        <span class="sc-grade-badge">C+</span>
+        <div class="sc-status">Quality copy. Thin page coverage.</div>
+      </div>
+      <div class="score-card grade-b">
+        <span class="sc-icon">🏛️</span>
+        <div class="sc-cat-name">Authority & Brand</div>
+        <div class="sc-number green">74</div>
+        <span class="sc-grade-badge">B</span>
+        <div class="sc-status">PCAM, CAI Platinum, FLCAJ Diamond.</div>
+      </div>
+      <div class="score-card grade-f">
+        <span class="sc-icon">🎬</span>
+        <div class="sc-cat-name">Media & Education</div>
+        <div class="sc-number red">12</div>
+        <span class="sc-grade-badge">F</span>
+        <div class="sc-status">No video. No courses. Blog only.</div>
+      </div>
+    </div>
+
+    <!-- Key Findings + Wins -->
+    <div class="findings-row">
+      <div class="banner banner-critical">
+        <div class="banner-head">🚨 Critical Findings</div>
+        <div class="banner-item"><span class="bi-icon">❌</span><div><span class="bi-text">Only 1 organic keyword ranking — all branded. Boards searching "HOA management Orlando" cannot find Edison.</span><span class="bi-id">VIS-01</span></div></div>
+        <div class="banner-item"><span class="bi-icon">❌</span><div><span class="bi-text">NAP conflict: three different addresses found across BBB, CAI directory, and current website.</span><span class="bi-id">LOCAL-01</span></div></div>
+        <div class="banner-item"><span class="bi-icon">❌</span><div><span class="bi-text">No video anywhere on the site. No courses or lead magnets. Every competitor looks the same without media — this is the gap that creates the moat.</span><span class="bi-id">MED-01</span></div></div>
+        <div class="banner-item"><span class="bi-icon">❌</span><div><span class="bi-text">Spam backlinks present from buybacklinks.agency, rank-your.site, rankyour.website — disavow recommended.</span><span class="bi-id">LINK-03</span></div></div>
+        <div class="banner-item"><span class="bi-icon">⚠️</span><div><span class="bi-text">Blog URL slug typo: /hoa-bylwas-vs-ccrs/ — misspelled slug hurts indexing and internal linking.</span><span class="bi-id">TECH-04</span></div></div>
+      </div>
+      <div class="banner banner-wins">
+        <div class="banner-head">✅ Strengths to Build On</div>
+        <div class="banner-item"><span class="bi-icon">🟢</span><div><span class="bi-text">111 Google reviews at 4.9 stars — top-decile reputation for a CAM company in any market. A major competitive asset that is underutilized on the website.</span><span class="bi-id">REP-00</span></div></div>
+        <div class="banner-item"><span class="bi-icon">🟢</span><div><span class="bi-text">Exceptional credential stack: PCAM designation, CAI Platinum Sponsor, FLCAJ Diamond Award, BBB accredited, OBJ Best Place to Work.</span><span class="bi-id">AUTH-01</span></div></div>
+        <div class="banner-item"><span class="bi-icon">🟢</span><div><span class="bi-text">Service page copy is board-focused and specific — far better than most CAM competitors. Differentiators are named and concrete.</span><span class="bi-id">CONV-01</span></div></div>
+        <div class="banner-item"><span class="bi-icon">🟢</span><div><span class="bi-text">DR jumped from 3.9 → 13 in April — homes.com (DR 84) link appears to have activated. Positive momentum.</span><span class="bi-id">LINK-01</span></div></div>
+        <div class="banner-item"><span class="bi-icon">🟢</span><div><span class="bi-text">Blog content infrastructure is live — hub page, categories, and 2 quality posts in place. Foundation exists to build on.</span><span class="bi-id">MED-04</span></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════════════
+     REACH — SECTION HEADER
+══════════════════════════════════════════════ -->
+<div id="reach" style="background:var(--purple);width:100vw;margin-left:calc(50% - 50vw);padding:20px 0;">
+  <div style="max-width:960px;margin:0 auto;padding:0 48px;display:flex;align-items:center;gap:16px;">
+    <span style="font-family:'Montserrat',sans-serif;font-size:10px;font-weight:700;letter-spacing:0.22em;text-transform:uppercase;color:rgba(255,255,255,0.5);">Part 1 of 3</span>
+    <span style="font-family:'Montserrat',sans-serif;font-size:16px;font-weight:900;color:#fff;letter-spacing:-0.02em;">REACH — Can boards find you and trust you?</span>
+  </div>
+</div>
+
+<!-- ══ A1: TECHNICAL SEO ══ -->
+<section class="audit-section">
+  <div class="wrap">
+    <div class="section-eyebrow"><span>A1</span></div>
+    <h2 class="section-title">Technical SEO</h2>
+    <p class="section-subtitle">The infrastructure that determines whether search engines can crawl, index, and rank Edison's pages — and whether the site performs well enough to convert visitors who do find it.</p>
+
+    <div class="metric-row metric-row-4">
+      <div class="metric-box">
+        <div class="mb-label">Sitemap</div>
+        <div class="mb-val green" style="font-size:16px;">✓ Live</div>
+        <div class="mb-sub">/sitemap.xml found</div>
+      </div>
+      <div class="metric-box">
+        <div class="mb-label">Robots.txt</div>
+        <div class="mb-val green" style="font-size:16px;">✓ Live</div>
+        <div class="mb-sub">/robots.txt accessible</div>
+      </div>
+      <div class="metric-box">
+        <div class="mb-label">SSL / HTTPS</div>
+        <div class="mb-val green" style="font-size:16px;">✓ Valid</div>
+        <div class="mb-sub">Secure certificate active</div>
+      </div>
+      <div class="metric-box">
+        <div class="mb-label">PageSpeed Score</div>
+        <div class="mb-val amber">—</div>
+        <div class="mb-sub">Pending · Q2 2026</div>
+      </div>
+    </div>
+
+    <div class="metric-row metric-row-4" style="margin-bottom:32px;">
+      <div class="metric-box">
+        <div class="mb-label">Mobile Score</div>
+        <div class="mb-val amber">Pending</div>
+        <div class="mb-sub">Google PageSpeed · Mobile</div>
+      </div>
+      <div class="metric-box">
+        <div class="mb-label">Desktop Score</div>
+        <div class="mb-val amber">Pending</div>
+        <div class="mb-sub">Google PageSpeed · Desktop</div>
+      </div>
+      <div class="metric-box">
+        <div class="mb-label">LCP (Mobile)</div>
+        <div class="mb-val amber">Pending</div>
+        <div class="mb-sub">Largest Contentful Paint</div>
+      </div>
+      <div class="metric-box">
+        <div class="mb-label">CLS (Mobile)</div>
+        <div class="mb-val amber">Pending</div>
+        <div class="mb-sub">Cumulative Layout Shift</div>
+      </div>
+    </div>
+
+    <div class="findings-list">
+      <div class="finding-item">
+        <div class="fi-id">TECH-01</div>
+        <div class="fi-body">
+          <div class="fi-title">Site rebuild caused keyword ranking drop — expected, needs recovery plan</div>
+          <div class="fi-desc">Edison had 11 keywords ranking in October 2025 (1 top-3, 2 positions 4–10, 8 positions 11+). Following the site rebuild, rankings declined to 1 keyword by April 2026. This pattern is normal with significant site changes, but the recovery needs to be actively managed through content, internal linking, and technical re-indexing.</div>
+          <div class="fi-tags"><span class="tag tag-critical">Critical</span></div>
+        </div>
+      </div>
+      <div class="finding-item">
+        <div class="fi-id">TECH-02</div>
+        <div class="fi-body">
+          <div class="fi-title"><span class="strength-badge">Strength</span> SSL, sitemap, and robots.txt all properly configured</div>
+          <div class="fi-desc">Core technical infrastructure is sound. HTTPS is active, sitemap.xml is live, and robots.txt is accessible. This is the right foundation to build on. No critical crawl blocking issues detected.</div>
+          <div class="fi-tags"><span class="tag tag-win">Pass</span></div>
+        </div>
+      </div>
+      <div class="finding-item">
+        <div class="fi-id">TECH-03</div>
+        <div class="fi-body">
+          <div class="fi-title">Title tag formatting inconsistency on HOA Management page</div>
+          <div class="fi-desc">"HOA Management Services| Edison Association Management" — missing space before pipe character. Minor but signals template-level inconsistency. More importantly, the title lacks a geographic modifier. "HOA Management Services Orlando FL | Edison Association Management" would better target local intent.</div>
+          <div class="fi-tags"><span class="tag tag-high">High</span></div>
+        </div>
+      </div>
+      <div class="finding-item">
+        <div class="fi-id">TECH-04</div>
+        <div class="fi-body">
+          <div class="fi-title">Blog URL slug has typo — /hoa-bylwas-vs-ccrs/ instead of /hoa-bylaws-vs-ccrs/</div>
+          <div class="fi-desc">The published URL for the HOA Bylaws vs CC&Rs post contains a misspelling in the slug: "bylwas" instead of "bylaws." This is the URL being indexed and linked to. Fix requires a 301 redirect from the old slug to the corrected URL, and updating all internal links that reference the old slug.</div>
+          <div class="fi-tags"><span class="tag tag-critical">Critical</span></div>
+        </div>
+      </div>
+    </div>
+
+    <table class="checklist">
+      <thead><tr><th>Status</th><th>Item</th><th>Current</th><th>Target</th><th>Priority</th></tr></thead>
+      <tbody>
+        <tr><td class="cl-status">✅</td><td><div class="cl-item">HTTPS / SSL Certificate</div><div class="cl-detail">Site served securely</div></td><td class="cl-value">Active</td><td class="cl-target">Valid</td><td><span class="tag tag-win">Pass</span></td></tr>
+        <tr><td class="cl-status">✅</td><td><div class="cl-item">XML Sitemap</div><div class="cl-detail">sitemap.xml accessible</div></td><td class="cl-value">Live</td><td class="cl-target">Submitted to GSC</td><td><span class="tag tag-win">Pass</span></td></tr>
+        <tr><td class="cl-status">✅</td><td><div class="cl-item">Robots.txt</div><div class="cl-detail">Properly configured</div></td><td class="cl-value">Live</td><td class="cl-target">No blocking issues</td><td><span class="tag tag-win">Pass</span></td></tr>
+        <tr><td class="cl-status">❌</td><td><div class="cl-item">Blog slug typo — /hoa-bylwas-vs-ccrs/</div><div class="cl-detail">Redirect old URL → corrected URL</div></td><td class="cl-value">Misspelled</td><td class="cl-target">Corrected + 301</td><td><span class="tag tag-critical">Critical</span></td></tr>
+        <tr><td class="cl-status">⚠️</td><td><div class="cl-item">Title tags — geo modifiers missing</div><div class="cl-detail">Add Orlando/Central Florida to key service page titles</div></td><td class="cl-value">Partial</td><td class="cl-target">All service pages</td><td><span class="tag tag-high">High</span></td></tr>
+        <tr><td class="cl-status">ℹ️</td><td><div class="cl-item">PageSpeed / Core Web Vitals</div><div class="cl-detail">Run manual check via pagespeed.web.dev</div></td><td class="cl-value">Not pulled</td><td class="cl-target">Mobile 85+ / Desktop 90+</td><td><span class="tag tag-high">High</span></td></tr>
+        <tr><td class="cl-status">⚠️</td><td><div class="cl-item">Schema markup — LocalBusiness</div><div class="cl-detail">Verify structured data is implemented and validated</div></td><td class="cl-value">Unconfirmed</td><td class="cl-target">Valid LocalBusiness schema</td><td><span class="tag tag-high">High</span></td></tr>
+        <tr><td class="cl-status">ℹ️</td><td><div class="cl-item">Google Search Console — verified</div><div class="cl-detail">Confirm GSC is connected and sitemap submitted</div></td><td class="cl-value">Unconfirmed</td><td class="cl-target">Connected + crawl data active</td><td><span class="tag tag-critical">Critical</span></td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+
+<!-- ══ A2: VISIBILITY & RANKINGS ══ -->
+<section class="audit-section alt">
+  <div class="wrap">
+    <div class="section-eyebrow"><span>A2</span></div>
+    <h2 class="section-title">Visibility & Rankings</h2>
+    <p class="section-subtitle">How many boards can find Edison when they search for HOA management in Central Florida — and what keywords are driving (or not driving) that visibility.</p>
+
+    <div class="metric-row metric-row-4">
+      <div class="metric-box">
+        <div class="mb-label">Organic Keywords</div>
+        <div class="mb-val red">1</div>
+        <div class="mb-sub">April 2026 · US</div>
+        <div class="quarterly-only"><span class="mb-delta down">↓ from 11</span><span class="mb-benchmark"> · Benchmark: 11 (Oct '25)</span></div>
+      </div>
+      <div class="metric-box">
+        <div class="mb-label">Est. Monthly Traffic</div>
+        <div class="mb-val red">21</div>
+        <div class="mb-sub">visits/month · Ahrefs est.</div>
+      </div>
+      <div class="metric-box">
+        <div class="mb-label">Top-3 Rankings</div>
+        <div class="mb-val amber">1</div>
+        <div class="mb-sub">"edison property management" · pos. 3</div>
+      </div>
+      <div class="metric-box">
+        <div class="mb-label">Non-Branded Rankings</div>
+        <div class="mb-val red">0</div>
+        <div class="mb-sub">No board-intent keyword visibility</div>
+      </div>
+    </div>
+
+    <!-- DR History Bar Chart -->
+    <div style="margin-bottom:32px;">
+      <div style="font-family:'Montserrat',sans-serif;font-size:11px;font-weight:700;letter-spacing:0.16em;text-transform:uppercase;color:var(--dim);margin-bottom:14px;">Domain Rating — 7-Month Trajectory</div>
+      <div class="dr-history-chart">
+        <div class="dr-bar-row"><span class="dr-bar-month">Oct '25</span><div class="dr-bar-track"><div class="dr-bar-fill" style="width:6%"><span class="dr-bar-num">6</span></div></div><span class="dr-bar-val">6</span></div>
+        <div class="dr-bar-row"><span class="dr-bar-month">Nov '25</span><div class="dr-bar-track"><div class="dr-bar-fill" style="width:3.7%"><span class="dr-bar-num"></span></div></div><span class="dr-bar-val">3.7</span></div>
+        <div class="dr-bar-row"><span class="dr-bar-month">Dec '25</span><div class="dr-bar-track"><div class="dr-bar-fill" style="width:4.2%"><span class="dr-bar-num"></span></div></div><span class="dr-bar-val">4.2</span></div>
+        <div class="dr-bar-row"><span class="dr-bar-month">Jan '26</span><div class="dr-bar-track"><div class="dr-bar-fill" style="width:3.7%"><span class="dr-bar-num"></span></div></div><span class="dr-bar-val">3.7</span></div>
+        <div class="dr-bar-row"><span class="dr-bar-month">Feb '26</span><div class="dr-bar-track"><div class="dr-bar-fill" style="width:3.8%"><span class="dr-bar-num"></span></div></div><span class="dr-bar-val">3.8</span></div>
+        <div class="dr-bar-row"><span class="dr-bar-month">Mar '26</span><div class="dr-bar-track"><div class="dr-bar-fill" style="width:3.9%"><span class="dr-bar-num"></span></div></div><span class="dr-bar-val">3.9</span></div>
+        <div class="dr-bar-row"><span class="dr-bar-month">Apr '26</span><div class="dr-bar-track"><div class="dr-bar-fill current" style="width:13%"><span class="dr-bar-num">13</span></div></div><span class="dr-bar-val" style="color:var(--pink);font-weight:900;">13</span></div>
+      </div>
+      <div style="font-size:12px;color:var(--muted);margin-top:8px;">↑ DR jumped from 3.9 → 13 in April — driven by homes.com (DR 84, 81 dofollow links) activating. Positive momentum.</div>
+    </div>
+
+    <!-- Current keyword ranking -->
+    <div style="margin-bottom:28px;">
+      <div style="font-family:'Montserrat',sans-serif;font-size:11px;font-weight:700;letter-spacing:0.16em;text-transform:uppercase;color:var(--dim);margin-bottom:14px;">Current Keyword Rankings</div>
+      <table class="kw-table">
+        <thead><tr><th>Keyword</th><th>Position</th><th>Monthly Volume</th><th>Est. Traffic</th><th>Type</th><th>Page</th></tr></thead>
+        <tbody>
+          <tr>
+            <td class="kw-keyword">edison property management</td>
+            <td class="kw-pos">3</td>
+            <td class="kw-vol">150</td>
+            <td class="kw-traffic">21</td>
+            <td><span class="tag" style="background:var(--alt);color:var(--muted);border:1px solid var(--rule);">Branded</span></td>
+            <td style="font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--dim);">Homepage</td>
+          </tr>
+        </tbody>
+      </table>
+      <div style="font-size:12px;color:var(--muted);margin-top:10px;">⚠️ All traffic is from branded search only. Boards who don't already know Edison's name cannot find them organically.</div>
+    </div>
+
+    <div class="findings-list">
+      <div class="finding-item">
+        <div class="fi-id">VIS-01</div>
+        <div class="fi-body">
+          <div class="fi-title">Zero non-branded keyword visibility — the primary growth gap</div>
+          <div class="fi-desc">A board in Kissimmee searching "HOA management company Central Florida" or "condo association management Orlando" will not find Edison. The entire current traffic stream is from people who already know the brand name. This is the single highest-priority gap to close — every location page, service page, and blog post we build is an attack on this problem.</div>
+          <div class="fi-tags"><span class="tag tag-critical">Critical</span></div>
+        </div>
+      </div>
+      <div class="finding-item">
+        <div class="fi-id">VIS-02</div>
+        <div class="fi-body">
+          <div class="fi-title"><span class="strength-badge">Strength</span> DR 13 jump in April signals the link profile is starting to compound</div>
+          <div class="fi-desc">The 3x DR increase in a single month (3.9 → 13) is driven by homes.com listing activity and a few strong dofollow links activating. This is early but meaningful — it gives the site authority to rank if content is added. The DR trajectory is correct. Now we need the content layer to capitalize on it.</div>
+          <div class="fi-tags"><span class="tag tag-win">Strength</span><span class="tag tag-opportunity" style="margin-left:6px;">Opportunity</span></div>
+        </div>
+      </div>
+      <div class="finding-item">
+        <div class="fi-id">VIS-03</div>
+        <div class="fi-body">
+          <div class="fi-title">Keyword history shows prior rankings were lost in site rebuild — recovery is feasible</div>
+          <div class="fi-desc">Edison had 11 keywords ranking as recently as October 2025. That footprint exists — it just needs to be rebuilt with better-targeted, location-specific content. The site rebuild was the right long-term move. The keyword recovery is now the immediate priority.</div>
+          <div class="fi-tags"><span class="tag tag-high">High</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ══ A3: LOCAL & GBP ══ -->
+<section class="audit-section">
+  <div class="wrap">
+    <div class="section-eyebrow"><span>A3</span></div>
+    <h2 class="section-title">Local SEO & Google Business Profile</h2>
+    <p class="section-subtitle">The local search infrastructure that determines whether Edison appears in the map pack when boards search for HOA management in Orlando and surrounding markets.</p>
+
+    <div class="metric-row metric-row-4" style="margin-bottom:24px;">
+      <div class="metric-box">
+        <div class="mb-label">GBP Status</div>
+        <div class="mb-val green" style="font-size:16px;">✓ Verified</div>
+        <div class="mb-sub">Knowledge Panel live</div>
+      </div>
+      <div class="metric-box">
+        <div class="mb-label">Google Reviews</div>
+        <div class="mb-val green">111</div>
+        <div class="mb-sub">4.9 ★ avg · Exceptional</div>
+      </div>
+      <div class="metric-box">
+        <div class="mb-label">Last GBP Post</div>
+        <div class="mb-val green" style="font-size:16px;">16 hrs ago</div>
+        <div class="mb-sub">Active · April 29, 2026</div>
+      </div>
+      <div class="metric-box">
+        <div class="mb-label">GBP Photos</div>
+        <div class="mb-val amber">—</div>
+        <div class="mb-sub">Count not recorded</div>
+      </div>
+    </div>
+
+    <!-- NAP Conflict Table -->
+    <div style="margin-bottom:28px;">
+      <div style="font-family:'Montserrat',sans-serif;font-size:11px;font-weight:700;letter-spacing:0.16em;text-transform:uppercase;color:var(--red);margin-bottom:14px;">⚠️ NAP Inconsistency Detected — Three Addresses in Wild</div>
+      <table class="nap-table">
+        <thead><tr><th>Source</th><th>Address</th><th>Phone</th><th>Status</th></tr></thead>
+        <tbody>
+          <tr><td class="source">Website (current)</td><td class="addr">619 E. Colonial Drive, Orlando FL 32803</td><td class="addr">(407) 317-5252</td><td><span class="tag tag-win">Current</span></td></tr>
+          <tr><td class="source">CAI Central Florida Directory</td><td class="addr nap-conflict">1416 E. Concord St., Orlando FL 32803</td><td class="addr">(407) 317-5252</td><td><span class="tag tag-critical">Conflict</span></td></tr>
+          <tr><td class="source">ZoomInfo</td><td class="addr nap-conflict">1817 Kalurna Ct., Orlando FL 32806</td><td class="addr">—</td><td><span class="tag tag-critical">Conflict</span></td></tr>
+          <tr><td class="source">Yelp</td><td class="addr">619 E. Colonial Dr, Orlando FL 32803</td><td class="addr">(407) 317-5252</td><td><span class="tag tag-win">Match</span></td></tr>
+          <tr><td class="source">BBB</td><td class="addr">Orlando FL</td><td class="addr">(407) 317-5252</td><td><span class="tag tag-high">Partial</span></td></tr>
+        </tbody>
+      </table>
+      <div style="font-size:12px;color:var(--muted);margin-top:10px;">NAP inconsistency is a direct local ranking signal. CAI directory and ZoomInfo need to be updated to reflect 619 E. Colonial Drive.</div>
+    </div>
+
+    <table class="checklist">
+      <thead><tr><th>Status</th><th>Item</th><th>Current</th><th>Target</th><th>Priority</th></tr></thead>
+      <tbody>
+        <tr><td class="cl-status">✅</td><td><div class="cl-item">GBP claimed and verified</div><div class="cl-detail">Knowledge Panel live and active</div></td><td class="cl-value">Verified ✓</td><td class="cl-target">Verified ✓</td><td><span class="tag tag-win">Pass</span></td></tr>
+        <tr><td class="cl-status">❌</td><td><div class="cl-item">NAP consistency — CAI directory</div><div class="cl-detail">Update 1416 E. Concord → 619 E. Colonial</div></td><td class="cl-value">Wrong address</td><td class="cl-target">Matches website</td><td><span class="tag tag-critical">Critical</span></td></tr>
+        <tr><td class="cl-status">❌</td><td><div class="cl-item">NAP consistency — ZoomInfo</div><div class="cl-detail">Claim/update ZoomInfo listing</div></td><td class="cl-value">Different address</td><td class="cl-target">Matches website</td><td><span class="tag tag-high">High</span></td></tr>
+        <tr><td class="cl-status">✅</td><td><div class="cl-item">NAP consistency — Yelp</div><div class="cl-detail">Address and phone match website</div></td><td class="cl-value">Match</td><td class="cl-target">Consistent</td><td><span class="tag tag-win">Pass</span></td></tr>
+        <tr><td class="cl-status">✅</td><td><div class="cl-item">GBP — reviews count and rating</div><div class="cl-detail">111 reviews at 4.9 ★ — exceptional for a CAM company</div></td><td class="cl-value">111 · 4.9 ★</td><td class="cl-target">20+ reviews, 4.5+</td><td><span class="tag tag-win">Exceeds Target</span></td></tr>
+        <tr><td class="cl-status">✅</td><td><div class="cl-item">GBP — posts active</div><div class="cl-detail">Last post 16 hours ago — excellent cadence</div></td><td class="cl-value">Active daily</td><td class="cl-target">1+ post/week</td><td><span class="tag tag-win">Exceeds Target</span></td></tr>
+        <tr><td class="cl-status">ℹ️</td><td><div class="cl-item">GBP — photo count</div></td><td class="cl-value">Not recorded</td><td class="cl-target">10+ photos, recent</td><td><span class="tag tag-high">Verify</span></td></tr>
+        <tr><td class="cl-status">⚠️</td><td><div class="cl-item">Location pages — service area coverage</div><div class="cl-detail">Orlando page live. Kissimmee in progress. Others needed.</div></td><td class="cl-value">1 live page</td><td class="cl-target">6+ market pages</td><td><span class="tag tag-critical">Critical</span></td></tr>
+        <tr><td class="cl-status">✅</td><td><div class="cl-item">CAI Central Florida — Platinum Sponsor listing</div><div class="cl-detail">Strong industry authority signal</div></td><td class="cl-value">Active</td><td class="cl-target">Maintained</td><td><span class="tag tag-win">Strength</span></td></tr>
+        <tr><td class="cl-status">✅</td><td><div class="cl-item">BBB Accredited</div><div class="cl-detail">Accredited since Sept 2024 — trust signal</div></td><td class="cl-value">Active</td><td class="cl-target">Maintained</td><td><span class="tag tag-win">Strength</span></td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+
+<!-- ══ A4: REPUTATION ══ -->
+<section class="audit-section alt">
+  <div class="wrap">
+    <div class="section-eyebrow"><span>A4</span></div>
+    <h2 class="section-title">Reputation & Social Proof</h2>
+    <p class="section-subtitle">The review footprint and trust signals that boards encounter when they research Edison — and whether that reputation is being actively surfaced in the sales process.</p>
+
+    <div class="metric-row metric-row-3">
+      <div class="metric-box">
+        <div class="mb-label">Google Reviews</div>
+        <div class="mb-val green">4.9 ★</div>
+        <div class="mb-sub">111 reviews · Verified GBP</div>
+      </div>
+      <div class="metric-box">
+        <div class="mb-label">BBB Rating</div>
+        <div class="mb-val green" style="font-size:16px;">A+</div>
+        <div class="mb-sub">Accredited since Sept 2024</div>
+      </div>
+      <div class="metric-box">
+        <div class="mb-label">Industry Awards</div>
+        <div class="mb-val green" style="font-size:14px; line-height:1.3;">FLCAJ<br>Diamond ×2</div>
+        <div class="mb-sub">Multi-year award recipient</div>
+      </div>
+    </div>
+
+    <div class="findings-list">
+      <div class="finding-item">
+        <div class="fi-id">REP-00</div>
+        <div class="fi-body">
+          <div class="fi-title"><span class="strength-badge">Strength</span> 111 Google reviews at 4.9 stars — top-decile reputation for a CAM company</div>
+          <div class="fi-desc">111 reviews averaging 4.9 stars is exceptional for an HOA management company at any size. Most competitors in the Orlando market have fewer than 30 reviews and ratings under 4.5. This is a significant competitive asset — boards do research Edison, and what they find on Google is overwhelmingly positive. The problem is that this reputation is not front-and-center on the website. A board visiting the homepage has to actively search for this signal rather than being led to it.</div>
+          <div class="fi-tags"><span class="tag tag-win">Strength</span><span class="tag tag-opportunity" style="margin-left:6px;">Not surfaced on site</span></div>
+        </div>
+      </div>
+      <div class="finding-item">
+        <div class="fi-id">REP-01</div>
+        <div class="fi-body">
+          <div class="fi-title"><span class="strength-badge">Strength</span> FLCAJ Diamond Award, CAI Platinum, OBJ Best Place to Work — exceptional credential stack</div>
+          <div class="fi-desc">Edison holds more industry credentials than most CAM companies of any size. FLCAJ Diamond Award (multiple years), CAI Central Florida Platinum Sponsor, OBJ Best Place to Work, PCAM designation, BBB accredited. These are significant trust signals — but the majority are not visible on the website homepage or in search results. They're buried or mentioned only in footer badge rows.</div>
+          <div class="fi-tags"><span class="tag tag-win">Strength</span><span class="tag tag-opportunity" style="margin-left:6px;">Wasted Asset</span></div>
+        </div>
+      </div>
+      <div class="finding-item">
+        <div class="fi-id">REP-02</div>
+        <div class="fi-body">
+          <div class="fi-title">No named board member testimonials visible on website</div>
+          <div class="fi-desc">The website does not display any testimonials with names, association names, or specific outcomes. For boards evaluating a management company, peer testimony from other board members is the highest-trust social proof available. This is a high-leverage gap — even 2–3 specific testimonials with names and community types would meaningfully impact conversion.</div>
+          <div class="fi-tags"><span class="tag tag-critical">Critical</span></div>
+        </div>
+      </div>
+      <div class="finding-item">
+        <div class="fi-id">REP-03</div>
+        <div class="fi-body">
+          <div class="fi-title">LinkedIn presence is strong — not being leveraged on the website</div>
+          <div class="fi-desc">Edison's LinkedIn shows active community involvement: CAI Cares volunteer days, holiday events, CAI chapter recognition, award announcements, hiring activity. This is proof of culture and community — exactly what boards want to see. None of this activity is reflected on the website, which presents a more formal but less human picture than LinkedIn tells.</div>
+          <div class="fi-tags"><span class="tag tag-opportunity">Opportunity</span></div>
+        </div>
+      </div>
+    </div>
+
+    <table class="checklist">
+      <thead><tr><th>Status</th><th>Item</th><th>Current</th><th>Target</th><th>Priority</th></tr></thead>
+      <tbody>
+        <tr><td class="cl-status">✅</td><td><div class="cl-item">Google reviews — count and rating</div></td><td class="cl-value">111 · 4.9 ★</td><td class="cl-target">20+ reviews, 4.5+</td><td><span class="tag tag-win">Exceeds Target</span></td></tr>
+        <tr><td class="cl-status">✅</td><td><div class="cl-item">BBB A+ Rating — accredited</div></td><td class="cl-value">Active</td><td class="cl-target">Maintained</td><td><span class="tag tag-win">Strength</span></td></tr>
+        <tr><td class="cl-status">✅</td><td><div class="cl-item">FLCAJ Diamond Award — multi-year</div></td><td class="cl-value">Won ×2+</td><td class="cl-target">Homepage visible</td><td><span class="tag tag-win">Strength</span></td></tr>
+        <tr><td class="cl-status">✅</td><td><div class="cl-item">CAI Central Florida Platinum Sponsor</div></td><td class="cl-value">Active</td><td class="cl-target">Highlighted on site</td><td><span class="tag tag-win">Strength</span></td></tr>
+        <tr><td class="cl-status">❌</td><td><div class="cl-item">Named board member testimonials on website</div></td><td class="cl-value">None found</td><td class="cl-target">3+ with names, outcomes</td><td><span class="tag tag-critical">Critical</span></td></tr>
+        <tr><td class="cl-status">⚠️</td><td><div class="cl-item">Award badges visible in hero / above fold</div><div class="cl-detail">FLCAJ Diamond, CAI badges currently in footer area only</div></td><td class="cl-value">Footer only</td><td class="cl-target">Visible above fold</td><td><span class="tag tag-high">High</span></td></tr>
+        <tr><td class="cl-status">✅</td><td><div class="cl-item">Yelp profile — claimed</div></td><td class="cl-value">Listed</td><td class="cl-target">Respond to reviews</td><td><span class="tag tag-high">High</span></td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+
+<!-- ══ A5: BACKLINKS & AUTHORITY ══ -->
+<section class="audit-section">
+  <div class="wrap">
+    <div class="section-eyebrow"><span>A5</span></div>
+    <h2 class="section-title">Backlinks & Domain Authority</h2>
+    <p class="section-subtitle">The quality and quantity of sites linking to Edison — a key signal that search engines use to determine how authoritative and trustworthy the domain is.</p>
+
+    <div class="metric-row metric-row-4">
+      <div class="metric-box">
+        <div class="mb-label">Domain Rating</div>
+        <div class="mb-val amber">13</div>
+        <div class="mb-sub">April 2026 · up from 3.9</div>
+        <div class="quarterly-only"><span class="mb-benchmark">Benchmark: 3.9 (Feb '26)</span></div>
+      </div>
+      <div class="metric-box">
+        <div class="mb-label">Referring Domains</div>
+        <div class="mb-val amber">20+</div>
+        <div class="mb-sub">Top 20 pulled · Ahrefs</div>
+      </div>
+      <div class="metric-box">
+        <div class="mb-label">Dofollow Quality Links</div>
+        <div class="mb-val green">~6</div>
+        <div class="mb-sub">homes.com, mn.co, qgiv, CINC, CAI</div>
+      </div>
+      <div class="metric-box">
+        <div class="mb-label">Spam / Disavow Needed</div>
+        <div class="mb-val red">5+</div>
+        <div class="mb-sub">buybacklinks.agency + rankers</div>
+      </div>
+    </div>
+
+    <!-- Top referring domains table -->
+    <div style="margin-bottom:28px;">
+      <div style="font-family:'Montserrat',sans-serif;font-size:11px;font-weight:700;letter-spacing:0.16em;text-transform:uppercase;color:var(--dim);margin-bottom:14px;">Top Referring Domains — Quality Assessment</div>
+      <table class="rd-table">
+        <thead><tr><th>Domain</th><th>DR</th><th>Dofollow Links</th><th>Quality</th><th>Notes</th></tr></thead>
+        <tbody>
+          <tr><td class="rd-domain">bbb.org</td><td><span class="dr-pill dr-high">93</span></td><td>0</td><td><span class="tag tag-win">Nofollow</span></td><td style="font-size:12px;color:var(--muted);">Trust signal, no SEO juice</td></tr>
+          <tr><td class="rd-domain">homes.com</td><td><span class="dr-pill dr-high">84</span></td><td>81</td><td><span class="tag tag-win">Strong</span></td><td style="font-size:12px;color:var(--muted);">81 dofollow links — driving DR jump</td></tr>
+          <tr><td class="rd-domain">mn.co</td><td><span class="dr-pill dr-high">86</span></td><td>8</td><td><span class="tag tag-win">Strong</span></td><td style="font-size:12px;color:var(--muted);">Community platform — quality signal</td></tr>
+          <tr><td class="rd-domain">qgiv.com</td><td><span class="dr-pill dr-high">88</span></td><td>3</td><td><span class="tag tag-win">Strong</span></td><td style="font-size:12px;color:var(--muted);">Charity platform — CAI Cares events</td></tr>
+          <tr><td class="rd-domain">cincwebaxis.com</td><td><span class="dr-pill dr-high">80</span></td><td>4</td><td><span class="tag tag-win">Strong</span></td><td style="font-size:12px;color:var(--muted);">Property mgmt software partner</td></tr>
+          <tr><td class="rd-domain">buybacklinks.agency</td><td><span class="dr-pill dr-high">79</span></td><td>0</td><td><span class="dr-pill dr-spam-pill">Disavow</span></td><td style="font-size:12px;color:var(--red);font-weight:600;">Link seller — disavow immediately</td></tr>
+          <tr><td class="rd-domain">rank-your.site</td><td><span class="dr-pill dr-mid">75</span></td><td>0</td><td><span class="dr-pill dr-spam-pill">Disavow</span></td><td style="font-size:12px;color:var(--red);font-weight:600;">Link spam network</td></tr>
+          <tr><td class="rd-domain">rankyour.website</td><td><span class="dr-pill dr-mid">74</span></td><td>0</td><td><span class="dr-pill dr-spam-pill">Disavow</span></td><td style="font-size:12px;color:var(--red);font-weight:600;">Link spam network</td></tr>
+          <tr><td class="rd-domain">rank-top.click</td><td><span class="dr-pill dr-mid">74</span></td><td>0</td><td><span class="dr-pill dr-spam-pill">Disavow</span></td><td style="font-size:12px;color:var(--red);font-weight:600;">Link spam network</td></tr>
+          <tr><td class="rd-domain">rapydapps.cloud</td><td><span class="dr-pill dr-mid">55</span></td><td>139</td><td><span class="dr-pill dr-spam-pill">Disavow</span></td><td style="font-size:12px;color:var(--red);font-weight:600;">139 links — likely app store scraper</td></tr>
+          <tr><td class="rd-domain">allaroundmoving.com</td><td><span class="dr-pill dr-high">71</span></td><td>1</td><td><span class="tag tag-high">Low Relevance</span></td><td style="font-size:12px;color:var(--muted);">Moving company — unrelated</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="findings-list">
+      <div class="finding-item">
+        <div class="fi-id">LINK-01</div>
+        <div class="fi-body">
+          <div class="fi-title"><span class="strength-badge">Strength</span> homes.com (DR 84) with 81 dofollow links is the driver behind the April DR jump</div>
+          <div class="fi-desc">This is a meaningful, high-authority link. homes.com is a major real estate platform, and 81 dofollow links from a DR 84 domain is a significant backlink contribution for a site at Edison's current stage. The CAI, CINC, and qgiv.com links (all DR 80+) add to a solid foundation of legitimate, relevant referring domains.</div>
+          <div class="fi-tags"><span class="tag tag-win">Strength</span></div>
+        </div>
+      </div>
+      <div class="finding-item">
+        <div class="fi-id">LINK-03</div>
+        <div class="fi-body">
+          <div class="fi-title">5+ spam/link-scheme domains need to be disavowed</div>
+          <div class="fi-desc">buybacklinks.agency, rank-your.site, rankyour.website, rank-top.click, and rapydapps.cloud are all either link seller networks or mass-link spammers. These don't appear to be links Edison built — they're likely parasitic links. A disavow file should be submitted to Google Search Console to signal these should not be counted. At this DR level, these carry more relative weight than they would on a stronger domain.</div>
+          <div class="fi-tags"><span class="tag tag-critical">Critical</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════════════
+     MATCH — SECTION HEADER
+══════════════════════════════════════════════ -->
+<div id="match" style="background:var(--pink);width:100vw;margin-left:calc(50% - 50vw);padding:20px 0;">
+  <div style="max-width:960px;margin:0 auto;padding:0 48px;display:flex;align-items:center;gap:16px;">
+    <span style="font-family:'Montserrat',sans-serif;font-size:10px;font-weight:700;letter-spacing:0.22em;text-transform:uppercase;color:rgba(255,255,255,0.6);">Part 2 of 3</span>
+    <span style="font-family:'Montserrat',sans-serif;font-size:16px;font-weight:900;color:#fff;letter-spacing:-0.02em;">MATCH — When boards find you, do they choose you?</span>
+  </div>
+</div>
+
+<!-- ══ C1: CONVERSION READINESS ══ -->
+<section class="audit-section alt">
+  <div class="wrap">
+    <div class="section-eyebrow"><span>C1</span></div>
+    <h2 class="section-title">Conversion Readiness</h2>
+    <p class="section-subtitle">Whether the website is structured to turn a visiting board member into a proposal request — through clear CTAs, trust signals, and friction-free contact paths.</p>
+
+    <div class="metric-row metric-row-3">
+      <div class="metric-box">
+        <div class="mb-label">Primary CTA</div>
+        <div class="mb-val green" style="font-size:13px;line-height:1.3;">Request a Proposal</div>
+        <div class="mb-sub">Consistent · Board-focused</div>
+      </div>
+      <div class="metric-box">
+        <div class="mb-label">Messaging Target</div>
+        <div class="mb-val green" style="font-size:13px;line-height:1.3;">Boards ✓</div>
+        <div class="mb-sub">Not residents — correct</div>
+      </div>
+      <div class="metric-box">
+        <div class="mb-label">Testimonials on Site</div>
+        <div class="mb-val red">0</div>
+        <div class="mb-sub">Named board testimonials</div>
+      </div>
+    </div>
+
+    <div class="findings-list">
+      <div class="finding-item">
+        <div class="fi-id">CONV-01</div>
+        <div class="fi-body">
+          <div class="fi-title"><span class="strength-badge">Strength</span> Website speaks directly to boards — not homeowners or residents</div>
+          <div class="fi-desc">Edison's homepage and service pages are written for the right audience. Language like "so your board can focus on what matters most," "your board can access anytime," and the clear separation of Board vs. Resident navigation paths shows sophisticated targeting. Most CAM competitors talk to everyone and reach no one. Edison talks to boards specifically.</div>
+          <div class="fi-tags"><span class="tag tag-win">Strength</span></div>
+        </div>
+      </div>
+      <div class="finding-item">
+        <div class="fi-id">CONV-02</div>
+        <div class="fi-body">
+          <div class="fi-title"><span class="strength-badge">Strength</span> Service page copy is exceptionally detailed and differentiator-specific</div>
+          <div class="fi-desc">The HOA Management Services page names specific differentiators that most CAM companies never articulate: capped manager portfolios, the Action Item List (live tracker), WATTSON AI assistant, dedicated back-office departments, senior leadership 6-month property visits, one-on-one monthly manager meetings. These are concrete, credible, and hard to replicate in a proposal response. This copy is a competitive asset.</div>
+          <div class="fi-tags"><span class="tag tag-win">Strength</span></div>
+        </div>
+      </div>
+      <div class="finding-item">
+        <div class="fi-id">CONV-03</div>
+        <div class="fi-body">
+          <div class="fi-title">No case study or before/after story on the website</div>
+          <div class="fi-desc">There is no published case study, client story, or outcome-based narrative on edisonassociationmanagement.com. For boards doing due diligence, this is a gap — particularly given Edison's strong industry reputation. Even a single anonymized "Community X came to us with Y challenge — here's what happened" page would measurably improve close rates from organic visitors.</div>
+          <div class="fi-tags"><span class="tag tag-high">High</span></div>
+        </div>
+      </div>
+      <div class="finding-item">
+        <div class="fi-id">CONV-04</div>
+        <div class="fi-body">
+          <div class="fi-title">Service Areas navigation item appears incomplete</div>
+          <div class="fi-desc">The navigation includes "Service Areas" under Contacts, but the dropdown appears to not navigate to dedicated pages — suggesting this section is incomplete or in progress. Boards from Kissimmee, Lake County, or Osceola would not find a page confirming Edison serves their area. Location-specific pages are both an SEO and a conversion tool.</div>
+          <div class="fi-tags"><span class="tag tag-high">High</span></div>
+        </div>
+      </div>
+      <div class="finding-item">
+        <div class="fi-id">CONV-05</div>
+        <div class="fi-body">
+          <div class="fi-title">No educational content in the conversion path — boards are left to research on their own</div>
+          <div class="fi-desc">A board evaluating Edison has no video to watch, no guide to download, no course to sample. Every competitor's website looks the same at this stage. Educational content at the Match stage — an explainer video, a board evaluation checklist, a "how to switch management companies" guide — builds trust actively rather than passively. Boards who learn from Edison before they call are already sold on the relationship.</div>
+          <div class="fi-tags"><span class="tag tag-high">High</span><span class="tag tag-opportunity" style="margin-left:6px;">Match</span></div>
+        </div>
+      </div>
+    </div>
+
+    <table class="checklist">
+      <thead><tr><th>Status</th><th>Item</th><th>Current</th><th>Target</th><th>Priority</th></tr></thead>
+      <tbody>
+        <tr><td class="cl-status">✅</td><td><div class="cl-item">Primary CTA — board-focused</div><div class="cl-detail">"Request a Proposal" — consistent throughout</div></td><td class="cl-value">Active</td><td class="cl-target">Consistent</td><td><span class="tag tag-win">Pass</span></td></tr>
+        <tr><td class="cl-status">✅</td><td><div class="cl-item">Site messaging targets boards, not residents</div></td><td class="cl-value">Board-focused</td><td class="cl-target">Maintained</td><td><span class="tag tag-win">Strength</span></td></tr>
+        <tr><td class="cl-status">✅</td><td><div class="cl-item">Trust badges present on homepage</div><div class="cl-detail">CAI, PCAM, FLCAJ, BBB, OBJ all shown</div></td><td class="cl-value">5 badges</td><td class="cl-target">Above fold</td><td><span class="tag tag-high">High</span></td></tr>
+        <tr><td class="cl-status">❌</td><td><div class="cl-item">Named board member testimonials</div></td><td class="cl-value">0</td><td class="cl-target">3+ on homepage</td><td><span class="tag tag-critical">Critical</span></td></tr>
+        <tr><td class="cl-status">❌</td><td><div class="cl-item">Published case study or client story</div></td><td class="cl-value">None</td><td class="cl-target">1+ with outcomes</td><td><span class="tag tag-high">High</span></td></tr>
+        <tr><td class="cl-status">⚠️</td><td><div class="cl-item">Service Areas pages — complete</div></td><td class="cl-value">Orlando only</td><td class="cl-target">All served markets</td><td><span class="tag tag-critical">Critical</span></td></tr>
+        <tr><td class="cl-status">⚠️</td><td><div class="cl-item">About / team page — leadership bios</div><div class="cl-detail">Board-level credibility — PCAM should be prominent</div></td><td class="cl-value">Unreviewed</td><td class="cl-target">Named bios, PCAM visible</td><td><span class="tag tag-high">High</span></td></tr>
+        <tr><td class="cl-status">❌</td><td><div class="cl-item">Educational content in conversion path</div><div class="cl-detail">Video, guide, checklist, or lead magnet that builds trust before a proposal call</div></td><td class="cl-value">None</td><td class="cl-target">1+ in Q2</td><td><span class="tag tag-high">High</span></td></tr>
+        <tr><td class="cl-status">❌</td><td><div class="cl-item">Video — any format on site</div><div class="cl-detail">Explainer, testimonial, walkthrough — zero video means zero media differentiation</div></td><td class="cl-value">0 videos</td><td class="cl-target">1+ this quarter</td><td><span class="tag tag-high">High</span></td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+
+<!-- ══ C2: CONTENT & ON-PAGE ══ -->
+<section class="audit-section">
+  <div class="wrap">
+    <div class="section-eyebrow"><span>C2</span></div>
+    <h2 class="section-title">Content & On-Page SEO</h2>
+    <p class="section-subtitle">Whether Edison's pages are optimized to rank for the terms boards actually search, and whether content depth signals expertise to both Google and the boards who read it.</p>
+
+    <div class="findings-list">
+      <div class="finding-item">
+        <div class="fi-id">CONT-01</div>
+        <div class="fi-body">
+          <div class="fi-title"><span class="strength-badge">Strength</span> Edison Education section — board-focused content infrastructure is live</div>
+          <div class="fi-desc">The blog has published content specifically for Florida HOA board members: HOA Audit guide, HOA Bylaws vs CC&Rs explainer. This is the right content strategy — educational content targeted at the decision-makers Edison wants to reach. It positions Edison as the authority before a board ever considers requesting a proposal. This infrastructure needs to be expanded aggressively.</div>
+          <div class="fi-tags"><span class="tag tag-win">Strength</span></div>
+        </div>
+      </div>
+      <div class="finding-item">
+        <div class="fi-id">CONT-02</div>
+        <div class="fi-body">
+          <div class="fi-title">No solution pages — only service pages</div>
+          <div class="fi-desc">Edison has service pages (what we do) but no solution pages (problems we solve). A board searching "switching HOA management company Florida" or "HOA management company fired how to replace" is a high-intent prospect — and there's no page for them. Solution pages targeting transition scenarios, board pain points, and comparison searches are currently missing entirely.</div>
+          <div class="fi-tags"><span class="tag tag-critical">Critical</span></div>
+        </div>
+      </div>
+      <div class="finding-item">
+        <div class="fi-id">CONT-03</div>
+        <div class="fi-body">
+          <div class="fi-title">Property type pages exist but need keyword depth</div>
+          <div class="fi-desc">Single Family HOA Management and Condominium Management pages exist — which is the right structure. But these pages need to rank for terms boards actually search: "single family HOA management Orlando," "condo association management Central Florida." Title tags, H1s, and body copy need geo-modified keyword targeting on these pages.</div>
+          <div class="fi-tags"><span class="tag tag-high">High</span></div>
+        </div>
+      </div>
+    </div>
+
+    <table class="checklist">
+      <thead><tr><th>Status</th><th>Item</th><th>Current</th><th>Target</th><th>Priority</th></tr></thead>
+      <tbody>
+        <tr><td class="cl-status">⚠️</td><td><div class="cl-item">Service pages — geo-modified title tags</div></td><td class="cl-value">Partial</td><td class="cl-target">All service pages</td><td><span class="tag tag-critical">Critical</span></td></tr>
+        <tr><td class="cl-status">❌</td><td><div class="cl-item">Solution pages — problem-focused content</div></td><td class="cl-value">None</td><td class="cl-target">3+ solution pages</td><td><span class="tag tag-critical">Critical</span></td></tr>
+        <tr><td class="cl-status">✅</td><td><div class="cl-item">Blog / Education section — live</div></td><td class="cl-value">2+ posts live</td><td class="cl-target">Monthly cadence</td><td><span class="tag tag-win">Strength</span></td></tr>
+        <tr><td class="cl-status">❌</td><td><div class="cl-item">Blog slug typo — /hoa-bylwas-vs-ccrs/</div></td><td class="cl-value">Misspelled</td><td class="cl-target">Fixed + 301</td><td><span class="tag tag-critical">Critical</span></td></tr>
+        <tr><td class="cl-status">⚠️</td><td><div class="cl-item">Internal linking — blog → service pages</div><div class="cl-detail">Blog posts should link to relevant service pages</div></td><td class="cl-value">Unconfirmed</td><td class="cl-target">3+ internal links/post</td><td><span class="tag tag-high">High</span></td></tr>
+        <tr><td class="cl-status">⚠️</td><td><div class="cl-item">FAQ / schema markup on key pages</div></td><td class="cl-value">Unconfirmed</td><td class="cl-target">FAQ schema on service pages</td><td><span class="tag tag-high">High</span></td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════════════
+     RETAIN — SECTION HEADER
+══════════════════════════════════════════════ -->
+<div id="retain" style="background:var(--green-dark);width:100vw;margin-left:calc(50% - 50vw);padding:20px 0;">
+  <div style="max-width:960px;margin:0 auto;padding:0 48px;display:flex;align-items:center;gap:16px;">
+    <span style="font-family:'Montserrat',sans-serif;font-size:10px;font-weight:700;letter-spacing:0.22em;text-transform:uppercase;color:rgba(255,255,255,0.5);">Part 3 of 3</span>
+    <span style="font-family:'Montserrat',sans-serif;font-size:16px;font-weight:900;color:#fff;letter-spacing:-0.02em;">RETAIN — Does the digital presence support retention and referral?</span>
+  </div>
+</div>
+
+<!-- ══ K1: RETENTION & REFERRAL ══ -->
+<section id="keep-section" class="audit-section">
+  <div class="wrap">
+    <div class="section-eyebrow"><span>K1</span></div>
+    <h2 class="section-title">Retention & Referral Infrastructure</h2>
+    <p class="section-subtitle">The digital touchpoints that support existing associations and create conditions for referral — client portals, ongoing value signals, board education, and mechanisms that make happy boards refer other boards.</p>
+
+    <div class="findings-list">
+      <div class="finding-item">
+        <div class="fi-id">KEEP-01</div>
+        <div class="fi-body">
+          <div class="fi-title"><span class="strength-badge">Strength</span> Resident portal, mobile app, and WATTSON AI are operational and client-facing</div>
+          <div class="fi-desc">Edison has CINC-powered resident portal, mobile app, and a branded AI assistant (WATTSON) that answers homeowner questions 24/7. These are referenced prominently on the service pages and represent a real retention advantage — boards with less work coming back to them are boards that stay. These assets should be more prominently featured in marketing materials and proposals.</div>
+          <div class="fi-tags"><span class="tag tag-win">Strength</span></div>
+        </div>
+      </div>
+      <div class="finding-item">
+        <div class="fi-id">KEEP-02</div>
+        <div class="fi-body">
+          <div class="fi-title">No referral mechanism or referral path on the website</div>
+          <div class="fi-desc">There is no "refer a community" page, referral program mention, or any mechanism for a happy board to direct another board to Edison. For a company whose reputation is strong enough to have earned FLCAJ Diamond awards, this is a missed channel. A simple referral page with a board-to-board testimonial and a contact path could generate qualified proposals.</div>
+          <div class="fi-tags"><span class="tag tag-opportunity">Opportunity</span></div>
+        </div>
+      </div>
+      <div class="finding-item">
+        <div class="fi-id">KEEP-03</div>
+        <div class="fi-body">
+          <div class="fi-title">No board education program — a retention tool that no competitor is building</div>
+          <div class="fi-desc">Ongoing board education — governance guides, certification reminders, legislative updates, video walkthroughs — keeps Edison visible and valuable to existing clients between renewal conversations. Boards that learn from their management company don't look for a new one. This is also a differentiation tool for winning new business: a board evaluating Edison and seeing structured education content sees a partner, not just a vendor. No CAM competitor in this market is doing this systematically.</div>
+          <div class="fi-tags"><span class="tag tag-opportunity">Opportunity</span><span class="tag tag-high" style="margin-left:6px;">Retain + Match</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div style="font-family:'Montserrat',sans-serif;font-size:11px;font-weight:700;letter-spacing:0.16em;text-transform:uppercase;color:var(--dim);margin-bottom:14px;margin-top:8px;">Authority & Thought Leadership</div>
+    <div id="authority"></div>
+    <table class="checklist">
+      <thead><tr><th>Status</th><th>Item</th><th>Current</th><th>Target</th><th>Priority</th></tr></thead>
+      <tbody>
+        <tr><td class="cl-status">✅</td><td><div class="cl-item">Resident portal — operational</div><div class="cl-detail">CINC-powered, 24/7 access</div></td><td class="cl-value">Live</td><td class="cl-target">Highlighted in proposals</td><td><span class="tag tag-win">Strength</span></td></tr>
+        <tr><td class="cl-status">✅</td><td><div class="cl-item">WATTSON AI assistant — operational</div></td><td class="cl-value">Live</td><td class="cl-target">Feature in proposals</td><td><span class="tag tag-win">Strength</span></td></tr>
+        <tr><td class="cl-status">✅</td><td><div class="cl-item">LinkedIn — active and community-focused</div><div class="cl-detail">CAI events, awards, hiring, community posts</div></td><td class="cl-value">Active</td><td class="cl-target">Weekly posts</td><td><span class="tag tag-win">Strength</span></td></tr>
+        <tr><td class="cl-status">❌</td><td><div class="cl-item">Board education program — digital</div><div class="cl-detail">Courses, guides, video walkthroughs for existing board clients</div></td><td class="cl-value">None</td><td class="cl-target">1 module Q2</td><td><span class="tag tag-opportunity">Opportunity</span></td></tr>
+        <tr><td class="cl-status">❌</td><td><div class="cl-item">Referral path or program on website</div></td><td class="cl-value">None</td><td class="cl-target">Board referral page</td><td><span class="tag tag-opportunity">Opportunity</span></td></tr>
+        <tr><td class="cl-status">⚠️</td><td><div class="cl-item">Newsletter or email content program</div><div class="cl-detail">Regular value delivery to existing boards keeps Edison top of mind</div></td><td class="cl-value">Unconfirmed</td><td class="cl-target">Monthly board newsletter</td><td><span class="tag tag-opportunity">Opportunity</span></td></tr>
+        <tr><td class="cl-status">✅</td><td><div class="cl-item">CAI chapter involvement — active</div><div class="cl-detail">Platinum Sponsor, CAI Cares volunteer events</div></td><td class="cl-value">Active</td><td class="cl-target">Visible on website</td><td><span class="tag tag-win">Strength</span></td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════════════
+     LEAD INTELLIGENCE — WHATCONVERTS
+══════════════════════════════════════════════ -->
+<section class="audit-section alt">
+  <div class="wrap">
+    <div class="section-eyebrow"><span>WC</span></div>
+    <h2 class="section-title">Lead Intelligence</h2>
+    <p class="section-subtitle">Web form submissions tracked through WhatConverts — Feb through Apr 28, 2026. All leads are web form type; no phone call tracking active in this period.</p>
+
+    <div class="metric-row metric-row-4">
+      <div class="metric-box">
+        <div class="mb-label">Total Leads</div>
+        <div class="mb-val green">11</div>
+        <div class="mb-sub">Feb–Apr 28, 2026</div>
+      </div>
+      <div class="metric-box">
+        <div class="mb-label">Top Source</div>
+        <div class="mb-val" style="font-size:16px;color:var(--purple);">Direct</div>
+        <div class="mb-sub">9 of 11 leads · 82%</div>
+      </div>
+      <div class="metric-box">
+        <div class="mb-label">Organic Search</div>
+        <div class="mb-val green">2</div>
+        <div class="mb-sub">Google Organic · 18%</div>
+      </div>
+      <div class="metric-box">
+        <div class="mb-label">Avg Lead Value</div>
+        <div class="mb-val amber">—</div>
+        <div class="mb-sub">Not yet quoted</div>
+      </div>
+    </div>
+
+    <div style="margin-bottom:28px;">
+      <div style="font-family:'Montserrat',sans-serif;font-size:11px;font-weight:700;letter-spacing:0.16em;text-transform:uppercase;color:var(--dim);margin-bottom:14px;">Lead Log — Feb–Apr 2026</div>
+      <table class="kw-table">
+        <thead><tr><th>Date</th><th>Source / Medium</th><th>Type</th><th>Status</th></tr></thead>
+        <tbody>
+          <tr><td style="font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--purple);">Apr 28</td><td style="font-size:12px;">Direct / None</td><td><span class="tag" style="background:var(--alt);color:var(--muted);border:1px solid var(--rule);">Web Form</span></td><td><span class="tag tag-high">Pending</span></td></tr>
+          <tr><td style="font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--purple);">Apr 24</td><td style="font-size:12px;">Direct / None</td><td><span class="tag" style="background:var(--alt);color:var(--muted);border:1px solid var(--rule);">Web Form</span></td><td><span class="tag tag-high">Pending</span></td></tr>
+          <tr><td style="font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--purple);">Apr 22</td><td style="font-size:12px;">Direct / None</td><td><span class="tag" style="background:var(--alt);color:var(--muted);border:1px solid var(--rule);">Web Form</span></td><td><span class="tag tag-high">Pending</span></td></tr>
+          <tr><td style="font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--purple);">Apr 22</td><td style="font-size:12px;">Direct / None</td><td><span class="tag" style="background:var(--alt);color:var(--muted);border:1px solid var(--rule);">Web Form</span></td><td><span class="tag tag-high">Pending</span></td></tr>
+          <tr><td style="font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--purple);">Apr 20</td><td style="font-size:12px;">Direct / None</td><td><span class="tag" style="background:var(--alt);color:var(--muted);border:1px solid var(--rule);">Web Form</span></td><td><span class="tag tag-high">Pending</span></td></tr>
+          <tr><td style="font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--purple);">Mar 30</td><td style="font-size:12px;">Direct / None</td><td><span class="tag" style="background:var(--alt);color:var(--muted);border:1px solid var(--rule);">Web Form</span></td><td><span class="tag tag-high">Pending</span></td></tr>
+          <tr><td style="font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--purple);">Mar 23</td><td style="font-size:12px;">Direct / None</td><td><span class="tag" style="background:var(--alt);color:var(--muted);border:1px solid var(--rule);">Web Form · Repeat</span></td><td><span class="tag tag-high">Pending</span></td></tr>
+          <tr><td style="font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--purple);">Mar 12</td><td style="font-size:12px;color:var(--green);font-weight:600;">Google / Organic</td><td><span class="tag" style="background:var(--alt);color:var(--muted);border:1px solid var(--rule);">Web Form</span></td><td><span class="tag tag-high">Pending</span></td></tr>
+          <tr><td style="font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--purple);">Feb 26</td><td style="font-size:12px;">Direct / None</td><td><span class="tag" style="background:var(--alt);color:var(--muted);border:1px solid var(--rule);">Web Form</span></td><td><span class="tag tag-high">Pending</span></td></tr>
+          <tr><td style="font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--purple);">Feb 25</td><td style="font-size:12px;">Direct / None</td><td><span class="tag" style="background:var(--alt);color:var(--muted);border:1px solid var(--rule);">Web Form · Repeat</span></td><td><span class="tag tag-high">Pending</span></td></tr>
+          <tr><td style="font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--purple);">Feb 9</td><td style="font-size:12px;color:var(--green);font-weight:600;">Google / Organic</td><td><span class="tag" style="background:var(--alt);color:var(--muted);border:1px solid var(--rule);">Web Form</span></td><td><span class="tag tag-high">Pending</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="findings-list">
+      <div class="finding-item">
+        <div class="fi-id">LEAD-01</div>
+        <div class="fi-body">
+          <div class="fi-title">82% of leads arrive via Direct — brand awareness is working, organic search is not yet contributing at scale</div>
+          <div class="fi-desc">9 of 11 leads came through direct navigation, meaning boards already knew Edison's name before visiting. This is a healthy sign of brand reputation but also confirms the visibility gap — boards who don't already know Edison cannot find them through search. The 2 Google Organic leads represent early signal that content investment is beginning to generate non-branded demand. This number should grow materially as location and solution pages are built out.</div>
+          <div class="fi-tags"><span class="tag tag-opportunity">Watch</span></div>
+        </div>
+      </div>
+      <div class="finding-item">
+        <div class="fi-id">LEAD-02</div>
+        <div class="fi-body">
+          <div class="fi-title">No lead values recorded — pipeline revenue from digital is invisible without this data</div>
+          <div class="fi-desc">All 11 leads show $0 Quote Value and $0 Sales Value in WhatConverts. Either these leads have not been followed up or the CRM pipeline is not connected back to WhatConverts. Without closed-loop data, it's impossible to calculate ROI on content, SEO, or any growth activity. Connecting WhatConverts to the sales outcome — even manually noting won/lost and contract value — is essential for the next quarterly audit to show real business impact.</div>
+          <div class="fi-tags"><span class="tag tag-high">High</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════════════
+     MEDIA & EDUCATION — SECTION HEADER
+══════════════════════════════════════════════ -->
+<div id="media" style="background:var(--amber);width:100vw;margin-left:calc(50% - 50vw);padding:20px 0;">
+  <div style="max-width:960px;margin:0 auto;padding:0 48px;display:flex;align-items:center;gap:16px;">
+    <span style="font-family:'Montserrat',sans-serif;font-size:10px;font-weight:700;letter-spacing:0.22em;text-transform:uppercase;color:rgba(255,255,255,0.65);">Cross-Funnel</span>
+    <span style="font-family:'Montserrat',sans-serif;font-size:16px;font-weight:900;color:#fff;letter-spacing:-0.02em;">MEDIA & EDUCATION — Video, courses, and content that builds trust across Reach, Match, and Retain</span>
+  </div>
+</div>
+
+<!-- ══ MED: MEDIA & EDUCATION ══ -->
+<section id="med-section" class="audit-section">
+  <div class="wrap">
+    <div class="section-eyebrow"><span>MED</span></div>
+    <h2 class="section-title">Media & Education</h2>
+    <p class="section-subtitle">Video and educational content work across all three engines — they build awareness for boards who haven't heard of Edison (Reach), build trust with boards who are evaluating (Match), and reinforce the relationship with boards who are already clients (Retain). Assessed independently because a zero score here affects every engine simultaneously.</p>
+
+    <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:28px;">
+      <div style="background:var(--surface);border:1px solid var(--rule);border-radius:10px;padding:16px;text-align:center;">
+        <div style="font-family:'JetBrains Mono',monospace;font-size:28px;font-weight:700;color:var(--red);">0</div>
+        <div style="font-family:'Montserrat',sans-serif;font-size:10px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--dim);margin-top:4px;">Videos on Site</div>
+      </div>
+      <div style="background:var(--surface);border:1px solid var(--rule);border-radius:10px;padding:16px;text-align:center;">
+        <div style="font-family:'JetBrains Mono',monospace;font-size:28px;font-weight:700;color:var(--red);">0</div>
+        <div style="font-family:'Montserrat',sans-serif;font-size:10px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--dim);margin-top:4px;">Courses / Modules</div>
+      </div>
+      <div style="background:var(--surface);border:1px solid var(--rule);border-radius:10px;padding:16px;text-align:center;">
+        <div style="font-family:'JetBrains Mono',monospace;font-size:28px;font-weight:700;color:var(--amber);">2</div>
+        <div style="font-family:'Montserrat',sans-serif;font-size:10px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--dim);margin-top:4px;">Blog Posts Live</div>
+      </div>
+      <div style="background:var(--surface);border:1px solid var(--rule);border-radius:10px;padding:16px;text-align:center;">
+        <div style="font-family:'JetBrains Mono',monospace;font-size:28px;font-weight:700;color:var(--red);">0</div>
+        <div style="font-family:'Montserrat',sans-serif;font-size:10px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--dim);margin-top:4px;">Lead Magnets</div>
+      </div>
+    </div>
+
+    <div class="findings-list">
+      <div class="finding-item">
+        <div class="fi-id">MED-01</div>
+        <div class="fi-body">
+          <div class="fi-title">No video anywhere on the site — zero media differentiation from any competitor</div>
+          <div class="fi-desc">There is not a single video on edisonassociationmanagement.com — no homepage explainer, no service walkthrough, no testimonial clip, no founder message. Every CAM competitor in this market is in the same position, which means the first company to build a video presence owns a gap that compounds over time. Video signals authority in Google and AI search (1.5x results multiplier per Alloy point system), increases time-on-page, and builds trust with boards in a way text alone cannot. A single short explainer video — how Edison's transition experience works, or what WATTSON does — would immediately differentiate the site from every competitor. This is the single fastest trust gap to close relative to its impact.</div>
+          <div class="fi-tags"><span class="tag tag-critical">Critical</span><span class="tag" style="background:var(--pink-bg);color:var(--pink);border:1px solid var(--pink-bdr);margin-left:6px;">Reach + Match</span></div>
+        </div>
+      </div>
+      <div class="finding-item">
+        <div class="fi-id">MED-02</div>
+        <div class="fi-body">
+          <div class="fi-title">No board education content — a moat no competitor is building</div>
+          <div class="fi-desc">Board certification is legally required in Florida within 90 days of election. Legislative updates create recurring compliance questions. Governance, reserve planning, vendor management — these are topics every board member actively searches for. A structured board education hub — even just 4–5 well-written guides and a video or two — positions Edison as the knowledge leader in this market. Boards who learn from Edison before they call are already predisposed to trust. Boards who keep learning from Edison after they become clients are far less likely to leave. This works in Reach (SEO and AI citations), Match (trust before the proposal call), and Retain (ongoing value delivery). No CAM competitor in Central Florida is doing this at all.</div>
+          <div class="fi-tags"><span class="tag tag-high">High</span><span class="tag" style="background:var(--purple);color:#fff;border:none;margin-left:6px;">Reach + Match + Retain</span></div>
+        </div>
+      </div>
+      <div class="finding-item">
+        <div class="fi-id">MED-03</div>
+        <div class="fi-body">
+          <div class="fi-title">No lead magnets — no email capture mechanism exists</div>
+          <div class="fi-desc">There is no downloadable resource, checklist, guide, or gated content on the site. Boards who visit, read a blog post, and aren't ready to request a proposal have no way to stay in Edison's orbit. A single high-value lead magnet — "HOA Budget Season Checklist for Florida Boards" or "Board Member Certification Guide: What You Need to Know" — creates an email capture path and positions Edison as a resource before the sales conversation. This compounds when combined with a newsletter or email nurture sequence.</div>
+          <div class="fi-tags"><span class="tag tag-opportunity">Opportunity</span><span class="tag" style="background:var(--pink-bg);color:var(--pink);border:1px solid var(--pink-bdr);margin-left:6px;">Match</span></div>
+        </div>
+      </div>
+      <div class="finding-item">
+        <div class="fi-id">MED-04</div>
+        <div class="fi-body">
+          <div class="fi-title"><span class="strength-badge">Strength</span> Blog infrastructure exists — 2 quality posts, well-structured hub page</div>
+          <div class="fi-desc">The /education-and-resources/ hub and two live posts (HOA Audit, HOA Bylaws vs CC&Rs) show the foundation is in place. Both posts are substantive (1,700+ words each), board-focused, and cover legally relevant Florida topics. The infrastructure — categories, tags, hub page, URL structure — is solid. What's missing is volume and media. The foundation doesn't need to be rebuilt, it needs to be built on.</div>
+          <div class="fi-tags"><span class="tag tag-win">Strength</span></div>
+        </div>
+      </div>
+    </div>
+
+    <table class="checklist">
+      <thead><tr><th>Status</th><th>Item</th><th>Current</th><th>Target</th><th>Engine</th></tr></thead>
+      <tbody>
+        <tr><td class="cl-status">❌</td><td><div class="cl-item">Video on site — any format</div><div class="cl-detail">Explainer, testimonial, founder, service walkthrough</div></td><td class="cl-value">0 videos</td><td class="cl-target">1 short video Q2</td><td><span class="tag" style="background:var(--pink-bg);color:var(--pink);border:1px solid var(--pink-bdr);">Reach + Match</span></td></tr>
+        <tr><td class="cl-status">❌</td><td><div class="cl-item">Board education content — guides or courses</div><div class="cl-detail">Governance, certification, legislative — topics boards actively search</div></td><td class="cl-value">0 modules</td><td class="cl-target">3–5 guides Q2</td><td><span class="tag" style="background:var(--purple);color:#fff;border:none;">All Three</span></td></tr>
+        <tr><td class="cl-status">❌</td><td><div class="cl-item">Lead magnet — gated downloadable resource</div></td><td class="cl-value">None</td><td class="cl-target">1 checklist or guide</td><td><span class="tag" style="background:var(--pink-bg);color:var(--pink);border:1px solid var(--pink-bdr);">Match</span></td></tr>
+        <tr><td class="cl-status">⚠️</td><td><div class="cl-item">Blog content volume</div><div class="cl-detail">2 posts live — needs consistent cadence to build topical authority</div></td><td class="cl-value">2 posts</td><td class="cl-target">Per point budget Q2</td><td><span class="tag" style="background:var(--purple);color:#fff;border:none;">Reach</span></td></tr>
+        <tr><td class="cl-status">❌</td><td><div class="cl-item">YouTube channel or video hosting presence</div></td><td class="cl-value">None confirmed</td><td class="cl-target">Channel set up Q2</td><td><span class="tag" style="background:var(--purple);color:#fff;border:none;">Reach</span></td></tr>
+      </tbody>
+    </table>
+
+    <div style="background:var(--amber-bg);border:1px solid var(--amber-bdr);border-radius:10px;padding:16px 20px;margin-top:20px;display:flex;gap:12px;align-items:flex-start;">
+      <span style="font-size:16px;flex-shrink:0;">💡</span>
+      <div style="font-size:13px;color:#78350f;line-height:1.6;">
+        <strong>Q2 Media & Education recommendation:</strong> Start with one short marketing video (1–2 min, slides + AI VO, 5–7 pts) and 3–5 board education blog posts targeting high-SV keywords (board certification, reserve study, Florida HOA laws). This builds the media foundation, creates Reach signals, and establishes the board education hub as a real asset — not just a blog stub. Courses and lead magnets follow once the content library has depth.
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════════════
+     PRIORITY ACTION LIST
+══════════════════════════════════════════════ -->
+<section id="priorities" style="background:var(--alt);width:100vw;margin-left:calc(50% - 50vw);padding:72px 0;border-bottom:1px solid var(--rule);">
+  <div style="max-width:960px;margin:0 auto;padding:0 48px;">
+    <div class="health-eyebrow">Prioritized Action List</div>
+    <h2 style="font-size:32px;color:var(--purple);margin-bottom:10px;">Top Findings — Ranked by Impact</h2>
+    <p style="font-size:15px;color:var(--muted);margin-bottom:36px;">Every item below has a Finding ID that maps directly to the Growth Playbook and the Authority Sitemap. Sequence follows impact on Reach → Match → Retain.</p>
+
+    <table style="width:100%;border-collapse:collapse;font-size:13px;">
+      <thead>
+        <tr style="border-bottom:2px solid var(--purple);">
+          <th style="font-family:'Montserrat',sans-serif;font-size:9px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:var(--dim);padding:8px 12px;text-align:left;width:80px;">ID</th>
+          <th style="font-family:'Montserrat',sans-serif;font-size:9px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:var(--dim);padding:8px 12px;text-align:left;">Action</th>
+          <th style="font-family:'Montserrat',sans-serif;font-size:9px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:var(--dim);padding:8px 12px;text-align:left;width:80px;">Category</th>
+          <th style="font-family:'Montserrat',sans-serif;font-size:9px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:var(--dim);padding:8px 12px;text-align:left;width:90px;">Priority</th>
+          <th style="font-family:'Montserrat',sans-serif;font-size:9px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:var(--dim);padding:8px 12px;text-align:left;width:90px;">Area</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr style="border-bottom:1px solid var(--rule);">
+          <td style="padding:12px;font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--dim);">VIS-01</td>
+          <td style="padding:12px;"><div style="font-weight:600;color:var(--ink);margin-bottom:2px;">Build location + service pages targeting board search terms</div><div style="font-size:12px;color:var(--muted);">6 location pages + 3 solution pages → direct attack on zero non-branded visibility</div></td>
+          <td style="padding:12px;"><span class="tag" style="background:var(--blue-bg);color:var(--blue);border:1px solid var(--blue-border);">Content</span></td>
+          <td style="padding:12px;"><span class="tag tag-critical">Critical</span></td>
+          <td style="padding:12px;"><span class="tag" style="background:var(--purple);color:#fff;border:none;">Reach</span></td>
+        </tr>
+        <tr style="border-bottom:1px solid var(--rule);">
+          <td style="padding:12px;font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--dim);">LOCAL-01</td>
+          <td style="padding:12px;"><div style="font-weight:600;color:var(--ink);margin-bottom:2px;">Fix NAP conflict — update CAI directory and ZoomInfo to 619 E. Colonial Drive</div><div style="font-size:12px;color:var(--muted);">Three different addresses in the wild is a local ranking signal penalty</div></td>
+          <td style="padding:12px;"><span class="tag" style="background:var(--blue-bg);color:var(--blue);border:1px solid var(--blue-border);">Local</span></td>
+          <td style="padding:12px;"><span class="tag tag-critical">Critical</span></td>
+          <td style="padding:12px;"><span class="tag" style="background:var(--purple);color:#fff;border:none;">Reach</span></td>
+        </tr>
+        <tr style="border-bottom:1px solid var(--rule);">
+          <td style="padding:12px;font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--dim);">MED-01</td>
+          <td style="padding:12px;"><div style="font-weight:600;color:var(--ink);margin-bottom:2px;">Produce first video — short explainer (1–2 min) and publish on site</div><div style="font-size:12px;color:var(--muted);">Slides + AI VO. Transition experience or WATTSON walkthrough. Every competitor has zero — this creates instant differentiation.</div></td>
+          <td style="padding:12px;"><span class="tag" style="background:var(--amber-bg);color:var(--amber);border:1px solid var(--amber-bdr);">Media</span></td>
+          <td style="padding:12px;"><span class="tag tag-critical">Critical</span></td>
+          <td style="padding:12px;"><span class="tag" style="background:var(--pink);color:#fff;border:none;">Match</span></td>
+        </tr>
+        <tr style="border-bottom:1px solid var(--rule);">
+          <td style="padding:12px;font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--dim);">REP-02</td>
+          <td style="padding:12px;"><div style="font-weight:600;color:var(--ink);margin-bottom:2px;">Collect and publish 3+ named board member testimonials on website</div><div style="font-size:12px;color:var(--muted);">Specific outcomes, named community types — highest-trust conversion asset for boards</div></td>
+          <td style="padding:12px;"><span class="tag" style="background:var(--blue-bg);color:var(--blue);border:1px solid var(--blue-border);">Reputation</span></td>
+          <td style="padding:12px;"><span class="tag tag-critical">Critical</span></td>
+          <td style="padding:12px;"><span class="tag" style="background:var(--pink);color:#fff;border:none;">Match</span></td>
+        </tr>
+        <tr style="border-bottom:1px solid var(--rule);">
+          <td style="padding:12px;font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--dim);">TECH-04</td>
+          <td style="padding:12px;"><div style="font-weight:600;color:var(--ink);margin-bottom:2px;">Fix blog slug typo — redirect /hoa-bylwas-vs-ccrs/ → /hoa-bylaws-vs-ccrs/</div><div style="font-size:12px;color:var(--muted);">Indexed URL has misspelling — fix slug, add 301 redirect, update internal links</div></td>
+          <td style="padding:12px;"><span class="tag" style="background:var(--blue-bg);color:var(--blue);border:1px solid var(--blue-border);">Technical</span></td>
+          <td style="padding:12px;"><span class="tag tag-critical">Critical</span></td>
+          <td style="padding:12px;"><span class="tag" style="background:var(--purple);color:#fff;border:none;">Reach</span></td>
+        </tr>
+        <tr style="border-bottom:1px solid var(--rule);">
+          <td style="padding:12px;font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--dim);">LINK-03</td>
+          <td style="padding:12px;"><div style="font-weight:600;color:var(--ink);margin-bottom:2px;">Create and submit disavow file for 5 spam domains</div><div style="font-size:12px;color:var(--muted);">buybacklinks.agency, rank-your.site, rankyour.website, rank-top.click, rapydapps.cloud</div></td>
+          <td style="padding:12px;"><span class="tag" style="background:var(--blue-bg);color:var(--blue);border:1px solid var(--blue-border);">Backlinks</span></td>
+          <td style="padding:12px;"><span class="tag tag-critical">Critical</span></td>
+          <td style="padding:12px;"><span class="tag" style="background:var(--purple);color:#fff;border:none;">Reach</span></td>
+        </tr>
+        <tr style="border-bottom:1px solid var(--rule);">
+          <td style="padding:12px;font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--dim);">MED-02</td>
+          <td style="padding:12px;"><div style="font-weight:600;color:var(--ink);margin-bottom:2px;">Build board education content hub — 3–5 guides targeting Florida board searches</div><div style="font-size:12px;color:var(--muted);">Board certification, reserve study, Florida HOA laws, annual meeting — each page builds SEO, AI citations, and trust simultaneously</div></td>
+          <td style="padding:12px;"><span class="tag" style="background:var(--amber-bg);color:var(--amber);border:1px solid var(--amber-bdr);">Media</span></td>
+          <td style="padding:12px;"><span class="tag tag-high">High</span></td>
+          <td style="padding:12px;"><span class="tag" style="background:var(--purple);color:#fff;border:none;">All Three</span></td>
+        </tr>
+        <tr style="border-bottom:1px solid var(--rule);">
+          <td style="padding:12px;font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--dim);">TECH-03</td>
+          <td style="padding:12px;"><div style="font-weight:600;color:var(--ink);margin-bottom:2px;">Add geo modifiers to all service page title tags</div><div style="font-size:12px;color:var(--muted);">"HOA Management Services Orlando FL | Edison" — every key page</div></td>
+          <td style="padding:12px;"><span class="tag" style="background:var(--blue-bg);color:var(--blue);border:1px solid var(--blue-border);">Technical</span></td>
+          <td style="padding:12px;"><span class="tag tag-high">High</span></td>
+          <td style="padding:12px;"><span class="tag" style="background:var(--purple);color:#fff;border:none;">Reach</span></td>
+        </tr>
+        <tr style="border-bottom:1px solid var(--rule);">
+          <td style="padding:12px;font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--dim);">CONT-02</td>
+          <td style="padding:12px;"><div style="font-weight:600;color:var(--ink);margin-bottom:2px;">Build solution pages targeting high-intent board problems</div><div style="font-size:12px;color:var(--muted);">"switching HOA management company" · "unhappy with HOA manager Florida" · "how to replace HOA management"</div></td>
+          <td style="padding:12px;"><span class="tag" style="background:var(--blue-bg);color:var(--blue);border:1px solid var(--blue-border);">Content</span></td>
+          <td style="padding:12px;"><span class="tag tag-high">High</span></td>
+          <td style="padding:12px;"><span class="tag" style="background:var(--pink);color:#fff;border:none;">Match</span></td>
+        </tr>
+        <tr style="border-bottom:1px solid var(--rule);">
+          <td style="padding:12px;font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--dim);">REP-01</td>
+          <td style="padding:12px;"><div style="font-weight:600;color:var(--ink);margin-bottom:2px;">Surface FLCAJ Diamond Award and awards above the fold on homepage</div><div style="font-size:12px;color:var(--muted);">Currently in footer badge row — needs to be a headline trust signal, not fine print</div></td>
+          <td style="padding:12px;"><span class="tag" style="background:var(--blue-bg);color:var(--blue);border:1px solid var(--blue-border);">Reputation</span></td>
+          <td style="padding:12px;"><span class="tag tag-high">High</span></td>
+          <td style="padding:12px;"><span class="tag" style="background:var(--pink);color:#fff;border:none;">Match</span></td>
+        </tr>
+        <tr style="border-bottom:1px solid var(--rule);">
+          <td style="padding:12px;font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--dim);">KEEP-02</td>
+          <td style="padding:12px;"><div style="font-weight:600;color:var(--ink);margin-bottom:2px;">Build a board referral path on the website</div><div style="font-size:12px;color:var(--muted);">Simple page: "Know another board that needs better management? Connect us."</div></td>
+          <td style="padding:12px;"><span class="tag" style="background:var(--blue-bg);color:var(--blue);border:1px solid var(--blue-border);">Retention</span></td>
+          <td style="padding:12px;"><span class="tag tag-opportunity">Opportunity</span></td>
+          <td style="padding:12px;"><span class="tag" style="background:var(--green-dark);color:#fff;border:none;">Retain</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════════════
+     QUARTERLY COMPARISON — ACTIVE MODE ONLY
+══════════════════════════════════════════════ -->
+<section id="quarterly-compare" class="quarterly-only audit-section" style="border-top:2px solid var(--blue);background:var(--blue-bg);">
+  <div class="wrap">
+    <div class="section-eyebrow" style="color:var(--blue);">Quarterly Comparison</div>
+    <h2 class="section-title">Q1 → Q2 Metric Comparison</h2>
+    <p class="section-subtitle">Key metric deltas from last quarter with attribution to work completed on Monday.com. Every significant change — improvement or slip — is explained.</p>
+
+    <table class="compare-table">
+      <thead>
+        <tr>
+          <th>Metric</th>
+          <th>Benchmark (Q2 '26)</th>
+          <th>Last Quarter</th>
+          <th class="highlight">This Quarter</th>
+          <th>Change</th>
+          <th>Why</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="ct-metric">Domain Rating</td>
+          <td class="ct-bench">13</td>
+          <td class="ct-prev">—</td>
+          <td class="ct-now">13</td>
+          <td class="ct-delta flat">→ Benchmark</td>
+          <td class="ct-why">This is the baseline audit</td>
+        </tr>
+        <tr>
+          <td class="ct-metric">Organic Keywords</td>
+          <td class="ct-bench">1</td>
+          <td class="ct-prev">—</td>
+          <td class="ct-now">1</td>
+          <td class="ct-delta flat">→ Benchmark</td>
+          <td class="ct-why">This is the baseline audit</td>
+        </tr>
+        <tr>
+          <td class="ct-metric">Est. Monthly Traffic</td>
+          <td class="ct-bench">21</td>
+          <td class="ct-prev">—</td>
+          <td class="ct-now">21</td>
+          <td class="ct-delta flat">→ Benchmark</td>
+          <td class="ct-why">This is the baseline audit</td>
+        </tr>
+        <tr>
+          <td class="ct-metric">Referring Domains</td>
+          <td class="ct-bench">20+</td>
+          <td class="ct-prev">—</td>
+          <td class="ct-now">20+</td>
+          <td class="ct-delta flat">→ Benchmark</td>
+          <td class="ct-why">This is the baseline audit</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <!-- Monday attribution block -->
+    <div class="attribution-box">
+      <div class="ab-head">Work Completed This Quarter — Edison Q2 Board</div>
+      <div class="ab-items">
+        <span class="ab-item">Technical SEO/GEO</span>
+        <span class="ab-item">On-Page Optimization</span>
+        <span class="ab-item">Build Page – Orlando</span>
+        <span class="ab-item">Build Page – Kissimmee</span>
+        <span class="ab-item">Build Post – HOA Board Responsibilities</span>
+        <span class="ab-item">Quality Backlink Placement</span>
+        <span class="ab-item">Google Review Link</span>
+        <span class="ab-item">Audit – Accounting & Bookkeeping page</span>
+        <span class="ab-item">Audit – Covenant Enforcement page</span>
+        <span class="ab-item">Audit – HOA Management Services page</span>
+      </div>
+    </div>
+    <div style="font-size:12px;color:var(--muted);margin-top:10px;">↑ Pulled from Edison Q2 Monday board. Future quarterly audits will map completed items directly to metrics that moved.</div>
+  </div>
+</section>
+
+
+
+
+
+<!-- FOOTER -->
+<footer class="audit-footer">
+  <div class="footer-inner" style="display:flex;align-items:center;justify-content:space-between;max-width:960px;margin:0 auto;padding:0 48px;">
+    <div>
+      <div class="footer-copy">BoardAttract™ Audit · Edison Association Management · Q2 2026</div>
+      <div class="footer-copy" style="margin-top:4px;color:rgba(255,255,255,0.35);">Prepared by Alloy Growth Partners · <span>alloygp.co</span> · Confidential — for client use only</div>
+    </div>
+    <img src="https://alloygp.co/wp-content/uploads/2026/02/alloy-logo-logo-light-full-color-rgb-900px-w-72ppi.png" alt="Alloy Growth Partners" class="footer-logo">
+  </div>
+</footer>
+
+<button class="back-top" onclick="window.scrollTo({top:0,behavior:'smooth'})" title="Back to top">↑</button>
+
+<script>
+function toggleMode(checkbox) {
+  const body = document.body;
+  const modeLabel = document.getElementById('modeLabel');
+  const coverLabel = document.getElementById('coverModeLabel');
+  if (checkbox.checked) {
+    body.classList.add('quarterly-mode');
+    modeLabel.textContent = 'QUARTERLY';
+    coverLabel.textContent = 'Quarterly Review';
+  } else {
+    body.classList.remove('quarterly-mode');
+    modeLabel.textContent = 'BASELINE';
+    coverLabel.textContent = 'Baseline Audit';
+  }
+}
+</script>
+</body>
+</html>

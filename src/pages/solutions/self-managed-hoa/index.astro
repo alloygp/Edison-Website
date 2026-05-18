@@ -1,0 +1,13 @@
+---
+import SiteLayout from '../../../layouts/SiteLayout.astro';
+import { SolutionPageB } from '../../../templates/solution-template.jsx';
+import { SOLUTIONS } from '../../../content/solutions-content.jsx';
+const content = SOLUTIONS['self-managed-hoa'];
+---
+
+<SiteLayout
+  title="Self-Managed HOA Moving to Professional Management | Edison"
+  description="Ready to move from self-managed to professional HOA management? Edison makes the transition seamless for Central Florida communities."
+>
+  <SolutionPageB content={content} client:load />
+</SiteLayout>

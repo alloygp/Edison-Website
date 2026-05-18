@@ -5,20 +5,20 @@
 export const EMAIL_CONFIG = {
 
   brand: {
-    name: 'Innovia',
-    url:  'https://innoviaco-op.com',
+    name: 'Edison Association Management',
+    url:  'https://edisonassociationmanagement.com',
     team: 'Skyler',
   },
 
   // Both addresses must be from a domain verified in Resend
   from: {
-    notifications: 'Innovia <notifications@innoviaco-op.com>',
-    hello:         'Innovia <hello@innoviaco-op.com>',
+    notifications: 'Edison Association Management <notifications@edisonassociationmanagement.com>',
+    hello:         'Edison Association Management <hello@edisonassociationmanagement.com>',
   },
 
   // Everyone here gets a copy of every form submission
   notify: [
-    'owner@innoviaco-op.com',
+    'contact@edisonassociationmanagement.com',
   ],
 
   mailchimp: {
@@ -38,7 +38,7 @@ export const EMAIL_CONFIG = {
       confirmSubject: "Thanks — we'll be in touch",
       confirmBody: (name: string, company: string, siteUrl: string) =>
         `<p>Hi ${name},</p>
-        <p>We received your info and someone will reach out shortly to discuss what ${company || 'your business'} needs.</p>
+        <p>We received your info and someone will reach out shortly to discuss what ${company || 'your community'} needs.</p>
         <p>— Skyler</p>`,
     },
     subscribe: {

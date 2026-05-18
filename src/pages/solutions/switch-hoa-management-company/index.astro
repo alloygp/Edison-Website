@@ -1,0 +1,13 @@
+---
+import SiteLayout from '../../../layouts/SiteLayout.astro';
+import { SolutionPageB } from '../../../templates/solution-template.jsx';
+import { SOLUTIONS } from '../../../content/solutions-content.jsx';
+const content = SOLUTIONS['switch-hoa-management-company'];
+---
+
+<SiteLayout
+  title="Switching HOA Management Companies in Florida | Edison"
+  description="Thinking about switching HOA management companies? Edison's transition experience handles onboarding, records, and vendor review in 60–90 days."
+>
+  <SolutionPageB content={content} client:load />
+</SiteLayout>

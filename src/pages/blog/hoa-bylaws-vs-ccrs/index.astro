@@ -1,0 +1,15 @@
+---
+import SiteLayout from '../../../layouts/SiteLayout.astro';
+import { BlogSpokeA } from '../../../templates/blog-template.jsx';
+import { BLOG_CONTENT } from '../../../content/blog-content.jsx';
+
+const content = BLOG_CONTENT['hoa-bylaws-vs-ccrs'];
+---
+
+<SiteLayout
+  title="HOA Bylaws vs CC&Rs: What's the Difference? | Edison"
+  description="What's the difference between HOA bylaws and CC&Rs in Florida? Learn which document controls what and how they work together to govern your community."
+  ogType="article"
+>
+  <BlogSpokeA content={content} client:load />
+</SiteLayout>

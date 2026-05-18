@@ -1,0 +1,13 @@
+---
+import SiteLayout from '../../layouts/SiteLayout.astro';
+import { BlogIndexPage } from '../../templates/blog-index-template.jsx';
+import { BLOG_CONTENT } from '../../content/blog-content.jsx';
+const content = BLOG_CONTENT;
+---
+
+<SiteLayout
+  title="HOA Management Blog | Edison Association Management"
+  description="HOA and condo association resources for Florida boards. Florida HOA laws, reserve studies, enforcement, financial management, and more."
+>
+  <BlogIndexPage content={content} client:load />
+</SiteLayout>

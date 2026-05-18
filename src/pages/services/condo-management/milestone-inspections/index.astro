@@ -1,0 +1,13 @@
+---
+import SiteLayout from '../../../../layouts/SiteLayout.astro';
+import { SubServicePage } from '../../../../templates/sub-service-template.jsx';
+import { SUB_SERVICES_CONTENT } from '../../../../content/sub-services-content.jsx';
+const content = SUB_SERVICES_CONTENT['milestone-inspections'];
+---
+
+<SiteLayout
+  title="Milestone Inspection Coordination | Edison"
+  description="Florida SB-4D milestone inspection coordination for condo associations. Edison manages engineer scheduling, board communication, and compliance tracking."
+>
+  <SubServicePage content={content} client:load />
+</SiteLayout>

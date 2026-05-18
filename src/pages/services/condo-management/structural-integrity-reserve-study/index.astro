@@ -1,0 +1,13 @@
+---
+import SiteLayout from '../../../../layouts/SiteLayout.astro';
+import { SubServicePage } from '../../../../templates/sub-service-template.jsx';
+import { SUB_SERVICES_CONTENT } from '../../../../content/sub-services-content.jsx';
+const content = SUB_SERVICES_CONTENT['sirs'];
+---
+
+<SiteLayout
+  title="Structural Integrity Reserve Study (SIRS) | Edison"
+  description="SIRS support for Florida condo associations. Edison coordinates structural integrity reserve studies and helps boards understand their compliance obligations."
+>
+  <SubServicePage content={content} client:load />
+</SiteLayout>

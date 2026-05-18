@@ -1,0 +1,193 @@
+/* ==========================================================================
+   Edison Association Management — Colors & Type Foundations
+   Source: edison-brand guide-v1.pdf, edison-master-brief-v1.3.html
+   ========================================================================== */
+
+/* Webfonts: Montserrat (headings) + Open Sans (body) sourced from Google Fonts.
+   The brand guide names these directly. If self-hosting is required, replace
+   the @import below with @font-face rules pointing at /fonts/. */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&family=Open+Sans:wght@300;400;500;600;700&display=swap');
+
+:root {
+  /* ----- BRAND COLORS — Primary -------------------------------------- */
+  --edison-navy:        #1B2A4A;   /* Dominant: text, headers, dark backgrounds */
+  --edison-teal:        #3CC8C8;   /* Accent: CTAs, links, highlights */
+  --edison-white:       #FFFFFF;
+
+  /* ----- BRAND COLORS — Secondary / Supporting ----------------------- */
+  --edison-navy-dark:   #0F1D33;   /* Pressed states, deeper backgrounds */
+  --edison-teal-light:  #5DD5D5;   /* Hover, soft highlights */
+  --edison-teal-pale:   #E8F8F8;   /* Surface tint, callouts */
+  --edison-gray-mid:    #6B7280;   /* Secondary text, captions */
+  --edison-gray-light:  #E5E7EB;   /* Hairline borders, dividers */
+
+  /* ----- Extended scale (derived for utility) ------------------------ */
+  --edison-navy-90:     #2A3A5E;
+  --edison-navy-50:     #8B95AB;
+  --edison-navy-10:     #E3E5EC;
+  --edison-teal-dark:   #2BA8A8;
+  --edison-bg-cream:    #FAF9F6;   /* Warm off-white surface (used sparingly) */
+  --edison-text-body:   #1F2937;   /* Per brand guide: navy or dark gray for body */
+
+  /* ----- Semantic — foreground / background -------------------------- */
+  --fg-1: var(--edison-navy);          /* Primary headings & strong text */
+  --fg-2: var(--edison-text-body);     /* Body copy */
+  --fg-3: var(--edison-gray-mid);      /* Secondary / metadata */
+  --fg-onDark: var(--edison-white);
+  --fg-link: var(--edison-teal-dark);  /* Slightly darker teal for AA contrast on white */
+  --fg-accent: var(--edison-teal);
+
+  --bg-1: var(--edison-white);
+  --bg-2: var(--edison-teal-pale);     /* Section tint */
+  --bg-3: #F5F7FA;                     /* Neutral surface */
+  --bg-dark: var(--edison-navy);
+  --bg-darker: var(--edison-navy-dark);
+
+  --border-hairline: var(--edison-gray-light);
+  --border-strong:   #CBD2DB;
+
+  /* ----- Status colors (derived; brand guide does not specify) ------- */
+  --status-success: #1F8A5B;
+  --status-warning: #D97706;
+  --status-danger:  #B0392E;
+  --status-info:    var(--edison-teal-dark);
+
+  /* ----- Typography — families --------------------------------------- */
+  --font-display: "Montserrat", "Helvetica Neue", Arial, sans-serif;
+  --font-body:    "Open Sans", "Helvetica Neue", Arial, sans-serif;
+  --font-mono:    ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+
+  /* ----- Type scale (web; print sizes documented in README) ---------- */
+  --fs-display:   56px;     /* Hero */
+  --fs-h1:        40px;
+  --fs-h2:        30px;
+  --fs-h3:        22px;
+  --fs-h4:        18px;
+  --fs-body-lg:   18px;
+  --fs-body:      16px;
+  --fs-body-sm:   14px;
+  --fs-caption:   13px;
+  --fs-micro:     11px;
+
+  --lh-tight:    1.15;
+  --lh-snug:     1.3;
+  --lh-normal:   1.55;
+  --lh-relaxed:  1.65;     /* Brand guide: 1.4–1.6 for long-form */
+
+  --ls-display: -0.02em;
+  --ls-heading: -0.01em;
+  --ls-eyebrow:  0.14em;   /* Uppercase eyebrow labels */
+
+  /* ----- Spacing (8pt scale) ----------------------------------------- */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 24px;
+  --space-6: 32px;
+  --space-7: 48px;
+  --space-8: 64px;
+  --space-9: 96px;
+  --space-10: 128px;
+
+  /* ----- Radii ------------------------------------------------------- */
+  --radius-xs: 4px;
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 16px;
+  --radius-xl: 24px;
+  --radius-pill: 999px;
+
+  /* ----- Shadows / elevation (cool navy-tinted) ---------------------- */
+  --shadow-xs: 0 1px 2px rgba(15, 29, 51, 0.06);
+  --shadow-sm: 0 2px 6px rgba(15, 29, 51, 0.08);
+  --shadow-md: 0 8px 24px rgba(15, 29, 51, 0.10);
+  --shadow-lg: 0 18px 48px rgba(15, 29, 51, 0.14);
+  --shadow-focus: 0 0 0 3px rgba(60, 200, 200, 0.35);
+
+  /* ----- Motion ------------------------------------------------------ */
+  --ease-standard: cubic-bezier(0.2, 0, 0.1, 1);
+  --ease-emphasized: cubic-bezier(0.2, 0.8, 0.2, 1);
+  --duration-fast: 140ms;
+  --duration-base: 220ms;
+  --duration-slow: 360ms;
+
+  /* ----- Containers -------------------------------------------------- */
+  --container-narrow: 720px;
+  --container-readable: 960px;
+  --container-wide: 1200px;
+  --container-xl: 1440px;
+}
+
+/* ==========================================================================
+   Semantic element styles — drop into any page using this stylesheet
+   ========================================================================== */
+html { -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+
+body {
+  font-family: var(--font-body);
+  font-size: var(--fs-body);
+  line-height: var(--lh-relaxed);
+  color: var(--fg-2);
+  background: var(--bg-1);
+  margin: 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-display);
+  color: var(--fg-1);
+  margin: 0 0 0.5em;
+  /* Brand guide: headings use title case */
+}
+
+h1 { font-size: var(--fs-h1); font-weight: 700; line-height: var(--lh-tight);  letter-spacing: var(--ls-display); }
+h2 { font-size: var(--fs-h2); font-weight: 700; line-height: var(--lh-tight);  letter-spacing: var(--ls-heading); }
+h3 { font-size: var(--fs-h3); font-weight: 600; line-height: var(--lh-snug);  }
+h4 { font-size: var(--fs-h4); font-weight: 600; line-height: var(--lh-snug);  }
+
+.display {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: var(--fs-display);
+  line-height: var(--lh-tight);
+  letter-spacing: var(--ls-display);
+  color: var(--fg-1);
+}
+
+.eyebrow {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: var(--fs-micro);
+  letter-spacing: var(--ls-eyebrow);
+  text-transform: uppercase;
+  color: var(--fg-accent);
+}
+
+p { margin: 0 0 1em; max-width: 70ch; text-wrap: pretty; }
+
+.lead {
+  font-size: var(--fs-body-lg);
+  line-height: var(--lh-relaxed);
+  color: var(--fg-2);
+}
+
+a {
+  color: var(--fg-link);
+  text-decoration: none;
+  border-bottom: 1px solid currentColor;
+  transition: color var(--duration-fast) var(--ease-standard);
+}
+a:hover { color: var(--edison-navy); }
+
+small, .caption {
+  font-size: var(--fs-caption);
+  color: var(--fg-3);
+}
+
+code, pre, kbd {
+  font-family: var(--font-mono);
+  font-size: 0.92em;
+}
+
+/* Selection */
+::selection { background: var(--edison-teal); color: var(--edison-navy); }

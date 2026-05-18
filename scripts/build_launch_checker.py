@@ -226,23 +226,26 @@ def parse_ahrefs(path):
 
 def fetch_ahrefs_api(domain, api_key, limit=1000):
     """
-    Auto-fetch 'Best by Links' data from the Ahrefs v3 API.
+    Auto-fetch top pages data from the Ahrefs v3 API.
     Returns a dict in the same format as parse_ahrefs(): { '/path': { ... } }
-    Docs: https://docs.ahrefs.com/docs/api/site-explorer/pages-by-links
+    Docs: https://docs.ahrefs.com/docs/api/site-explorer/top-pages
     """
+    import datetime
     pages = {}
     if not api_key:
         return pages
 
     try:
+        date = datetime.date.today().isoformat()
         params = urllib.parse.urlencode({
-            "select":   "url,title,referring_domains,traffic,top_keyword",
+            "select":   "url,referring_domains,sum_traffic,top_keyword",
             "target":   domain,
             "mode":     "domain",
+            "date":     date,
             "limit":    limit,
             "order_by": "referring_domains:desc",
         })
-        url = f"https://api.ahrefs.com/v3/site-explorer/pages-by-links?{params}"
+        url = f"https://api.ahrefs.com/v3/site-explorer/top-pages?{params}"
         req = urllib.request.Request(url, headers={
             "Authorization": f"Bearer {api_key}",
             "Accept":        "application/json",
@@ -258,9 +261,9 @@ def fetch_ahrefs_api(domain, api_key, limit=1000):
             pages[path_key] = {
                 "url":         path_key,
                 "full_url":    raw_url,
-                "title":       item.get("title", "") or "",
+                "title":       "",
                 "ref_domains": int(item.get("referring_domains", 0) or 0),
-                "traffic":     int(item.get("traffic", 0) or 0),
+                "traffic":     int(item.get("sum_traffic", 0) or 0),
                 "top_kw":      item.get("top_keyword", "") or "",
                 "inlinks":     0,
             }

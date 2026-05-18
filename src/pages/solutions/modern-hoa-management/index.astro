@@ -1,0 +1,13 @@
+---
+import SiteLayout from '../../../layouts/SiteLayout.astro';
+import { SolutionPageB } from '../../../templates/solution-template.jsx';
+import { SOLUTIONS } from '../../../content/solutions-content.jsx';
+const content = SOLUTIONS['modern-hoa-management'];
+---
+
+<SiteLayout
+  title="Modern HOA Management in Central Florida | Edison"
+  description="Modern HOA management built on technology, transparency, and low manager turnover. Discover how Edison's model compares to traditional management."
+>
+  <SolutionPageB content={content} client:load />
+</SiteLayout>

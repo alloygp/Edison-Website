@@ -1,0 +1,13 @@
+---
+import SiteLayout from '../../../../layouts/SiteLayout.astro';
+import { GeoPageB } from '../../../../templates/geo-template.jsx';
+import { GEO_CONTENT } from '../../../../content/geo-content.jsx';
+const content = GEO_CONTENT['lake-mary'];
+---
+
+<SiteLayout
+  title="HOA Management Lake Mary, FL | Edison"
+  description="HOA management in Lake Mary, FL. Edison serves Seminole County communities with full-service association management and low manager turnover."
+>
+  <GeoPageB content={content} client:load />
+</SiteLayout>

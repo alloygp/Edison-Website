@@ -1,0 +1,13 @@
+---
+import SiteLayout from '../../../layouts/SiteLayout.astro';
+import { PillarPageA } from '../../../templates/service-template.jsx';
+import { PILLAR_CONTENT } from '../../../content/pillars-content.jsx';
+const content = PILLAR_CONTENT['condo-management'];
+---
+
+<SiteLayout
+  title="Condo Association Management Orlando, FL | Edison"
+  description="Professional condo association management in Central Florida. Edison handles FL Chapter 718 compliance, milestone inspections, and SIRS support."
+>
+  <PillarPageA content={content} client:load />
+</SiteLayout>

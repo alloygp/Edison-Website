@@ -1,0 +1,13 @@
+---
+import SiteLayout from '../../../layouts/SiteLayout.astro';
+import { ServicePage } from '../../../templates/service-page-template.jsx';
+import { SERVICES_CONTENT } from '../../../content/services-content.jsx';
+const content = SERVICES_CONTENT['hoa-collections'];
+---
+
+<SiteLayout
+  title="HOA Collections & Delinquency Management | Edison"
+  description="In-house HOA collections in Orlando, FL. Edison handles delinquency, lien workflow, and homeowner outreach through the intent-to-lien stage."
+>
+  <ServicePage content={content} client:load />
+</SiteLayout>

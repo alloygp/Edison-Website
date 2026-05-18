@@ -1,0 +1,40 @@
+---
+// src/layouts/SiteLayout.astro
+// Full-page layout: SEO head + SiteHeader (React island) + slot + SiteFooter
+// Use this for every public-facing page.
+//
+// Usage:
+//   <SiteLayout title="..." description="...">
+//     <YourPageContent />
+//   </SiteLayout>
+
+import BaseLayout from './BaseLayout.astro';
+import { SiteHeader } from '../components/SiteHeader.jsx';
+import { SiteFooter } from '../components/SiteFooter.jsx';
+
+interface Props {
+  title: string;
+  description: string;
+  ogType?: 'website' | 'article';
+  ogImage?: string;
+  robots?: string;
+  pageSchema?: Record<string, unknown> | Record<string, unknown>[];
+}
+
+const { title, description, ogType, ogImage, robots, pageSchema } = Astro.props;
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  ogType={ogType}
+  ogImage={ogImage}
+  robots={robots}
+  pageSchema={pageSchema}
+>
+  <SiteHeader client:load />
+  <main>
+    <slot />
+  </main>
+  <SiteFooter client:idle />
+</BaseLayout>

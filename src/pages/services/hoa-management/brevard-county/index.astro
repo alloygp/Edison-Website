@@ -1,0 +1,13 @@
+---
+import SiteLayout from '../../../../layouts/SiteLayout.astro';
+import { GeoPageB } from '../../../../templates/geo-template.jsx';
+import { GEO_CONTENT } from '../../../../content/geo-content.jsx';
+const content = GEO_CONTENT['brevard-county'];
+---
+
+<SiteLayout
+  title="HOA Management Brevard County, FL | Edison"
+  description="HOA and condo management in Brevard County, FL. Edison serves communities from Titusville to Cocoa Beach with full-service association management."
+>
+  <GeoPageB content={content} client:load />
+</SiteLayout>
