@@ -66,9 +66,9 @@ function Breadcrumb({ trail }) {
     <nav aria-label="Breadcrumb" style={{
       background: "var(--edison-teal-pale)",
       borderBottom: "1px solid var(--border-hairline)",
-      padding: "14px 0"
+      padding: "14px 48px"
     }}>
-      <div style={{ maxWidth: 1200, margin: "0 auto", padding: "0 48px",
+      <div style={{ maxWidth: 1200, margin: "0 auto",
                     fontFamily: "var(--font-body)", fontSize: 13.5,
                     color: "var(--edison-navy)" }}>
         {trail.map((item, i) => (
