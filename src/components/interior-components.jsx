@@ -443,7 +443,7 @@ function FAQ({ eyebrow, title, sub, items, background = "#fff" }) {
 /* ============================================================
    SERVICE AREA — text + map placeholder
    ============================================================ */
-function ServiceArea({ eyebrow, title, body, cities, mapImg }) {
+function ServiceArea({ eyebrow, title, body, cities, mapImg, mapEmbed = false }) {
   return (
     <section style={{ background: "#fff", padding: "88px 48px" }}>
       <div style={{ maxWidth: 1200, margin: "0 auto",
@@ -472,30 +472,47 @@ function ServiceArea({ eyebrow, title, body, cities, mapImg }) {
           width: "100%", aspectRatio: "4 / 3",
           borderRadius: 16, overflow: "hidden",
           boxShadow: "var(--shadow-md)",
-          background: `linear-gradient(180deg, rgba(27,42,74,.15), rgba(27,42,74,.45)), url(${mapImg})`,
-          backgroundSize: "cover", backgroundPosition: "center",
           position: "relative"
         }}>
-          {/* Stylized map pin cluster */}
-          <svg viewBox="0 0 400 300" style={{ position: "absolute", inset: 0, width: "100%", height: "100%" }}>
-            {[
-              [120, 130], [165, 110], [200, 145], [235, 125], [180, 175],
-              [145, 165], [220, 180], [265, 155], [195, 100], [240, 200]
-            ].map(([cx, cy], i) => (
-              <g key={i} opacity={0.95}>
-                <circle cx={cx} cy={cy} r={11} fill="rgba(60,200,200,.22)"/>
-                <circle cx={cx} cy={cy} r={6} fill="var(--edison-teal)" stroke="#fff" strokeWidth={1.5}/>
-              </g>
-            ))}
-          </svg>
-          <div style={{
-            position: "absolute", left: 16, bottom: 16,
-            background: "rgba(27,42,74,.92)",
-            color: "#fff",
-            fontFamily: "var(--font-display)", fontWeight: 700, fontSize: 12,
-            letterSpacing: "0.08em", textTransform: "uppercase",
-            padding: "6px 12px", borderRadius: 6
-          }}>Central Florida · 18+ Cities</div>
+          {mapEmbed ? (
+            <iframe
+              src="https://maps.google.com/maps?q=Central+Florida,Orlando,FL&output=embed&z=9"
+              width="100%"
+              height="100%"
+              style={{ border: 0, display: "block", position: "absolute", inset: 0 }}
+              allowFullScreen=""
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+              title="Edison Association Management Service Area — Central Florida"
+            />
+          ) : (
+            <>
+              <div style={{
+                position: "absolute", inset: 0,
+                background: `linear-gradient(180deg, rgba(27,42,74,.15), rgba(27,42,74,.45)), url(${mapImg})`,
+                backgroundSize: "cover", backgroundPosition: "center"
+              }}/>
+              <svg viewBox="0 0 400 300" style={{ position: "absolute", inset: 0, width: "100%", height: "100%" }}>
+                {[
+                  [120, 130], [165, 110], [200, 145], [235, 125], [180, 175],
+                  [145, 165], [220, 180], [265, 155], [195, 100], [240, 200]
+                ].map(([cx, cy], i) => (
+                  <g key={i} opacity={0.95}>
+                    <circle cx={cx} cy={cy} r={11} fill="rgba(60,200,200,.22)"/>
+                    <circle cx={cx} cy={cy} r={6} fill="var(--edison-teal)" stroke="#fff" strokeWidth={1.5}/>
+                  </g>
+                ))}
+              </svg>
+              <div style={{
+                position: "absolute", left: 16, bottom: 16,
+                background: "rgba(27,42,74,.92)",
+                color: "#fff",
+                fontFamily: "var(--font-display)", fontWeight: 700, fontSize: 12,
+                letterSpacing: "0.08em", textTransform: "uppercase",
+                padding: "6px 12px", borderRadius: 6
+              }}>Central Florida · 18+ Cities</div>
+            </>
+          )}
         </div>
       </div>
     </section>

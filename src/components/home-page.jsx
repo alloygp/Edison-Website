@@ -352,7 +352,7 @@ function HomePage() {
         eyebrow="Orlando, Florida · Since 2021"
         title="HOA & Condominium Management Services"
         lede="Edison Association Management provides professional HOA and condominium management services designed to support boards, protect property values, and simplify day-to-day operations."
-        primary={{ label: "Request a Proposal", href: "#" }}
+        primary={{ label: "Request a Proposal", href: "/request-a-proposal/" }}
         audienceCards={[
           {
             eyebrow: "For HOA & Condo Boards",
@@ -360,7 +360,7 @@ function HomePage() {
             body: "Tailored proposals, transparent reporting, and a dedicated manager who knows your community.",
             cta: "Why Edison",
             image: "/assets/img-inspector.jpg",
-            href: "#"
+            href: "/about/"
           },
           {
             eyebrow: "For Residents & Homeowners",
@@ -368,7 +368,7 @@ function HomePage() {
             body: "Sign in to the resident portal for documents, payments, and maintenance requests — 24/7.",
             cta: "Resident Login",
             image: "/assets/img-resident-portal.jpg",
-            href: "#"
+            href: "https://edison.cincwebaxis.com"
           }
         ]}
       />
@@ -381,19 +381,19 @@ function HomePage() {
             title: "HOA Management Services",
             body: "Dedicated managers, transparent reporting, and proactive communication — so your board can focus on the community, not the paperwork.",
             image: "/assets/img-13.jpg",
-            href: "#"
+            href: "/services/hoa-management/"
           },
           {
             title: "Accounting & Bookkeeping",
             body: "Comprehensive monthly financials, accurate budgets, and streamlined collections — every dollar accounted for, every report on time.",
             image: "/assets/img-accounting.jpg",
-            href: "#"
+            href: "/services/hoa-accounting/"
           },
           {
             title: "Covenant Enforcement & Compliance",
             body: "Consistent inspections, fair enforcement, and full compliance tracking — protecting property values while keeping homeowners informed.",
             image: "/assets/img-inspector.jpg",
-            href: "#"
+            href: "/services/covenant-enforcement/"
           }
         ]}
       />
@@ -406,12 +406,12 @@ function HomePage() {
           {
             title: "Condominium Management",
             image: "/assets/img-21.jpg",
-            href: "#"
+            href: "/services/condo-management/"
           },
           {
             title: "Single-Family HOA Management",
             image: "/assets/img-22.jpg",
-            href: "#"
+            href: "/services/hoa-management/single-family/"
           }
         ]}
       />
@@ -452,14 +452,14 @@ function HomePage() {
             title: "HOA Audit: What It Is, When It's Required, and How to Prepare",
             excerpt: "An HOA audit confirms your community's finances are accurate, transparent, and compliant with Florida law. Learn what's required based on your association's revenue, and how strong year-round financial management makes the process faster and less expensive for your board.",
             image: "/assets/img-accounting.jpg",
-            href: "#"
+            href: "/blog/hoa-audit/"
           },
           {
             category: "Governance",
             title: "HOA Bylaws vs CC&Rs: Key Differences Explained",
             excerpt: "Board members often reach for the wrong document when a decision needs to be made quickly. Understanding the difference between HOA bylaws and CC&Rs — and knowing which one governs your situation — is how volunteer leaders make confident, defensible decisions.",
             image: "/assets/img-17.jpg",
-            href: "#"
+            href: "/blog/hoa-bylaws-vs-ccrs/"
           }
         ]}
       />
@@ -474,14 +474,15 @@ function HomePage() {
           "Altamonte Springs", "Oviedo", "Apopka"
         ]}
         mapImg="/assets/img-neighborhood-aerial.jpg"
+        mapEmbed={true}
       />
 
       <FinalCTA
         eyebrow="Let's Talk"
         title="Ready for a Better Association Management Experience?"
         body="Tell us about your community and receive a customized management proposal tailored to your association's needs."
-        primary={{ label: "Request a Proposal", href: "#" }}
-        secondary={{ label: "Contact Us", href: "#" }}
+        primary={{ label: "Request a Proposal", href: "/request-a-proposal/" }}
+        secondary={{ label: "Contact Us", href: "/contact/" }}
       />
 
     </main>
