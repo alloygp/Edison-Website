@@ -1,4 +1,5 @@
 import React, { useState as useTplState } from 'react';
+import { SectionHeading, InteriorButton, InteriorEyebrow } from './interior-components';
 
 /* ============================================================
    Edison — Template-Specific Section Components
