@@ -35,7 +35,7 @@ function HomeHero({ eyebrow, title, lede, primary, audienceCards }) {
             fontSize: 19, lineHeight: 1.55,
             color: "rgba(255,255,255,.9)", maxWidth: 680, margin: "0 0 32px"
           }}>{lede}</p>
-          <div style={{ display: "flex", flexDirection: "column", alignItems: "flex-start", gap: 20 }}>
+          <div style={{ display: "flex", flexDirection: "row", alignItems: "center", gap: 24 }}>
           <InteriorButton variant="onDark" size="lg" href={primary.href}>{primary.label}</InteriorButton>
 
           {/* Google review badge */}
