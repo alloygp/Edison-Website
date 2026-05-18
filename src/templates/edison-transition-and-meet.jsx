@@ -1,4 +1,5 @@
 import React from 'react';
+import { NumberedSteps, ComparisonTable, StatsBand, PullQuote } from '../components/template-sections';
 
 /* ============================================================
    Trust & Branded Page Content
