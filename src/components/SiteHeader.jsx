@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from 'react';
+import React, { useState, useRef, useEffect, useCallback } from 'react';
 
 /* ============================================================
    Edison — Site Header v2 (Astro-ready React island)
@@ -418,7 +418,11 @@ function SiteHeader({
 }) {
   const [openIdx, setOpenIdx] = useState(-1);
   const [mobileOpen, setMobileOpen] = useState(false);
+  const [hidden, setHidden] = useState(false);
+  const [atTop, setAtTop] = useState(true);
   const closeTimer = useRef(null);
+  const lastScrollY = useRef(0);
+  const headerRef = useRef(null);
 
   useEffect(() => {
     function onResize() { if (window.innerWidth > 1040) setMobileOpen(false); }
@@ -431,6 +435,25 @@ function SiteHeader({
     return () => { document.body.style.overflow = ""; };
   }, [mobileOpen]);
 
+  useEffect(() => {
+    function onScroll() {
+      const y = window.scrollY;
+      const delta = y - lastScrollY.current;
+      setAtTop(y < 8);
+      if (y < 8) {
+        setHidden(false);
+      } else if (delta > 8) {
+        setHidden(true);
+        setOpenIdx(-1);
+      } else if (delta < -4) {
+        setHidden(false);
+      }
+      lastScrollY.current = y;
+    }
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
   function openMenu(i) {
     clearTimeout(closeTimer.current);
     setOpenIdx(i);
@@ -441,7 +464,16 @@ function SiteHeader({
   }
 
   return (
-    <header style={{ position: "sticky", top: 0, zIndex: 60, background: "#fff" }}>
+    <>
+    {/* Spacer keeps page content from jumping under the fixed header */}
+    <div aria-hidden="true" style={{ height: "var(--site-header-height, 122px)" }}/>
+    <header ref={headerRef} style={{
+      position: "fixed", top: 0, left: 0, right: 0,
+      zIndex: 60,
+      transform: hidden ? "translateY(-100%)" : "translateY(0)",
+      transition: "transform 320ms cubic-bezier(.4,0,.2,1)",
+      willChange: "transform"
+    }}>
       {/* Utility bar */}
       <div style={{
         background: "var(--edison-navy)",
@@ -488,10 +520,14 @@ function SiteHeader({
         </div>
       </div>
 
-      {/* Main nav row */}
+      {/* Main nav row — glassmorphism */}
       <div style={{
-        background: "#fff",
-        borderBottom: "1px solid var(--border-hairline)",
+        background: atTop ? "#fff" : "rgba(255,255,255,.82)",
+        backdropFilter: atTop ? "none" : "blur(20px) saturate(180%)",
+        WebkitBackdropFilter: atTop ? "none" : "blur(20px) saturate(180%)",
+        borderBottom: atTop ? "1px solid var(--border-hairline)" : "1px solid rgba(255,255,255,.35)",
+        boxShadow: atTop ? "none" : "0 2px 24px rgba(15,29,51,.10)",
+        transition: "background 280ms ease, box-shadow 280ms ease, border-color 280ms ease",
         position: "relative"
       }}>
         <div style={{
@@ -666,6 +702,7 @@ function SiteHeader({
         }
       `}</style>
     </header>
+    </>
   );
 }
 
