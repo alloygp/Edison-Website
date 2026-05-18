@@ -35,6 +35,7 @@ function HomeHero({ eyebrow, title, lede, primary, audienceCards }) {
             fontSize: 19, lineHeight: 1.55,
             color: "rgba(255,255,255,.9)", maxWidth: 680, margin: "0 0 32px"
           }}>{lede}</p>
+          <div style={{ display: "flex", flexDirection: "column", alignItems: "flex-start", gap: 20 }}>
           <InteriorButton variant="onDark" size="lg" href={primary.href}>{primary.label}</InteriorButton>
 
           {/* Google review badge */}
@@ -42,7 +43,6 @@ function HomeHero({ eyebrow, title, lede, primary, audienceCards }) {
              target="_blank" rel="noopener noreferrer"
              style={{
                display: "inline-flex", alignItems: "center", gap: 12,
-               marginTop: 22,
                background: "rgba(255,255,255,.10)",
                backdropFilter: "blur(10px)",
                border: "1px solid rgba(255,255,255,.18)",
@@ -79,6 +79,7 @@ function HomeHero({ eyebrow, title, lede, primary, audienceCards }) {
               }}>· 120 Google Reviews</span>
             </div>
           </a>
+          </div>
         </div>
       </div>
 
@@ -89,7 +90,10 @@ function HomeHero({ eyebrow, title, lede, primary, audienceCards }) {
         position: "relative", zIndex: 2
       }}>
         {audienceCards.map((c, i) => (
-          <a key={i} href={c.href} style={{
+          <a key={i} href={c.href}
+             target={c.href.startsWith('http') ? '_blank' : undefined}
+             rel={c.href.startsWith('http') ? 'noopener noreferrer' : undefined}
+             style={{
             display: "grid",
             gridTemplateColumns: "180px 1fr",
             textDecoration: "none",
