@@ -113,22 +113,17 @@ function HomeHero({ eyebrow, title, lede, primary, audienceCards }) {
                 : `url(${c.image})`,
               backgroundSize: "cover", backgroundPosition: "center"
             }}/>
-            <div style={{ padding: "26px 30px",
-                          display: "flex", flexDirection: "column", justifyContent: "center" }}>
+            <div style={{ padding: "28px 30px",
+                          display: "flex", flexDirection: "column", justifyContent: "center", gap: 14 }}>
               <InteriorEyebrow color={i === 0 ? "var(--edison-teal)" : "var(--edison-teal-dark)"}>
                 {c.eyebrow}
               </InteriorEyebrow>
               <h3 style={{
                 fontFamily: "var(--font-display)", fontWeight: 700,
-                fontSize: 21, lineHeight: 1.25,
+                fontSize: 22, lineHeight: 1.25,
                 color: i === 0 ? "#fff" : "var(--edison-navy)",
-                margin: "10px 0 10px"
+                margin: 0
               }}>{c.title}</h3>
-              <p style={{
-                fontFamily: "var(--font-body)", fontSize: 14, lineHeight: 1.55,
-                color: i === 0 ? "rgba(255,255,255,.78)" : "var(--edison-text-body)",
-                margin: "0 0 16px"
-              }}>{c.body}</p>
               <span style={{
                 fontFamily: "var(--font-display)", fontWeight: 700, fontSize: 13.5,
                 color: i === 0 ? "var(--edison-teal)" : "var(--edison-teal-dark)",
@@ -195,30 +190,21 @@ function ServicesBand({ title, sub, services }) {
                 backgroundImage: `linear-gradient(180deg, rgba(15,29,51,0) 30%, rgba(15,29,51,.55) 100%), url(${s.image})`,
                 backgroundSize: "cover", backgroundPosition: "center"
               }}/>
-              <div style={{ padding: "26px 26px 28px", display: "flex", flexDirection: "column", gap: 12 }}>
-                <div style={{
-                  width: 42, height: 42, borderRadius: 10,
-                  background: "var(--edison-teal-pale)",
-                  display: "flex", alignItems: "center", justifyContent: "center",
-                  color: "var(--edison-teal-dark)", marginTop: -50,
-                  border: "4px solid #fff"
-                }}>
-                  <BulbMark size={22}/>
-                </div>
+              <div style={{ padding: "22px 24px 24px", display: "flex", flexDirection: "column", gap: 10 }}>
                 <h3 style={{
                   fontFamily: "var(--font-display)", fontWeight: 700,
-                  fontSize: 20, lineHeight: 1.3,
+                  fontSize: 19, lineHeight: 1.3,
                   color: "var(--edison-navy)", margin: 0
                 }}>{s.title}</h3>
                 <p style={{
-                  fontFamily: "var(--font-body)", fontSize: 14.5, lineHeight: 1.6,
-                  color: "var(--edison-text-body)", margin: 0, flex: 1
+                  fontFamily: "var(--font-body)", fontSize: 13.5, lineHeight: 1.5,
+                  color: "var(--edison-gray-mid)", margin: 0, flex: 1
                 }}>{s.body}</p>
                 <span style={{
-                  fontFamily: "var(--font-display)", fontWeight: 700, fontSize: 13.5,
+                  fontFamily: "var(--font-display)", fontWeight: 700, fontSize: 13,
                   color: "var(--edison-teal-dark)",
                   display: "inline-flex", alignItems: "center", gap: 6,
-                  marginTop: 6
+                  marginTop: 4
                 }}>
                   Learn more <span aria-hidden="true">→</span>
                 </span>
@@ -354,29 +340,25 @@ function EducationBand({ eyebrow, title, sub, hero, posts }) {
                 backgroundImage: `url(${p.image})`,
                 backgroundSize: "cover", backgroundPosition: "center"
               }}/>
-              <div style={{ padding: "26px 28px 28px",
-                            display: "flex", flexDirection: "column", gap: 12 }}>
+              <div style={{ padding: "22px 26px 24px",
+                            display: "flex", flexDirection: "column", gap: 10 }}>
                 <div style={{
-                  fontFamily: "var(--font-display)", fontWeight: 700, fontSize: 11.5,
+                  fontFamily: "var(--font-display)", fontWeight: 700, fontSize: 11,
                   letterSpacing: "0.12em", textTransform: "uppercase",
                   color: "var(--edison-teal-dark)"
                 }}>{p.category}</div>
                 <h3 style={{
                   fontFamily: "var(--font-display)", fontWeight: 700,
-                  fontSize: 21, lineHeight: 1.3,
-                  color: "var(--edison-navy)", margin: 0
+                  fontSize: 19, lineHeight: 1.3,
+                  color: "var(--edison-navy)", margin: 0, flex: 1
                 }}>{p.title}</h3>
-                <p style={{
-                  fontFamily: "var(--font-body)", fontSize: 14.5, lineHeight: 1.6,
-                  color: "var(--edison-text-body)", margin: 0
-                }}>{p.excerpt}</p>
                 <span style={{
-                  fontFamily: "var(--font-display)", fontWeight: 700, fontSize: 13.5,
+                  fontFamily: "var(--font-display)", fontWeight: 700, fontSize: 13,
                   color: "var(--edison-teal-dark)",
                   display: "inline-flex", alignItems: "center", gap: 6,
-                  marginTop: 4
+                  marginTop: 6
                 }}>
-                  Learn more <span aria-hidden="true">→</span>
+                  Read article <span aria-hidden="true">→</span>
                 </span>
               </div>
             </a>
@@ -403,17 +385,15 @@ function HomePage() {
         audienceCards={[
           {
             eyebrow: "For HOA & Condo Boards",
-            title: "Request a management proposal, explore services, see property types we manage.",
-            body: "Tailored proposals, transparent reporting, and a dedicated manager who knows your community.",
-            cta: "Why Edison",
+            title: "See why Central Florida boards switch to Edison.",
+            cta: "Learn more",
             image: "/assets/img-inspector.jpg",
             href: "/about/"
           },
           {
             eyebrow: "For Residents & Homeowners",
-            title: "Access account information, pay dues, and submit requests.",
-            body: "Sign in to the resident portal for documents, payments, and maintenance requests — 24/7.",
-            cta: "Resident Login",
+            title: "Pay dues, submit requests, and access your documents.",
+            cta: "Resident portal",
             image: "/assets/img-resident-portal.jpg",
             href: "https://edison.cincwebaxis.com"
           }
@@ -426,19 +406,19 @@ function HomePage() {
         services={[
           {
             title: "HOA Management Services",
-            body: "Dedicated managers, transparent reporting, and proactive communication — so your board can focus on the community, not the paperwork.",
+            body: "Dedicated managers. Transparent reporting. One point of contact.",
             image: "/assets/img-13.jpg",
             href: "/services/hoa-management/"
           },
           {
             title: "Accounting & Bookkeeping",
-            body: "Comprehensive monthly financials, accurate budgets, and streamlined collections — every dollar accounted for, every report on time.",
+            body: "Monthly financials, accurate budgets, and on-time collections.",
             image: "/assets/img-accounting.jpg",
             href: "/services/hoa-accounting/"
           },
           {
-            title: "Covenant Enforcement & Compliance",
-            body: "Consistent inspections, fair enforcement, and full compliance tracking — protecting property values while keeping homeowners informed.",
+            title: "Covenant Enforcement",
+            body: "Consistent inspections, fair enforcement, full compliance tracking.",
             image: "/assets/img-inspector.jpg",
             href: "/services/covenant-enforcement/"
           }
