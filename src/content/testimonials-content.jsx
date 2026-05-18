@@ -15,7 +15,7 @@ const TESTIMONIALS_CONTENT = {
       attribution: "Beth C.",
       role: "Board Member",
       community: "Edison-managed association",
-      image: "assets/img-11.jpg"
+      image: "/assets/img-11.jpg"
     },
     {
       category: "Switching",

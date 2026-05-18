@@ -11,7 +11,7 @@ const SOLUTIONS = {
     hero: {
       title: "Thinking about switching HOA management companies?",
       lede: "If your manager doesn't return calls, your financials feel opaque, or your board is tired of doing the management company's job — you're not alone. Most boards know they need a change long before they make one. Here's how to make it the easier decision.",
-      image: "assets/img-inspector.jpg"
+      image: "/assets/img-inspector.jpg"
     },
     heroStat: {
       eyebrow: "Industry Reality",
@@ -56,7 +56,7 @@ const SOLUTIONS = {
     hero: {
       title: "When self-management stops working — what comes next.",
       lede: "Self-managed associations get built on volunteer effort. They work until they don't. The complexity, the compliance, and the homeowner conflicts add up — and the volunteer who held it together for years finally burns out. Here's how to move to professional management without losing what worked.",
-      image: "assets/img-resident-portal.jpg"
+      image: "/assets/img-resident-portal.jpg"
     },
     heroStat: {
       eyebrow: "The tipping point",
@@ -101,7 +101,7 @@ const SOLUTIONS = {
     hero: {
       title: "Modern HOA management means a person still answers the phone.",
       lede: "There's a lot of HOA management software. There's not a lot of HOA management that actually uses it well. Edison's stack — CINC Systems, the Action Item List, WATTSON AI, and Plaud for meeting minutes — solves the problems boards keep flagging without removing the human relationship that makes management work.",
-      image: "assets/img-resident-portal.jpg"
+      image: "/assets/img-resident-portal.jpg"
     },
     heroStat: {
       eyebrow: "The shift",
@@ -150,7 +150,7 @@ const SOLUTIONS = {
     hero: {
       title: "The Edison Transition Experience.",
       lede: "Most management companies treat onboarding as a checkbox. Edison built a defined program with a dedicated COO touch-point, records digitization, vendor recredentialing, and a community-wide Meet Your Management event. 60–90 days, end-to-end. Run by us, not your board.",
-      image: "assets/img-community-aerial.jpg"
+      image: "/assets/img-community-aerial.jpg"
     },
     heroStat: {
       eyebrow: "What's different",

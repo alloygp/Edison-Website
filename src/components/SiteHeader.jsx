@@ -411,7 +411,7 @@ function MobileItem({ item, depth = 0 }) {
    SiteHeader
    ============================================================ */
 function SiteHeader({
-  logoSrc = "assets/logo.png",
+  logoSrc = "/assets/logo.png",
   logoAlt = "Edison Association Management",
   homeHref = "/",
   nav = DEFAULT_NAV,

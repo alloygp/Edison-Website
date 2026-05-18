@@ -147,7 +147,7 @@ function PillarPageA({ content }) {
         title={`Communities we serve across Central Florida`}
         body={content.serviceArea.body}
         cities={content.serviceArea.cityLinks.map(c => c.label)}
-        mapImg="assets/img-neighborhood-aerial.jpg"
+        mapImg="/assets/img-neighborhood-aerial.jpg"
       />
 
       <CrossPillarCard
@@ -328,7 +328,7 @@ function PillarPageB({ content }) {
         title={`Communities we serve across Central Florida`}
         body={content.serviceArea.body}
         cities={content.serviceArea.cityLinks.map(c => c.label)}
-        mapImg="assets/img-neighborhood-aerial.jpg"
+        mapImg="/assets/img-neighborhood-aerial.jpg"
       />
 
       <CrossPillarCard
@@ -371,7 +371,7 @@ const HOA_MGMT_CONTENT = {
   hero: {
     title: "HOA management built around the board, not the company growth chart.",
     lede: "Full-service management for single-family and townhome HOAs across Central Florida. Dedicated managers carrying 8–10 communities — half the industry average. Back-office departments handling what isn't community-facing. Boards stop starting over.",
-    image: "assets/img-community-aerial.jpg"
+    image: "/assets/img-community-aerial.jpg"
   },
   stats: [
     { value: "8–10", caption: "Communities per manager (industry average is 15+)" },
@@ -389,7 +389,7 @@ const HOA_MGMT_CONTENT = {
   included: {
     title: "Full-service HOA management with the depth boards actually need",
     sub: "Every Edison HOA management agreement includes the operational, financial, and advisory work that keeps Florida HOAs compliant, well-funded, and well-led. No surprise upcharges, no \"a la carte\" workarounds for what should be standard.",
-    image: "assets/img-inspector.jpg",
+    image: "/assets/img-inspector.jpg",
     items: [
       { title: "Dedicated Association Manager", body: "Carries 8–10 communities maximum. Visits the property monthly. Attends every board meeting. Knows your governing documents and your homeowners by name." },
       { title: "Monthly Property Inspections", body: "Documented walks of common areas, capital assets, and vendor work. Reported back to the board with photos and recommendations — not stale generic checklists." },

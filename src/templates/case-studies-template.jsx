@@ -360,7 +360,7 @@ const CASES_CONTENT = {
         { value: "$214K", label: "Delinquent assessments recovered" },
         { value: "0 lost", label: "Records during rebuild" }
       ],
-      image: "assets/img-11.jpg",
+      image: "/assets/img-11.jpg",
       href: "#"
     },
     {
@@ -374,7 +374,7 @@ const CASES_CONTENT = {
         { value: "32%", label: "Reserve funding gap closed in year 1" },
         { value: "On time", label: "SB-4D filing completed" }
       ],
-      image: "assets/img-13.jpg",
+      image: "/assets/img-13.jpg",
       href: "#"
     },
     {
@@ -388,7 +388,7 @@ const CASES_CONTENT = {
         { value: "0", label: "Manager changes in 3 years" },
         { value: "1 day", label: "Avg. board-call response time" }
       ],
-      image: "assets/img-17.jpg",
+      image: "/assets/img-17.jpg",
       href: "#"
     },
     {
@@ -402,7 +402,7 @@ const CASES_CONTENT = {
         { value: "$0", label: "Special assessment required" },
         { value: "8 mo", label: "Project on schedule" }
       ],
-      image: "assets/img-21.jpg",
+      image: "/assets/img-21.jpg",
       href: "#"
     },
     {
@@ -416,7 +416,7 @@ const CASES_CONTENT = {
         { value: "3.2%", label: "Delinquency at month 12" },
         { value: "0", label: "Foreclosure escalations" }
       ],
-      image: "assets/img-22.jpg",
+      image: "/assets/img-22.jpg",
       href: "#"
     },
     {
@@ -430,7 +430,7 @@ const CASES_CONTENT = {
         { value: "62%", label: "Drop in formal hearings, year 1" },
         { value: "0", label: "Lawsuits initiated" }
       ],
-      image: "assets/img-inspector.jpg",
+      image: "/assets/img-inspector.jpg",
       href: "#"
     },
     {
@@ -444,7 +444,7 @@ const CASES_CONTENT = {
         { value: "0", label: "Treasurer burnout incidents since" },
         { value: "Audit", label: "Passed first formal audit" }
       ],
-      image: "assets/img-resident-portal.jpg",
+      image: "/assets/img-resident-portal.jpg",
       href: "#"
     }
   ]

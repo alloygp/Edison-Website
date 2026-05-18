@@ -358,7 +358,7 @@ function HomePage() {
             title: "Request a management proposal, explore services, see property types we manage.",
             body: "Tailored proposals, transparent reporting, and a dedicated manager who knows your community.",
             cta: "Why Edison",
-            image: "assets/img-inspector.jpg",
+            image: "/assets/img-inspector.jpg",
             href: "#"
           },
           {
@@ -366,7 +366,7 @@ function HomePage() {
             title: "Access account information, pay dues, and submit requests.",
             body: "Sign in to the resident portal for documents, payments, and maintenance requests — 24/7.",
             cta: "Resident Login",
-            image: "assets/img-resident-portal.jpg",
+            image: "/assets/img-resident-portal.jpg",
             href: "#"
           }
         ]}
@@ -379,19 +379,19 @@ function HomePage() {
           {
             title: "HOA Management Services",
             body: "Dedicated managers, transparent reporting, and proactive communication — so your board can focus on the community, not the paperwork.",
-            image: "assets/img-13.jpg",
+            image: "/assets/img-13.jpg",
             href: "#"
           },
           {
             title: "Accounting & Bookkeeping",
             body: "Comprehensive monthly financials, accurate budgets, and streamlined collections — every dollar accounted for, every report on time.",
-            image: "assets/img-accounting.jpg",
+            image: "/assets/img-accounting.jpg",
             href: "#"
           },
           {
             title: "Covenant Enforcement & Compliance",
             body: "Consistent inspections, fair enforcement, and full compliance tracking — protecting property values while keeping homeowners informed.",
-            image: "assets/img-inspector.jpg",
+            image: "/assets/img-inspector.jpg",
             href: "#"
           }
         ]}
@@ -404,12 +404,12 @@ function HomePage() {
         options={[
           {
             title: "Condominium Management",
-            image: "assets/img-21.jpg",
+            image: "/assets/img-21.jpg",
             href: "#"
           },
           {
             title: "Single-Family HOA Management",
-            image: "assets/img-22.jpg",
+            image: "/assets/img-22.jpg",
             href: "#"
           }
         ]}
@@ -418,7 +418,7 @@ function HomePage() {
       <BulletsWithImage
         eyebrow="Why Boards Choose Edison"
         title="A Management Partner Boards Can Rely On"
-        image="assets/img-11.jpg"
+        image="/assets/img-11.jpg"
         bullets={[
           "Clear financial reporting and accountability",
           "Consistent communication with boards and residents",
@@ -444,20 +444,20 @@ function HomePage() {
         eyebrow="Edison Education"
         title="HOA Board Education & Resources"
         sub="Serving on a board is easier when you have the right information. Explore our guides and articles on HOA governance, compliance, and best practices — written specifically for Florida community leaders."
-        hero="assets/img-11.jpg"
+        hero="/assets/img-11.jpg"
         posts={[
           {
             category: "Finance & Audit",
             title: "HOA Audit: What It Is, When It's Required, and How to Prepare",
             excerpt: "An HOA audit confirms your community's finances are accurate, transparent, and compliant with Florida law. Learn what's required based on your association's revenue, and how strong year-round financial management makes the process faster and less expensive for your board.",
-            image: "assets/img-accounting.jpg",
+            image: "/assets/img-accounting.jpg",
             href: "#"
           },
           {
             category: "Governance",
             title: "HOA Bylaws vs CC&Rs: Key Differences Explained",
             excerpt: "Board members often reach for the wrong document when a decision needs to be made quickly. Understanding the difference between HOA bylaws and CC&Rs — and knowing which one governs your situation — is how volunteer leaders make confident, defensible decisions.",
-            image: "assets/img-17.jpg",
+            image: "/assets/img-17.jpg",
             href: "#"
           }
         ]}
@@ -472,7 +472,7 @@ function HomePage() {
           "Orlando", "Winter Garden", "Clermont", "Kissimmee", "Lake Mary",
           "Altamonte Springs", "Oviedo", "Apopka"
         ]}
-        mapImg="assets/img-neighborhood-aerial.jpg"
+        mapImg="/assets/img-neighborhood-aerial.jpg"
       />
 
       <FinalCTA
