@@ -100,7 +100,6 @@ const DEFAULT_NAV = [
         items: [
           { label: "Edison Education", href: "/edison-education/", desc: "Program overview + certification", parent: true },
           { label: "All Articles", href: "/blog/", desc: "Chronological article index" },
-          { label: "WATTSON AI", href: "/about/wattson/", desc: "Resident AI assistant" }
         ]
       }
     ]
@@ -112,7 +111,6 @@ const DEFAULT_NAV = [
       { label: "About Edison", href: "/about/" },
       { label: "Meet Our Team", href: "/about/meet-our-team/" },
       { label: "The Edison Transition", href: "/about/the-edison-transition/" },
-      { label: "WATTSON AI", href: "/about/wattson/" },
       { label: "Meet Your Management", href: "/about/meet-your-management/" },
       { label: "Testimonials", href: "/testimonials/" },
       { label: "Case Studies", href: "/case-studies/" }

@@ -130,7 +130,7 @@ const SOLUTIONS = {
     faqs: [
       { q: "Is this all AI? Are you replacing managers?", a: "No. Edison's manager-to-community ratio is still 8–10, and a real person still answers the phone every time. The tech handles the things that don't need a human — document lookup, project tracking, minutes drafting — so the manager can spend time on the work that does." },
       { q: "What if our board isn't comfortable with technology?", a: "Edison's model accommodates both ends. Boards that love the dashboards can live in CINC and the Action Item List. Boards that prefer email and phone get the same level of service without being forced into a portal. The tech is a tool, not a requirement." },
-      { q: "Is WATTSON live right now?", a: "WATTSON is in development with a 2026 launch targeting Edison's existing communities first. You can get on the notify list at /about/wattson/. Everything else in this section — CINC, Action Item List, Plaud — is live and in production for current Edison clients." },
+      { q: "Is WATTSON live right now?", a: "WATTSON is in development with a 2026 launch targeting Edison's existing communities first. Everything else in this section — CINC, Action Item List, Plaud — is live and in production for current Edison clients." },
       { q: "Does this cost extra?", a: "No. Edison's technology stack is included in the monthly management agreement. There's no separate technology fee, no per-resident charge, and no setup cost for activating any of these tools." }
     ],
     cta: {

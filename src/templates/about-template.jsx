@@ -272,7 +272,6 @@ const ABOUT_CONTENT = {
   ],
   subPages: [
     { title: "Meet Our Team", body: "Edison's managers, specialists, and leadership — the people who actually do the work for your board.", href: "/about/meet-our-team/" },
-    { title: "WATTSON AI", body: "Edison's branded resident AI assistant. Named for watts and the light bulb. Available 24/7 through the resident portal.", href: "/about/wattson/" },
     { title: "Testimonials", body: "What current Edison boards say about working with us — quoted, attributed, and verifiable.", href: "/testimonials/" },
     { title: "Case Studies", body: "Specific transitions and turnarounds we've led for Central Florida communities — sized, dated, and outcome-tracked.", href: "/case-studies/" },
     { title: "Meet Your Management", body: "The community-wide event Edison runs before every new contract starts. Why it matters and how it works.", href: "/about/meet-your-management/" },
