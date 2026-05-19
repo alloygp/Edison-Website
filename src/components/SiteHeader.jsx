@@ -1,21 +1,9 @@
-import React, { useState, useRef, useEffect, useCallback } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 
 /* ============================================================
    Edison — Site Header v2 (Astro-ready React island)
-   ----------------------------------------------------------------
-   Top nav per /uploads/edison-sitemap-v3.html spec:
-
-     Management ▾   (4-column mega menu)
-     Solutions ▾    (simple dropdown)
-     Edison Education ▾  (4-column mega menu)
-     About ▾        (simple dropdown)
-     Contact        (flat link)
-                                      [ Request a Proposal ]
-
    ============================================================ */
 
-
-/* ---------- Nav data (sitemap v3) ---------- */
 const DEFAULT_NAV = [
   {
     label: "Management",
@@ -156,13 +144,6 @@ function IconChevronDown({ size = 12 }) {
     </svg>
   );
 }
-function IconChevronRight() {
-  return (
-    <svg width="11" height="11" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-      <path d="M9 6l6 6-6 6" stroke="currentColor" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round"/>
-    </svg>
-  );
-}
 function IconMenu() {
   return (
     <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true">
@@ -178,91 +159,7 @@ function IconClose() {
   );
 }
 
-/* ---------- Mega menu panel ---------- */
-function MegaMenu({ columns, open }) {
-  return (
-    <div role="menu" aria-hidden={!open} style={{
-      position: "absolute",
-      top: "calc(100% + 1px)", left: "50%",
-      transform: open
-        ? "translateX(-50%) translateY(0)"
-        : "translateX(-50%) translateY(-8px)",
-      width: "min(1200px, calc(100vw - 32px))",
-      background: "#fff",
-      border: "1px solid var(--border-hairline)",
-      borderTop: "2px solid var(--edison-teal)",
-      borderRadius: "0 0 12px 12px",
-      boxShadow: "0 18px 48px rgba(15,29,51,.14)",
-      padding: "32px 36px",
-      display: "grid",
-      gridTemplateColumns: `repeat(${columns.length}, 1fr)`,
-      gap: 28, zIndex: 70,
-      opacity: open ? 1 : 0,
-      pointerEvents: open ? "auto" : "none",
-      transition: "opacity 220ms cubic-bezier(.2,.8,.2,1), transform 240ms cubic-bezier(.2,.8,.2,1)"
-    }}>
-      {columns.map((col, i) => col.feature ? (
-        <FeatureCard key={i} feature={col.feature}/>
-      ) : col.features ? (
-        /* Stacked feature cards column */
-        <div key={i} style={{ display: "flex", flexDirection: "column", gap: 12 }}>
-          {col.features.map((f, j) => <FeatureCard key={j} feature={f} compact={true}/>)}
-        </div>
-      ) : (
-        <div key={i}>
-          <div style={{
-            fontFamily: "var(--font-display)", fontWeight: 700, fontSize: 11.5,
-            letterSpacing: "0.14em", textTransform: "uppercase",
-            color: "var(--edison-teal-dark)", marginBottom: 16,
-            paddingBottom: 10,
-            borderBottom: "1px solid var(--border-hairline)"
-          }}>{col.title}</div>
-          <ul style={{ listStyle: "none", padding: 0, margin: 0,
-                       display: "flex", flexDirection: "column", gap: 4 }}>
-            {col.items.map((it, j) => <MegaItem key={j} item={it}/>)}
-          </ul>
-        </div>
-      ))}
-    </div>
-  );
-}
-
-function MegaItem({ item }) {
-  const [hover, setHover] = useState(false);
-  const active = typeof window !== "undefined" && window.location.pathname === item.href;
-  return (
-    <li>
-      <a href={item.href}
-         aria-current={active ? "page" : undefined}
-         onMouseEnter={() => setHover(true)}
-         onMouseLeave={() => setHover(false)}
-         style={{
-           display: "block",
-           padding: "10px 12px",
-           borderRadius: 6,
-           textDecoration: "none", borderBottom: 0,
-           background: active || hover ? "var(--edison-teal-pale)" : "transparent",
-           transition: "background 140ms var(--ease-standard)"
-         }}>
-        <div style={{
-          fontFamily: "var(--font-display)",
-          fontWeight: item.parent ? 700 : 600,
-          fontSize: 14.5,
-          color: active || hover ? "var(--edison-teal-dark)" : "var(--edison-navy)",
-          marginBottom: item.desc ? 2 : 0,
-          transition: "color 140ms"
-        }}>{item.label}</div>
-        {item.desc && (
-          <div style={{
-            fontFamily: "var(--font-body)", fontSize: 12.5, lineHeight: 1.4,
-            color: "var(--edison-gray-mid)"
-          }}>{item.desc}</div>
-        )}
-      </a>
-    </li>
-  );
-}
-
+/* ---------- FeatureCard ---------- */
 function FeatureCard({ feature, compact = false }) {
   const dark = feature.theme !== "light";
   return (
@@ -284,8 +181,7 @@ function FeatureCard({ feature, compact = false }) {
       <div>
         {feature.mark && (
           <img src={feature.mark} alt={feature.title} style={{
-            height: 26, width: "auto", display: "block",
-            marginBottom: 16, opacity: 0.95
+            height: 26, width: "auto", display: "block", marginBottom: 16, opacity: 0.95
           }}/>
         )}
         <div style={{
@@ -316,19 +212,89 @@ function FeatureCard({ feature, compact = false }) {
   );
 }
 
-/* ---------- Simple dropdown panel ---------- */
-function SimpleDropdown({ items, open }) {
+/* ---------- Mega menu ---------- */
+function MegaMenu({ columns, open }) {
   return (
-    <ul role="menu" aria-hidden={!open} style={{
-      listStyle: "none", margin: 0, padding: "6px",
-      minWidth: 260,
+    <div role="menu" aria-hidden={!open} style={{
+      position: "absolute",
+      top: "calc(100% + 1px)", left: "50%",
+      transform: open ? "translateX(-50%) translateY(0)" : "translateX(-50%) translateY(-8px)",
+      width: "min(1200px, calc(100vw - 32px))",
       background: "#fff",
       border: "1px solid var(--border-hairline)",
       borderTop: "2px solid var(--edison-teal)",
-      borderRadius: "0 0 10px 10px",
+      borderRadius: "0 0 12px 12px",
+      boxShadow: "0 18px 48px rgba(15,29,51,.14)",
+      padding: "32px 36px",
+      display: "grid",
+      gridTemplateColumns: `repeat(${columns.length}, 1fr)`,
+      gap: 28, zIndex: 70,
+      opacity: open ? 1 : 0,
+      pointerEvents: open ? "auto" : "none",
+      transition: "opacity 220ms cubic-bezier(.2,.8,.2,1), transform 240ms cubic-bezier(.2,.8,.2,1)"
+    }}>
+      {columns.map((col, i) => col.feature ? (
+        <FeatureCard key={i} feature={col.feature}/>
+      ) : col.features ? (
+        <div key={i} style={{ display: "flex", flexDirection: "column", gap: 12 }}>
+          {col.features.map((f, j) => <FeatureCard key={j} feature={f} compact={true}/>)}
+        </div>
+      ) : (
+        <div key={i}>
+          <div style={{
+            fontFamily: "var(--font-display)", fontWeight: 700, fontSize: 11.5,
+            letterSpacing: "0.14em", textTransform: "uppercase",
+            color: "var(--edison-teal-dark)", marginBottom: 16,
+            paddingBottom: 10, borderBottom: "1px solid var(--border-hairline)"
+          }}>{col.title}</div>
+          <ul style={{ listStyle: "none", padding: 0, margin: 0, display: "flex", flexDirection: "column", gap: 4 }}>
+            {col.items.map((it, j) => <MegaItem key={j} item={it}/>)}
+          </ul>
+        </div>
+      ))}
+    </div>
+  );
+}
+
+function MegaItem({ item }) {
+  const [hover, setHover] = useState(false);
+  const p = typeof window !== "undefined" ? window.location.pathname.replace(/\/$/, '') : '';
+  const h = item.href.replace(/\/$/, '');
+  const active = p !== '' && p === h;
+  return (
+    <li>
+      <a href={item.href}
+         aria-current={active ? "page" : undefined}
+         onMouseEnter={() => setHover(true)}
+         onMouseLeave={() => setHover(false)}
+         style={{
+           display: "block", padding: "10px 12px", borderRadius: 6,
+           textDecoration: "none", borderBottom: 0,
+           background: active || hover ? "var(--edison-teal-pale)" : "transparent",
+           transition: "background 140ms var(--ease-standard)"
+         }}>
+        <div style={{
+          fontFamily: "var(--font-display)", fontWeight: item.parent ? 700 : 600, fontSize: 14.5,
+          color: active || hover ? "var(--edison-teal-dark)" : "var(--edison-navy)",
+          marginBottom: item.desc ? 2 : 0, transition: "color 140ms"
+        }}>{item.label}</div>
+        {item.desc && (
+          <div style={{ fontFamily: "var(--font-body)", fontSize: 12.5, lineHeight: 1.4, color: "var(--edison-gray-mid)" }}>{item.desc}</div>
+        )}
+      </a>
+    </li>
+  );
+}
+
+/* ---------- Simple dropdown ---------- */
+function SimpleDropdown({ items, open }) {
+  return (
+    <ul role="menu" aria-hidden={!open} style={{
+      listStyle: "none", margin: 0, padding: "6px", minWidth: 260,
+      background: "#fff", border: "1px solid var(--border-hairline)",
+      borderTop: "2px solid var(--edison-teal)", borderRadius: "0 0 10px 10px",
       boxShadow: "0 14px 40px rgba(15,29,51,.14)",
-      position: "absolute",
-      top: "calc(100% + 1px)", left: 0, zIndex: 70,
+      position: "absolute", top: "calc(100% + 1px)", left: 0, zIndex: 70,
       opacity: open ? 1 : 0,
       transform: open ? "translateY(0)" : "translateY(-8px)",
       pointerEvents: open ? "auto" : "none",
@@ -341,7 +307,9 @@ function SimpleDropdown({ items, open }) {
 
 function SimpleItem({ item }) {
   const [hover, setHover] = useState(false);
-  const active = typeof window !== "undefined" && window.location.pathname === item.href;
+  const sp = typeof window !== "undefined" ? window.location.pathname.replace(/\/$/, '') : '';
+  const sh = item.href.replace(/\/$/, '');
+  const active = sp !== '' && sp === sh;
   return (
     <li>
       <a href={item.href}
@@ -349,9 +317,7 @@ function SimpleItem({ item }) {
          onMouseEnter={() => setHover(true)}
          onMouseLeave={() => setHover(false)}
          style={{
-           display: "block",
-           padding: "11px 14px",
-           borderRadius: 6,
+           display: "block", padding: "11px 14px", borderRadius: 6,
            fontFamily: "var(--font-display)", fontWeight: 600, fontSize: 14,
            color: active || hover ? "var(--edison-teal-dark)" : "var(--edison-navy)",
            textDecoration: "none", borderBottom: 0,
@@ -368,20 +334,16 @@ function SimpleItem({ item }) {
 /* ---------- Mobile drawer item ---------- */
 function MobileItem({ item, depth = 0 }) {
   const [open, setOpen] = useState(false);
-  // Treat mega columns as a flat set of all items for mobile
   let childItems = item.children;
   if (item.mega && item.columns) {
     childItems = item.columns
-      .filter(c => !c.feature)
+      .filter(c => !c.feature && !c.features)
       .flatMap(c => [{ heading: c.title }, ...c.items])
       .concat(
-        item.columns.filter(c => c.feature).map(c => ({
-          label: c.feature.title, href: c.feature.cta.href
-        }))
+        item.columns.filter(c => c.feature).map(c => ({ label: c.feature.title, href: c.feature.cta.href }))
       );
   }
   const hasChildren = childItems && childItems.length;
-
   return (
     <li style={{ listStyle: "none" }}>
       <div style={{ display: "flex", alignItems: "stretch" }}>
@@ -389,20 +351,16 @@ function MobileItem({ item, depth = 0 }) {
           <div style={{
             flex: 1, padding: `14px ${16 + depth * 16}px 6px`,
             fontFamily: "var(--font-display)", fontWeight: 700, fontSize: 11.5,
-            letterSpacing: "0.14em", textTransform: "uppercase",
-            color: "var(--edison-teal-dark)"
+            letterSpacing: "0.14em", textTransform: "uppercase", color: "var(--edison-teal-dark)"
           }}>{item.heading}</div>
         ) : (
           <a href={item.href} style={{
-            flex: 1,
-            padding: `14px ${16 + depth * 16}px`,
-            fontFamily: "var(--font-display)",
-            fontWeight: depth === 0 ? 700 : 500,
-            fontSize: depth === 0 ? 16 : 14.5,
-            color: "var(--edison-navy)",
+            flex: 1, padding: `14px ${16 + depth * 16}px`,
+            fontFamily: "var(--font-display)", fontWeight: depth === 0 ? 700 : 500,
+            fontSize: depth === 0 ? 16 : 14.5, color: "var(--edison-navy)",
             textDecoration: "none", borderBottom: 0,
-            borderBottomColor: "var(--border-hairline)",
-            borderBottomStyle: "solid", borderBottomWidth: hasChildren ? 0 : 1
+            borderBottomStyle: "solid", borderBottomColor: "var(--border-hairline)",
+            borderBottomWidth: hasChildren ? 0 : 1
           }}>{item.label}</a>
         )}
         {hasChildren && (
@@ -414,9 +372,7 @@ function MobileItem({ item, depth = 0 }) {
                     borderBottom: "1px solid var(--border-hairline)",
                     borderLeft: "1px solid var(--border-hairline)",
                     background: open ? "var(--edison-teal-pale)" : "transparent",
-                    color: "var(--edison-navy)",
-                    cursor: "pointer",
-                    transition: "background 140ms",
+                    color: "var(--edison-navy)", cursor: "pointer", transition: "background 140ms",
                     display: "flex", alignItems: "center", justifyContent: "center"
                   }}>
             <span style={{ transform: open ? "rotate(180deg)" : "none", display: "inline-flex" }}>
@@ -426,27 +382,22 @@ function MobileItem({ item, depth = 0 }) {
         )}
       </div>
       {hasChildren && open && (
-        <ul style={{ listStyle: "none", margin: 0, padding: 0,
-                     background: "rgba(60,200,200,.04)" }}>
-          {childItems.map((c, i) => (
-            <MobileItem key={i} item={c} depth={depth + 1}/>
-          ))}
+        <ul style={{ listStyle: "none", margin: 0, padding: 0, background: "rgba(60,200,200,.04)" }}>
+          {childItems.map((c, i) => <MobileItem key={i} item={c} depth={depth + 1}/>)}
         </ul>
       )}
     </li>
   );
 }
 
-/* ---------- Nav CTA button with shine hover ---------- */
+/* ---------- Nav CTA button ---------- */
 function NavCtaButton({ href, label }) {
   const [hovered, setHovered] = useState(false);
   return (
     <a href={href} style={{
-      display: "inline-flex", alignItems: "center", gap: 8,
-      padding: "13px 22px",
+      display: "inline-flex", alignItems: "center", gap: 8, padding: "13px 22px",
       background: hovered ? "var(--edison-teal-light)" : "var(--edison-teal)",
-      color: "var(--edison-navy)",
-      fontFamily: "var(--font-display)", fontWeight: 700, fontSize: 14,
+      color: "var(--edison-navy)", fontFamily: "var(--font-display)", fontWeight: 700, fontSize: 14,
       borderRadius: 8, border: 0, textDecoration: "none", borderBottom: 0,
       position: "relative", overflow: "hidden",
       boxShadow: hovered ? "0 4px 20px rgba(60,200,200,.38)" : "none",
@@ -458,8 +409,7 @@ function NavCtaButton({ href, label }) {
       {label}
       <span aria-hidden="true" style={{
         position: "absolute", top: 0, bottom: 0,
-        left: hovered ? "110%" : "-60%",
-        width: "45%",
+        left: hovered ? "110%" : "-60%", width: "45%",
         background: "linear-gradient(105deg, transparent, rgba(255,255,255,.22) 50%, transparent)",
         transform: "skewX(-18deg)",
         transition: hovered ? "left 480ms cubic-bezier(.4,0,.2,1)" : "none",
@@ -509,273 +459,209 @@ function SiteHeader({
       const y = window.scrollY;
       const delta = y - lastScrollY.current;
       setAtTop(y < 8);
-      if (y < 8) {
-        setHidden(false);
-      } else if (delta > 8) {
-        setHidden(true);
-        setOpenIdx(-1);
-      } else if (delta < -4) {
-        setHidden(false);
-      }
+      if (y < 8) { setHidden(false); }
+      else if (delta > 8) { setHidden(true); setOpenIdx(-1); }
+      else if (delta < -4) { setHidden(false); }
       lastScrollY.current = y;
     }
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  function openMenu(i) {
-    clearTimeout(closeTimer.current);
-    setOpenIdx(i);
-  }
-  function scheduleClose() {
-    clearTimeout(closeTimer.current);
-    closeTimer.current = setTimeout(() => setOpenIdx(-1), 140);
-  }
+  function openMenu(i) { clearTimeout(closeTimer.current); setOpenIdx(i); }
+  function scheduleClose() { clearTimeout(closeTimer.current); closeTimer.current = setTimeout(() => setOpenIdx(-1), 140); }
 
   return (
     <>
-    {/* Spacer keeps page content from jumping under the fixed header */}
-    <div aria-hidden="true" style={{ height: "var(--site-header-height, 122px)" }}/>
-    <header ref={headerRef} style={{
-      position: "fixed", top: 0, left: 0, right: 0,
-      zIndex: 60,
-      transform: hidden ? "translateY(-100%)" : "translateY(0)",
-      transition: "transform 320ms cubic-bezier(.4,0,.2,1)",
-      willChange: "transform"
-    }}>
-      {/* Utility bar */}
-      <div style={{
-        background: "var(--edison-navy)",
-        color: "rgba(255,255,255,.85)",
-        fontFamily: "var(--font-body)", fontSize: 13,
-        borderBottom: "1px solid rgba(255,255,255,.08)"
+      <div aria-hidden="true" style={{ height: "var(--site-header-height, 122px)" }}/>
+      <header ref={headerRef} style={{
+        position: "fixed", top: 0, left: 0, right: 0, zIndex: 60,
+        transform: hidden ? "translateY(-100%)" : "translateY(0)",
+        transition: "transform 320ms cubic-bezier(.4,0,.2,1)",
+        willChange: "transform"
       }}>
+        {/* Utility bar */}
         <div style={{
-          maxWidth: 1280, margin: "0 auto", padding: "9px 32px",
-          display: "flex", justifyContent: "space-between", alignItems: "center", gap: 24,
-          flexWrap: "wrap"
+          background: "var(--edison-navy)", color: "rgba(255,255,255,.85)",
+          fontFamily: "var(--font-body)", fontSize: 13,
+          borderBottom: "1px solid rgba(255,255,255,.08)"
         }}>
-          <div style={{ display: "flex", alignItems: "center", gap: 18 }}>
-            <a href={utility.phone.href} style={{
-              color: "#fff", textDecoration: "none", borderBottom: 0,
-              display: "inline-flex", alignItems: "center", gap: 8,
-              fontWeight: 600
-            }}>
-              <IconPhone/> {utility.phone.label}
-            </a>
-            <span style={{ color: "rgba(255,255,255,.55)" }}>{utility.hours}</span>
-          </div>
-          <ul style={{
-            listStyle: "none", padding: 0, margin: 0,
-            display: "flex", gap: 22, alignItems: "center"
-          }}>
-            {utility.portals.map((p, i) => (
-              <li key={i}>
-                <a href={p.href} target="_blank" rel="noopener noreferrer"
-                   style={{
-                     color: "rgba(255,255,255,.85)",
-                     textDecoration: "none", borderBottom: 0,
-                     fontFamily: "var(--font-display)", fontWeight: 600, fontSize: 12.5,
-                     letterSpacing: "0.02em",
-                     transition: "color 140ms"
-                   }}
-                   onMouseEnter={(e) => e.currentTarget.style.color = "var(--edison-teal)"}
-                   onMouseLeave={(e) => e.currentTarget.style.color = "rgba(255,255,255,.85)"}>
-                  {p.label}
-                </a>
-              </li>
-            ))}
-          </ul>
-        </div>
-      </div>
-
-      {/* Main nav row — glassmorphism */}
-      <div style={{
-        background: atTop ? "#fff" : "rgba(255,255,255,.82)",
-        backdropFilter: atTop ? "none" : "blur(20px) saturate(180%)",
-        WebkitBackdropFilter: atTop ? "none" : "blur(20px) saturate(180%)",
-        borderBottom: atTop ? "1px solid var(--border-hairline)" : "1px solid rgba(255,255,255,.35)",
-        boxShadow: atTop ? "none" : "0 2px 24px rgba(15,29,51,.10)",
-        transition: "background 280ms ease, box-shadow 280ms ease, border-color 280ms ease",
-        position: "relative"
-      }}>
-        <div style={{
-          maxWidth: 1280, margin: "0 auto", padding: "0 32px",
-          height: 84,
-          display: "flex", alignItems: "center", gap: 28
-        }}>
-          <a href={homeHref} aria-label={logoAlt} style={{ display: "block", borderBottom: 0, flexShrink: 0 }}>
-            <img src={logoSrc} alt={logoAlt} style={{ height: 44, width: "auto", display: "block" }}/>
-          </a>
-
-          <nav aria-label="Primary"
-               className="edison-desktop-nav"
-               style={{ flex: 1, display: "flex", justifyContent: "center", gap: 2 }}>
-            {nav.map((item, i) => {
-              const hasMenu = item.mega || (item.children && item.children.length);
-              const isOpen = openIdx === i;
-              // Active if current path starts with item href (but "/" only matches exactly)
-              const isActive = item.href === "/"
-                ? currentPath === "/"
-                : currentPath.startsWith(item.href) ||
-                  // Edison Education also active when on /blog/
-                  (item.href === "/edison-education/" && currentPath.startsWith("/blog/"));
-              return (
-                <div key={i} style={{ position: "static" /* mega menus need static parent for full-width centering */ }}
-                     onMouseEnter={() => hasMenu && openMenu(i)}
-                     onMouseLeave={() => hasMenu && scheduleClose()}>
-                  <div style={{ position: "relative" }}>
-                    <a href={item.href}
-                       aria-haspopup={hasMenu ? "true" : undefined}
-                       aria-expanded={hasMenu ? isOpen : undefined}
-                       style={{
-                         display: "inline-flex", alignItems: "center", gap: 6,
-                         padding: "30px 14px",
-                         fontFamily: "var(--font-display)", fontWeight: 600, fontSize: 14.5,
-                         color: isOpen || isActive ? "var(--edison-teal-dark)" : "var(--edison-navy)",
-                         textDecoration: "none", borderBottom: 0,
-                         transition: "color 140ms"
-                       }}>
-                      {item.label}
-                      {hasMenu && (
-                        <span style={{
-                          color: isOpen || isActive ? "var(--edison-teal-dark)" : "var(--edison-navy-50)",
-                          transform: isOpen ? "rotate(180deg)" : "none",
-                          transition: "transform 180ms",
-                          display: "inline-flex"
-                        }}>
-                          <IconChevronDown/>
-                        </span>
-                      )}
-                    </a>
-                    {/* Active page underline indicator */}
-                    {isActive && (
-                      <span style={{
-                        position: "absolute", bottom: 0, left: "50%",
-                        transform: "translateX(-50%)",
-                        width: "calc(100% - 28px)", height: 3,
-                        background: "var(--edison-teal)",
-                        borderRadius: "2px 2px 0 0"
-                      }}/>
-                    )}
-                    {/* Simple dropdown always rendered for animation */}
-                    {item.children && !item.mega && (
-                      <SimpleDropdown items={item.children} open={isOpen}/>
-                    )}
-                  </div>
-                  {/* Mega menu always rendered for animation */}
-                  {item.mega && (
-                    <MegaMenu columns={item.columns} open={isOpen}/>
-                  )}
-                </div>
-              );
-            })}
-          </nav>
-
-          <div className="edison-desktop-cta" style={{ flexShrink: 0 }}>
-            <NavCtaButton href={cta.href} label={cta.label}/>
-          </div>
-
-          <button className="edison-mobile-trigger"
-                  onClick={() => setMobileOpen(true)}
-                  aria-label="Open menu"
-                  style={{
-                    display: "none",
-                    background: "transparent", border: 0,
-                    color: "var(--edison-navy)",
-                    cursor: "pointer", padding: 8
-                  }}>
-            <IconMenu/>
-          </button>
-        </div>
-      </div>
-
-      {/* Mobile drawer */}
-      {mobileOpen && (
-        <div style={{
-          position: "fixed", inset: 0, zIndex: 80,
-          background: "rgba(15,29,51,.55)",
-          backdropFilter: "blur(2px)"
-        }}
-             onClick={() => setMobileOpen(false)}>
           <div style={{
-            position: "absolute", top: 0, right: 0, bottom: 0,
-            width: "min(92vw, 380px)",
-            background: "#fff",
-            overflow: "auto",
-            boxShadow: "var(--shadow-lg)"
-          }} onClick={(e) => e.stopPropagation()}>
-            <div style={{
-              padding: "18px 18px",
-              display: "flex", justifyContent: "space-between", alignItems: "center",
-              borderBottom: "1px solid var(--border-hairline)"
-            }}>
-              <img src={logoSrc} alt={logoAlt} style={{ height: 32 }}/>
-              <button onClick={() => setMobileOpen(false)} aria-label="Close menu"
-                      style={{
-                        background: "transparent", border: 0, padding: 6,
-                        color: "var(--edison-navy)", cursor: "pointer"
-                      }}>
-                <IconClose/>
-              </button>
+            maxWidth: 1280, margin: "0 auto", padding: "9px 32px",
+            display: "flex", justifyContent: "space-between", alignItems: "center", gap: 24, flexWrap: "wrap"
+          }}>
+            <div style={{ display: "flex", alignItems: "center", gap: 18 }}>
+              <a href={utility.phone.href} style={{
+                color: "#fff", textDecoration: "none", borderBottom: 0,
+                display: "inline-flex", alignItems: "center", gap: 8, fontWeight: 600
+              }}>
+                <IconPhone/> {utility.phone.label}
+              </a>
+              <span style={{ color: "rgba(255,255,255,.55)" }}>{utility.hours}</span>
             </div>
-            <ul style={{ listStyle: "none", padding: 0, margin: 0 }}>
-              {nav.map((item, i) => (
-                <MobileItem key={i} item={item}/>
+            <ul style={{ listStyle: "none", padding: 0, margin: 0, display: "flex", gap: 22, alignItems: "center" }}>
+              {utility.portals.map((p, i) => (
+                <li key={i}>
+                  <a href={p.href} target="_blank" rel="noopener noreferrer" style={{
+                    color: "rgba(255,255,255,.85)", textDecoration: "none", borderBottom: 0,
+                    fontFamily: "var(--font-display)", fontWeight: 600, fontSize: 12.5,
+                    letterSpacing: "0.02em", transition: "color 140ms"
+                  }}
+                    onMouseEnter={(e) => e.currentTarget.style.color = "var(--edison-teal)"}
+                    onMouseLeave={(e) => e.currentTarget.style.color = "rgba(255,255,255,.85)"}>
+                    {p.label}
+                  </a>
+                </li>
               ))}
             </ul>
-            <div style={{ padding: "20px" }}>
-              <a href={cta.href} style={{
-                display: "flex", justifyContent: "center", alignItems: "center", gap: 8,
-                padding: "14px 22px",
-                background: "var(--edison-teal)", color: "var(--edison-navy)",
-                fontFamily: "var(--font-display)", fontWeight: 700, fontSize: 14.5,
-                borderRadius: 8, border: 0, textDecoration: "none", borderBottom: 0
-              }}>
-                {cta.label}
-              </a>
-            </div>
-            <div style={{
-              padding: "8px 20px 20px",
-              borderTop: "1px solid var(--border-hairline)",
-              marginTop: 8,
-              fontFamily: "var(--font-body)", fontSize: 13.5,
-              color: "var(--edison-text-body)"
-            }}>
-              <div style={{ marginBottom: 10 }}>
-                <a href={utility.phone.href} style={{
-                  color: "var(--edison-navy)",
-                  textDecoration: "none", borderBottom: 0, fontWeight: 700,
-                  display: "inline-flex", alignItems: "center", gap: 8
-                }}>
-                  <IconPhone/> {utility.phone.label}
-                </a>
-                <div style={{ color: "var(--edison-gray-mid)", marginTop: 2 }}>{utility.hours}</div>
-              </div>
-              <ul style={{ listStyle: "none", padding: 0, margin: 0,
-                           display: "flex", flexDirection: "column", gap: 8 }}>
-                {utility.portals.map((p, i) => (
-                  <li key={i}>
-                    <a href={p.href} target="_blank" rel="noopener noreferrer"
-                       style={{ color: "var(--edison-teal-dark)",
-                                textDecoration: "none", borderBottom: 0, fontWeight: 600 }}>
-                      {p.label} ↗
-                    </a>
-                  </li>
-                ))}
-              </ul>
-            </div>
           </div>
         </div>
-      )}
 
-      <style>{`
-        @media (max-width: 1040px) {
-          .edison-desktop-nav, .edison-desktop-cta { display: none !important; }
-          .edison-mobile-trigger { display: inline-flex !important; }
-        }
-      `}</style>
-    </header>
+        {/* Main nav row — glassmorphism on scroll */}
+        <div style={{
+          background: atTop ? "#fff" : "rgba(255,255,255,.82)",
+          backdropFilter: atTop ? "none" : "blur(20px) saturate(180%)",
+          WebkitBackdropFilter: atTop ? "none" : "blur(20px) saturate(180%)",
+          borderBottom: atTop ? "1px solid var(--border-hairline)" : "1px solid rgba(255,255,255,.35)",
+          boxShadow: atTop ? "none" : "0 2px 24px rgba(15,29,51,.10)",
+          transition: "background 280ms ease, box-shadow 280ms ease, border-color 280ms ease",
+          position: "relative"
+        }}>
+          <div style={{
+            maxWidth: 1280, margin: "0 auto", padding: "0 32px", height: 84,
+            display: "flex", alignItems: "center", gap: 28
+          }}>
+            <a href={homeHref} aria-label={logoAlt} style={{ display: "block", borderBottom: 0, flexShrink: 0 }}>
+              <img src={logoSrc} alt={logoAlt} style={{ height: 44, width: "auto", display: "block" }}/>
+            </a>
+
+            <nav aria-label="Primary" className="edison-desktop-nav"
+                 style={{ flex: 1, display: "flex", justifyContent: "center", gap: 2 }}>
+              {nav.map((item, i) => {
+                const hasMenu = item.mega || (item.children && item.children.length);
+                const isOpen = openIdx === i;
+                const isActive = item.href === "/"
+                  ? currentPath === "/"
+                  : currentPath.startsWith(item.href) ||
+                    (item.href === "/edison-education/" && currentPath.startsWith("/blog/"));
+                return (
+                  <div key={i} style={{ position: "static" }}
+                       onMouseEnter={() => hasMenu && openMenu(i)}
+                       onMouseLeave={() => hasMenu && scheduleClose()}>
+                    <div style={{ position: "relative" }}>
+                      <a href={item.href}
+                         aria-haspopup={hasMenu ? "true" : undefined}
+                         aria-expanded={hasMenu ? isOpen : undefined}
+                         style={{
+                           display: "inline-flex", alignItems: "center", gap: 6,
+                           padding: "30px 14px",
+                           fontFamily: "var(--font-display)", fontWeight: 600, fontSize: 14.5,
+                           color: isOpen || isActive ? "var(--edison-teal-dark)" : "var(--edison-navy)",
+                           textDecoration: "none", borderBottom: 0,
+                           transition: "color 140ms"
+                         }}>
+                        {item.label}
+                        {hasMenu && (
+                          <span style={{
+                            color: isOpen || isActive ? "var(--edison-teal-dark)" : "var(--edison-navy-50)",
+                            transform: isOpen ? "rotate(180deg)" : "none",
+                            transition: "transform 180ms", display: "inline-flex"
+                          }}>
+                            <IconChevronDown/>
+                          </span>
+                        )}
+                      </a>
+                      {item.children && !item.mega && <SimpleDropdown items={item.children} open={isOpen}/>}
+                    </div>
+                    {item.mega && <MegaMenu columns={item.columns} open={isOpen}/>}
+                  </div>
+                );
+              })}
+            </nav>
+
+            <div className="edison-desktop-cta" style={{ flexShrink: 0 }}>
+              <NavCtaButton href={cta.href} label={cta.label}/>
+            </div>
+
+            <button className="edison-mobile-trigger" onClick={() => setMobileOpen(true)}
+                    aria-label="Open menu" style={{
+                      display: "none", background: "transparent", border: 0,
+                      color: "var(--edison-navy)", cursor: "pointer", padding: 8
+                    }}>
+              <IconMenu/>
+            </button>
+          </div>
+        </div>
+
+        {/* Mobile drawer */}
+        {mobileOpen && (
+          <div style={{
+            position: "fixed", inset: 0, zIndex: 80,
+            background: "rgba(15,29,51,.55)", backdropFilter: "blur(2px)"
+          }} onClick={() => setMobileOpen(false)}>
+            <div style={{
+              position: "absolute", top: 0, right: 0, bottom: 0,
+              width: "min(92vw, 380px)", background: "#fff", overflow: "auto",
+              boxShadow: "var(--shadow-lg)"
+            }} onClick={(e) => e.stopPropagation()}>
+              <div style={{
+                padding: "18px 18px", display: "flex", justifyContent: "space-between", alignItems: "center",
+                borderBottom: "1px solid var(--border-hairline)"
+              }}>
+                <img src={logoSrc} alt={logoAlt} style={{ height: 32 }}/>
+                <button onClick={() => setMobileOpen(false)} aria-label="Close menu" style={{
+                  background: "transparent", border: 0, padding: 6, color: "var(--edison-navy)", cursor: "pointer"
+                }}>
+                  <IconClose/>
+                </button>
+              </div>
+              <ul style={{ listStyle: "none", padding: 0, margin: 0 }}>
+                {nav.map((item, i) => <MobileItem key={i} item={item}/>)}
+              </ul>
+              <div style={{ padding: "20px" }}>
+                <a href={cta.href} style={{
+                  display: "flex", justifyContent: "center", alignItems: "center", gap: 8,
+                  padding: "14px 22px", background: "var(--edison-teal)", color: "var(--edison-navy)",
+                  fontFamily: "var(--font-display)", fontWeight: 700, fontSize: 14.5,
+                  borderRadius: 8, border: 0, textDecoration: "none", borderBottom: 0
+                }}>
+                  {cta.label}
+                </a>
+              </div>
+              <div style={{
+                padding: "8px 20px 20px", borderTop: "1px solid var(--border-hairline)", marginTop: 8,
+                fontFamily: "var(--font-body)", fontSize: 13.5, color: "var(--edison-text-body)"
+              }}>
+                <div style={{ marginBottom: 10 }}>
+                  <a href={utility.phone.href} style={{
+                    color: "var(--edison-navy)", textDecoration: "none", borderBottom: 0,
+                    fontWeight: 700, display: "inline-flex", alignItems: "center", gap: 8
+                  }}>
+                    <IconPhone/> {utility.phone.label}
+                  </a>
+                  <div style={{ color: "var(--edison-gray-mid)", marginTop: 2 }}>{utility.hours}</div>
+                </div>
+                <ul style={{ listStyle: "none", padding: 0, margin: 0, display: "flex", flexDirection: "column", gap: 8 }}>
+                  {utility.portals.map((p, i) => (
+                    <li key={i}>
+                      <a href={p.href} target="_blank" rel="noopener noreferrer" style={{
+                        color: "var(--edison-teal-dark)", textDecoration: "none", borderBottom: 0, fontWeight: 600
+                      }}>{p.label} ↗</a>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+          </div>
+        )}
+
+        <style>{`
+          @media (max-width: 1040px) {
+            .edison-desktop-nav, .edison-desktop-cta { display: none !important; }
+            .edison-mobile-trigger { display: inline-flex !important; }
+          }
+        `}</style>
+      </header>
     </>
   );
 }

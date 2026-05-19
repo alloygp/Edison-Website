@@ -1,11 +1,11 @@
 ---
 import SiteLayout from '../../layouts/SiteLayout.astro';
-import { EducationHubA, EDUCATION_CONTENT } from '../../templates/education-hub-template.jsx';
+import { EducationHubA } from '../../templates/education-hub-template.jsx';
 ---
 
 <SiteLayout
   title="Edison Education — HOA Board Resources | Edison"
   description="Board certification, continuing education, and legislative updates for Florida HOA and condo boards. Edison Education — lighting the way for volunteer leaders."
 >
-  <EducationHubA content={EDUCATION_CONTENT} client:load />
+  <EducationHubA client:load />
 </SiteLayout>

@@ -1,5 +1,4 @@
-import React, { useState, Suspense } from 'react';
-import { ServiceAreaMap } from './ServiceAreaMap.jsx';
+import React, { useState } from 'react';
 
 /* ============================================================
    ATOMS — small reusable pieces (Edison brand tokens only)
@@ -15,70 +14,37 @@ function InteriorEyebrow({ children, color = "var(--edison-teal-dark)" }) {
 }
 
 function InteriorButton({ variant = "primary", size = "md", children, href, type, onClick }) {
-  const [hovered, setHovered] = useState(false);
-
   const sizes = {
-    sm: { padding: "9px 16px",  fontSize: 13 },
+    sm: { padding: "9px 16px", fontSize: 13 },
     md: { padding: "13px 22px", fontSize: 14 },
     lg: { padding: "16px 28px", fontSize: 15 }
   }[size];
-
-  const base = {
-    primary:     { background: "var(--edison-teal)",        color: "var(--edison-navy)", border: "0" },
-    secondary:   { background: "var(--edison-navy)",        color: "#fff",               border: "0" },
-    ghost:       { background: "transparent",               color: "var(--edison-navy)", border: "1.5px solid var(--edison-navy)" },
-    onDark:      { background: "var(--edison-teal)",        color: "var(--edison-navy)", border: "0" },
-    ghostOnDark: { background: "transparent",               color: "#fff",               border: "1.5px solid rgba(255,255,255,.5)" }
+  const variants = {
+    primary:    { background: "var(--edison-teal)", color: "var(--edison-navy)", border: "0" },
+    secondary:  { background: "var(--edison-navy)", color: "#fff", border: "0" },
+    ghost:      { background: "transparent", color: "var(--edison-navy)", border: "1.5px solid var(--edison-navy)" },
+    onDark:     { background: "var(--edison-teal)", color: "var(--edison-navy)", border: "0" },
+    ghostOnDark:{ background: "transparent", color: "#fff", border: "1.5px solid rgba(255,255,255,.5)" }
   }[variant];
-
-  const hover = {
-    primary:     { background: "var(--edison-teal-light)", boxShadow: "0 4px 20px rgba(60,200,200,.38)", transform: "translateY(-1px)" },
-    secondary:   { background: "#263b62",                  boxShadow: "0 4px 20px rgba(27,42,74,.30)",   transform: "translateY(-1px)" },
-    ghost:       { background: "var(--edison-navy)",        color: "#fff",                                transform: "translateY(-1px)" },
-    onDark:      { background: "var(--edison-teal-light)", boxShadow: "0 4px 20px rgba(60,200,200,.38)", transform: "translateY(-1px)" },
-    ghostOnDark: { background: "rgba(255,255,255,.14)",    border: "1.5px solid rgba(255,255,255,.85)",  transform: "translateY(-1px)" }
-  }[variant];
-
-  const style = {
+  const baseStyle = {
     fontFamily: "var(--font-display)", fontWeight: 700, textDecoration: "none",
     borderRadius: 8, cursor: "pointer", borderBottom: 0,
-    letterSpacing: "0.01em",
-    transition: "background 200ms ease, box-shadow 200ms ease, transform 180ms ease, color 160ms ease, border-color 160ms ease",
+    letterSpacing: "0.01em", transition: "all 180ms cubic-bezier(.2,0,.1,1)",
     display: "inline-flex", alignItems: "center", gap: 8,
     appearance: "none", lineHeight: 1.2,
-    position: "relative", overflow: "hidden",
-    ...sizes, ...base, ...(hovered ? hover : {})
+    ...sizes, ...variants
   };
-
-  /* Shine span — sweeps across on hover */
-  const shine = (
-    <span aria-hidden="true" style={{
-      position: "absolute", top: 0, bottom: 0,
-      left: hovered ? "110%" : "-60%",
-      width: "45%",
-      background: "linear-gradient(105deg, transparent, rgba(255,255,255,.22) 50%, transparent)",
-      transform: "skewX(-18deg)",
-      transition: hovered ? "left 480ms cubic-bezier(.4,0,.2,1)" : "none",
-      pointerEvents: "none"
-    }}/>
-  );
-
-  const handlers = {
-    onMouseEnter: () => setHovered(true),
-    onMouseLeave: () => setHovered(false)
-  };
-
+  // Render as <button> when type is passed (form submit/reset/button)
+  // or when there's an onClick with no href. Otherwise render as <a>.
   if (type || (onClick && !href)) {
     return (
-      <button type={type || "button"} onClick={onClick} style={style} {...handlers}>
-        {children}{shine}
+      <button type={type || "button"} onClick={onClick} style={baseStyle}>
+        {children}
       </button>
     );
   }
   return (
-    <a href={href || "#"} onClick={onClick} style={style} {...handlers}>
-      {children}{shine}
-    </a>
+    <a href={href || "#"} onClick={onClick} style={baseStyle}>{children}</a>
   );
 }
 
@@ -100,9 +66,9 @@ function Breadcrumb({ trail }) {
     <nav aria-label="Breadcrumb" style={{
       background: "var(--edison-teal-pale)",
       borderBottom: "1px solid var(--border-hairline)",
-      padding: "14px 48px"
+      padding: "14px 0"
     }}>
-      <div style={{ maxWidth: 1200, margin: "0 auto",
+      <div style={{ maxWidth: 1200, margin: "0 auto", padding: "0 48px",
                     fontFamily: "var(--font-body)", fontSize: 13.5,
                     color: "var(--edison-navy)" }}>
         {trail.map((item, i) => (
@@ -384,37 +350,30 @@ function TrustBadges({ eyebrow, title, sub, badges }) {
         <div style={{
           marginTop: 48,
           display: "flex", flexWrap: "wrap", justifyContent: "center",
-          gap: 20, alignItems: "center"
+          gap: 24
         }}>
           {badges.map((b, i) => (
-            <div key={i} style={{
+            <div key={i} title={b.label} style={{
               background: "#fff",
               border: "1px solid var(--border-hairline)",
-              borderRadius: 12,
-              width: 160, height: 100,
-              display: "flex",
+              borderRadius: 10,
+              width: 168, height: 96,
+              display: "flex", flexDirection: "column",
               alignItems: "center", justifyContent: "center",
-              padding: "14px 18px",
+              padding: 12, textAlign: "center",
               boxShadow: "var(--shadow-xs)"
             }}>
-              {b.img
-                ? <img src={b.img} alt={b.label}
-                       style={{ maxWidth: "100%", maxHeight: "100%", objectFit: "contain", display: "block" }}/>
-                : (
-                  <div style={{ textAlign: "center" }}>
-                    <div style={{
-                      fontFamily: "var(--font-display)", fontWeight: 800,
-                      fontSize: 11, letterSpacing: "0.06em",
-                      color: b.color || "var(--edison-navy)",
-                      textTransform: "uppercase", marginBottom: 4
-                    }}>{b.label}</div>
-                    {b.sub && <div style={{
-                      fontFamily: "var(--font-body)", fontSize: 10.5,
-                      color: "var(--edison-gray-mid)", lineHeight: 1.3
-                    }}>{b.sub}</div>}
-                  </div>
-                )
-              }
+              <div style={{
+                fontFamily: "var(--font-display)", fontWeight: 800,
+                fontSize: 11, letterSpacing: "0.06em",
+                color: b.color || "var(--edison-navy)",
+                textTransform: "uppercase",
+                marginBottom: 4
+              }}>{b.label}</div>
+              {b.sub && <div style={{
+                fontFamily: "var(--font-body)", fontSize: 10.5,
+                color: "var(--edison-gray-mid)", lineHeight: 1.3
+              }}>{b.sub}</div>}
             </div>
           ))}
         </div>
@@ -484,7 +443,7 @@ function FAQ({ eyebrow, title, sub, items, background = "#fff" }) {
 /* ============================================================
    SERVICE AREA — text + map placeholder
    ============================================================ */
-function ServiceArea({ eyebrow, title, body, cities, mapImg, mapEmbed = false }) {
+function ServiceArea({ eyebrow, title, body, cities, mapImg }) {
   return (
     <section style={{ background: "#fff", padding: "88px 48px" }}>
       <div style={{ maxWidth: 1200, margin: "0 auto",
@@ -513,9 +472,30 @@ function ServiceArea({ eyebrow, title, body, cities, mapImg, mapEmbed = false })
           width: "100%", aspectRatio: "4 / 3",
           borderRadius: 16, overflow: "hidden",
           boxShadow: "var(--shadow-md)",
+          background: `linear-gradient(180deg, rgba(27,42,74,.15), rgba(27,42,74,.45)), url(${mapImg})`,
+          backgroundSize: "cover", backgroundPosition: "center",
           position: "relative"
         }}>
-          <ServiceAreaMap />
+          {/* Stylized map pin cluster */}
+          <svg viewBox="0 0 400 300" style={{ position: "absolute", inset: 0, width: "100%", height: "100%" }}>
+            {[
+              [120, 130], [165, 110], [200, 145], [235, 125], [180, 175],
+              [145, 165], [220, 180], [265, 155], [195, 100], [240, 200]
+            ].map(([cx, cy], i) => (
+              <g key={i} opacity={0.95}>
+                <circle cx={cx} cy={cy} r={11} fill="rgba(60,200,200,.22)"/>
+                <circle cx={cx} cy={cy} r={6} fill="var(--edison-teal)" stroke="#fff" strokeWidth={1.5}/>
+              </g>
+            ))}
+          </svg>
+          <div style={{
+            position: "absolute", left: 16, bottom: 16,
+            background: "rgba(27,42,74,.92)",
+            color: "#fff",
+            fontFamily: "var(--font-display)", fontWeight: 700, fontSize: 12,
+            letterSpacing: "0.08em", textTransform: "uppercase",
+            padding: "6px 12px", borderRadius: 6
+          }}>Central Florida · 18+ Cities</div>
         </div>
       </div>
     </section>

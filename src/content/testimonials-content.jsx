@@ -11,19 +11,19 @@ const TESTIMONIALS_CONTENT = {
     {
       category: "Switching",
       rating: 5,
-      quote: "We began working with Edison six months ago, and within just 90 days our community manager Jessica turned around long-standing problems left by our previous management company. She is hardworking, diligent, and genuinely cares about the people she serves — and the rest of the Edison team backs her up.",
-      attribution: "Ross H.",
+      quote: "If you are an association board member searching for a company that will give you prompt, efficient, and personalized service, stop searching and go with Edison. Tracy Durham and her dedicated staff — Krystal, Sabrina, Carmen, and Sandy — are the easiest individuals to partner with. We interviewed multiple management companies before selecting Edison, and Edison has excelled at managing our community.",
+      attribution: "Beth C.",
       role: "Board Member",
-      community: "Edison-managed HOA",
-      image: "/assets/img-11.jpg"
+      community: "Edison-managed association",
+      image: "assets/img-11.jpg"
     },
     {
       category: "Switching",
       rating: 5,
-      quote: "If you are an association board member searching for a company that will give you prompt, efficient, and personalized service, stop searching and go with Edison. Tracy Durham and her dedicated staff — Krystal, Sabrina, Carmen, and Sandy — are the easiest individuals to partner with. We interviewed multiple management companies before selecting Edison, and Edison has excelled at managing our community.",
-      attribution: "Beth C.",
+      quote: "We began working with Edison six months ago, and within just 90 days our community manager Jessica turned around long-standing problems left by our previous management company. She is hardworking, diligent, and genuinely cares about the people she serves — and the rest of the Edison team backs her up.",
+      attribution: "Ross H.",
       role: "Board Member",
-      community: "Edison-managed association"
+      community: "Edison-managed HOA"
     },
     {
       category: "Responsiveness",

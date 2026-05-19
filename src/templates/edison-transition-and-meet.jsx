@@ -1,6 +1,4 @@
 import React from 'react';
-import { Breadcrumb, BodyProse, FAQ, FinalCTA, InteriorButton } from '../components/interior-components';
-import { NumberedSteps, ComparisonTable, StatsBand, PullQuote } from '../components/template-sections';
 
 /* ============================================================
    Trust & Branded Page Content

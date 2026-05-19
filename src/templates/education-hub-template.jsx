@@ -20,13 +20,8 @@ function EducationHubA({ content }) {
         padding: "88px 48px 64px"
       }}>
         <div style={{ maxWidth: 980, margin: "0 auto" }}>
-          <div style={{ marginBottom: 28 }}>
-            <img
-              src="/assets/Edison-Education-Full-Color.svg"
-              alt="Edison Education"
-              style={{ height: 80, width: "auto", display: "block" }}
-            />
-          </div>
+          <img src="/assets/Edison-Education-Full-Color.svg" alt="Edison Education"
+               style={{ height: 80, width: "auto", display: "block", marginBottom: 24 }}/>
           <h1 style={{
             fontFamily: "var(--font-display)", fontWeight: 800,
             fontSize: 52, lineHeight: 1.08, letterSpacing: "-0.02em",
@@ -34,8 +29,7 @@ function EducationHubA({ content }) {
           }}>Resources for Florida HOA & condo boards.</h1>
           <p style={{
             fontFamily: "var(--font-body)", fontSize: 18.5, lineHeight: 1.55,
-            color: "var(--edison-text-body)", margin: "0 auto", maxWidth: 720,
-            textAlign: "center"
+            color: "var(--edison-text-body)", margin: "0 auto", maxWidth: 720, textAlign: "center"
           }}>{content.intro}</p>
         </div>
       </section>
@@ -262,7 +256,7 @@ function EducationHubB({ content }) {
                 }}>
                   <div style={{
                     width: 200, height: 130, borderRadius: 8, overflow: "hidden",
-                    backgroundImage: `url(${a.image || "/assets/img-13.jpg"})`,
+                    backgroundImage: `url(${a.image || "assets/img-13.jpg"})`,
                     backgroundSize: "cover", backgroundPosition: "center"
                   }}/>
                   <div>
@@ -395,7 +389,7 @@ const EDUCATION_CONTENT = {
     category: "Financial Management",
     title: "HOA Audit: What It Is, When It's Required, and How to Prepare",
     excerpt: "An HOA audit confirms your community's finances are accurate, transparent, and compliant with Florida law. Learn what's required based on your association's revenue, and how strong year-round financial management makes the process faster and less expensive.",
-    image: "/assets/img-accounting.jpg",
+    image: "assets/img-accounting.jpg",
     href: "/blog/hoa-audit/"
   }
 };
