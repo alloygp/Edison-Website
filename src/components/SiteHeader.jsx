@@ -96,10 +96,20 @@ const DEFAULT_NAV = [
         ]
       },
       {
-        title: "Programs & Blog",
-        items: [
-          { label: "Edison Education", href: "/edison-education/", desc: "Program overview + certification", parent: true },
-          { label: "All Articles", href: "/blog/", desc: "Chronological article index" },
+        features: [
+          {
+            eyebrow: "Free for Boards",
+            title: "Edison Education",
+            body: "Certification-track courses and governance guides built for Florida HOA and condo boards.",
+            cta: { label: "Explore program", href: "/edison-education/" }
+          },
+          {
+            theme: "light",
+            eyebrow: "Resource Library",
+            title: "All Articles",
+            body: "Practical guides on Florida HOA law, finance, and governance — free for any board.",
+            cta: { label: "Browse articles", href: "/blog/" }
+          }
         ]
       }
     ]
@@ -192,6 +202,11 @@ function MegaMenu({ columns, open }) {
     }}>
       {columns.map((col, i) => col.feature ? (
         <FeatureCard key={i} feature={col.feature}/>
+      ) : col.features ? (
+        /* Stacked feature cards column */
+        <div key={i} style={{ display: "flex", flexDirection: "column", gap: 12 }}>
+          {col.features.map((f, j) => <FeatureCard key={j} feature={f} compact={true}/>)}
+        </div>
       ) : (
         <div key={i}>
           <div style={{
@@ -245,40 +260,43 @@ function MegaItem({ item }) {
   );
 }
 
-function FeatureCard({ feature }) {
+function FeatureCard({ feature, compact = false }) {
+  const dark = feature.theme !== "light";
   return (
     <a href={feature.cta.href} style={{
-      background: "var(--edison-navy)",
-      color: "#fff",
+      background: dark ? "var(--edison-navy)" : "var(--edison-teal-pale)",
+      color: dark ? "#fff" : "var(--edison-navy)",
       borderRadius: 10,
-      padding: "24px 22px",
+      padding: compact ? "18px 20px" : "24px 22px",
       textDecoration: "none", borderBottom: 0,
       display: "flex", flexDirection: "column", justifyContent: "space-between",
-      gap: 16,
-      transition: "transform 220ms var(--ease-standard)",
-      minHeight: 220
+      gap: compact ? 10 : 16,
+      border: dark ? "0" : "1px solid rgba(60,200,200,.25)",
+      transition: "transform 220ms var(--ease-standard), box-shadow 220ms",
+      flex: compact ? "1" : undefined,
+      minHeight: compact ? 0 : 220
     }}
-      onMouseEnter={(e) => e.currentTarget.style.transform = "translateY(-2px)"}
-      onMouseLeave={(e) => e.currentTarget.style.transform = "translateY(0)"}>
+      onMouseEnter={(e) => { e.currentTarget.style.transform = "translateY(-2px)"; e.currentTarget.style.boxShadow = "0 6px 20px rgba(15,29,51,.12)"; }}
+      onMouseLeave={(e) => { e.currentTarget.style.transform = "translateY(0)"; e.currentTarget.style.boxShadow = "none"; }}>
       <div>
         <div style={{
-          fontFamily: "var(--font-display)", fontWeight: 700, fontSize: 11.5,
+          fontFamily: "var(--font-display)", fontWeight: 700, fontSize: 11,
           letterSpacing: "0.14em", textTransform: "uppercase",
-          color: "var(--edison-teal)", marginBottom: 12
+          color: dark ? "var(--edison-teal)" : "var(--edison-teal-dark)", marginBottom: 8
         }}>{feature.eyebrow}</div>
         <div style={{
           fontFamily: "var(--font-display)", fontWeight: 700,
-          fontSize: 19, lineHeight: 1.25,
-          color: "#fff", marginBottom: 10
+          fontSize: compact ? 16 : 19, lineHeight: 1.25,
+          color: dark ? "#fff" : "var(--edison-navy)", marginBottom: compact ? 6 : 10
         }}>{feature.title}</div>
         <div style={{
-          fontFamily: "var(--font-body)", fontSize: 13.5, lineHeight: 1.55,
-          color: "rgba(255,255,255,.8)"
+          fontFamily: "var(--font-body)", fontSize: 13, lineHeight: 1.5,
+          color: dark ? "rgba(255,255,255,.78)" : "var(--edison-text-body)"
         }}>{feature.body}</div>
       </div>
       <div style={{
-        fontFamily: "var(--font-display)", fontWeight: 700, fontSize: 13.5,
-        color: "var(--edison-teal)",
+        fontFamily: "var(--font-display)", fontWeight: 700, fontSize: 13,
+        color: dark ? "var(--edison-teal)" : "var(--edison-teal-dark)",
         display: "inline-flex", alignItems: "center", gap: 6
       }}>
         {feature.cta.label} <span aria-hidden="true">→</span>
