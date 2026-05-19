@@ -742,12 +742,13 @@ export { AntiPatterns, CrossPillarCard, SubServiceNav, AuthorBylineBlock, Bullet
    ============================================================ */
 function BulletsWithImage({ eyebrow, title, bullets, image }) {
   return (
-    <section style={{ background: "#fff", padding: "88px 48px" }}>
-      <div style={{ maxWidth: 1200, margin: "0 auto",
+    <section className="ts-bullets-section" style={{ background: "#fff", padding: "88px 48px" }}>
+      <div className="ts-bullets-grid" style={{ maxWidth: 1200, margin: "0 auto",
                     display: "grid", gridTemplateColumns: "1fr 1.1fr", gap: 64,
                     alignItems: "center" }}>
-        <div style={{
+        <div className="ts-bullets-img" style={{
           width: "100%", aspectRatio: "5 / 4",
+          minHeight: 280,
           borderRadius: 18, overflow: "hidden",
           boxShadow: "var(--shadow-md)",
           backgroundImage: `url(${image})`,

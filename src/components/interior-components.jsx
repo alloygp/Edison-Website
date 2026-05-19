@@ -381,9 +381,10 @@ function TrustBadges({ eyebrow, title, sub, badges }) {
     <section style={{ background: "var(--bg-2, #F7F8FA)", padding: "80px 48px" }}>
       <div style={{ maxWidth: 1200, margin: "0 auto" }}>
         <SectionHeading eyebrow={eyebrow} title={title} sub={sub} align="center"/>
-        <div style={{
+        <div className="ic-trust-badges-grid" style={{
           marginTop: 48,
-          display: "flex", flexWrap: "wrap", justifyContent: "center",
+          display: "grid",
+          gridTemplateColumns: "repeat(auto-fill, minmax(160px, 1fr))",
           gap: 20, alignItems: "center"
         }}>
           {badges.map((b, i) => (
@@ -391,7 +392,7 @@ function TrustBadges({ eyebrow, title, sub, badges }) {
               background: "#fff",
               border: "1px solid var(--border-hairline)",
               borderRadius: 12,
-              width: 160, height: 100,
+              width: "100%", height: 100,
               display: "flex",
               alignItems: "center", justifyContent: "center",
               padding: "14px 18px",
@@ -486,8 +487,8 @@ function FAQ({ eyebrow, title, sub, items, background = "#fff" }) {
    ============================================================ */
 function ServiceArea({ eyebrow, title, body, cities, mapImg, mapEmbed = false }) {
   return (
-    <section style={{ background: "#fff", padding: "88px 48px" }}>
-      <div style={{ maxWidth: 1200, margin: "0 auto",
+    <section className="ic-service-area" style={{ background: "#fff", padding: "88px 48px" }}>
+      <div className="ic-service-area-grid" style={{ maxWidth: 1200, margin: "0 auto",
                     display: "grid", gridTemplateColumns: "1.1fr 1fr", gap: 56,
                     alignItems: "center" }}>
         <div>
@@ -511,6 +512,7 @@ function ServiceArea({ eyebrow, title, body, cities, mapImg, mapEmbed = false })
         </div>
         <div style={{
           width: "100%", aspectRatio: "4 / 3",
+          minHeight: 280,
           borderRadius: 16, overflow: "hidden",
           boxShadow: "var(--shadow-md)",
           position: "relative"

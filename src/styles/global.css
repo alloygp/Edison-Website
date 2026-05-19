@@ -34,3 +34,30 @@ h1, h2, h3, h4, h5, h6 {
 @media (max-width: 640px) {
   .ic-breadcrumb { padding: 12px 20px !important; }
 }
+
+/* ---- Mobile: TrustBadges 2-col grid ---- */
+@media (max-width: 640px) {
+  /* Force exactly 2 columns on mobile */
+  .ic-trust-badges-grid {
+    grid-template-columns: 1fr 1fr !important;
+  }
+}
+
+/* ---- Mobile: ServiceArea stack ---- */
+@media (max-width: 768px) {
+  .ic-service-area { padding: 56px 20px !important; }
+  .ic-service-area-grid {
+    grid-template-columns: 1fr !important;
+    gap: 32px !important;
+  }
+}
+
+/* ---- Mobile: BulletsWithImage stack ---- */
+@media (max-width: 768px) {
+  .ts-bullets-section { padding: 56px 20px !important; }
+  .ts-bullets-grid {
+    grid-template-columns: 1fr !important;
+    gap: 32px !important;
+  }
+  .ts-bullets-img { order: -1; }
+}
