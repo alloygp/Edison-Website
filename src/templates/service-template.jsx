@@ -187,8 +187,8 @@ function PillarPageB({ content }) {
       <Breadcrumb trail={content.crumb}/>
 
       {/* Split hero */}
-      <section style={{ background: "#fff", padding: "72px 48px 64px" }}>
-        <div style={{ maxWidth: 1200, margin: "0 auto",
+      <section className="svc-b-hero" style={{ background: "#fff", padding: "72px 48px 64px" }}>
+        <div className="svc-b-hero-grid" style={{ maxWidth: 1200, margin: "0 auto",
                       display: "grid", gridTemplateColumns: "1.15fr 1fr", gap: 56,
                       alignItems: "center" }}>
           <div>
@@ -211,7 +211,7 @@ function PillarPageB({ content }) {
               <InteriorButton variant="ghost" size="lg" href="/contact/">Schedule a Consultation</InteriorButton>
             </div>
           </div>
-          <div style={{
+          <div className="svc-b-hero-img" style={{
             width: "100%", aspectRatio: "5 / 4",
             borderRadius: 18, overflow: "hidden",
             backgroundImage: `url(${content.hero.image})`,

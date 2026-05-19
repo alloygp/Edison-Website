@@ -74,8 +74,8 @@ function SubServicePage({ content }) {
       </section>
 
       {/* Statutory Spec, quick-reference card row */}
-      <section style={{ background: "var(--edison-teal-pale)", padding: "48px" }}>
-        <div style={{
+      <section className="sub-svc-spec-section" style={{ background: "var(--edison-teal-pale)", padding: "48px" }}>
+        <div className="sub-svc-spec-grid" style={{
           maxWidth: 1080, margin: "0 auto",
           display: "grid", gridTemplateColumns: `repeat(${content.spec.length}, 1fr)`,
           gap: 16
@@ -176,13 +176,13 @@ function SubServicePage({ content }) {
 
       {/* Related, link back to parent + sibling sub-services */}
       {content.related && content.related.length > 0 && (
-        <section style={{ background: "#fff", padding: "72px 48px" }}>
+        <section className="sub-svc-related-section" style={{ background: "#fff", padding: "72px 48px" }}>
           <div style={{ maxWidth: 1200, margin: "0 auto" }}>
             <SectionHeading
               eyebrow="Related"
               title="Continue exploring"
             />
-            <div style={{
+            <div className="sub-svc-related-grid" style={{
               marginTop: 32,
               display: "grid",
               gridTemplateColumns: `repeat(${content.related.length}, 1fr)`,

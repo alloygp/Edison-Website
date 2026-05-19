@@ -181,7 +181,7 @@ function ContactPageA() {
           }}>Send us the basics about your community and we'll respond within one business day. Board members get a same-day reply; homeowners within 24 hours. Non-negotiable.</p>
 
           <div className="contact-a-layout" style={{ display: "grid", gridTemplateColumns: "1fr 1.3fr", gap: 56, alignItems: "start" }}>
-            <div style={{ display: "flex", flexDirection: "column", gap: 20 }}>
+            <div className="contact-a-sidebar" style={{ display: "flex", flexDirection: "column", gap: 20 }}>
               <div style={{
                 background: "var(--edison-teal-pale)", borderRadius: 12, padding: "26px 26px"
               }}>

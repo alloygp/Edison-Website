@@ -48,10 +48,10 @@ function EdisonTransitionPage() {
               <InteriorButton variant="ghost" size="lg" href="/contact/">Schedule a Consultation</InteriorButton>
             </div>
           </div>
-          <div style={{
+          <div className="transition-hero-img" style={{
             width: "100%", aspectRatio: "5 / 4",
             borderRadius: 18, overflow: "hidden",
-            backgroundImage: "url(assets/img-community-aerial.jpg)",
+            backgroundImage: "url(/assets/img-community-aerial.jpg)",
             backgroundSize: "cover", backgroundPosition: "center",
             boxShadow: "var(--shadow-lg)"
           }}/>
@@ -157,7 +157,7 @@ function MeetYourManagementPage() {
             letterSpacing: "0.16em", textTransform: "uppercase",
             color: "var(--edison-teal-dark)", marginBottom: 18
           }}>A signature Edison program</div>
-          <h1 style={{
+          <h1 className="meet-headline" style={{
             fontFamily: "var(--font-display)", fontWeight: 800,
             fontSize: 54, lineHeight: 1.06, letterSpacing: "-0.02em",
             color: "var(--edison-navy)", margin: "0 0 22px"
