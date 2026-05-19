@@ -347,14 +347,28 @@ h1, h2, h3, h4, h5, h6 {
   .blog-idx-hero {
     padding: 40px 20px 32px !important;
   }
+  /* Blog index: switch to flex-column so we can reorder sidebar above articles */
   .blog-idx-layout {
-    display: block !important;
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 32px !important;
+  }
+  /* Sidebar gets order: -1 so it floats above the article list */
+  .blog-idx-sidebar {
+    order: -1 !important;
+    position: static !important;
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: wrap !important;
+    gap: 12px !important;
+  }
+  /* Each sidebar widget becomes a compact chip row on mobile */
+  .blog-idx-sidebar > div {
+    flex: 1 1 calc(50% - 6px) !important;
+    min-width: 0 !important;
   }
   .blog-idx-row {
     display: block !important;
-  }
-  .blog-idx-sidebar {
-    display: none !important;
   }
 
   /* ── BLOG POST ────────────────────────────────────────────── */
@@ -364,8 +378,22 @@ h1, h2, h3, h4, h5, h6 {
   .blog-a-body {
     padding: 24px 20px 0 !important;
   }
+  /* Blog post: aside (TOC) is first in DOM, so block layout naturally puts it above article */
   .blog-a-layout {
     padding: 24px 20px 48px !important;
+  }
+  /* The inner grid wrapper — switch to block so TOC (first child) shows above article */
+  .blog-a-layout > div {
+    display: block !important;
+  }
+  /* TOC aside: remove sticky, compact it to a scrollable strip */
+  .blog-a-layout aside {
+    position: static !important;
+    margin-bottom: 28px !important;
+    padding: 18px 16px !important;
+    background: var(--edison-teal-pale) !important;
+    border-radius: 10px !important;
+    border-left: 3px solid var(--edison-teal) !important;
   }
   .blog-a-related {
     padding: 48px 20px !important;
