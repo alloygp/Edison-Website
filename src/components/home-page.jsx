@@ -1,5 +1,6 @@
 import React from 'react';
 import { BulbMark, FinalCTA, InteriorButton, InteriorEyebrow, SectionHeading, ServiceArea, TrustBadges } from '../components/interior-components';
+import { BulletsWithImage } from '../components/template-sections';
 
 /* ============================================================
    HOMEPAGE-SPECIFIC SECTIONS
