@@ -227,3 +227,79 @@ h1, h2, h3, h4, h5, h6 {
   }
   .ts-author-byline-cta { grid-column: 1 / -1 !important; }
 }
+
+/* ============================================================
+   PROPOSAL PAGE — mobile
+   Goal: form above the fold, no intro barrier, 1-col fields
+   ============================================================ */
+@media (max-width: 768px) {
+  /* Compress top padding so form is near top of viewport */
+  .rfp-section { padding: 24px 16px 48px !important; }
+
+  /* Shrink h1 to 2 lines max */
+  .rfp-intro-h1 {
+    font-size: 26px !important;
+    line-height: 1.2 !important;
+    margin-bottom: 20px !important;
+  }
+
+  /* Hide the long intro paragraph — form steps are self-explanatory */
+  .rfp-intro-p { display: none !important; }
+
+  /* Stack form above sidebar */
+  .rfp-layout {
+    grid-template-columns: 1fr !important;
+    gap: 24px !important;
+  }
+
+  /* Tighter form card padding on small screens */
+  .rfp-form {
+    padding: 22px 18px !important;
+    border-radius: 12px !important;
+  }
+
+  /* All form field grids collapse to 1 column */
+  .rfp-step-fields {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* Checkbox options stack to 1 column */
+  .rfp-check-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* Form footer: back button left, CTA takes remaining space */
+  .rfp-form-footer {
+    flex-wrap: wrap !important;
+    gap: 12px !important;
+  }
+  .rfp-form-footer > a,
+  .rfp-form-footer > button[type="submit"] {
+    flex: 1 !important;
+    justify-content: center !important;
+    text-align: center !important;
+  }
+
+  /* Sidebar: display as a compact strip, not full cards */
+  .rfp-sidebar {
+    flex-direction: row !important;
+    flex-wrap: wrap !important;
+    gap: 12px !important;
+  }
+  .rfp-sidebar > div {
+    flex: 1 1 calc(50% - 6px) !important;
+    min-width: 0 !important;
+    padding: 18px 16px !important;
+  }
+  /* Testimonial card spans full width */
+  .rfp-sidebar > div:last-child {
+    flex: 1 1 100% !important;
+  }
+}
+
+@media (max-width: 480px) {
+  /* On very small screens sidebar cards also stack */
+  .rfp-sidebar > div {
+    flex: 1 1 100% !important;
+  }
+}

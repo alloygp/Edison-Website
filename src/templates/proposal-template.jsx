@@ -107,25 +107,25 @@ function ProposalPageA() {
         { label: "Request a Proposal" }
       ]}/>
 
-      <section style={{ background: "#fff", padding: "72px 48px 96px" }}>
+      <section className="rfp-section" style={{ background: "#fff", padding: "72px 48px 96px" }}>
         <div style={{ maxWidth: 1200, margin: "0 auto" }}>
           <div style={{
             fontFamily: "var(--font-display)", fontWeight: 700, fontSize: 12.5,
             letterSpacing: "0.16em", textTransform: "uppercase",
             color: "var(--edison-teal-dark)", marginBottom: 18
           }}>Request a Proposal</div>
-          <h1 style={{
+          <h1 className="rfp-intro-h1" style={{
             fontFamily: "var(--font-display)", fontWeight: 800,
             fontSize: 52, lineHeight: 1.06, letterSpacing: "-0.02em",
             color: "var(--edison-navy)", margin: "0 0 22px", maxWidth: 880
           }}>Tell us about your community, we'll get back within one business day.</h1>
-          <p style={{
+          <p className="rfp-intro-p" style={{
             fontFamily: "var(--font-body)", fontSize: 18, lineHeight: 1.6,
             color: "var(--edison-text-body)", margin: "0 0 56px", maxWidth: 720
           }}>This intake takes about 3 minutes. We use it to deliver a written, fixed-scope proposal sized for your governing documents, capital plan, and homeowner count, not a generic template.</p>
 
-          <div style={{ display: "grid", gridTemplateColumns: "1.45fr 1fr", gap: 56, alignItems: "start" }}>
-            <form onSubmit={handleSubmit}
+          <div className="rfp-layout" style={{ display: "grid", gridTemplateColumns: "1.45fr 1fr", gap: 56, alignItems: "start" }}>
+            <form onSubmit={handleSubmit} className="rfp-form"
                   style={{
                     background: "#fff",
                     border: "1px solid var(--border-hairline)",
@@ -170,7 +170,7 @@ function ProposalPageA() {
               </div>
 
               {step === 1 && (
-                <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 16 }}>
+                <div className="rfp-step-fields" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 16 }}>
                   <div style={{ gridColumn: "1/-1" }}>
                     <label style={labelStyle}>Your Name</label>
                     <input style={inputStyle} value={form.name} onChange={(e) => set("name", e.target.value)} required/>
@@ -198,7 +198,7 @@ function ProposalPageA() {
               )}
 
               {step === 2 && (
-                <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 16 }}>
+                <div className="rfp-step-fields" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 16 }}>
                   <div style={{ gridColumn: "1/-1" }}>
                     <label style={labelStyle}>Community Name</label>
                     <input style={inputStyle} value={form.community} onChange={(e) => set("community", e.target.value)} required/>
@@ -228,7 +228,7 @@ function ProposalPageA() {
                 <div style={{ display: "flex", flexDirection: "column", gap: 18 }}>
                   <div>
                     <label style={labelStyle}>What's driving the conversation?</label>
-                    <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 8 }}>
+                    <div className="rfp-check-grid" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 8 }}>
                       {["Manager unresponsive", "Financial concerns", "Compliance / legal exposure",
                         "Switching companies", "Self-managed → professional", "New community / new board"].map(n => (
                         <label key={n} style={{
@@ -266,7 +266,7 @@ function ProposalPageA() {
                 </div>
               )}
 
-              <div style={{
+              <div className="rfp-form-footer" style={{
                 display: "flex", justifyContent: "space-between", alignItems: "center", gap: 16,
                 marginTop: 28, paddingTop: 22,
                 borderTop: "1px solid var(--border-hairline)"
@@ -290,7 +290,7 @@ function ProposalPageA() {
               )}
             </form>
 
-            <aside style={{ display: "flex", flexDirection: "column", gap: 22 }}>
+            <aside className="rfp-sidebar" style={{ display: "flex", flexDirection: "column", gap: 22 }}>
               <div style={{
                 background: "var(--edison-navy)", color: "#fff",
                 borderRadius: 14, padding: "26px 28px"
