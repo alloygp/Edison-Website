@@ -229,9 +229,11 @@ function MegaMenu({ columns, open }) {
 
 function MegaItem({ item }) {
   const [hover, setHover] = useState(false);
+  const active = typeof window !== "undefined" && window.location.pathname === item.href;
   return (
     <li>
       <a href={item.href}
+         aria-current={active ? "page" : undefined}
          onMouseEnter={() => setHover(true)}
          onMouseLeave={() => setHover(false)}
          style={{
@@ -239,14 +241,14 @@ function MegaItem({ item }) {
            padding: "10px 12px",
            borderRadius: 6,
            textDecoration: "none", borderBottom: 0,
-           background: hover ? "var(--edison-teal-pale)" : "transparent",
+           background: active || hover ? "var(--edison-teal-pale)" : "transparent",
            transition: "background 140ms var(--ease-standard)"
          }}>
         <div style={{
           fontFamily: "var(--font-display)",
           fontWeight: item.parent ? 700 : 600,
           fontSize: 14.5,
-          color: hover ? "var(--edison-teal-dark)" : "var(--edison-navy)",
+          color: active || hover ? "var(--edison-teal-dark)" : "var(--edison-navy)",
           marginBottom: item.desc ? 2 : 0,
           transition: "color 140ms"
         }}>{item.label}</div>
@@ -339,9 +341,11 @@ function SimpleDropdown({ items, open }) {
 
 function SimpleItem({ item }) {
   const [hover, setHover] = useState(false);
+  const active = typeof window !== "undefined" && window.location.pathname === item.href;
   return (
     <li>
       <a href={item.href}
+         aria-current={active ? "page" : undefined}
          onMouseEnter={() => setHover(true)}
          onMouseLeave={() => setHover(false)}
          style={{
@@ -349,9 +353,10 @@ function SimpleItem({ item }) {
            padding: "11px 14px",
            borderRadius: 6,
            fontFamily: "var(--font-display)", fontWeight: 600, fontSize: 14,
-           color: hover ? "var(--edison-teal-dark)" : "var(--edison-navy)",
+           color: active || hover ? "var(--edison-teal-dark)" : "var(--edison-navy)",
            textDecoration: "none", borderBottom: 0,
-           background: hover ? "var(--edison-teal-pale)" : "transparent",
+           background: active || hover ? "var(--edison-teal-pale)" : "transparent",
+           borderLeft: active ? "3px solid var(--edison-teal)" : "3px solid transparent",
            transition: "background 140ms var(--ease-standard), color 140ms"
          }}>
         {item.label}
@@ -479,6 +484,7 @@ function SiteHeader({
   const [mobileOpen, setMobileOpen] = useState(false);
   const [hidden, setHidden] = useState(false);
   const [atTop, setAtTop] = useState(true);
+  const [currentPath, setCurrentPath] = useState('');
   const closeTimer = useRef(null);
   const lastScrollY = useRef(0);
   const headerRef = useRef(null);
@@ -487,6 +493,10 @@ function SiteHeader({
     function onResize() { if (window.innerWidth > 1040) setMobileOpen(false); }
     window.addEventListener("resize", onResize);
     return () => window.removeEventListener("resize", onResize);
+  }, []);
+
+  useEffect(() => {
+    setCurrentPath(window.location.pathname);
   }, []);
 
   useEffect(() => {
@@ -604,6 +614,12 @@ function SiteHeader({
             {nav.map((item, i) => {
               const hasMenu = item.mega || (item.children && item.children.length);
               const isOpen = openIdx === i;
+              // Active if current path starts with item href (but "/" only matches exactly)
+              const isActive = item.href === "/"
+                ? currentPath === "/"
+                : currentPath.startsWith(item.href) ||
+                  // Edison Education also active when on /blog/
+                  (item.href === "/edison-education/" && currentPath.startsWith("/blog/"));
               return (
                 <div key={i} style={{ position: "static" /* mega menus need static parent for full-width centering */ }}
                      onMouseEnter={() => hasMenu && openMenu(i)}
@@ -616,14 +632,14 @@ function SiteHeader({
                          display: "inline-flex", alignItems: "center", gap: 6,
                          padding: "30px 14px",
                          fontFamily: "var(--font-display)", fontWeight: 600, fontSize: 14.5,
-                         color: isOpen ? "var(--edison-teal-dark)" : "var(--edison-navy)",
+                         color: isOpen || isActive ? "var(--edison-teal-dark)" : "var(--edison-navy)",
                          textDecoration: "none", borderBottom: 0,
                          transition: "color 140ms"
                        }}>
                       {item.label}
                       {hasMenu && (
                         <span style={{
-                          color: isOpen ? "var(--edison-teal-dark)" : "var(--edison-navy-50)",
+                          color: isOpen || isActive ? "var(--edison-teal-dark)" : "var(--edison-navy-50)",
                           transform: isOpen ? "rotate(180deg)" : "none",
                           transition: "transform 180ms",
                           display: "inline-flex"
@@ -632,6 +648,16 @@ function SiteHeader({
                         </span>
                       )}
                     </a>
+                    {/* Active page underline indicator */}
+                    {isActive && (
+                      <span style={{
+                        position: "absolute", bottom: 0, left: "50%",
+                        transform: "translateX(-50%)",
+                        width: "calc(100% - 28px)", height: 3,
+                        background: "var(--edison-teal)",
+                        borderRadius: "2px 2px 0 0"
+                      }}/>
+                    )}
                     {/* Simple dropdown always rendered for animation */}
                     {item.children && !item.mega && (
                       <SimpleDropdown items={item.children} open={isOpen}/>
