@@ -10,6 +10,8 @@ import { PullQuote } from '../components/template-sections';
 function ProposalPageA() {
   const [step, setStep] = useRfpState(1);
   const [submitted, setSubmitted] = useRfpState(false);
+  const [loading, setLoading] = useRfpState(false);
+  const [error, setError] = useRfpState('');
   const [form, setForm] = useRfpState({
     name: "", role: "Board President", phone: "", email: "",
     community: "", type: "HOA", units: "", current: "",
@@ -21,6 +23,39 @@ function ProposalPageA() {
       ? form.needs.filter(x => x !== n)
       : [...form.needs, n];
     set("needs", next);
+  }
+
+  async function handleSubmit(e) {
+    e.preventDefault();
+    if (step < 3) { setStep(step + 1); return; }
+    setLoading(true);
+    setError('');
+    try {
+      const fd = new FormData();
+      fd.append('name', form.name);
+      fd.append('email', form.email);
+      fd.append('company', form.community || '');
+      fd.append('phone', form.phone || '');
+      const goal = [
+        `Role: ${form.role}`,
+        `Type: ${form.type}`,
+        form.units ? `Units: ${form.units}` : '',
+        form.current ? `Current company: ${form.current}` : '',
+        form.needs.length ? `Driving factors: ${form.needs.join(', ')}` : '',
+        `Timeline: ${form.timeline}`,
+        form.notes ? `Notes: ${form.notes}` : '',
+      ].filter(Boolean).join('\n');
+      fd.append('goal', goal);
+      fd.append('source', 'Request a Proposal form');
+      const res = await fetch('/api/lead', { method: 'POST', body: fd });
+      const json = await res.json();
+      if (!res.ok) throw new Error(json.error || 'Something went wrong.');
+      setSubmitted(true);
+    } catch (err) {
+      setError(err.message || 'Something went wrong. Please try again.');
+    } finally {
+      setLoading(false);
+    }
   }
 
   const inputStyle = {
@@ -89,7 +124,7 @@ function ProposalPageA() {
           }}>This intake takes about 3 minutes. We use it to deliver a written, fixed-scope proposal sized for your governing documents, capital plan, and homeowner count — not a generic template.</p>
 
           <div style={{ display: "grid", gridTemplateColumns: "1.45fr 1fr", gap: 56, alignItems: "start" }}>
-            <form onSubmit={(e) => { e.preventDefault(); if (step < 3) setStep(step + 1); else setSubmitted(true); }}
+            <form onSubmit={handleSubmit}
                   style={{
                     background: "#fff",
                     border: "1px solid var(--border-hairline)",
@@ -238,10 +273,15 @@ function ProposalPageA() {
                             fontFamily: "var(--font-display)", fontWeight: 700, fontSize: 14
                           }}>← Back</button>
                 ) : <div/>}
-                <InteriorButton variant="primary" size="lg" type="submit">
-                  {step < 3 ? "Continue →" : "Submit request"}
+                <InteriorButton variant="primary" size="lg" type="submit" disabled={loading}>
+                  {step < 3 ? "Continue →" : loading ? "Sending…" : "Submit request"}
                 </InteriorButton>
               </div>
+              {error && (
+                <div style={{ marginTop: 12, color: "#c0392b", fontSize: 14, padding: "10px 14px", background: "#fdf2f2", borderRadius: 8, border: "1px solid #f5c6c6" }}>
+                  {error}
+                </div>
+              )}
             </form>
 
             <aside style={{ display: "flex", flexDirection: "column", gap: 22 }}>

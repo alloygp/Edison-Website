@@ -8,7 +8,37 @@ function ContactForm({ compact = false }) {
     email: "", phone: "", notes: ""
   });
   const [submitted, setSubmitted] = useContactState(false);
+  const [loading, setLoading] = useContactState(false);
+  const [error, setError] = useContactState('');
   function set(k, v) { setForm({ ...form, [k]: v }); }
+
+  async function handleSubmit(e) {
+    e.preventDefault();
+    setLoading(true);
+    setError('');
+    try {
+      const fd = new FormData();
+      fd.append('name', form.name);
+      fd.append('email', form.email);
+      const message = [
+        form.role ? `Role: ${form.role}` : '',
+        form.community ? `Community: ${form.community}` : '',
+        form.units ? `Units: ${form.units}` : '',
+        form.phone ? `Phone: ${form.phone}` : '',
+        form.notes ? `\n${form.notes}` : '',
+      ].filter(Boolean).join('\n');
+      fd.append('message', message || '(no message)');
+      fd.append('source', 'Contact page form');
+      const res = await fetch('/api/contact', { method: 'POST', body: fd });
+      const json = await res.json();
+      if (!res.ok) throw new Error(json.error || 'Something went wrong.');
+      setSubmitted(true);
+    } catch (err) {
+      setError(err.message || 'Something went wrong. Please try again.');
+    } finally {
+      setLoading(false);
+    }
+  }
   const inputStyle = {
     fontFamily: "var(--font-body)", fontSize: 14.5,
     padding: "12px 14px", borderRadius: 8,
@@ -48,7 +78,7 @@ function ContactForm({ compact = false }) {
   }
 
   return (
-    <form onSubmit={(e) => { e.preventDefault(); setSubmitted(true); }}
+    <form onSubmit={handleSubmit}
           style={{
             background: "#fff",
             border: "1px solid var(--border-hairline)",
@@ -101,8 +131,15 @@ function ContactForm({ compact = false }) {
         <textarea rows={4} style={{ ...inputStyle, resize: "vertical" }}
                   value={form.notes} onChange={(e) => set("notes", e.target.value)}/>
       </div>
+      {error && (
+        <div style={{ gridColumn: "1/-1", color: "#c0392b", fontSize: 14, padding: "10px 14px", background: "#fdf2f2", borderRadius: 8, border: "1px solid #f5c6c6" }}>
+          {error}
+        </div>
+      )}
       <div style={{ gridColumn: "1/-1", marginTop: 4 }}>
-        <InteriorButton variant="primary" size="lg" type="submit">Send Message</InteriorButton>
+        <InteriorButton variant="primary" size="lg" type="submit" disabled={loading}>
+          {loading ? 'Sending…' : 'Send Message'}
+        </InteriorButton>
       </div>
     </form>
   );
