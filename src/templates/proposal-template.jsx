@@ -15,7 +15,7 @@ function ProposalPageA() {
   const [form, setForm] = useRfpState({
     name: "", role: "Board President", phone: "", email: "",
     community: "", type: "HOA", units: "", current: "",
-    needs: [], notes: "", timeline: "Just exploring"
+    needs: [], notes: "", timeline: "Just exploring", website: ""
   });
   function set(k, v) { setForm({ ...form, [k]: v }); }
   function toggleNeed(n) {
@@ -47,6 +47,7 @@ function ProposalPageA() {
       ].filter(Boolean).join('\n');
       fd.append('goal', goal);
       fd.append('source', 'Request a Proposal form');
+      fd.append('website', form.website || '');
       const res = await fetch('/api/lead', { method: 'POST', body: fd });
       const json = await res.json();
       if (!res.ok) throw new Error(json.error || 'Something went wrong.');
@@ -131,6 +132,11 @@ function ProposalPageA() {
                     borderRadius: 14, padding: 36,
                     boxShadow: "var(--shadow-sm)"
                   }}>
+              {/* Honeypot — hidden from humans, bots fill it in */}
+              <div style={{ position: "absolute", left: "-9999px", opacity: 0, height: 0, overflow: "hidden" }} aria-hidden="true">
+                <label>Leave this empty</label>
+                <input type="text" name="website" value={form.website} onChange={(e) => set("website", e.target.value)} tabIndex={-1} autoComplete="off"/>
+              </div>
               {/* Step indicator */}
               <div style={{
                 display: "flex", alignItems: "center", gap: 12,

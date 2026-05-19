@@ -5,7 +5,7 @@ import { Breadcrumb, FinalCTA, InteriorButton, SectionHeading } from '../compone
 function ContactForm({ compact = false }) {
   const [form, setForm] = useContactState({
     name: "", role: "Board President", community: "", units: "",
-    email: "", phone: "", notes: ""
+    email: "", phone: "", notes: "", website: ""
   });
   const [submitted, setSubmitted] = useContactState(false);
   const [loading, setLoading] = useContactState(false);
@@ -29,6 +29,7 @@ function ContactForm({ compact = false }) {
       ].filter(Boolean).join('\n');
       fd.append('message', message || '(no message)');
       fd.append('source', 'Contact page form');
+      fd.append('website', form.website || '');
       const res = await fetch('/api/contact', { method: 'POST', body: fd });
       const json = await res.json();
       if (!res.ok) throw new Error(json.error || 'Something went wrong.');
@@ -86,6 +87,11 @@ function ContactForm({ compact = false }) {
             boxShadow: "var(--shadow-sm)",
             display: "grid", gridTemplateColumns: "1fr 1fr", gap: 16
           }}>
+      {/* Honeypot — hidden from humans, bots fill it in */}
+      <div style={{ position: "absolute", left: "-9999px", opacity: 0, height: 0, overflow: "hidden" }} aria-hidden="true">
+        <label>Leave this empty</label>
+        <input type="text" name="website" value={form.website} onChange={(e) => set("website", e.target.value)} tabIndex={-1} autoComplete="off"/>
+      </div>
       <div style={{ gridColumn: "1/-1" }}>
         <label style={labelStyle}>Your Name</label>
         <input style={inputStyle} value={form.name} onChange={(e) => set("name", e.target.value)} required/>

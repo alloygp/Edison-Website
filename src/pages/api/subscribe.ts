@@ -19,6 +19,12 @@ if (EMAIL_CONFIG.mailchimp.enabled) {
 export const POST: APIRoute = async ({ request }) => {
   try {
     const data      = await request.formData();
+
+    // Honeypot: bots fill hidden fields, humans don't
+    if (data.get('website')?.toString()) {
+      return new Response(JSON.stringify({ success: true }), { status: 200 });
+    }
+
     const email     = data.get('email')?.toString().trim()     ?? '';
     const firstName = data.get('firstName')?.toString().trim() ?? '';
 
