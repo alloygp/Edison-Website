@@ -1,4 +1,5 @@
 import React, { useState, useRef, useEffect } from 'react';
+import { createPortal } from 'react-dom';
 
 /* ============================================================
    Edison, Site Header v2 (Astro-ready React island)
@@ -38,7 +39,7 @@ const DEFAULT_NAV = [
         feature: {
           eyebrow: "Featured",
           title: "Switching companies?",
-          body: "The Edison Transition Experience handles onboarding, vendor review, and records digitization in 60–90 days.",
+          body: "The Edison Transition Experience handles onboarding, vendor review, and records digitization in 60-90 days.",
           cta: { label: "Learn more", href: "/about/the-edison-transition/" }
         }
       }
@@ -49,7 +50,7 @@ const DEFAULT_NAV = [
     href: "/solutions/",
     children: [
       { label: "Switch HOA Management Company", href: "/solutions/switch-hoa-management-company/" },
-      { label: "Self-Managed → Professional", href: "/solutions/self-managed-hoa/" },
+      { label: "Self-Managed to Professional", href: "/solutions/self-managed-hoa/" },
       { label: "Modern HOA Management", href: "/solutions/modern-hoa-management/" }
     ]
   },
@@ -120,7 +121,7 @@ const DEFAULT_NAV = [
 
 const DEFAULT_UTILITY = {
   phone: { label: "(407) 317-5252", href: "tel:4073175252" },
-  hours: "M–F 9am–5pm",
+  hours: "M-F 9am-5pm",
   portals: [
     { label: "Estoppel Request", href: "https://www.homewisedocs.com" },
     { label: "VIVE Login", href: "https://app.getvived.com" },
@@ -206,7 +207,7 @@ function FeatureCard({ feature, compact = false }) {
         color: dark ? "var(--edison-teal)" : "var(--edison-teal-dark)",
         display: "inline-flex", alignItems: "center", gap: 6
       }}>
-        {feature.cta.label} <span aria-hidden="true">→</span>
+        {feature.cta.label} <span aria-hidden="true">&#x2192;</span>
       </div>
     </a>
   );
@@ -436,9 +437,12 @@ function SiteHeader({
   const [hidden, setHidden] = useState(false);
   const [atTop, setAtTop] = useState(true);
   const [currentPath, setCurrentPath] = useState('');
+  const [mounted, setMounted] = useState(false);
   const closeTimer = useRef(null);
   const lastScrollY = useRef(0);
   const headerRef = useRef(null);
+
+  useEffect(() => { setMounted(true); }, []);
 
   useEffect(() => {
     function onResize() { if (window.innerWidth > 1040) setMobileOpen(false); }
@@ -472,17 +476,82 @@ function SiteHeader({
   function openMenu(i) { clearTimeout(closeTimer.current); setOpenIdx(i); }
   function scheduleClose() { clearTimeout(closeTimer.current); closeTimer.current = setTimeout(() => setOpenIdx(-1), 140); }
 
+  /* Mobile drawer rendered via portal so it escapes the header stacking context */
+  const mobileDrawer = mounted && mobileOpen ? createPortal(
+    <div style={{
+      position: "fixed", inset: 0, zIndex: 9999,
+      background: "rgba(15,29,51,.55)", backdropFilter: "blur(2px)"
+    }} onClick={() => setMobileOpen(false)}>
+      <div style={{
+        position: "absolute", top: 0, right: 0, bottom: 0,
+        width: "min(92vw, 380px)", background: "#fff", overflowY: "auto",
+        boxShadow: "var(--shadow-lg)"
+      }} onClick={(e) => e.stopPropagation()}>
+        <div style={{
+          padding: "18px 18px", display: "flex", justifyContent: "space-between", alignItems: "center",
+          borderBottom: "1px solid var(--border-hairline)",
+          position: "sticky", top: 0, background: "#fff", zIndex: 1
+        }}>
+          <img src={logoSrc} alt={logoAlt} style={{ height: 32 }}/>
+          <button onClick={() => setMobileOpen(false)} aria-label="Close menu" style={{
+            background: "transparent", border: 0, padding: 6, color: "var(--edison-navy)", cursor: "pointer"
+          }}>
+            <IconClose/>
+          </button>
+        </div>
+        <ul style={{ listStyle: "none", padding: 0, margin: 0 }}>
+          {nav.map((item, i) => <MobileItem key={i} item={item}/>)}
+        </ul>
+        <div style={{ padding: "20px" }}>
+          <a href={cta.href} style={{
+            display: "flex", justifyContent: "center", alignItems: "center", gap: 8,
+            padding: "14px 22px", background: "var(--edison-teal)", color: "var(--edison-navy)",
+            fontFamily: "var(--font-display)", fontWeight: 700, fontSize: 14.5,
+            borderRadius: 8, border: 0, textDecoration: "none", borderBottom: 0
+          }}>
+            {cta.label}
+          </a>
+        </div>
+        <div style={{
+          padding: "8px 20px 28px", borderTop: "1px solid var(--border-hairline)", marginTop: 8,
+          fontFamily: "var(--font-body)", fontSize: 13.5, color: "var(--edison-text-body)"
+        }}>
+          <div style={{ marginBottom: 10 }}>
+            <a href={utility.phone.href} style={{
+              color: "var(--edison-navy)", textDecoration: "none", borderBottom: 0,
+              fontWeight: 700, display: "inline-flex", alignItems: "center", gap: 8
+            }}>
+              <IconPhone/> {utility.phone.label}
+            </a>
+            <div style={{ color: "var(--edison-gray-mid)", marginTop: 2 }}>{utility.hours}</div>
+          </div>
+          <ul style={{ listStyle: "none", padding: 0, margin: 0, display: "flex", flexDirection: "column", gap: 8 }}>
+            {utility.portals.map((p, i) => (
+              <li key={i}>
+                <a href={p.href} target="_blank" rel="noopener noreferrer" style={{
+                  color: "var(--edison-teal-dark)", textDecoration: "none", borderBottom: 0, fontWeight: 600
+                }}>{p.label} &#x2197;</a>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
+    </div>,
+    document.body
+  ) : null;
+
   return (
     <>
-      <div aria-hidden="true" style={{ height: "var(--site-header-height, 122px)" }}/>
+      {/* Spacer pushes page content below fixed header */}
+      <div aria-hidden="true" className="edison-header-spacer"/>
+
       <header ref={headerRef} style={{
         position: "fixed", top: 0, left: 0, right: 0, zIndex: 60,
         transform: hidden ? "translateY(-100%)" : "translateY(0)",
-        transition: "transform 320ms cubic-bezier(.4,0,.2,1)",
-        willChange: "transform"
+        transition: "transform 320ms cubic-bezier(.4,0,.2,1)"
       }}>
-        {/* Utility bar */}
-        <div style={{
+        {/* Utility bar — hidden on mobile via CSS */}
+        <div className="edison-utility-bar" style={{
           background: "var(--edison-navy)", color: "rgba(255,255,255,.85)",
           fontFamily: "var(--font-body)", fontSize: 13,
           borderBottom: "1px solid rgba(255,255,255,.08)"
@@ -518,7 +587,7 @@ function SiteHeader({
           </div>
         </div>
 
-        {/* Main nav row, glassmorphism on scroll */}
+        {/* Main nav row */}
         <div style={{
           background: atTop ? "#fff" : "rgba(255,255,255,.82)",
           backdropFilter: atTop ? "none" : "blur(20px) saturate(180%)",
@@ -529,11 +598,11 @@ function SiteHeader({
           position: "relative"
         }}>
           <div style={{
-            maxWidth: 1280, margin: "0 auto", padding: "0 32px", height: 84,
-            display: "flex", alignItems: "center", gap: 28
+            maxWidth: 1280, margin: "0 auto", padding: "0 24px", height: 72,
+            display: "flex", alignItems: "center", gap: 20
           }}>
             <a href={homeHref} aria-label={logoAlt} style={{ display: "block", borderBottom: 0, flexShrink: 0 }}>
-              <img src={logoSrc} alt={logoAlt} style={{ height: 44, width: "auto", display: "block" }}/>
+              <img src={logoSrc} alt={logoAlt} style={{ height: 40, width: "auto", display: "block" }}/>
             </a>
 
             <nav aria-label="Primary" className="edison-desktop-nav"
@@ -556,7 +625,7 @@ function SiteHeader({
                          aria-expanded={hasMenu ? isOpen : undefined}
                          style={{
                            display: "inline-flex", alignItems: "center", gap: 6,
-                           padding: "30px 14px",
+                           padding: "26px 14px",
                            fontFamily: "var(--font-display)", fontWeight: 600, fontSize: 14.5,
                            color: isOpen || isActive || isHovered ? "var(--edison-teal-dark)" : "var(--edison-navy)",
                            textDecoration: "none", borderBottom: 0,
@@ -585,85 +654,36 @@ function SiteHeader({
               <NavCtaButton href={cta.href} label={cta.label}/>
             </div>
 
+            {/* Hamburger — marginLeft:auto pushes it to the far right on mobile */}
             <button className="edison-mobile-trigger" onClick={() => setMobileOpen(true)}
                     aria-label="Open menu" style={{
                       display: "none", background: "transparent", border: 0,
-                      color: "var(--edison-navy)", cursor: "pointer", padding: 8
+                      color: "var(--edison-navy)", cursor: "pointer", padding: 8,
+                      marginLeft: "auto"
                     }}>
               <IconMenu/>
             </button>
           </div>
         </div>
-
-        {/* Mobile drawer */}
-        {mobileOpen && (
-          <div style={{
-            position: "fixed", inset: 0, zIndex: 80,
-            background: "rgba(15,29,51,.55)", backdropFilter: "blur(2px)"
-          }} onClick={() => setMobileOpen(false)}>
-            <div style={{
-              position: "absolute", top: 0, right: 0, bottom: 0,
-              width: "min(92vw, 380px)", background: "#fff", overflow: "auto",
-              boxShadow: "var(--shadow-lg)"
-            }} onClick={(e) => e.stopPropagation()}>
-              <div style={{
-                padding: "18px 18px", display: "flex", justifyContent: "space-between", alignItems: "center",
-                borderBottom: "1px solid var(--border-hairline)"
-              }}>
-                <img src={logoSrc} alt={logoAlt} style={{ height: 32 }}/>
-                <button onClick={() => setMobileOpen(false)} aria-label="Close menu" style={{
-                  background: "transparent", border: 0, padding: 6, color: "var(--edison-navy)", cursor: "pointer"
-                }}>
-                  <IconClose/>
-                </button>
-              </div>
-              <ul style={{ listStyle: "none", padding: 0, margin: 0 }}>
-                {nav.map((item, i) => <MobileItem key={i} item={item}/>)}
-              </ul>
-              <div style={{ padding: "20px" }}>
-                <a href={cta.href} style={{
-                  display: "flex", justifyContent: "center", alignItems: "center", gap: 8,
-                  padding: "14px 22px", background: "var(--edison-teal)", color: "var(--edison-navy)",
-                  fontFamily: "var(--font-display)", fontWeight: 700, fontSize: 14.5,
-                  borderRadius: 8, border: 0, textDecoration: "none", borderBottom: 0
-                }}>
-                  {cta.label}
-                </a>
-              </div>
-              <div style={{
-                padding: "8px 20px 20px", borderTop: "1px solid var(--border-hairline)", marginTop: 8,
-                fontFamily: "var(--font-body)", fontSize: 13.5, color: "var(--edison-text-body)"
-              }}>
-                <div style={{ marginBottom: 10 }}>
-                  <a href={utility.phone.href} style={{
-                    color: "var(--edison-navy)", textDecoration: "none", borderBottom: 0,
-                    fontWeight: 700, display: "inline-flex", alignItems: "center", gap: 8
-                  }}>
-                    <IconPhone/> {utility.phone.label}
-                  </a>
-                  <div style={{ color: "var(--edison-gray-mid)", marginTop: 2 }}>{utility.hours}</div>
-                </div>
-                <ul style={{ listStyle: "none", padding: 0, margin: 0, display: "flex", flexDirection: "column", gap: 8 }}>
-                  {utility.portals.map((p, i) => (
-                    <li key={i}>
-                      <a href={p.href} target="_blank" rel="noopener noreferrer" style={{
-                        color: "var(--edison-teal-dark)", textDecoration: "none", borderBottom: 0, fontWeight: 600
-                      }}>{p.label} ↗</a>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </div>
-          </div>
-        )}
-
-        <style>{`
-          @media (max-width: 1040px) {
-            .edison-desktop-nav, .edison-desktop-cta { display: none !important; }
-            .edison-mobile-trigger { display: inline-flex !important; }
-          }
-        `}</style>
       </header>
+
+      {/* Mobile drawer portal — renders outside header, no stacking context issues */}
+      {mobileDrawer}
+
+      <style>{`
+        /* Desktop: full header = utility bar (~38px) + nav row (72px) = ~110px */
+        .edison-header-spacer { height: 110px; }
+
+        @media (max-width: 1040px) {
+          /* Hide desktop nav + CTA, show hamburger */
+          .edison-desktop-nav, .edison-desktop-cta { display: none !important; }
+          .edison-mobile-trigger { display: inline-flex !important; }
+          /* Hide utility bar — phone/hours/portals are in the mobile drawer */
+          .edison-utility-bar { display: none !important; }
+          /* Spacer = nav row only (72px) */
+          .edison-header-spacer { height: 72px !important; }
+        }
+      `}</style>
     </>
   );
 }

@@ -97,7 +97,7 @@ function BulbMark({ size = 22, color = "currentColor", strokeWidth = 1.8 }) {
    ============================================================ */
 function Breadcrumb({ trail }) {
   return (
-    <nav aria-label="Breadcrumb" style={{
+    <nav aria-label="Breadcrumb" className="ic-breadcrumb" style={{
       background: "var(--edison-teal-pale)",
       borderBottom: "1px solid var(--border-hairline)",
       padding: "14px 48px"

@@ -29,3 +29,8 @@ h1, h2, h3, h4, h5, h6 {
   color: var(--fg-1);
   margin-top: 0;
 }
+
+/* ---- Mobile: interior component overrides ---- */
+@media (max-width: 640px) {
+  .ic-breadcrumb { padding: 12px 20px !important; }
+}

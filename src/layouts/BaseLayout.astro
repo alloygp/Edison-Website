@@ -111,7 +111,7 @@ const gaMeasurementId = import.meta.env.GA_MEASUREMENT_ID;
     )}
 
     <!-- Google Analytics: deferred until after page paint to avoid forced reflow -->
-    {gaMeasurementId && (
+    {gaMeasurementId && import.meta.env.PUBLIC_ENV === 'production' && (
       <script is:inline define:vars={{ gaMeasurementId }}>
         window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
@@ -123,6 +123,14 @@ const gaMeasurementId = import.meta.env.GA_MEASUREMENT_ID;
           document.head.appendChild(s);
         });
       </script>
+    )}
+
+    <!-- WhatConverts: production only -->
+    {import.meta.env.PUBLIC_ENV === 'production' && (
+      <>
+        <script is:inline>{`var $wc_load=function(a){return JSON.parse(JSON.stringify(a))},$wc_leads=$wc_leads||{doc:{url:$wc_load(document.URL),ref:$wc_load(document.referrer),search:$wc_load(location.search),hash:$wc_load(location.hash)}};`}</script>
+        <script is:inline src="//s.ksrndkehqnwntyxlhgto.com/160125.js"></script>
+      </>
     )}
   </head>
   <body>
