@@ -14,37 +14,70 @@ function InteriorEyebrow({ children, color = "var(--edison-teal-dark)" }) {
 }
 
 function InteriorButton({ variant = "primary", size = "md", children, href, type, onClick }) {
+  const [hovered, setHovered] = useState(false);
+
   const sizes = {
-    sm: { padding: "9px 16px", fontSize: 13 },
+    sm: { padding: "9px 16px",  fontSize: 13 },
     md: { padding: "13px 22px", fontSize: 14 },
     lg: { padding: "16px 28px", fontSize: 15 }
   }[size];
-  const variants = {
-    primary:    { background: "var(--edison-teal)", color: "var(--edison-navy)", border: "0" },
-    secondary:  { background: "var(--edison-navy)", color: "#fff", border: "0" },
-    ghost:      { background: "transparent", color: "var(--edison-navy)", border: "1.5px solid var(--edison-navy)" },
-    onDark:     { background: "var(--edison-teal)", color: "var(--edison-navy)", border: "0" },
-    ghostOnDark:{ background: "transparent", color: "#fff", border: "1.5px solid rgba(255,255,255,.5)" }
+
+  const base = {
+    primary:     { background: "var(--edison-teal)",        color: "var(--edison-navy)", border: "0" },
+    secondary:   { background: "var(--edison-navy)",        color: "#fff",               border: "0" },
+    ghost:       { background: "transparent",               color: "var(--edison-navy)", border: "1.5px solid var(--edison-navy)" },
+    onDark:      { background: "var(--edison-teal)",        color: "var(--edison-navy)", border: "0" },
+    ghostOnDark: { background: "transparent",               color: "#fff",               border: "1.5px solid rgba(255,255,255,.5)" }
   }[variant];
-  const baseStyle = {
+
+  const hover = {
+    primary:     { background: "var(--edison-teal-light)", boxShadow: "0 4px 20px rgba(60,200,200,.38)", transform: "translateY(-1px)" },
+    secondary:   { background: "#263b62",                  boxShadow: "0 4px 20px rgba(27,42,74,.30)",   transform: "translateY(-1px)" },
+    ghost:       { background: "var(--edison-navy)",        color: "#fff",                                transform: "translateY(-1px)" },
+    onDark:      { background: "var(--edison-teal-light)", boxShadow: "0 4px 20px rgba(60,200,200,.38)", transform: "translateY(-1px)" },
+    ghostOnDark: { background: "rgba(255,255,255,.14)",    border: "1.5px solid rgba(255,255,255,.85)",  transform: "translateY(-1px)" }
+  }[variant];
+
+  const style = {
     fontFamily: "var(--font-display)", fontWeight: 700, textDecoration: "none",
     borderRadius: 8, cursor: "pointer", borderBottom: 0,
-    letterSpacing: "0.01em", transition: "all 180ms cubic-bezier(.2,0,.1,1)",
+    letterSpacing: "0.01em",
+    transition: "background 200ms ease, box-shadow 200ms ease, transform 180ms ease, color 160ms ease, border-color 160ms ease",
     display: "inline-flex", alignItems: "center", gap: 8,
     appearance: "none", lineHeight: 1.2,
-    ...sizes, ...variants
+    position: "relative", overflow: "hidden",
+    ...sizes, ...base, ...(hovered ? hover : {})
   };
-  // Render as <button> when type is passed (form submit/reset/button)
-  // or when there's an onClick with no href. Otherwise render as <a>.
+
+  /* Shine span — sweeps across on hover */
+  const shine = (
+    <span aria-hidden="true" style={{
+      position: "absolute", top: 0, bottom: 0,
+      left: hovered ? "110%" : "-60%",
+      width: "45%",
+      background: "linear-gradient(105deg, transparent, rgba(255,255,255,.22) 50%, transparent)",
+      transform: "skewX(-18deg)",
+      transition: hovered ? "left 480ms cubic-bezier(.4,0,.2,1)" : "none",
+      pointerEvents: "none"
+    }}/>
+  );
+
+  const handlers = {
+    onMouseEnter: () => setHovered(true),
+    onMouseLeave: () => setHovered(false)
+  };
+
   if (type || (onClick && !href)) {
     return (
-      <button type={type || "button"} onClick={onClick} style={baseStyle}>
-        {children}
+      <button type={type || "button"} onClick={onClick} style={style} {...handlers}>
+        {children}{shine}
       </button>
     );
   }
   return (
-    <a href={href || "#"} onClick={onClick} style={baseStyle}>{children}</a>
+    <a href={href || "#"} onClick={onClick} style={style} {...handlers}>
+      {children}{shine}
+    </a>
   );
 }
 

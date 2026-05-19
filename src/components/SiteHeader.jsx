@@ -405,6 +405,38 @@ function MobileItem({ item, depth = 0 }) {
   );
 }
 
+/* ---------- Nav CTA button with shine hover ---------- */
+function NavCtaButton({ href, label }) {
+  const [hovered, setHovered] = useState(false);
+  return (
+    <a href={href} style={{
+      display: "inline-flex", alignItems: "center", gap: 8,
+      padding: "13px 22px",
+      background: hovered ? "var(--edison-teal-light)" : "var(--edison-teal)",
+      color: "var(--edison-navy)",
+      fontFamily: "var(--font-display)", fontWeight: 700, fontSize: 14,
+      borderRadius: 8, border: 0, textDecoration: "none", borderBottom: 0,
+      position: "relative", overflow: "hidden",
+      boxShadow: hovered ? "0 4px 20px rgba(60,200,200,.38)" : "none",
+      transform: hovered ? "translateY(-1px)" : "none",
+      transition: "background 200ms ease, box-shadow 200ms ease, transform 180ms ease"
+    }}
+      onMouseEnter={() => setHovered(true)}
+      onMouseLeave={() => setHovered(false)}>
+      {label}
+      <span aria-hidden="true" style={{
+        position: "absolute", top: 0, bottom: 0,
+        left: hovered ? "110%" : "-60%",
+        width: "45%",
+        background: "linear-gradient(105deg, transparent, rgba(255,255,255,.22) 50%, transparent)",
+        transform: "skewX(-18deg)",
+        transition: hovered ? "left 480ms cubic-bezier(.4,0,.2,1)" : "none",
+        pointerEvents: "none"
+      }}/>
+    </a>
+  );
+}
+
 /* ============================================================
    SiteHeader
    ============================================================ */
@@ -588,18 +620,7 @@ function SiteHeader({
           </nav>
 
           <div className="edison-desktop-cta" style={{ flexShrink: 0 }}>
-            <a href={cta.href} style={{
-              display: "inline-flex", alignItems: "center", gap: 8,
-              padding: "13px 22px",
-              background: "var(--edison-teal)", color: "var(--edison-navy)",
-              fontFamily: "var(--font-display)", fontWeight: 700, fontSize: 14,
-              borderRadius: 8, border: 0, textDecoration: "none",
-              transition: "filter 140ms, transform 140ms"
-            }}
-              onMouseEnter={(e) => { e.currentTarget.style.filter = "brightness(1.05)"; e.currentTarget.style.transform = "translateY(-1px)"; }}
-              onMouseLeave={(e) => { e.currentTarget.style.filter = ""; e.currentTarget.style.transform = ""; }}>
-              {cta.label}
-            </a>
+            <NavCtaButton href={cta.href} label={cta.label}/>
           </div>
 
           <button className="edison-mobile-trigger"
