@@ -20,11 +20,13 @@ function EducationHubA({ content }) {
         padding: "88px 48px 64px"
       }}>
         <div style={{ maxWidth: 980, margin: "0 auto", textAlign: "center" }}>
-          <img
-            src="/assets/logo-education-mark.svg"
-            alt="Edison Education"
-            style={{ height: 96, width: "auto", marginBottom: 24, display: "block", margin: "0 auto 24px" }}
-          />
+          <div style={{ marginBottom: 28 }}>
+            <img
+              src="/assets/Edison-Education-Full-Color.svg"
+              alt="Edison Education"
+              style={{ height: 80, width: "auto", display: "block", margin: "0 auto" }}
+            />
+          </div>
           <div style={{
             fontFamily: "var(--font-display)", fontWeight: 700, fontSize: 12.5,
             letterSpacing: "0.16em", textTransform: "uppercase",
