@@ -11,7 +11,7 @@ const SOLUTIONS = {
     hero: {
       title: "Thinking about switching HOA management companies?",
       lede: "If your manager doesn't return calls, your financials feel opaque, or your board is tired of doing the management company's job — you're not alone. Most boards know they need a change long before they make one. Here's how to make it the easier decision.",
-      image: "assets/img-inspector.jpg"
+      image: "/assets/img-inspector.jpg"
     },
     heroStat: {
       eyebrow: "Industry Reality",
@@ -56,7 +56,7 @@ const SOLUTIONS = {
     hero: {
       title: "When self-management stops working — what comes next.",
       lede: "Self-managed associations get built on volunteer effort. They work until they don't. The complexity, the compliance, and the homeowner conflicts add up — and the volunteer who held it together for years finally burns out. Here's how to move to professional management without losing what worked.",
-      image: "assets/img-resident-portal.jpg"
+      image: "/assets/img-resident-portal.jpg"
     },
     heroStat: {
       eyebrow: "The tipping point",
@@ -101,7 +101,7 @@ const SOLUTIONS = {
     hero: {
       title: "Modern HOA management means a person still answers the phone.",
       lede: "There's a lot of HOA management software. There's not a lot of HOA management that actually uses it well. Edison's stack — CINC Systems, the Action Item List, WATTSON AI, and Plaud for meeting minutes — solves the problems boards keep flagging without removing the human relationship that makes management work.",
-      image: "assets/img-resident-portal.jpg"
+      image: "/assets/img-resident-portal.jpg"
     },
     heroStat: {
       eyebrow: "The shift",
@@ -130,7 +130,7 @@ const SOLUTIONS = {
     faqs: [
       { q: "Is this all AI? Are you replacing managers?", a: "No. Edison's manager-to-community ratio is still 8–10, and a real person still answers the phone every time. The tech handles the things that don't need a human — document lookup, project tracking, minutes drafting — so the manager can spend time on the work that does." },
       { q: "What if our board isn't comfortable with technology?", a: "Edison's model accommodates both ends. Boards that love the dashboards can live in CINC and the Action Item List. Boards that prefer email and phone get the same level of service without being forced into a portal. The tech is a tool, not a requirement." },
-      { q: "Is WATTSON live right now?", a: "WATTSON is in development with a 2026 launch targeting Edison's existing communities first. You can get on the notify list at /about/wattson/. Everything else in this section — CINC, Action Item List, Plaud — is live and in production for current Edison clients." },
+      { q: "Is WATTSON live right now?", a: "WATTSON is in development with a 2026 launch targeting Edison's existing communities first. Everything else in this section — CINC, Action Item List, Plaud — is live and in production for current Edison clients." },
       { q: "Does this cost extra?", a: "No. Edison's technology stack is included in the monthly management agreement. There's no separate technology fee, no per-resident charge, and no setup cost for activating any of these tools." }
     ],
     cta: {
@@ -150,7 +150,7 @@ const SOLUTIONS = {
     hero: {
       title: "The Edison Transition Experience.",
       lede: "Most management companies treat onboarding as a checkbox. Edison built a defined program with a dedicated COO touch-point, records digitization, vendor recredentialing, and a community-wide Meet Your Management event. 60–90 days, end-to-end. Run by us, not your board.",
-      image: "assets/img-community-aerial.jpg"
+      image: "/assets/img-community-aerial.jpg"
     },
     heroStat: {
       eyebrow: "What's different",

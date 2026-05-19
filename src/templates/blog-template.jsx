@@ -478,7 +478,7 @@ const AUDIT_CONTENT = {
   author: "Edison Editorial",
   date: "April 2026",
   readTime: "9 min",
-  heroImage: "assets/img-accounting.jpg",
+  heroImage: "/assets/img-accounting.jpg",
   summary: "If your Florida HOA collects $300,000 or more in annual revenue, you're likely required to commission an audited financial statement each year. Boards that prepare year-round — clean ledgers, documented vendor invoices, reconciled reserves — finish audits faster, cheaper, and without surprises.",
   sections: [
     {
@@ -545,19 +545,19 @@ const AUDIT_CONTENT = {
     {
       category: "Financial Management",
       title: "HOA Reserve Study Guide (Florida)",
-      image: "assets/img-21.jpg",
+      image: "/assets/img-21.jpg",
       href: "/blog/hoa-reserve-study-guide-florida/"
     },
     {
       category: "Financial Management",
       title: "HOA Management Fees — What Boards Actually Pay",
-      image: "assets/img-13.jpg",
+      image: "/assets/img-13.jpg",
       href: "/blog/hoa-management-fees/"
     },
     {
       category: "Florida Compliance",
       title: "Florida HOA Laws Guide — Ch. 720 and Ch. 718",
-      image: "assets/img-22.jpg",
+      image: "/assets/img-22.jpg",
       href: "/blog/florida-hoa-laws-guide/"
     }
   ]

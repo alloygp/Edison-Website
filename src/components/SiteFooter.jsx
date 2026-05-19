@@ -109,7 +109,7 @@ function FooterCol({ title, href, links }) {
 }
 
 function SiteFooter({
-  logoSrc = "assets/logo-white.png",
+  logoSrc = "/assets/logo-white.png",
   logoAlt = "Edison Association Management",
   homeHref = "/",
   blurb = "Professional HOA and condominium management services in Orlando, Florida. Lighting the way for community associations since 2021.",

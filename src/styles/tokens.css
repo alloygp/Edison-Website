@@ -9,6 +9,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&family=Open+Sans:wght@300;400;500;600;700&display=swap');
 
 :root {
+  /* ----- Layout ------------------------------------------------------ */
+  --site-header-height: 122px; /* utility bar (~38px) + nav bar (84px) */
+
   /* ----- BRAND COLORS — Primary -------------------------------------- */
   --edison-navy:        #1B2A4A;   /* Dominant: text, headers, dark backgrounds */
   --edison-teal:        #3CC8C8;   /* Accent: CTAs, links, highlights */
