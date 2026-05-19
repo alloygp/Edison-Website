@@ -424,11 +424,11 @@ function HomePage() {
         title="Credentials You Can Verify"
         sub="Edison's leadership and team are recognized by the Orlando Business Journal, the Community Associations Institute, the Florida Community Association Journal, and the Better Business Bureau."
         badges={[
-          { label: "OBJ", sub: "Best Place to Work" },
-          { label: "CAI", sub: "Member Company" },
-          { label: "PCAM", sub: "Designation" },
-          { label: "FLCAJ", sub: "Featured Firm" },
-          { label: "BBB A+", sub: "Accredited Business" }
+          { label: "OBJ",   sub: "Best Place to Work",  img: "/assets/badge-bptw.png" },
+          { label: "CAI",   sub: "Member Company",       img: "/assets/badge-cai.png" },
+          { label: "PCAM",  sub: "Designation",          img: "/assets/badge-pcam.png" },
+          { label: "FLCAJ", sub: "Featured Firm",        img: "/assets/badge-flcaj.png" },
+          { label: "BBB A+",sub: "Accredited Business",  img: "/assets/badge-bbb.png" }
         ]}
       />
 
