@@ -19,22 +19,23 @@ function EducationHubA({ content }) {
         background: "linear-gradient(180deg, #fff 0%, var(--edison-teal-pale) 100%)",
         padding: "88px 48px 64px"
       }}>
-        <div style={{ maxWidth: 980, margin: "0 auto", textAlign: "center" }}>
+        <div style={{ maxWidth: 980, margin: "0 auto" }}>
           <div style={{ marginBottom: 28 }}>
             <img
               src="/assets/Edison-Education-Full-Color.svg"
               alt="Edison Education"
-              style={{ height: 80, width: "auto", display: "block", margin: "0 auto" }}
+              style={{ height: 80, width: "auto", display: "block" }}
             />
           </div>
           <h1 style={{
             fontFamily: "var(--font-display)", fontWeight: 800,
             fontSize: 52, lineHeight: 1.08, letterSpacing: "-0.02em",
-            color: "var(--edison-navy)", margin: "0 0 20px"
+            color: "var(--edison-navy)", margin: "0 0 20px", textAlign: "center"
           }}>Resources for Florida HOA & condo boards.</h1>
           <p style={{
             fontFamily: "var(--font-body)", fontSize: 18.5, lineHeight: 1.55,
             color: "var(--edison-text-body)", margin: "0 auto", maxWidth: 720
+          textAlign: "center"
           }}>{content.intro}</p>
         </div>
       </section>
