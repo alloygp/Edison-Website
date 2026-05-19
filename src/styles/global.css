@@ -155,13 +155,20 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* ---- StatsBand ---- */
-@media (max-width: 640px) {
+@media (max-width: 768px) {
   .ts-stats-band { padding: 56px 20px !important; }
   .ts-stats-band-grid {
     grid-template-columns: 1fr 1fr !important;
     gap: 28px 20px !important;
   }
   .ts-stats-band-grid > div > div:first-child { font-size: 40px !important; }
+}
+@media (max-width: 480px) {
+  .ts-stats-band-grid {
+    grid-template-columns: 1fr !important;
+    gap: 24px !important;
+  }
+  .ts-stats-band-grid > div > div:first-child { font-size: 36px !important; }
 }
 
 /* ---- PullQuote ---- */
