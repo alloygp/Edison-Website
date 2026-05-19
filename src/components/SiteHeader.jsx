@@ -101,7 +101,8 @@ const DEFAULT_NAV = [
             eyebrow: "Free for Boards",
             title: "Edison Education",
             body: "Certification-track courses and governance guides built for Florida HOA and condo boards.",
-            cta: { label: "Explore program", href: "/edison-education/" }
+            cta: { label: "Explore program", href: "/edison-education/" },
+            mark: "/assets/logo-education-mark.svg"
           },
           {
             theme: "light",
@@ -279,6 +280,12 @@ function FeatureCard({ feature, compact = false }) {
       onMouseEnter={(e) => { e.currentTarget.style.transform = "translateY(-2px)"; e.currentTarget.style.boxShadow = "0 6px 20px rgba(15,29,51,.12)"; }}
       onMouseLeave={(e) => { e.currentTarget.style.transform = "translateY(0)"; e.currentTarget.style.boxShadow = "none"; }}>
       <div>
+        {feature.mark && (
+          <img src={feature.mark} alt={feature.title}
+               style={{ height: 44, width: "auto", marginBottom: 14, display: "block",
+                        filter: dark ? "brightness(0) invert(1)" : "none",
+                        opacity: dark ? 0.92 : 1 }}/>
+        )}
         <div style={{
           fontFamily: "var(--font-display)", fontWeight: 700, fontSize: 11,
           letterSpacing: "0.14em", textTransform: "uppercase",

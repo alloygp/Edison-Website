@@ -20,17 +20,11 @@ function EducationHubA({ content }) {
         padding: "88px 48px 64px"
       }}>
         <div style={{ maxWidth: 980, margin: "0 auto", textAlign: "center" }}>
-          <div style={{
-            display: "inline-flex", alignItems: "center", justifyContent: "center",
-            width: 72, height: 72, borderRadius: 18,
-            background: "var(--edison-teal)", color: "var(--edison-navy)",
-            marginBottom: 22
-          }}>
-            <svg width="36" height="36" viewBox="0 0 24 24" fill="none">
-              <path d="M9 18h6M10 21h4M12 3a6 6 0 00-3.5 10.9c.3.2.5.6.5 1V16h6v-1.1c0-.4.2-.8.5-1A6 6 0 0012 3z M16 11h2 M6 11H4"
-                    stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/>
-            </svg>
-          </div>
+          <img
+            src="/assets/logo-education-mark.svg"
+            alt="Edison Education"
+            style={{ height: 96, width: "auto", marginBottom: 24, display: "block", margin: "0 auto 24px" }}
+          />
           <div style={{
             fontFamily: "var(--font-display)", fontWeight: 700, fontSize: 12.5,
             letterSpacing: "0.16em", textTransform: "uppercase",
