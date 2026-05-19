@@ -431,6 +431,7 @@ function SiteHeader({
   cta = { label: "Request a Proposal", href: "/request-a-proposal/" }
 }) {
   const [openIdx, setOpenIdx] = useState(-1);
+  const [hoveredIdx, setHoveredIdx] = useState(-1);
   const [mobileOpen, setMobileOpen] = useState(false);
   const [hidden, setHidden] = useState(false);
   const [atTop, setAtTop] = useState(true);
@@ -540,14 +541,15 @@ function SiteHeader({
               {nav.map((item, i) => {
                 const hasMenu = item.mega || (item.children && item.children.length);
                 const isOpen = openIdx === i;
+                const isHovered = hoveredIdx === i;
                 const isActive = item.href === "/"
                   ? currentPath === "/"
                   : currentPath.startsWith(item.href) ||
                     (item.href === "/edison-education/" && currentPath.startsWith("/blog/"));
                 return (
                   <div key={i} style={{ position: "static" }}
-                       onMouseEnter={() => hasMenu && openMenu(i)}
-                       onMouseLeave={() => hasMenu && scheduleClose()}>
+                       onMouseEnter={() => { setHoveredIdx(i); if (hasMenu) openMenu(i); }}
+                       onMouseLeave={() => { setHoveredIdx(-1); if (hasMenu) scheduleClose(); }}>
                     <div style={{ position: "relative" }}>
                       <a href={item.href}
                          aria-haspopup={hasMenu ? "true" : undefined}
@@ -556,14 +558,14 @@ function SiteHeader({
                            display: "inline-flex", alignItems: "center", gap: 6,
                            padding: "30px 14px",
                            fontFamily: "var(--font-display)", fontWeight: 600, fontSize: 14.5,
-                           color: isOpen || isActive ? "var(--edison-teal-dark)" : "var(--edison-navy)",
+                           color: isOpen || isActive || isHovered ? "var(--edison-teal-dark)" : "var(--edison-navy)",
                            textDecoration: "none", borderBottom: 0,
                            transition: "color 140ms"
                          }}>
                         {item.label}
                         {hasMenu && (
                           <span style={{
-                            color: isOpen || isActive ? "var(--edison-teal-dark)" : "var(--edison-navy-50)",
+                            color: isOpen || isActive || isHovered ? "var(--edison-teal-dark)" : "var(--edison-navy-50)",
                             transform: isOpen ? "rotate(180deg)" : "none",
                             transition: "transform 180ms", display: "inline-flex"
                           }}>
