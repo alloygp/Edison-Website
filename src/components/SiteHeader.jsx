@@ -281,9 +281,9 @@ function FeatureCard({ feature, compact = false }) {
       onMouseLeave={(e) => { e.currentTarget.style.transform = "translateY(0)"; e.currentTarget.style.boxShadow = "none"; }}>
       <div>
         {feature.mark && (
-          <img src={feature.mark} alt="" aria-hidden="true" style={{
-            height: 36, width: "auto", display: "block",
-            marginBottom: 14, opacity: 0.95
+          <img src={feature.mark} alt={feature.title} style={{
+            height: 26, width: "auto", display: "block",
+            marginBottom: 16, opacity: 0.95
           }}/>
         )}
         <div style={{
@@ -291,11 +291,13 @@ function FeatureCard({ feature, compact = false }) {
           letterSpacing: "0.14em", textTransform: "uppercase",
           color: dark ? "var(--edison-teal)" : "var(--edison-teal-dark)", marginBottom: 8
         }}>{feature.eyebrow}</div>
-        <div style={{
-          fontFamily: "var(--font-display)", fontWeight: 700,
-          fontSize: compact ? 16 : 19, lineHeight: 1.25,
-          color: dark ? "#fff" : "var(--edison-navy)", marginBottom: compact ? 6 : 10
-        }}>{feature.title}</div>
+        {!feature.mark && (
+          <div style={{
+            fontFamily: "var(--font-display)", fontWeight: 700,
+            fontSize: compact ? 16 : 19, lineHeight: 1.25,
+            color: dark ? "#fff" : "var(--edison-navy)", marginBottom: compact ? 6 : 10
+          }}>{feature.title}</div>
+        )}
         <div style={{
           fontFamily: "var(--font-body)", fontSize: 13, lineHeight: 1.5,
           color: dark ? "rgba(255,255,255,.78)" : "var(--edison-text-body)"

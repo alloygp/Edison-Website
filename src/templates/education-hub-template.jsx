@@ -27,11 +27,6 @@ function EducationHubA({ content }) {
               style={{ height: 80, width: "auto", display: "block", margin: "0 auto" }}
             />
           </div>
-          <div style={{
-            fontFamily: "var(--font-display)", fontWeight: 700, fontSize: 12.5,
-            letterSpacing: "0.16em", textTransform: "uppercase",
-            color: "var(--edison-teal-dark)", marginBottom: 16
-          }}>Edison Education</div>
           <h1 style={{
             fontFamily: "var(--font-display)", fontWeight: 800,
             fontSize: 52, lineHeight: 1.08, letterSpacing: "-0.02em",
