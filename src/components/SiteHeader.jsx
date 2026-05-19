@@ -484,11 +484,10 @@ function SiteHeader({
   /* ---- Mobile full-width dropdown panel (portal) ---- */
   const mobilePanel = mounted ? createPortal(
     <>
-      {/* Backdrop — click to close */}
+      {/* Backdrop — starts below header so logo + X stay unblurred */}
       <div style={{
-        position: "fixed", inset: 0, zIndex: 9989,
+        position: "fixed", top: 72, left: 0, right: 0, bottom: 0, zIndex: 9989,
         background: "rgba(15,29,51,.38)",
-        backdropFilter: "blur(2px)",
         opacity: mobileOpen ? 1 : 0,
         visibility: mobileOpen ? "visible" : "hidden",
         transition: "opacity 280ms ease, visibility 280ms"
@@ -532,7 +531,7 @@ function SiteHeader({
         </div>
 
         {/* Phone */}
-        <div style={{ padding: "8px 20px 28px", display: "flex", flexDirection: "column", gap: 8 }}>
+        <div style={{ padding: "8px 20px 16px" }}>
           <a href={utility.phone.href} style={{
             display: "flex", justifyContent: "center", alignItems: "center", gap: 10,
             padding: "14px 20px",
@@ -545,11 +544,31 @@ function SiteHeader({
           }}>
             <IconPhone/> {utility.phone.label}
           </a>
+        </div>
+
+        {/* Portal links */}
+        <div style={{ padding: "0 20px 28px", display: "flex", flexDirection: "column", gap: 2 }}>
           <div style={{
-            textAlign: "center",
-            fontFamily: "var(--font-body)", fontSize: 12.5,
-            color: "var(--edison-gray-mid)"
-          }}>{utility.hours}</div>
+            fontFamily: "var(--font-display)", fontWeight: 700, fontSize: 11,
+            letterSpacing: "0.13em", textTransform: "uppercase",
+            color: "var(--edison-teal-dark)", padding: "6px 4px 8px"
+          }}>Quick Links</div>
+          {utility.portals.map((p, i) => (
+            <a key={i} href={p.href} target="_blank" rel="noopener noreferrer"
+               style={{
+                 display: "flex", alignItems: "center", justifyContent: "space-between",
+                 padding: "14px 16px",
+                 borderRadius: 8,
+                 background: "var(--edison-teal-pale)",
+                 color: "var(--edison-navy)",
+                 fontFamily: "var(--font-display)", fontWeight: 600, fontSize: 14.5,
+                 textDecoration: "none", borderBottom: 0,
+                 marginBottom: i < utility.portals.length - 1 ? 6 : 0
+               }}>
+              {p.label}
+              <span aria-hidden="true" style={{ fontSize: 13, opacity: 0.5 }}>&#x2197;</span>
+            </a>
+          ))}
         </div>
       </div>
     </>,
