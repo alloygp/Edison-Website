@@ -280,89 +280,109 @@ function SolutionsSplit({ eyebrow, title, sub, options }) {
 /* ---------- Bullets + image: now lives in template-sections.jsx (shared) ---------- */
 
 /* ---------- Education band + 2 article cards ---------- */
-function EducationBand({ eyebrow, title, sub, hero, posts }) {
+function EducationBand({ title, sub, posts }) {
   return (
     <section style={{ background: "var(--bg-3, #F5F7FA)", padding: "88px 48px" }}>
       <div style={{ maxWidth: 1200, margin: "0 auto" }}>
-
         <div style={{
-          display: "grid", gridTemplateColumns: "1.05fr 1fr", gap: 56,
-          alignItems: "center", marginBottom: 56
+          display: "grid", gridTemplateColumns: "1.15fr 1fr", gap: 64,
+          alignItems: "center"
         }}>
-          <div style={{
-            width: "100%", aspectRatio: "3 / 2",
-            borderRadius: 16, overflow: "hidden",
-            backgroundImage: `url(${hero})`,
-            backgroundSize: "cover", backgroundPosition: "center",
-            boxShadow: "var(--shadow-md)"
-          }}/>
-          <div>
-            <InteriorEyebrow>{eyebrow}</InteriorEyebrow>
+
+          {/* Left: 2 article cards side by side */}
+          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 18 }}>
+            {posts.map((p, i) => (
+              <a key={i} href={p.href} style={{
+                textDecoration: "none",
+                background: "#fff",
+                border: "1px solid var(--border-hairline)",
+                borderRadius: 14, overflow: "hidden",
+                display: "flex", flexDirection: "column",
+                boxShadow: "var(--shadow-xs)",
+                transition: "all 220ms var(--ease-standard)"
+              }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.boxShadow = "var(--shadow-md)";
+                  e.currentTarget.style.transform = "translateY(-3px)";
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.boxShadow = "var(--shadow-xs)";
+                  e.currentTarget.style.transform = "translateY(0)";
+                }}>
+                <div style={{
+                  aspectRatio: "4 / 3",
+                  backgroundImage: `url(${p.image})`,
+                  backgroundSize: "cover", backgroundPosition: "center"
+                }}/>
+                <div style={{ padding: "18px 20px 20px",
+                              display: "flex", flexDirection: "column", gap: 8 }}>
+                  <div style={{
+                    fontFamily: "var(--font-display)", fontWeight: 700, fontSize: 10.5,
+                    letterSpacing: "0.12em", textTransform: "uppercase",
+                    color: "var(--edison-teal-dark)"
+                  }}>{p.category}</div>
+                  <h3 style={{
+                    fontFamily: "var(--font-display)", fontWeight: 700,
+                    fontSize: 16, lineHeight: 1.3,
+                    color: "var(--edison-navy)", margin: 0, flex: 1
+                  }}>{p.title}</h3>
+                  <span style={{
+                    fontFamily: "var(--font-display)", fontWeight: 700, fontSize: 12.5,
+                    color: "var(--edison-teal-dark)",
+                    display: "inline-flex", alignItems: "center", gap: 5,
+                    marginTop: 4
+                  }}>
+                    Read article <span aria-hidden="true">→</span>
+                  </span>
+                </div>
+              </a>
+            ))}
+          </div>
+
+          {/* Right: logo + heading + text + CTA */}
+          <div style={{ display: "flex", flexDirection: "column", gap: 0 }}>
+            <img
+              src="/assets/Edison-Education-Full-Color.svg"
+              alt="Edison Education"
+              style={{ height: 48, width: "auto", display: "block", marginBottom: 24 }}
+            />
             <h2 style={{
               fontFamily: "var(--font-display)", fontWeight: 700,
-              fontSize: 34, lineHeight: 1.18, letterSpacing: "-0.01em",
-              color: "var(--edison-navy)", margin: "12px 0 16px",
+              fontSize: 30, lineHeight: 1.2, letterSpacing: "-0.01em",
+              color: "var(--edison-navy)", margin: "0 0 16px",
               position: "relative", paddingBottom: 16, display: "inline-block"
             }}>
               {title}
               <span style={{ position: "absolute", left: 0, bottom: 0,
-                             width: 60, height: 3,
+                             width: 52, height: 3,
                              background: "var(--edison-teal)", borderRadius: 2 }}/>
             </h2>
             <p style={{
-              fontFamily: "var(--font-body)", fontSize: 16.5, lineHeight: 1.65,
-              color: "var(--edison-text-body)", margin: 0
+              fontFamily: "var(--font-body)", fontSize: 16, lineHeight: 1.65,
+              color: "var(--edison-text-body)", margin: "0 0 28px"
             }}>{sub}</p>
-          </div>
-        </div>
-
-        <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 24 }}>
-          {posts.map((p, i) => (
-            <a key={i} href={p.href} style={{
-              textDecoration: "none",
-              background: "#fff",
-              border: "1px solid var(--border-hairline)",
-              borderRadius: 14, overflow: "hidden",
-              display: "flex", flexDirection: "column",
-              boxShadow: "var(--shadow-xs)",
-              transition: "all 220ms var(--ease-standard)"
+            <a href="/edison-education/" style={{
+              display: "inline-flex", alignItems: "center", gap: 8,
+              fontFamily: "var(--font-display)", fontWeight: 700, fontSize: 14,
+              color: "var(--edison-teal-dark)",
+              textDecoration: "none", borderBottom: 0,
+              padding: "11px 20px", borderRadius: 8,
+              border: "1.5px solid var(--edison-teal-dark)",
+              alignSelf: "flex-start",
+              transition: "background 160ms ease, color 160ms ease"
             }}
               onMouseEnter={(e) => {
-                e.currentTarget.style.boxShadow = "var(--shadow-md)";
-                e.currentTarget.style.transform = "translateY(-3px)";
+                e.currentTarget.style.background = "var(--edison-teal-dark)";
+                e.currentTarget.style.color = "#fff";
               }}
               onMouseLeave={(e) => {
-                e.currentTarget.style.boxShadow = "var(--shadow-xs)";
-                e.currentTarget.style.transform = "translateY(0)";
+                e.currentTarget.style.background = "transparent";
+                e.currentTarget.style.color = "var(--edison-teal-dark)";
               }}>
-              <div style={{
-                aspectRatio: "16 / 9",
-                backgroundImage: `url(${p.image})`,
-                backgroundSize: "cover", backgroundPosition: "center"
-              }}/>
-              <div style={{ padding: "22px 26px 24px",
-                            display: "flex", flexDirection: "column", gap: 10 }}>
-                <div style={{
-                  fontFamily: "var(--font-display)", fontWeight: 700, fontSize: 11,
-                  letterSpacing: "0.12em", textTransform: "uppercase",
-                  color: "var(--edison-teal-dark)"
-                }}>{p.category}</div>
-                <h3 style={{
-                  fontFamily: "var(--font-display)", fontWeight: 700,
-                  fontSize: 19, lineHeight: 1.3,
-                  color: "var(--edison-navy)", margin: 0, flex: 1
-                }}>{p.title}</h3>
-                <span style={{
-                  fontFamily: "var(--font-display)", fontWeight: 700, fontSize: 13,
-                  color: "var(--edison-teal-dark)",
-                  display: "inline-flex", alignItems: "center", gap: 6,
-                  marginTop: 6
-                }}>
-                  Read article <span aria-hidden="true">→</span>
-                </span>
-              </div>
+              Explore Edison Education <span aria-hidden="true">→</span>
             </a>
-          ))}
+          </div>
+
         </div>
       </div>
     </section>
@@ -469,10 +489,8 @@ function HomePage() {
       />
 
       <EducationBand
-        eyebrow="Edison Education"
         title="HOA Board Education & Resources"
         sub="Serving on a board is easier when you have the right information. Explore our guides and articles on HOA governance, compliance, and best practices — written specifically for Florida community leaders."
-        hero="/assets/img-11.jpg"
         posts={[
           {
             category: "Finance & Audit",
