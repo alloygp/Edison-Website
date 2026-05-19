@@ -11,11 +11,11 @@ import { SectionHeading, InteriorButton, InteriorEyebrow } from './interior-comp
 /* ---------- Empathy hero (Solution variant A) ---------- */
 function EmpathyHero({ eyebrow, title, lede, primary, secondary, image }) {
   return (
-    <section style={{
+    <section className="ts-empathy-hero" style={{
       background: "linear-gradient(180deg, #fff 0%, var(--edison-teal-pale) 100%)",
       padding: "96px 48px 80px"
     }}>
-      <div style={{ maxWidth: 1200, margin: "0 auto",
+      <div className="ts-empathy-hero-grid" style={{ maxWidth: 1200, margin: "0 auto",
                     display: "grid", gridTemplateColumns: "1.05fr 1fr", gap: 64,
                     alignItems: "center" }}>
         <div>
@@ -45,7 +45,7 @@ function EmpathyHero({ eyebrow, title, lede, primary, secondary, image }) {
             )}
           </div>
         </div>
-        <div style={{
+        <div className="ts-empathy-hero-img" style={{
           width: "100%", aspectRatio: "5 / 4",
           borderRadius: 16, overflow: "hidden",
           backgroundImage: `url(${image})`,
@@ -60,7 +60,7 @@ function EmpathyHero({ eyebrow, title, lede, primary, secondary, image }) {
 /* ---------- Stat hero (Solution variant B) ---------- */
 function StatHero({ eyebrow, title, lede, stat, primary, secondary, bg }) {
   return (
-    <section style={{
+    <section className="ts-stat-hero" style={{
       background: "var(--edison-navy)",
       color: "#fff",
       padding: "104px 48px 88px",
@@ -73,7 +73,7 @@ function StatHero({ eyebrow, title, lede, stat, primary, secondary, bg }) {
           backgroundSize: "cover", backgroundPosition: "center", opacity: 1
         }}/>
       )}
-      <div style={{ maxWidth: 1200, margin: "0 auto", position: "relative",
+      <div className="ts-stat-hero-grid" style={{ maxWidth: 1200, margin: "0 auto", position: "relative",
                     display: "grid", gridTemplateColumns: "1.4fr 1fr", gap: 64,
                     alignItems: "center" }}>
         <div>
@@ -130,10 +130,10 @@ function StatHero({ eyebrow, title, lede, stat, primary, secondary, bg }) {
 /* ---------- Numbered process steps ---------- */
 function NumberedSteps({ eyebrow, title, sub, steps, background = "#fff", variant = "horizontal" }) {
   return (
-    <section style={{ background, padding: "88px 48px" }}>
+    <section className="ts-numbered-steps" style={{ background, padding: "88px 48px" }}>
       <div style={{ maxWidth: 1200, margin: "0 auto" }}>
         <SectionHeading eyebrow={eyebrow} title={title} sub={sub}/>
-        <div style={{
+        <div className="ts-numbered-steps-grid" style={{
           marginTop: 48,
           display: "grid",
           gridTemplateColumns: variant === "horizontal" ? `repeat(${steps.length}, 1fr)` : "1fr",
@@ -180,10 +180,10 @@ function NumberedSteps({ eyebrow, title, sub, steps, background = "#fff", varian
 /* ---------- Comparison table (Solution variant B) ---------- */
 function ComparisonTable({ eyebrow, title, sub, leftLabel, rightLabel, rows, background = "var(--edison-teal-pale)" }) {
   return (
-    <section style={{ background, padding: "88px 48px" }}>
+    <section className="ts-comparison" style={{ background, padding: "88px 48px" }}>
       <div style={{ maxWidth: 1080, margin: "0 auto" }}>
         <SectionHeading eyebrow={eyebrow} title={title} sub={sub} align="center"/>
-        <div style={{
+        <div className="ts-comparison-wrap" style={{
           marginTop: 48,
           background: "#fff",
           border: "1px solid var(--border-hairline)",
@@ -246,7 +246,7 @@ function ComparisonTable({ eyebrow, title, sub, leftLabel, rightLabel, rows, bac
 /* ---------- Stats band ---------- */
 function StatsBand({ eyebrow, title, stats, background = "#fff" }) {
   return (
-    <section style={{ background, padding: "80px 48px" }}>
+    <section className="ts-stats-band" style={{ background, padding: "80px 48px" }}>
       <div style={{ maxWidth: 1200, margin: "0 auto" }}>
         {(eyebrow || title) && (
           <div style={{ marginBottom: 40, maxWidth: 720 }}>
@@ -258,7 +258,7 @@ function StatsBand({ eyebrow, title, stats, background = "#fff" }) {
             }}>{title}</h2>}
           </div>
         )}
-        <div style={{
+        <div className="ts-stats-band-grid" style={{
           display: "grid",
           gridTemplateColumns: `repeat(${stats.length}, 1fr)`,
           gap: 32
@@ -288,7 +288,7 @@ function StatsBand({ eyebrow, title, stats, background = "#fff" }) {
 /* ---------- Pull-quote testimonial ---------- */
 function PullQuote({ quote, attribution, role, community, background = "#fff" }) {
   return (
-    <section style={{ background, padding: "88px 48px" }}>
+    <section className="ts-pull-quote" style={{ background, padding: "88px 48px" }}>
       <div style={{ maxWidth: 920, margin: "0 auto", textAlign: "center" }}>
         <div style={{
           fontFamily: "var(--font-display)", fontWeight: 800,
@@ -317,7 +317,7 @@ function PullQuote({ quote, attribution, role, community, background = "#fff" })
 /* ---------- Geo Hero, city skyline / aerial focus ---------- */
 function GeoHeroLocal({ eyebrow, city, lede, primary, secondary, image }) {
   return (
-    <section style={{
+    <section className="ts-geo-hero-local" style={{
       position: "relative", minHeight: 480,
       backgroundImage: `linear-gradient(180deg, rgba(15,29,51,.55) 0%, rgba(15,29,51,.72) 100%), url(${image})`,
       backgroundSize: "cover", backgroundPosition: "center",
@@ -357,7 +357,7 @@ function GeoHeroLocal({ eyebrow, city, lede, primary, secondary, image }) {
 /* ---------- Geo Hero, service-first with city qualifier ---------- */
 function GeoHeroService({ eyebrow, title, lede, city, locationStrip, primary, secondary }) {
   return (
-    <section style={{ background: "#fff", padding: "88px 48px 56px" }}>
+    <section className="ts-geo-hero-service" style={{ background: "#fff", padding: "88px 48px 56px" }}>
       <div style={{ maxWidth: 1200, margin: "0 auto" }}>
         <div style={{
           fontFamily: "var(--font-display)", fontWeight: 700, fontSize: 12.5,
@@ -403,7 +403,7 @@ function GeoHeroService({ eyebrow, title, lede, city, locationStrip, primary, se
 /* ---------- Community / neighborhoods list ---------- */
 function NeighborhoodList({ eyebrow, title, sub, items, background = "#fff" }) {
   return (
-    <section style={{ background, padding: "80px 48px" }}>
+    <section className="ts-neighborhood-list" style={{ background, padding: "80px 48px" }}>
       <div style={{ maxWidth: 1200, margin: "0 auto" }}>
         <SectionHeading eyebrow={eyebrow} title={title} sub={sub}/>
         <div style={{
@@ -432,11 +432,11 @@ function NeighborhoodList({ eyebrow, title, sub, items, background = "#fff" }) {
 /* ---------- Local context: image + body copy ---------- */
 function LocalContext({ eyebrow, title, paragraphs = [], image, background = "var(--edison-teal-pale)" }) {
   return (
-    <section style={{ background, padding: "88px 48px" }}>
-      <div style={{ maxWidth: 1200, margin: "0 auto",
+    <section className="ts-local-context" style={{ background, padding: "88px 48px" }}>
+      <div className="ts-local-context-grid" style={{ maxWidth: 1200, margin: "0 auto",
                     display: "grid", gridTemplateColumns: "1fr 1.05fr", gap: 56,
                     alignItems: "center" }}>
-        <div style={{
+        <div className="ts-local-context-img" style={{
           width: "100%", aspectRatio: "5 / 4",
           borderRadius: 16, overflow: "hidden",
           backgroundImage: `url(${image})`,
@@ -475,7 +475,7 @@ function AntiPatterns({
 }) {
   const isDark = variant === "dark";
   return (
-    <section style={{ background, color: isDark ? "#fff" : "var(--edison-navy)",
+    <section className="ts-anti-patterns" style={{ background, color: isDark ? "#fff" : "var(--edison-navy)",
                       padding: "88px 48px" }}>
       <div style={{ maxWidth: 1200, margin: "0 auto" }}>
         <div style={{ maxWidth: 760, marginBottom: 40 }}>
@@ -534,9 +534,9 @@ function CrossPillarCard({ eyebrow = "Different community type?",
                           title, body, href, ctaLabel = "See the other pillar",
                           background = "var(--edison-teal-pale)" }) {
   return (
-    <section style={{ background, padding: "56px 48px" }}>
+    <section className="ts-cross-pillar" style={{ background, padding: "56px 48px" }}>
       <div style={{ maxWidth: 1080, margin: "0 auto" }}>
-        <a href={href} style={{
+        <a href={href} className="ts-cross-pillar-inner" style={{
           display: "grid", gridTemplateColumns: "1.4fr auto",
           gap: 32, alignItems: "center",
           padding: "32px 36px",
@@ -569,7 +569,7 @@ function CrossPillarCard({ eyebrow = "Different community type?",
               color: "var(--edison-text-body)", margin: 0, maxWidth: 600
             }}>{body}</p>
           </div>
-          <div style={{
+          <div className="ts-cross-pillar-cta" style={{
             background: "var(--edison-navy)", color: "var(--edison-teal)",
             padding: "14px 22px", borderRadius: 8,
             fontFamily: "var(--font-display)", fontWeight: 700, fontSize: 14,
@@ -593,7 +593,7 @@ function SubServiceNav({ eyebrow = "Go deeper",
                         title = "Sub-services under this pillar",
                         sub, items, background = "#fff" }) {
   return (
-    <section style={{ background, padding: "88px 48px" }}>
+    <section className="ts-sub-service-nav" style={{ background, padding: "88px 48px" }}>
       <div style={{ maxWidth: 1200, margin: "0 auto" }}>
         <div style={{ maxWidth: 820, marginBottom: 36 }}>
           <div style={{
@@ -611,7 +611,7 @@ function SubServiceNav({ eyebrow = "Go deeper",
             color: "var(--edison-text-body)", margin: 0, maxWidth: 760
           }}>{sub}</p>}
         </div>
-        <div style={{
+        <div className="ts-sub-service-nav-grid" style={{
           display: "grid",
           gridTemplateColumns: `repeat(${Math.min(items.length, 3)}, 1fr)`,
           gap: 18
@@ -676,8 +676,8 @@ function AuthorBylineBlock({
   cta = { label: "Read more about Edison", href: "/about/" }
 }) {
   return (
-    <section style={{ background: "var(--bg-3, #F5F7FA)", padding: "56px 48px" }}>
-      <div style={{ maxWidth: 980, margin: "0 auto",
+    <section className="ts-author-byline" style={{ background: "var(--bg-3, #F5F7FA)", padding: "56px 48px" }}>
+      <div className="ts-author-byline-grid" style={{ maxWidth: 980, margin: "0 auto",
                     display: "grid", gridTemplateColumns: "auto 1fr auto", gap: 28,
                     alignItems: "center" }}>
         <div style={{
@@ -723,7 +723,7 @@ function AuthorBylineBlock({
             color: "var(--edison-text-body)", margin: 0
           }}>{bio}</p>
         </div>
-        <a href={cta.href} style={{
+        <a href={cta.href} className="ts-author-byline-cta" style={{
           fontFamily: "var(--font-display)", fontWeight: 700, fontSize: 13.5,
           color: "var(--edison-teal-dark)",
           textDecoration: "none", borderBottom: 0,

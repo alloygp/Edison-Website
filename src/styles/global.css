@@ -61,3 +61,169 @@ h1, h2, h3, h4, h5, h6 {
   }
   .ts-bullets-img { order: -1; }
 }
+
+/* ============================================================
+   COMPREHENSIVE MOBILE RESPONSIVE — interior-components.jsx
+   ============================================================ */
+
+/* ---- PageTitle ---- */
+@media (max-width: 768px) {
+  .ic-page-title { padding: 48px 20px 36px !important; }
+  .ic-page-title h1 { font-size: 32px !important; }
+  .ic-page-title p  { font-size: 16px !important; }
+}
+
+/* ---- BodyProse ---- */
+@media (max-width: 768px) {
+  .ic-body-prose { padding: 56px 20px !important; }
+}
+
+/* ---- FeatureGrid ---- */
+@media (max-width: 768px) {
+  .ic-feature-grid { padding: 56px 20px !important; }
+  .ic-feature-grid-inner { grid-template-columns: 1fr !important; }
+}
+
+/* ---- MidCTA ---- */
+@media (max-width: 768px) {
+  .ic-mid-cta { padding: 48px 20px !important; }
+  .ic-mid-cta-grid {
+    grid-template-columns: 1fr !important;
+    gap: 24px !important;
+  }
+  .ic-mid-cta h2 { font-size: 26px !important; }
+}
+
+/* ---- DetailLinkCards ---- */
+@media (max-width: 768px) {
+  .ic-detail-cards { padding: 56px 20px !important; }
+  .ic-detail-cards-grid { grid-template-columns: 1fr !important; }
+}
+
+/* ---- TrustBadges (section padding) ---- */
+@media (max-width: 768px) {
+  .ic-trust-badges { padding: 56px 20px !important; }
+}
+
+/* ---- FAQ ---- */
+@media (max-width: 768px) {
+  .ic-faq { padding: 56px 20px !important; }
+}
+
+/* ---- FinalCTA ---- */
+@media (max-width: 768px) {
+  .ic-final-cta { padding: 64px 20px !important; }
+  .ic-final-cta h2 { font-size: 28px !important; }
+}
+
+/* ============================================================
+   COMPREHENSIVE MOBILE RESPONSIVE — template-sections.jsx
+   ============================================================ */
+
+/* ---- EmpathyHero ---- */
+@media (max-width: 768px) {
+  .ts-empathy-hero { padding: 56px 20px 48px !important; }
+  .ts-empathy-hero-grid {
+    grid-template-columns: 1fr !important;
+    gap: 32px !important;
+  }
+  .ts-empathy-hero h1 { font-size: 34px !important; }
+  .ts-empathy-hero-img { min-height: 240px !important; }
+}
+
+/* ---- StatHero ---- */
+@media (max-width: 768px) {
+  .ts-stat-hero { padding: 64px 20px 48px !important; }
+  .ts-stat-hero-grid {
+    grid-template-columns: 1fr !important;
+    gap: 32px !important;
+  }
+  .ts-stat-hero h1 { font-size: 34px !important; }
+}
+
+/* ---- NumberedSteps ---- */
+@media (max-width: 768px) {
+  .ts-numbered-steps { padding: 56px 20px !important; }
+  .ts-numbered-steps-grid { grid-template-columns: 1fr !important; }
+}
+
+/* ---- ComparisonTable ---- */
+@media (max-width: 768px) {
+  .ts-comparison { padding: 56px 20px !important; }
+  .ts-comparison-wrap { overflow-x: auto !important; -webkit-overflow-scrolling: touch; }
+  .ts-comparison-wrap > div { min-width: 480px; }
+}
+
+/* ---- StatsBand ---- */
+@media (max-width: 640px) {
+  .ts-stats-band { padding: 56px 20px !important; }
+  .ts-stats-band-grid {
+    grid-template-columns: 1fr 1fr !important;
+    gap: 28px 20px !important;
+  }
+  .ts-stats-band-grid > div > div:first-child { font-size: 40px !important; }
+}
+
+/* ---- PullQuote ---- */
+@media (max-width: 768px) {
+  .ts-pull-quote { padding: 56px 20px !important; }
+  .ts-pull-quote blockquote { font-size: 20px !important; }
+}
+
+/* ---- GeoHeroLocal ---- */
+@media (max-width: 768px) {
+  .ts-geo-hero-local { padding: 72px 20px 56px !important; }
+  .ts-geo-hero-local h1 { font-size: 36px !important; }
+}
+
+/* ---- GeoHeroService ---- */
+@media (max-width: 768px) {
+  .ts-geo-hero-service { padding: 48px 20px 36px !important; }
+  .ts-geo-hero-service h1 { font-size: 36px !important; }
+}
+
+/* ---- NeighborhoodList ---- */
+@media (max-width: 768px) {
+  .ts-neighborhood-list { padding: 56px 20px !important; }
+}
+
+/* ---- LocalContext ---- */
+@media (max-width: 768px) {
+  .ts-local-context { padding: 56px 20px !important; }
+  .ts-local-context-grid {
+    grid-template-columns: 1fr !important;
+    gap: 32px !important;
+  }
+  .ts-local-context-img { min-height: 240px !important; }
+}
+
+/* ---- AntiPatterns ---- */
+@media (max-width: 768px) {
+  .ts-anti-patterns { padding: 56px 20px !important; }
+}
+
+/* ---- CrossPillarCard ---- */
+@media (max-width: 640px) {
+  .ts-cross-pillar { padding: 40px 20px !important; }
+  .ts-cross-pillar-inner {
+    grid-template-columns: 1fr !important;
+    gap: 20px !important;
+  }
+  .ts-cross-pillar-cta { width: 100% !important; justify-content: center !important; }
+}
+
+/* ---- SubServiceNav ---- */
+@media (max-width: 768px) {
+  .ts-sub-service-nav { padding: 56px 20px !important; }
+  .ts-sub-service-nav-grid { grid-template-columns: 1fr !important; }
+}
+
+/* ---- AuthorBylineBlock ---- */
+@media (max-width: 640px) {
+  .ts-author-byline { padding: 40px 20px !important; }
+  .ts-author-byline-grid {
+    grid-template-columns: auto 1fr !important;
+    row-gap: 16px !important;
+  }
+  .ts-author-byline-cta { grid-column: 1 / -1 !important; }
+}

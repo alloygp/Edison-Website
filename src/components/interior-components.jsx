@@ -136,7 +136,7 @@ function Breadcrumb({ trail }) {
    ============================================================ */
 function PageTitle({ title, intro }) {
   return (
-    <section style={{ padding: "72px 48px 56px", background: "#fff" }}>
+    <section className="ic-page-title" style={{ padding: "72px 48px 56px", background: "#fff" }}>
       <div style={{ maxWidth: 1080, margin: "0 auto" }}>
         <h1 style={{
           fontFamily: "var(--font-display)", fontWeight: 800,
@@ -192,7 +192,7 @@ function SectionHeading({ eyebrow, title, sub, align = "left", color = "var(--ed
    ============================================================ */
 function BodyProse({ eyebrow, title, paragraphs = [], background = "#fff" }) {
   return (
-    <section style={{ background, padding: "80px 48px" }}>
+    <section className="ic-body-prose" style={{ background, padding: "80px 48px" }}>
       <div style={{ maxWidth: 1080, margin: "0 auto" }}>
         <SectionHeading eyebrow={eyebrow} title={title} />
         <div style={{ marginTop: 28, display: "flex", flexDirection: "column", gap: 20,
@@ -216,10 +216,10 @@ function BodyProse({ eyebrow, title, paragraphs = [], background = "#fff" }) {
 function FeatureGrid({ eyebrow, title, sub, items, background = "var(--edison-teal-pale)",
                        columns = 3 }) {
   return (
-    <section style={{ background, padding: "88px 48px" }}>
+    <section className="ic-feature-grid" style={{ background, padding: "88px 48px" }}>
       <div style={{ maxWidth: 1200, margin: "0 auto" }}>
         <SectionHeading eyebrow={eyebrow} title={title} sub={sub} />
-        <div style={{
+        <div className="ic-feature-grid-inner" style={{
           marginTop: 48,
           display: "grid",
           gridTemplateColumns: `repeat(${columns}, 1fr)`,
@@ -274,12 +274,12 @@ function FeatureGrid({ eyebrow, title, sub, items, background = "var(--edison-te
 function MidCTA({ title, lede, primary, secondary, variant = "navy" }) {
   const isNavy = variant === "navy";
   return (
-    <section style={{
+    <section className="ic-mid-cta" style={{
       background: isNavy ? "var(--edison-navy)" : "var(--edison-teal-pale)",
       padding: "72px 48px",
       color: isNavy ? "#fff" : "var(--edison-navy)"
     }}>
-      <div style={{
+      <div className="ic-mid-cta-grid" style={{
         maxWidth: 1080, margin: "0 auto",
         display: "grid", gridTemplateColumns: "1.4fr auto",
         gap: 48, alignItems: "center"
@@ -317,10 +317,10 @@ function MidCTA({ title, lede, primary, secondary, variant = "navy" }) {
    ============================================================ */
 function DetailLinkCards({ eyebrow, title, sub, items, columns = 3 }) {
   return (
-    <section style={{ background: "#fff", padding: "88px 48px" }}>
+    <section className="ic-detail-cards" style={{ background: "#fff", padding: "88px 48px" }}>
       <div style={{ maxWidth: 1200, margin: "0 auto" }}>
         <SectionHeading eyebrow={eyebrow} title={title} sub={sub} />
-        <div style={{
+        <div className="ic-detail-cards-grid" style={{
           marginTop: 48,
           display: "grid",
           gridTemplateColumns: `repeat(${columns}, 1fr)`,
@@ -378,7 +378,7 @@ function DetailLinkCards({ eyebrow, title, sub, items, columns = 3 }) {
    ============================================================ */
 function TrustBadges({ eyebrow, title, sub, badges }) {
   return (
-    <section style={{ background: "var(--bg-2, #F7F8FA)", padding: "80px 48px" }}>
+    <section className="ic-trust-badges" style={{ background: "var(--bg-2, #F7F8FA)", padding: "80px 48px" }}>
       <div style={{ maxWidth: 1200, margin: "0 auto" }}>
         <SectionHeading eyebrow={eyebrow} title={title} sub={sub} align="center"/>
         <div className="ic-trust-badges-grid" style={{
@@ -430,7 +430,7 @@ function TrustBadges({ eyebrow, title, sub, badges }) {
 function FAQ({ eyebrow, title, sub, items, background = "#fff" }) {
   const [open, setOpen] = useState(0);
   return (
-    <section style={{ background, padding: "88px 48px" }}>
+    <section className="ic-faq" style={{ background, padding: "88px 48px" }}>
       <div style={{ maxWidth: 980, margin: "0 auto" }}>
         <SectionHeading eyebrow={eyebrow} title={title} sub={sub} align="center"/>
         <div style={{ marginTop: 40, display: "flex", flexDirection: "column", gap: 10 }}>
@@ -529,7 +529,7 @@ function ServiceArea({ eyebrow, title, body, cities, mapImg, mapEmbed = false })
    ============================================================ */
 function FinalCTA({ eyebrow, title, body, primary, secondary }) {
   return (
-    <section style={{ background: "var(--edison-navy)", padding: "96px 48px", color: "#fff" }}>
+    <section className="ic-final-cta" style={{ background: "var(--edison-navy)", padding: "96px 48px", color: "#fff" }}>
       <div style={{ maxWidth: 880, margin: "0 auto", textAlign: "center" }}>
         {eyebrow && <InteriorEyebrow color="var(--edison-teal)">{eyebrow}</InteriorEyebrow>}
         <h2 style={{
