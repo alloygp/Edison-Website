@@ -75,7 +75,7 @@ function WattsonPageA() {
         { label: "WATTSON AI" }
       ]}/>
 
-      <section style={{
+      <section className="wattson-hero" style={{
         background: "linear-gradient(180deg, var(--edison-navy) 0%, var(--edison-navy-dark) 100%)",
         color: "#fff",
         padding: "104px 48px 96px",
@@ -86,7 +86,7 @@ function WattsonPageA() {
           width: 600, height: 600, borderRadius: "50%",
           background: "radial-gradient(circle, rgba(60,200,200,.18) 0%, transparent 70%)"
         }}/>
-        <div style={{ maxWidth: 1200, margin: "0 auto",
+        <div className="wattson-hero-grid" style={{ maxWidth: 1200, margin: "0 auto",
                       display: "grid", gridTemplateColumns: "1.2fr 1fr", gap: 64,
                       alignItems: "center", position: "relative" }}>
           <div>

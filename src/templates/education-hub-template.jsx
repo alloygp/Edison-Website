@@ -15,7 +15,7 @@ function EducationHubA({ content }) {
         { label: "Edison Education" }
       ]}/>
 
-      <section style={{
+      <section className="edu-hero" style={{
         background: "linear-gradient(180deg, #fff 0%, var(--edison-teal-pale) 100%)",
         padding: "88px 48px 64px"
       }}>
@@ -62,7 +62,7 @@ function EducationHubA({ content }) {
               border: "1.5px solid var(--edison-teal-dark)"
             }}>See all blogs <span aria-hidden="true">→</span></a>
           </div>
-          <div style={{display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 24 }}>
+          <div className="edu-course-grid" style={{display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 24 }}>
           {content.topics.map((t, i) => (
             <article key={i} style={{
               background: "#fff",
@@ -126,7 +126,7 @@ function EducationHubA({ content }) {
       <section style={{ background: "var(--edison-teal-pale)", padding: "80px 48px" }}>
         <div style={{ maxWidth: 1200, margin: "0 auto" }}>
           <SectionHeading eyebrow="Featured" title="What boards are reading this month"/>
-          <a href={content.featured.href} style={{
+          <a className="edu-featured-grid" href={content.featured.href} style={{
             marginTop: 32,
             display: "grid", gridTemplateColumns: "1.2fr 1fr", gap: 0,
             background: "#fff",
@@ -235,7 +235,7 @@ function EducationHubB({ content }) {
       </section>
 
       <section style={{ background: "#fff", padding: "56px 48px" }}>
-        <div style={{ maxWidth: 1200, margin: "0 auto",
+        <div className="edu-blog-layout" style={{ maxWidth: 1200, margin: "0 auto",
                       display: "grid", gridTemplateColumns: "1.6fr 1fr", gap: 56,
                       alignItems: "start" }}>
 
@@ -246,7 +246,7 @@ function EducationHubB({ content }) {
               display: "flex", flexDirection: "column", gap: 24
             }}>
               {allArticles.slice(0, 8).map((a, i) => (
-                <a key={i} href={a.href} style={{
+                <a className="edu-article-row" key={i} href={a.href} style={{
                   display: "grid", gridTemplateColumns: "200px 1fr", gap: 24,
                   alignItems: "center",
                   textDecoration: "none",

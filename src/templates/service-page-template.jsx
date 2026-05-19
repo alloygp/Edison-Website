@@ -19,8 +19,8 @@ function ServicePage({ content }) {
       <Breadcrumb trail={content.crumb}/>
 
       {/* Split hero, same pattern as Pillar */}
-      <section style={{ background: "#fff", padding: "72px 48px 64px" }}>
-        <div style={{ maxWidth: 1200, margin: "0 auto",
+      <section className="svc-page-hero" style={{ background: "#fff", padding: "72px 48px 64px" }}>
+        <div className="svc-page-hero-grid" style={{ maxWidth: 1200, margin: "0 auto",
                       display: "grid", gridTemplateColumns: "1.15fr 1fr", gap: 56,
                       alignItems: "center" }}>
           <div>
@@ -59,7 +59,7 @@ function ServicePage({ content }) {
               <InteriorButton variant="ghost" size="lg" href="/contact/">Schedule a Consultation</InteriorButton>
             </div>
           </div>
-          <div style={{
+          <div className="svc-page-hero-img" style={{
             width: "100%", aspectRatio: "5 / 4",
             borderRadius: 18, overflow: "hidden",
             backgroundImage: `url(${content.hero.image})`,
@@ -79,7 +79,7 @@ function ServicePage({ content }) {
             title={content.included.title}
             sub={content.included.sub}
           />
-          <div style={{
+          <div className="svc-page-sub-grid" style={{
             marginTop: 48,
             display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 18
           }}>

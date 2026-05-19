@@ -24,8 +24,8 @@ function EdisonTransitionPage() {
         { label: "The Edison Transition" }
       ]}/>
 
-      <section style={{ background: "#fff", padding: "72px 48px 56px" }}>
-        <div style={{ maxWidth: 1200, margin: "0 auto",
+      <section className="transition-hero" style={{ background: "#fff", padding: "72px 48px 56px" }}>
+        <div className="transition-hero-grid" style={{ maxWidth: 1200, margin: "0 auto",
                       display: "grid", gridTemplateColumns: "1.15fr 1fr", gap: 56,
                       alignItems: "center" }}>
           <div>
@@ -141,7 +141,7 @@ function MeetYourManagementPage() {
         { label: "Meet Your Management" }
       ]}/>
 
-      <section style={{
+      <section className="meet-section" style={{
         background: "linear-gradient(180deg, #fff 0%, var(--edison-teal-pale) 100%)",
         padding: "88px 48px 64px"
       }}>
@@ -170,7 +170,7 @@ function MeetYourManagementPage() {
       </section>
 
       <section style={{ background: "var(--edison-teal-pale)", padding: "0 48px 88px" }}>
-        <div style={{ maxWidth: 1080, margin: "0 auto",
+        <div className="meet-grid" style={{ maxWidth: 1080, margin: "0 auto",
                       display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 18 }}>
           {[
             { title: "Meet the People", body: "Homeowners see the actual humans running their community, names, faces, direct extensions. Not 'our team.'" },

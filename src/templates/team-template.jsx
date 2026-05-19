@@ -46,7 +46,7 @@ function TeamPageA({ content }) {
         { label: "Meet Our Team" }
       ]}/>
 
-      <section style={{ background: "#fff", padding: "72px 48px 48px" }}>
+      <section className="team-hero" style={{ background: "#fff", padding: "72px 48px 48px" }}>
         <div style={{ maxWidth: 1080, margin: "0 auto" }}>
           <div style={{
             fontFamily: "var(--font-display)", fontWeight: 700, fontSize: 12.5,
@@ -69,7 +69,7 @@ function TeamPageA({ content }) {
       <section style={{ background: "var(--edison-teal-pale)", padding: "64px 48px" }}>
         <div style={{ maxWidth: 1200, margin: "0 auto" }}>
           <SectionHeading eyebrow="Leadership" title="Who's at the top, and why it matters"/>
-          <div style={{
+          <div className="team-leaders-grid" style={{
             marginTop: 36,
             display: "grid",
             gridTemplateColumns: `repeat(${leaders.length}, 1fr)`,
@@ -163,7 +163,7 @@ function TeamPageA({ content }) {
                 color: "var(--edison-navy)", margin: 0
               }}>{dept}</h2>
             </div>
-            <div style={{
+            <div className="team-dept-grid" style={{
               display: "grid",
               gridTemplateColumns: "repeat(4, 1fr)",
               gap: 20

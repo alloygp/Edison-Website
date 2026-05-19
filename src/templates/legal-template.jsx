@@ -15,7 +15,7 @@ function LegalShell({ eyebrow, title, lastUpdated, sections, children }) {
         { label: title }
       ]}/>
 
-      <section style={{ background: "#fff", padding: "72px 48px 32px" }}>
+      <section className="legal-hero" style={{ background: "#fff", padding: "72px 48px 32px" }}>
         <div style={{ maxWidth: 880, margin: "0 auto" }}>
           <div style={{
             fontFamily: "var(--font-display)", fontWeight: 700, fontSize: 12.5,
@@ -35,7 +35,7 @@ function LegalShell({ eyebrow, title, lastUpdated, sections, children }) {
         </div>
       </section>
 
-      <section style={{ background: "#fff", padding: "32px 48px 80px" }}>
+      <section className="legal-content" style={{ background: "#fff", padding: "32px 48px 80px" }}>
         <div style={{ maxWidth: 880, margin: "0 auto" }}>
           {sections.map((s, i) => (
             <section key={i} style={{ marginBottom: 36 }}>

@@ -86,7 +86,7 @@ function ContactForm({ compact = false }) {
             borderRadius: 14, padding: compact ? 28 : 36,
             boxShadow: "var(--shadow-sm)",
             display: "grid", gridTemplateColumns: "1fr 1fr", gap: 16
-          }}>
+          }} className="contact-a-fields">
       {/* Honeypot — hidden from humans, bots fill it in */}
       <div style={{ position: "absolute", left: "-9999px", opacity: 0, height: 0, overflow: "hidden" }} aria-hidden="true">
         <label>Leave this empty</label>
@@ -163,7 +163,7 @@ function ContactPageA() {
         { label: "Contact" }
       ]}/>
 
-      <section style={{ background: "#fff", padding: "72px 48px 96px" }}>
+      <section className="contact-a-section" style={{ background: "#fff", padding: "72px 48px 96px" }}>
         <div style={{ maxWidth: 1200, margin: "0 auto" }}>
           <div style={{
             fontFamily: "var(--font-display)", fontWeight: 700, fontSize: 12.5,
@@ -180,7 +180,7 @@ function ContactPageA() {
             color: "var(--edison-text-body)", margin: "0 0 56px", maxWidth: 720
           }}>Send us the basics about your community and we'll respond within one business day. Board members get a same-day reply; homeowners within 24 hours. Non-negotiable.</p>
 
-          <div style={{ display: "grid", gridTemplateColumns: "1fr 1.3fr", gap: 56, alignItems: "start" }}>
+          <div className="contact-a-layout" style={{ display: "grid", gridTemplateColumns: "1fr 1.3fr", gap: 56, alignItems: "start" }}>
             <div style={{ display: "flex", flexDirection: "column", gap: 20 }}>
               <div style={{
                 background: "var(--edison-teal-pale)", borderRadius: 12, padding: "26px 26px"
@@ -287,7 +287,7 @@ function ContactPageB() {
         { label: "Contact" }
       ]}/>
 
-      <section style={{
+      <section className="contact-b-hero" style={{
         background: "linear-gradient(180deg, var(--edison-navy) 0%, var(--edison-navy) 60%, transparent 100%)",
         color: "#fff",
         padding: "96px 48px 200px",

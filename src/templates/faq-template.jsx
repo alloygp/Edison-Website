@@ -16,7 +16,7 @@ function FAQPage({ content }) {
         { label: "FAQ" }
       ]}/>
 
-      <section style={{
+      <section className="faq-hero" style={{
         background: "linear-gradient(180deg, #fff 0%, var(--edison-teal-pale) 100%)",
         padding: "88px 48px 64px"
       }}>

@@ -15,7 +15,7 @@ function BlogIndexPage({ content }) {
         { label: "Blog" }
       ]}/>
 
-      <section style={{ background: "var(--edison-navy)", color: "#fff",
+      <section className="blog-idx-hero" style={{ background: "var(--edison-navy)", color: "#fff",
                         padding: "72px 48px 56px" }}>
         <div style={{ maxWidth: 1080, margin: "0 auto" }}>
           <div style={{
@@ -35,8 +35,8 @@ function BlogIndexPage({ content }) {
         </div>
       </section>
 
-      <section style={{ background: "#fff", padding: "56px 48px 88px" }}>
-        <div style={{ maxWidth: 1200, margin: "0 auto",
+      <section className="blog-idx-body" style={{ background: "#fff", padding: "56px 48px 88px" }}>
+        <div className="blog-idx-layout" style={{ maxWidth: 1200, margin: "0 auto",
                       display: "grid", gridTemplateColumns: "1.6fr 1fr", gap: 56,
                       alignItems: "start" }}>
           <div>
@@ -44,7 +44,7 @@ function BlogIndexPage({ content }) {
               display: "flex", flexDirection: "column", gap: 22
             }}>
               {all.map((a, i) => (
-                <a key={i} href={a.href} style={{
+                <a key={i} href={a.href} className="blog-idx-row" style={{
                   display: "grid", gridTemplateColumns: "200px 1fr", gap: 22,
                   alignItems: "center",
                   textDecoration: "none",
@@ -81,7 +81,7 @@ function BlogIndexPage({ content }) {
             </div>
           </div>
 
-          <aside style={{ position: "sticky", top: 110, display: "flex", flexDirection: "column", gap: 22 }}>
+          <aside className="blog-idx-sidebar" style={{ position: "sticky", top: 110, display: "flex", flexDirection: "column", gap: 22 }}>
             <div style={{
               background: "#fff", border: "1px solid var(--border-hairline)",
               borderRadius: 12, padding: 22

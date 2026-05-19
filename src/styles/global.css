@@ -303,3 +303,271 @@ h1, h2, h3, h4, h5, h6 {
     flex: 1 1 100% !important;
   }
 }
+
+/* ============================================================
+   TEMPLATE-LEVEL MOBILE OVERRIDES
+   All 16 page templates — section padding, grid collapse,
+   image sizing, font shrink. Requires !important throughout
+   because all styles are inline JSX objects.
+   ============================================================ */
+
+@media (max-width: 768px) {
+
+  /* ── ABOUT ────────────────────────────────────────────────── */
+  .about-a-hero,
+  .about-b-hero {
+    padding: 48px 20px 40px !important;
+  }
+  .about-b-hero-grid {
+    display: block !important;
+  }
+  .about-b-hero-img,
+  .about-a-img-wrap {
+    width: 100% !important;
+    min-height: 260px !important;
+    max-height: 300px !important;
+    margin-top: 28px !important;
+  }
+  .about-full-img {
+    height: 220px !important;
+  }
+  .about-a-btn-wrap {
+    flex-direction: column !important;
+    align-items: stretch !important;
+  }
+  .about-b-anti-grid {
+    display: block !important;
+  }
+  .about-b-anti-list {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+  }
+
+  /* ── BLOG INDEX ───────────────────────────────────────────── */
+  .blog-idx-hero {
+    padding: 40px 20px 32px !important;
+  }
+  .blog-idx-layout {
+    display: block !important;
+  }
+  .blog-idx-row {
+    display: block !important;
+  }
+  .blog-idx-sidebar {
+    display: none !important;
+  }
+
+  /* ── BLOG POST ────────────────────────────────────────────── */
+  .blog-a-hero {
+    padding: 36px 20px 0 !important;
+  }
+  .blog-a-body {
+    padding: 24px 20px 0 !important;
+  }
+  .blog-a-layout {
+    padding: 24px 20px 48px !important;
+  }
+  .blog-a-related {
+    padding: 48px 20px !important;
+  }
+  .blog-related-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* ── CASE STUDIES ─────────────────────────────────────────── */
+  .cs-hub-hero {
+    padding: 40px 20px 32px !important;
+  }
+  .cs-hub-featured-grid {
+    display: block !important;
+  }
+  .cs-hub-featured-img {
+    min-height: 220px !important;
+    max-height: 260px !important;
+  }
+  .cs-hub-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* ── CONTACT ──────────────────────────────────────────────── */
+  .contact-a-section {
+    padding: 40px 20px 56px !important;
+  }
+  .contact-a-layout {
+    display: block !important;
+  }
+  .contact-a-fields {
+    grid-template-columns: 1fr !important;
+  }
+  .contact-b-hero {
+    padding: 56px 20px 120px !important;
+  }
+  .contact-b-cards {
+    grid-template-columns: 1fr !important;
+    margin-top: -80px !important;
+  }
+
+  /* ── EDUCATION HUB ────────────────────────────────────────── */
+  .edu-hero {
+    padding: 48px 20px 40px !important;
+  }
+  .edu-featured-grid {
+    display: block !important;
+  }
+  .edu-course-grid {
+    grid-template-columns: 1fr !important;
+  }
+  .edu-blog-layout {
+    display: block !important;
+  }
+  .edu-article-row {
+    grid-template-columns: 100px 1fr !important;
+    gap: 14px !important;
+  }
+
+  /* ── FAQ ──────────────────────────────────────────────────── */
+  .faq-hero {
+    padding: 48px 20px 40px !important;
+    text-align: left !important;
+  }
+
+  /* ── LEGAL ────────────────────────────────────────────────── */
+  .legal-hero {
+    padding: 40px 20px 20px !important;
+  }
+  .legal-content {
+    padding: 20px 20px 56px !important;
+  }
+
+  /* ── SERVICE ──────────────────────────────────────────────── */
+  .svc-a-hero {
+    padding: 40px 20px 48px !important;
+  }
+  .svc-a-hero-grid {
+    display: block !important;
+  }
+  .svc-a-hero-img {
+    width: 100% !important;
+    min-height: 240px !important;
+    max-height: 280px !important;
+    margin-top: 28px !important;
+    aspect-ratio: unset !important;
+  }
+  .svc-a-benefits-grid {
+    grid-template-columns: 1fr !important;
+  }
+  .svc-a-included-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* ── SERVICE PAGE ─────────────────────────────────────────── */
+  .svc-page-hero {
+    padding: 40px 20px 48px !important;
+  }
+  .svc-page-hero-grid {
+    display: block !important;
+  }
+  .svc-page-hero-img {
+    width: 100% !important;
+    min-height: 240px !important;
+    max-height: 280px !important;
+    margin-top: 28px !important;
+    aspect-ratio: unset !important;
+  }
+  .svc-page-sub-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* ── SUB-SERVICE ──────────────────────────────────────────── */
+  .sub-svc-hero {
+    padding: 36px 20px 32px !important;
+  }
+  .sub-svc-hero-grid {
+    display: block !important;
+  }
+  .sub-svc-hero-img {
+    width: 100% !important;
+    min-height: 220px !important;
+    max-height: 260px !important;
+    margin-top: 24px !important;
+    aspect-ratio: unset !important;
+  }
+  .sub-svc-process-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* ── TEAM ─────────────────────────────────────────────────── */
+  .team-hero {
+    padding: 40px 20px 32px !important;
+  }
+  .team-leaders-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+  .team-dept-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+
+  /* ── TESTIMONIALS ─────────────────────────────────────────── */
+  .testi-hero {
+    padding: 40px 20px 24px !important;
+  }
+  .testi-featured-grid {
+    display: block !important;
+  }
+  .testi-all-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* ── TRANSITION & MEET ────────────────────────────────────── */
+  .transition-hero {
+    padding: 40px 20px 40px !important;
+  }
+  .transition-hero-grid {
+    display: block !important;
+  }
+  .transition-hero-img {
+    width: 100% !important;
+    min-height: 240px !important;
+    max-height: 280px !important;
+    margin-top: 28px !important;
+  }
+  .meet-section {
+    padding: 48px 20px 56px !important;
+  }
+  .meet-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* ── WATTSON ──────────────────────────────────────────────── */
+  .wattson-hero {
+    padding: 56px 20px 64px !important;
+  }
+  .wattson-hero-grid {
+    display: block !important;
+  }
+  .wattson-hero-img {
+    width: 100% !important;
+    min-height: 240px !important;
+    max-height: 280px !important;
+    margin-top: 32px !important;
+    border-radius: 12px !important;
+  }
+}
+
+/* Narrow screens: team/testimonials go 1-col */
+@media (max-width: 480px) {
+  .team-leaders-grid,
+  .team-dept-grid {
+    grid-template-columns: 1fr !important;
+  }
+  .blog-idx-row {
+    display: block !important;
+  }
+  .edu-article-row {
+    display: block !important;
+  }
+  .edu-article-row > div:first-child {
+    width: 100% !important;
+    height: 180px !important;
+  }
+}

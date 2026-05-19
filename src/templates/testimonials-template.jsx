@@ -36,7 +36,7 @@ function TestimonialsPageA({ content }) {
         { label: "Testimonials" }
       ]}/>
 
-      <section style={{ background: "#fff", padding: "72px 48px 32px" }}>
+      <section className="testi-hero" style={{ background: "#fff", padding: "72px 48px 32px" }}>
         <div style={{ maxWidth: 1080, margin: "0 auto", textAlign: "center" }}>
           <div style={{
             fontFamily: "var(--font-display)", fontWeight: 700, fontSize: 12.5,
@@ -185,7 +185,7 @@ function TestimonialsPageB({ content }) {
 
       {/* Featured quote, large */}
       <section style={{ background: "var(--edison-teal-pale)", padding: "72px 48px" }}>
-        <div style={{ maxWidth: 1080, margin: "0 auto",
+        <div className="testi-featured-grid" style={{ maxWidth: 1080, margin: "0 auto",
                       display: "grid", gridTemplateColumns: "1.4fr 1fr", gap: 56,
                       alignItems: "center" }}>
           <div>
@@ -222,7 +222,7 @@ function TestimonialsPageB({ content }) {
       <section style={{ background: "#fff", padding: "88px 48px" }}>
         <div style={{ maxWidth: 1200, margin: "0 auto" }}>
           <SectionHeading eyebrow="More from Edison boards" title="Six reasons boards stay"/>
-          <div style={{
+          <div className="testi-all-grid" style={{
             marginTop: 40,
             display: "grid", gridTemplateColumns: "1fr 1fr", gap: 18
           }}>

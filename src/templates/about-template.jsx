@@ -16,7 +16,7 @@ function AboutPageA({ content }) {
       ]}/>
 
       {/* Story Hero */}
-      <section style={{
+      <section className="about-a-hero" style={{
         background: "linear-gradient(180deg, #fff 0%, var(--edison-teal-pale) 100%)",
         padding: "96px 48px 80px"
       }}>
@@ -39,10 +39,10 @@ function AboutPageA({ content }) {
       </section>
 
       {/* Hero image */}
-      <section style={{ background: "var(--edison-teal-pale)", padding: "0 48px 96px" }}>
+      <section className="about-a-img-wrap" style={{ background: "var(--edison-teal-pale)", padding: "0 48px 96px" }}>
         <div style={{ maxWidth: 1280, margin: "0 auto" }}>
           <img src={content.hero.image} alt=""
-               style={{ width: "100%", height: 460, objectFit: "cover",
+               className="about-full-img" style={{ width: "100%", height: 460, objectFit: "cover",
                         borderRadius: 20, boxShadow: "var(--shadow-lg)" }}/>
         </div>
       </section>
@@ -74,7 +74,7 @@ function AboutPageA({ content }) {
         paragraphs={content.teamIntro}
       />
 
-      <section style={{ background: "#fff", padding: "0 48px 88px" }}>
+      <section className="about-a-btn-wrap" style={{ background: "#fff", padding: "0 48px 88px" }}>
         <div style={{ maxWidth: 1080, margin: "0 auto",
                       display: "flex", justifyContent: "center" }}>
           <InteriorButton variant="ghost" size="lg" href="/about/meet-our-team/">
@@ -108,8 +108,8 @@ function AboutPageB({ content }) {
         { label: "About" }
       ]}/>
 
-      <section style={{ background: "#fff", padding: "88px 48px 64px" }}>
-        <div style={{ maxWidth: 1200, margin: "0 auto",
+      <section className="about-b-hero" style={{ background: "#fff", padding: "88px 48px 64px" }}>
+        <div className="about-b-hero-grid" style={{ maxWidth: 1200, margin: "0 auto",
                       display: "grid", gridTemplateColumns: "1.15fr 1fr", gap: 64,
                       alignItems: "center" }}>
           <div>
@@ -136,7 +136,7 @@ function AboutPageB({ content }) {
               </InteriorButton>
             </div>
           </div>
-          <div style={{
+          <div className="about-b-hero-img" style={{
             width: "100%", aspectRatio: "5 / 4",
             borderRadius: 18, overflow: "hidden",
             backgroundImage: `url(${content.hero.image})`,
@@ -168,10 +168,10 @@ function AboutPageB({ content }) {
         items={content.subPages}
       />
 
-      <section style={{
+      <section className="about-b-anti" style={{
         background: "var(--edison-navy)", color: "#fff", padding: "88px 48px"
       }}>
-        <div style={{ maxWidth: 1080, margin: "0 auto",
+        <div className="about-b-anti-grid" style={{ maxWidth: 1080, margin: "0 auto",
                       display: "grid", gridTemplateColumns: "auto 1fr", gap: 56,
                       alignItems: "center" }}>
           <div style={{
@@ -190,7 +190,7 @@ function AboutPageB({ content }) {
               fontSize: 30, lineHeight: 1.2, letterSpacing: "-0.01em",
               color: "#fff", margin: "0 0 18px"
             }}>What Edison deliberately doesn't do</h2>
-            <ul style={{ listStyle: "none", padding: 0, margin: 0,
+            <ul className="about-b-anti-list" style={{ listStyle: "none", padding: 0, margin: 0,
                          display: "grid", gridTemplateColumns: "1fr 1fr", gap: "10px 28px" }}>
               {content.antiPatterns.map((a, i) => (
                 <li key={i} style={{

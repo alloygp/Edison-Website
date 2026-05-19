@@ -44,7 +44,7 @@ function BlogSpokeA({ content }) {
       ]}/>
 
       {/* Hero with image */}
-      <section style={{ background: "#fff", padding: "56px 48px 0" }}>
+      <section className="blog-a-hero" style={{ background: "#fff", padding: "56px 48px 0" }}>
         <div style={{ maxWidth: 920, margin: "0 auto" }}>
           <div style={{
             fontFamily: "var(--font-display)", fontWeight: 700, fontSize: 12.5,
@@ -75,7 +75,7 @@ function BlogSpokeA({ content }) {
         </div>
       </section>
 
-      <section style={{ background: "#fff", padding: "32px 48px 0" }}>
+      <section className="blog-a-body" style={{ background: "#fff", padding: "32px 48px 0" }}>
         <div style={{ maxWidth: 1200, margin: "0 auto" }}>
           <img src={content.heroImage} alt=""
                style={{
@@ -87,7 +87,7 @@ function BlogSpokeA({ content }) {
       </section>
 
       {/* Body with TOC sidebar */}
-      <section style={{ background: "#fff", padding: "64px 48px 80px" }}>
+      <section className="blog-a-layout" style={{ background: "#fff", padding: "64px 48px 80px" }}>
         <div style={{
           maxWidth: 1200, margin: "0 auto",
           display: "grid", gridTemplateColumns: "240px 1fr", gap: 64,
@@ -181,10 +181,10 @@ function BlogSpokeA({ content }) {
       />
 
       {/* Related articles */}
-      <section style={{ background: "#fff", padding: "88px 48px" }}>
+      <section className="blog-a-related" style={{ background: "#fff", padding: "88px 48px" }}>
         <div style={{ maxWidth: 1200, margin: "0 auto" }}>
           <SectionHeading eyebrow="Keep reading" title="Related Edison Education articles"/>
-          <div style={{
+          <div className="blog-related-grid" style={{
             marginTop: 32,
             display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 20
           }}>

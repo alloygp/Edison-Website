@@ -14,8 +14,8 @@ function PillarPageA({ content }) {
       <Breadcrumb trail={content.crumb}/>
 
       {/* Split hero with image (from Variant B) */}
-      <section style={{ background: "#fff", padding: "72px 48px 64px" }}>
-        <div style={{ maxWidth: 1200, margin: "0 auto",
+      <section className="svc-a-hero" style={{ background: "#fff", padding: "72px 48px 64px" }}>
+        <div className="svc-a-hero-grid" style={{ maxWidth: 1200, margin: "0 auto",
                       display: "grid", gridTemplateColumns: "1.15fr 1fr", gap: 56,
                       alignItems: "center" }}>
           <div>
@@ -38,7 +38,7 @@ function PillarPageA({ content }) {
               <InteriorButton variant="ghost" size="lg" href="/contact/">Schedule a Consultation</InteriorButton>
             </div>
           </div>
-          <div style={{
+          <div className="svc-a-hero-img" style={{
             width: "100%", aspectRatio: "5 / 4",
             borderRadius: 18, overflow: "hidden",
             backgroundImage: `url(${content.hero.image})`,
@@ -61,7 +61,7 @@ function PillarPageA({ content }) {
             title={content.included.title}
             sub={content.included.sub}
           />
-          <div style={{
+          <div className="svc-a-benefits-grid" style={{
             marginTop: 48,
             display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 18
           }}>
@@ -273,7 +273,7 @@ function PillarPageB({ content }) {
             title={content.whyEdison.title}
             sub={content.whyEdison.sub}
           />
-          <div style={{
+          <div className="svc-a-included-grid" style={{
             marginTop: 40,
             display: "grid", gridTemplateColumns: "repeat(2, 1fr)", gap: 18
           }}>

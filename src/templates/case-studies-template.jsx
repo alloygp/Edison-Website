@@ -18,7 +18,7 @@ function CaseStudiesPageA({ content }) {
         { label: "Case Studies" }
       ]}/>
 
-      <section style={{ background: "#fff", padding: "72px 48px 48px" }}>
+      <section className="cs-hub-hero" style={{ background: "#fff", padding: "72px 48px 48px" }}>
         <div style={{ maxWidth: 1080, margin: "0 auto" }}>
           <div style={{
             fontFamily: "var(--font-display)", fontWeight: 700, fontSize: 12.5,
@@ -40,8 +40,9 @@ function CaseStudiesPageA({ content }) {
       {/* Featured case */}
       <section style={{ background: "var(--edison-teal-pale)", padding: "0 48px 80px" }}>
         <div style={{ maxWidth: 1200, margin: "0 auto" }}>
-          <a href={featured.href} style={{
+          <a className="cs-hub-featured-grid" href={featured.href} style={{
             display: "grid", gridTemplateColumns: "1.05fr 1fr", gap: 0,
+            // @className cs-hub-featured-grid (applied on wrapper)
             textDecoration: "none",
             background: "#fff",
             borderRadius: 18, overflow: "hidden",
@@ -50,7 +51,7 @@ function CaseStudiesPageA({ content }) {
           }}
             onMouseEnter={(e) => e.currentTarget.style.transform = "translateY(-3px)"}
             onMouseLeave={(e) => e.currentTarget.style.transform = "translateY(0)"}>
-            <div style={{
+            <div className="cs-hub-featured-img" style={{
               minHeight: 420,
               backgroundImage: `url(${featured.image})`,
               backgroundSize: "cover", backgroundPosition: "center"
@@ -116,7 +117,7 @@ function CaseStudiesPageA({ content }) {
       <section style={{ background: "#fff", padding: "80px 48px" }}>
         <div style={{ maxWidth: 1200, margin: "0 auto" }}>
           <SectionHeading eyebrow="More case studies" title="Communities we've helped"/>
-          <div style={{
+          <div className="cs-hub-grid" style={{
             marginTop: 36,
             display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 20
           }}>
