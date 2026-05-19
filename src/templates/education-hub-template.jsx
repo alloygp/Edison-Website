@@ -21,7 +21,7 @@ function EducationHubA({ content }) {
       }}>
         <div style={{ maxWidth: 980, margin: "0 auto" }}>
           <img src="/assets/Edison-Education-Full-Color.svg" alt="Edison Education"
-               style={{ height: 80, width: "auto", display: "block", marginBottom: 24 }}/>
+               style={{ height: 80, width: "auto", display: "block", margin: "0 auto 24px" }}/>
           <h1 style={{
             fontFamily: "var(--font-display)", fontWeight: 800,
             fontSize: 52, lineHeight: 1.08, letterSpacing: "-0.02em",
