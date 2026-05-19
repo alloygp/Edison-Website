@@ -340,7 +340,7 @@ function EducationBand({ title, sub, posts }) {
           </div>
 
           {/* Right: logo + heading + text + CTA */}
-          <div style={{ display: "flex", flexDirection: "column", gap: 0 }}>
+          <div style={{ display: "flex", flexDirection: "column", gap: 0, alignItems: "flex-start" }}>
             <img
               src="/assets/Edison-Education-Full-Color.svg"
               alt="Edison Education"
