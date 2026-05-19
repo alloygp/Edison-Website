@@ -32,21 +32,21 @@ export const EMAIL_CONFIG = {
       confirmBody: (name: string, _siteUrl: string) =>
         `<p>Hi ${name},</p>
         <p>Thanks for reaching out. We typically respond within 1 business day.</p>
-        <p>— Skyler</p>`,
+        <p>Skyler</p>`,
     },
     lead: {
-      confirmSubject: "Thanks — we'll be in touch",
+      confirmSubject: "Thanks, we'll be in touch",
       confirmBody: (name: string, company: string, siteUrl: string) =>
         `<p>Hi ${name},</p>
         <p>We received your info and someone will reach out shortly to discuss what ${company || 'your community'} needs.</p>
-        <p>— Skyler</p>`,
+        <p>Skyler</p>`,
     },
     subscribe: {
       confirmSubject: "You're on the list",
       confirmBody: (name: string) =>
         `<p>Hi${name ? ` ${name}` : ''},</p>
         <p>Thanks for subscribing. We'll be in touch soon.</p>
-        <p>— Skyler</p>`,
+        <p>Skyler</p>`,
     },
   },
 };

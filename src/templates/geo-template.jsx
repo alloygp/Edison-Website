@@ -3,13 +3,13 @@ import { BodyProse, Breadcrumb, DetailLinkCards, FAQ, FeatureGrid, FinalCTA, Int
 import { GeoHeroLocal, GeoHeroService, LocalContext, NeighborhoodList, PullQuote, StatsBand } from '../components/template-sections';
 
 /* ============================================================
-   GEO PAGE TEMPLATE — VARIANT A (Location-First)
+   GEO PAGE TEMPLATE, VARIANT A (Location-First)
    Hero foregrounds the city. Best for high-search-volume primaries
    (Orlando) and cities with strong local-identity signal.
    ============================================================ */
 function GeoPageA({ content }) {
   return (
-    <main data-screen-label="Geo — Variant A">
+    <main data-screen-label="Geo, Variant A">
       <Breadcrumb trail={[
         { label: "Home", href: "/" },
         { label: "Services", href: "/services/" },
@@ -42,7 +42,7 @@ function GeoPageA({ content }) {
         background="#fff"
         eyebrow="What's included"
         title={`Full-service HOA management for ${content.city} boards`}
-        sub="Operational, financial, and advisory support — delivered by a dedicated manager with a back-office team handling everything that isn't community-facing."
+        sub="Operational, financial, and advisory support, delivered by a dedicated manager with a back-office team handling everything that isn't community-facing."
         columns={3}
         items={content.services}
       />
@@ -51,7 +51,7 @@ function GeoPageA({ content }) {
         background="var(--edison-teal-pale)"
         eyebrow="Communities we serve"
         title={`HOA communities across ${content.city} & nearby`}
-        sub="Edison manages associations throughout the area. If your community isn't listed, ask — we add coverage as boards reach out."
+        sub="Edison manages associations throughout the area. If your community isn't listed, ask, we add coverage as boards reach out."
         items={content.neighborhoods}
       />
 
@@ -66,7 +66,7 @@ function GeoPageA({ content }) {
       <FinalCTA
         eyebrow={`${content.city} · Central Florida`}
         title={`Local HOA management. Sized for the community, not the portfolio.`}
-        body={`Tell us about your ${content.city} association and we'll deliver a written proposal within one business day — sized for your governing documents, capital plan, and homeowner count.`}
+        body={`Tell us about your ${content.city} association and we'll deliver a written proposal within one business day, sized for your governing documents, capital plan, and homeowner count.`}
         primary={{ label: "Request a Proposal", href: "/request-a-proposal/" }}
         secondary={{ label: `Call ${content.phone}`, href: `tel:${content.phone.replace(/\D/g,"")}` }}
       />
@@ -75,13 +75,13 @@ function GeoPageA({ content }) {
 }
 
 /* ============================================================
-   GEO PAGE TEMPLATE — VARIANT B (Service-First with City Qualifier)
+   GEO PAGE TEMPLATE, VARIANT B (Service-First with City Qualifier)
    Strong text hero. Better for secondary cities, scalable to all
    geo pages with a single content shape.
    ============================================================ */
 function GeoPageB({ content }) {
   return (
-    <main data-screen-label="Geo — Variant B">
+    <main data-screen-label="Geo, Variant B">
       <Breadcrumb trail={[
         { label: "Home", href: "/" },
         { label: "Services", href: "/services/" },
@@ -107,7 +107,7 @@ function GeoPageB({ content }) {
       <DetailLinkCards
         eyebrow="Services"
         title={`What we deliver to ${content.city} associations`}
-        sub="Each service is run by a dedicated department — not a manager wearing six hats. Click through to see what's included."
+        sub="Each service is run by a dedicated department, not a manager wearing six hats. Click through to see what's included."
         columns={3}
         items={content.serviceLinks}
       />
@@ -146,7 +146,7 @@ function GeoPageB({ content }) {
       <FinalCTA
         eyebrow="Get started"
         title={`Ready to talk about your ${content.city} association?`}
-        body="Send us the basics and we'll respond within one business day with next steps. Same-day for board members, 24-hour for homeowners — non-negotiable."
+        body="Send us the basics and we'll respond within one business day with next steps. Same-day for board members, 24-hour for homeowners, non-negotiable."
         primary={{ label: "Request a Proposal", href: "/request-a-proposal/" }}
         secondary={{ label: `Call ${content.phone}`, href: `tel:${content.phone.replace(/\D/g,"")}` }}
       />
@@ -155,53 +155,53 @@ function GeoPageB({ content }) {
 }
 
 /* ============================================================
-   SAMPLE CONTENT — "HOA Management Orlando"
+   SAMPLE CONTENT, "HOA Management Orlando"
    ============================================================ */
 const ORLANDO_CONTENT = {
   city: "Orlando",
   region: "Orange County, FL",
   phone: "(407) 317-5252",
   hero: {
-    lede: "Orlando boards have more management choices than any other city in Central Florida — and more competing pressures than most. Edison is the boutique alternative: a dedicated manager who knows your community, a PCAM-credentialed leader at the top, and back-office departments that close the loop on what most companies leave open.",
+    lede: "Orlando boards have more management choices than any other city in Central Florida, and more competing pressures than most. Edison is the boutique alternative: a dedicated manager who knows your community, a PCAM-credentialed leader at the top, and back-office departments that close the loop on what most companies leave open.",
     image: "/assets/img-community-aerial.jpg"
   },
   localStats: [
     { value: "Orlando", caption: "Headquartered here. Tracy and the team live and work in the metro." },
-    { value: "8–10", caption: "Communities per manager — half the industry average of 15+." },
+    { value: "8–10", caption: "Communities per manager, half the industry average of 15+." },
     { value: "4.9★", caption: "Google rating, the highest of any named competitor in the Orlando market." },
     { value: "M–F", caption: "9am–5pm office hours. Same-day response for board members." }
   ],
   context: {
-    title: "Orlando's HOA market is unique — and so are its boards",
+    title: "Orlando's HOA market is unique, and so are its boards",
     paragraphs: [
-      "Orlando is one of the fastest-growing HOA markets in the country. The metro adds roughly 1,500 residents a week, sees rapid new-community development, and houses a mix of established neighborhoods, transplant-heavy newer subdivisions, and growing 55+ communities. That growth has produced a strong management-company industry — but also a familiar pattern: large firms get larger, managers get spread thinner, and boards end up wondering why their phone calls aren't being returned.",
-      "Edison was founded in Orlando in 2021 with a deliberately different model. Smaller portfolios. Dedicated back-office departments. A PCAM-credentialed principal — Tracy Durham, with 15+ years in the industry — who personally onboards every new association. The result is a management partner that scales with the community's needs — not the company's growth chart."
+      "Orlando is one of the fastest-growing HOA markets in the country. The metro adds roughly 1,500 residents a week, sees rapid new-community development, and houses a mix of established neighborhoods, transplant-heavy newer subdivisions, and growing 55+ communities. That growth has produced a strong management-company industry, but also a familiar pattern: large firms get larger, managers get spread thinner, and boards end up wondering why their phone calls aren't being returned.",
+      "Edison was founded in Orlando in 2021 with a deliberately different model. Smaller portfolios. Dedicated back-office departments. A PCAM-credentialed principal, Tracy Durham, with 15+ years in the industry, who personally onboards every new association. The result is a management partner that scales with the community's needs, not the company's growth chart."
     ],
     image: "/assets/img-community-aerial.jpg"
   },
   services: [
-    { title: "HOA Management", body: "Dedicated managers, transparent reporting, and proactive communication — built for Orlando's mix of established and newer communities." },
-    { title: "HOA Accounting", body: "Monthly financials, reserve study guidance, and reserve banking — handled by a dedicated specialist, not your manager's spare time." },
-    { title: "Covenant Enforcement", body: "Consistent inspections, fair enforcement, and full compliance tracking — protecting property values without homeowner relationships." },
+    { title: "HOA Management", body: "Dedicated managers, transparent reporting, and proactive communication, built for Orlando's mix of established and newer communities." },
+    { title: "HOA Accounting", body: "Monthly financials, reserve study guidance, and reserve banking, handled by a dedicated specialist, not your manager's spare time." },
+    { title: "Covenant Enforcement", body: "Consistent inspections, fair enforcement, and full compliance tracking, protecting property values without homeowner relationships." },
     { title: "Collections", body: "In-house collections through intent-to-lien, with attorney coordination when legally required. Fast cash flow, clear ledger." },
     { title: "Reserve Planning", body: "Florida reserve study coordination, capital project pipeline, and long-range funding plans your board can defend." },
-    { title: "The Transition Experience", body: "60–90 day onboarding with COO oversight — for boards switching from another company." }
+    { title: "The Transition Experience", body: "60–90 day onboarding with COO oversight, for boards switching from another company." }
   ],
   serviceLinks: [
-    { title: "HOA Management", body: "Day-to-day management, monthly inspections, vendor coordination, and the Action Item List — live project tracking that replaces stale manager reports.", href: "/services/hoa-management/" },
-    { title: "HOA Accounting", body: "Monthly statements, reserve study guidance, reserve banking, tax filing — handled by a dedicated accounting specialist.", href: "/services/hoa-accounting/" },
-    { title: "Covenant Enforcement", body: "Dedicated enforcement department. Fair, consistent, and address-not-name based — protecting property values and homeowner relationships.", href: "/services/covenant-enforcement/" },
-    { title: "Single-Family HOA", body: "Tailored management for single-family neighborhood HOAs across Orlando — Ch. 720 compliance, ARC support, common-area planning.", href: "/services/hoa-management/single-family/" },
-    { title: "Townhome Associations", body: "Townhome-specific challenges handled — shared roofs, common insurance, party-wall maintenance, and homeowner expectations.", href: "/services/hoa-management/townhome/" },
-    { title: "Switching Companies", body: "The Edison Transition Experience handles records, vendors, and homeowner communication — 60–90 days, end to end.", href: "/solutions/switch-hoa-management-company/" }
+    { title: "HOA Management", body: "Day-to-day management, monthly inspections, vendor coordination, and the Action Item List, live project tracking that replaces stale manager reports.", href: "/services/hoa-management/" },
+    { title: "HOA Accounting", body: "Monthly statements, reserve study guidance, reserve banking, tax filing, handled by a dedicated accounting specialist.", href: "/services/hoa-accounting/" },
+    { title: "Covenant Enforcement", body: "Dedicated enforcement department. Fair, consistent, and address-not-name based, protecting property values and homeowner relationships.", href: "/services/covenant-enforcement/" },
+    { title: "Single-Family HOA", body: "Tailored management for single-family neighborhood HOAs across Orlando, Ch. 720 compliance, ARC support, common-area planning.", href: "/services/hoa-management/single-family/" },
+    { title: "Townhome Associations", body: "Townhome-specific challenges handled, shared roofs, common insurance, party-wall maintenance, and homeowner expectations.", href: "/services/hoa-management/townhome/" },
+    { title: "Switching Companies", body: "The Edison Transition Experience handles records, vendors, and homeowner communication, 60–90 days, end to end.", href: "/solutions/switch-hoa-management-company/" }
   ],
   differentiators: [
     { title: "Industry-Low Manager Turnover", body: "Most firms see 30–40% annual turnover. Edison's is a fraction of that. The manager who learns your community in year one is still there in year three." },
-    { title: "Dedicated Back-Office Departments", body: "Enforcement, ARC, accounting, and collections are separate departments — not your manager's overtime work. Boards get specialist quality on every workstream." },
-    { title: "Boutique Portfolio Sizes", body: "8–10 communities per manager — half the industry average. Yours isn't lost in a portfolio of hundreds. The manager actually knows your community by name." },
-    { title: "Leadership Credibility", body: "Edison's principal is a PCAM and the 2025 CAI Central Florida Chapter President — credentials boards can verify and trust." },
+    { title: "Dedicated Back-Office Departments", body: "Enforcement, ARC, accounting, and collections are separate departments, not your manager's overtime work. Boards get specialist quality on every workstream." },
+    { title: "Boutique Portfolio Sizes", body: "8–10 communities per manager, half the industry average. Yours isn't lost in a portfolio of hundreds. The manager actually knows your community by name." },
+    { title: "Leadership Credibility", body: "Edison's principal is a PCAM and the 2025 CAI Central Florida Chapter President, credentials boards can verify and trust." },
     { title: "Modern Technology, Human Touch", body: "WATTSON AI for 24/7 resident questions. CINC for portals and financials. A human still answers when you call the office." },
-    { title: "The Edison Transition Experience", body: "Switching is the burden Edison absorbs — records, vendors, banking, homeowner communication. 60–90 days, COO-supervised." }
+    { title: "The Edison Transition Experience", body: "Switching is the burden Edison absorbs, records, vendors, banking, homeowner communication. 60–90 days, COO-supervised." }
   ],
   neighborhoods: [
     "Lake Nona", "Baldwin Park", "MetroWest", "Dr. Phillips", "Hunters Creek",
@@ -215,7 +215,7 @@ const ORLANDO_CONTENT = {
     "Winter Park", "St. Cloud", "Brevard County"
   ],
   quote: {
-    quote: "We interviewed four companies after our last manager left mid-year. Edison was the only one whose principal showed up to the interview personally. A year in, that wasn't just sales — that's how they actually run.",
+    quote: "We interviewed four companies after our last manager left mid-year. Edison was the only one whose principal showed up to the interview personally. A year in, that wasn't just sales, that's how they actually run.",
     attribution: "Board President",
     role: "HOA · 228 units",
     community: "Dr. Phillips, Orlando"

@@ -30,11 +30,11 @@ function ReadingProgress() {
 }
 
 /* ============================================================
-   BLOG SPOKE — VARIANT A (Magazine / Editorial w/ Image Hero)
+   BLOG SPOKE, VARIANT A (Magazine / Editorial w/ Image Hero)
    ============================================================ */
 function BlogSpokeA({ content }) {
   return (
-    <main data-screen-label="Blog Spoke — Variant A">
+    <main data-screen-label="Blog Spoke, Variant A">
       <ReadingProgress/>
       <Breadcrumb trail={[
         { label: "Home", href: "/" },
@@ -231,14 +231,14 @@ function BlogSpokeA({ content }) {
 }
 
 /* ============================================================
-   BLOG SPOKE — VARIANT B (Reference / Documentation Style)
+   BLOG SPOKE, VARIANT B (Reference / Documentation Style)
    No hero image. Type-driven. Heavier on structure, anchors,
    and scannability. Better for compliance/legal guides where
    readers want a reference doc, not a magazine article.
    ============================================================ */
 function BlogSpokeB({ content }) {
   return (
-    <main data-screen-label="Blog Spoke — Variant B">
+    <main data-screen-label="Blog Spoke, Variant B">
       <ReadingProgress/>
       <Breadcrumb trail={[
         { label: "Home", href: "/" },
@@ -469,7 +469,7 @@ function BlogSpokeB({ content }) {
 }
 
 /* ============================================================
-   SAMPLE CONTENT — "HOA Audit"
+   SAMPLE CONTENT, "HOA Audit"
    ============================================================ */
 const AUDIT_CONTENT = {
   category: "Financial Management",
@@ -479,13 +479,13 @@ const AUDIT_CONTENT = {
   date: "April 2026",
   readTime: "9 min",
   heroImage: "/assets/img-accounting.jpg",
-  summary: "If your Florida HOA collects $300,000 or more in annual revenue, you're likely required to commission an audited financial statement each year. Boards that prepare year-round — clean ledgers, documented vendor invoices, reconciled reserves — finish audits faster, cheaper, and without surprises.",
+  summary: "If your Florida HOA collects $300,000 or more in annual revenue, you're likely required to commission an audited financial statement each year. Boards that prepare year-round, clean ledgers, documented vendor invoices, reconciled reserves, finish audits faster, cheaper, and without surprises.",
   sections: [
     {
       id: "what-is-an-audit",
       heading: "What an HOA audit actually is",
       body: [
-        "An HOA audit is an independent examination of the association's financial records by a licensed CPA. The auditor verifies that the financial statements fairly represent the association's actual financial position — assessments collected, expenses paid, reserves funded, and obligations outstanding.",
+        "An HOA audit is an independent examination of the association's financial records by a licensed CPA. The auditor verifies that the financial statements fairly represent the association's actual financial position, assessments collected, expenses paid, reserves funded, and obligations outstanding.",
         "Florida statute distinguishes between three levels of financial reporting: compilation (least scrutiny), review (some scrutiny), and audit (independent examination with formal opinion). Which level your association needs depends on annual revenue."
       ]
     },
@@ -493,13 +493,13 @@ const AUDIT_CONTENT = {
       id: "when-required",
       heading: "When Florida HOAs are required to audit",
       body: [
-        "Under Florida Statute Chapter 720 and Chapter 718 for condos, the reporting level your association must produce annually is tied to total annual revenue. Boards can technically vote to waive the requirement for one year — but that vote has specific procedural rules and doesn't change next year's obligation."
+        "Under Florida Statute Chapter 720 and Chapter 718 for condos, the reporting level your association must produce annually is tied to total annual revenue. Boards can technically vote to waive the requirement for one year, but that vote has specific procedural rules and doesn't change next year's obligation."
       ],
       list: [
-        "Annual revenue under $150,000 — report of cash receipts and expenditures",
-        "Annual revenue $150,000 to $300,000 — compiled financial statements",
-        "Annual revenue $300,000 to $500,000 — reviewed financial statements",
-        "Annual revenue $500,000 or more — audited financial statements"
+        "Annual revenue under $150,000, report of cash receipts and expenditures",
+        "Annual revenue $150,000 to $300,000, compiled financial statements",
+        "Annual revenue $300,000 to $500,000, reviewed financial statements",
+        "Annual revenue $500,000 or more, audited financial statements"
       ],
       callout: {
         label: "Important",
@@ -524,7 +524,7 @@ const AUDIT_CONTENT = {
       id: "what-it-costs",
       heading: "What an HOA audit typically costs",
       body: [
-        "Audit fees vary by association size, complexity, and the cleanliness of the books. A small association with well-maintained accrual-basis books and a reserve study on file might pay $3,500–$6,500 for a clean audit. A larger or more complex community with messy records can see fees climb to $12,000 or more — most of that increase reflects the auditor's time untangling what should have been documented as the year unfolded.",
+        "Audit fees vary by association size, complexity, and the cleanliness of the books. A small association with well-maintained accrual-basis books and a reserve study on file might pay $3,500–$6,500 for a clean audit. A larger or more complex community with messy records can see fees climb to $12,000 or more, most of that increase reflects the auditor's time untangling what should have been documented as the year unfolded.",
         "The single biggest cost driver is records preparation time. If the management company keeps books on a cash basis with informal documentation, the CPA has to reconstruct a year of bookkeeping before the actual audit begins. Edison and similar firms keep accrual-basis books with invoice documentation required, which typically drops audit fees by 20–40% relative to less rigorous setups."
       ]
     },
@@ -532,7 +532,7 @@ const AUDIT_CONTENT = {
       id: "how-edison-helps",
       heading: "How Edison's accounting model makes audits easier",
       body: [
-        "Edison's HOA accounting team treats audit readiness as a year-round responsibility, not an April scramble. A dedicated accounting specialist — not the manager wearing two hats — maintains the books on an accrual basis, requires documentation for every invoice paid, reconciles reserve banking against the most recent reserve study, and packages a year-end binder that the auditor can work from on day one.",
+        "Edison's HOA accounting team treats audit readiness as a year-round responsibility, not an April scramble. A dedicated accounting specialist, not the manager wearing two hats, maintains the books on an accrual basis, requires documentation for every invoice paid, reconciles reserve banking against the most recent reserve study, and packages a year-end binder that the auditor can work from on day one.",
         "The result for boards is shorter audit timelines, lower CPA fees, and zero panicked emails the week before the auditor arrives. The result for homeowners is published audited statements that reflect what the association actually did with their money."
       ],
       callout: {
@@ -550,13 +550,13 @@ const AUDIT_CONTENT = {
     },
     {
       category: "Financial Management",
-      title: "HOA Management Fees — What Boards Actually Pay",
+      title: "HOA Management Fees, What Boards Actually Pay",
       image: "/assets/img-13.jpg",
       href: "/blog/hoa-management-fees/"
     },
     {
       category: "Florida Compliance",
-      title: "Florida HOA Laws Guide — Ch. 720 and Ch. 718",
+      title: "Florida HOA Laws Guide, Ch. 720 and Ch. 718",
       image: "/assets/img-22.jpg",
       href: "/blog/florida-hoa-laws-guide/"
     }

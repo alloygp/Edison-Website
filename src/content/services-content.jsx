@@ -15,19 +15,19 @@ const SERVICES_CONTENT = {
     eyebrow: "HOA Accounting & Financial Management",
     phone: "(407) 317-5252",
     hero: {
-      title: "HOA accounting handled by a dedicated specialist — not your manager's spare time.",
+      title: "HOA accounting handled by a dedicated specialist, not your manager's spare time.",
       lede: "Florida community associations carry compliance obligations, transparency requirements, and reserve funding responsibilities that a generalist bookkeeper isn't built to handle. Edison's accounting department keeps your books audit-ready year-round.",
       image: "/assets/img-accounting.jpg",
       applies: "HOA + Condo Associations"
     },
     stats: [
-      { value: "15th", caption: "Monthly statements delivered by the 15th — balance sheet, P&L, budget-to-actual." },
+      { value: "15th", caption: "Monthly statements delivered by the 15th, balance sheet, P&L, budget-to-actual." },
       { value: "Accrual", caption: "Audit-ready accrual-basis books. Not cash-basis approximations." },
       { value: "CPA-Led", caption: "Director of Accounting oversees every association's financials." }
     ],
     included: {
       title: "Full-service HOA accounting for Florida communities",
-      sub: "Every Edison management agreement includes the full financial operations workstream — handled by a dedicated specialist supported by Edison's CPA-led Director of Accounting.",
+      sub: "Every Edison management agreement includes the full financial operations workstream, handled by a dedicated specialist supported by Edison's CPA-led Director of Accounting.",
       items: [
         { title: "Monthly Financial Reporting", body: "Balance sheet, income statement, and budget-to-actual comparisons by the 15th of every month. Invoice backup attached, audit-ready format." },
         { title: "Budget Preparation & Planning", body: "Annual budgets built from real operating data, reserve study recommendations, and capital pipeline." },
@@ -39,10 +39,10 @@ const SERVICES_CONTENT = {
     },
     whyEdison: {
       title: "Why boards switch to Edison's accounting model",
-      sub: "Most management companies treat accounting as overhead. Edison built it as a dedicated department with its own director — because it's the work that protects board members from personal liability.",
+      sub: "Most management companies treat accounting as overhead. Edison built it as a dedicated department with its own director, because it's the work that protects board members from personal liability.",
       items: [
         { title: "Dedicated Accounting Specialist", body: "Not your manager wearing two hats. A specialist who knows accrual accounting, FL Ch. 720/718 requirements, and your association's specific history." },
-        { title: "CPA-Led Director of Accounting", body: "Every association's financials are overseen by Edison's Director of Accounting — not just a senior bookkeeper." },
+        { title: "CPA-Led Director of Accounting", body: "Every association's financials are overseen by Edison's Director of Accounting, not just a senior bookkeeper." },
         { title: "Audit-Ready Year-Round", body: "Books are kept audit-ready every month. Most Edison audits finish 20–40% faster than the industry norm." },
         { title: "Reserve Funding Discipline", body: "Reserve banking strategy reviewed annually against current study. We catch underfunding before it requires a special assessment." },
         { title: "Live Financial Access", body: "CINC Systems dashboards give the treasurer real-time balances, AR aging, and budget pacing." },
@@ -57,14 +57,14 @@ const SERVICES_CONTENT = {
       title: "How Edison's accounting works in practice",
       sub: "Defined cadence, predictable deliverables, year-round audit readiness.",
       steps: [
-        { title: "Day 1 — Onboarding", body: "Your accounting specialist inherits records, reconciles opening balances, builds the audit-ready ledger." },
-        { title: "Month 1–12 — Monthly Reporting", body: "By the 15th of every month: balance sheet, income statement, budget-to-actual, AR aging, narrative. Invoice docs attached." },
-        { title: "Q4 — Budget Season", body: "August–October: draft budget built from operating data and reserve study, presented with scenarios — not a take-it-or-leave-it number." },
-        { title: "Year-End — Audit & Tax", body: "Year-end binder delivered to the auditor by mid-January. Tax filings coordinated. Audit closes in weeks." }
+        { title: "Day 1, Onboarding", body: "Your accounting specialist inherits records, reconciles opening balances, builds the audit-ready ledger." },
+        { title: "Month 1–12, Monthly Reporting", body: "By the 15th of every month: balance sheet, income statement, budget-to-actual, AR aging, narrative. Invoice docs attached." },
+        { title: "Q4, Budget Season", body: "August–October: draft budget built from operating data and reserve study, presented with scenarios, not a take-it-or-leave-it number." },
+        { title: "Year-End, Audit & Tax", body: "Year-end binder delivered to the auditor by mid-January. Tax filings coordinated. Audit closes in weeks." }
       ]
     },
     quote: {
-      quote: "Our previous manager couldn't tell us what was in the reserve fund without a week of digging. Edison sends monthly statements with invoice backup — we know what we're looking at, and so does our auditor.",
+      quote: "Our previous manager couldn't tell us what was in the reserve fund without a week of digging. Edison sends monthly statements with invoice backup, we know what we're looking at, and so does our auditor.",
       attribution: "James R.",
       role: "Treasurer",
       community: "Condo Association · 184 units"
@@ -73,12 +73,12 @@ const SERVICES_CONTENT = {
       { q: "Does this apply to both HOAs and condo associations?", a: "Yes. Edison's accounting department handles HOAs under FL Chapter 720 and condominium associations under FL Chapter 718. The reporting cadence, audit prep, and reserve discipline are identical; the regulatory specifics differ by community type." },
       { q: "How quickly will we get monthly statements?", a: "By the 15th of every month. Balance sheet, income statement, budget-to-actual, AR aging, and a brief narrative. Real-time financial data is also available 24/7 through CINC dashboards." },
       { q: "What if our books are a mess right now?", a: "Edison's onboarding includes a clean-up phase: opening balance reconciliation, vendor recredentialing, and audit-ready ledger reconstruction. Most cleanups are complete within the first 60 days." },
-      { q: "Do you handle the audit directly?", a: "We coordinate with your independent CPA — Florida statute requires external audits be performed by independent auditors. Edison prepares the year-end binder, sits with the auditor through fieldwork, and handles every follow-up question." },
+      { q: "Do you handle the audit directly?", a: "We coordinate with your independent CPA, Florida statute requires external audits be performed by independent auditors. Edison prepares the year-end binder, sits with the auditor through fieldwork, and handles every follow-up question." },
       { q: "What about HOA tax filings?", a: "Edison coordinates Form 1120-H or 1120 filings for each association annually, working with your CPA on the optimal filing choice based on revenue mix and prior-year filings." }
     ],
     cta: {
       title: "Ready for accounting your board can actually defend?",
-      body: "Tell us about your association — current size, current state of the books, what's worrying you. We'll respond with a written proposal within one business day."
+      body: "Tell us about your association, current size, current state of the books, what's worrying you. We'll respond with a written proposal within one business day."
     }
   },
 
@@ -98,20 +98,20 @@ const SERVICES_CONTENT = {
       applies: "HOA + Condo Associations"
     },
     stats: [
-      { value: "Dept", caption: "Dedicated covenant department — not the manager's overtime work." },
+      { value: "Dept", caption: "Dedicated covenant department, not the manager's overtime work." },
       { value: "Address", caption: "Inspectors see addresses, not names. Bias-resistant by design." },
-      { value: "Quarterly", caption: "Board reporting cadence — not a buried line in the monthly minutes." }
+      { value: "Quarterly", caption: "Board reporting cadence, not a buried line in the monthly minutes." }
     ],
     included: {
       title: "Full-cycle covenant work with the documentation boards actually need",
-      sub: "Edison's enforcement department handles the workflow end-to-end — inspections, notice generation, hearing support, and reporting back to the board.",
+      sub: "Edison's enforcement department handles the workflow end-to-end, inspections, notice generation, hearing support, and reporting back to the board.",
       items: [
-        { title: "Scheduled Property Inspections", body: "Routine inspections on a documented cadence — monthly drive-throughs in most communities, with photographic documentation." },
+        { title: "Scheduled Property Inspections", body: "Routine inspections on a documented cadence, monthly drive-throughs in most communities, with photographic documentation." },
         { title: "Address-Not-Name Inspections", body: "Inspectors record addresses, not homeowner names. Protocols designed to remove bias and protect the board from selective-enforcement claims." },
-        { title: "Notice & Hearing Workflow", body: "Courtesy notices, formal notices, hearing scheduling, and minutes — all documented and tracked through the Action Item List." },
+        { title: "Notice & Hearing Workflow", body: "Courtesy notices, formal notices, hearing scheduling, and minutes, all documented and tracked through the Action Item List." },
         { title: "ARC Coordination", body: "Architectural Review Committee submissions reviewed, sequenced, and decisioned within board-set timelines." },
-        { title: "Quarterly Board Reporting", body: "A clear summary of enforcement activity, trends, and recommendations — not buried in the monthly meeting packet." },
-        { title: "Legal Coordination", body: "When enforcement requires legal escalation, Edison coordinates with the association's attorney — full case file in hand." }
+        { title: "Quarterly Board Reporting", body: "A clear summary of enforcement activity, trends, and recommendations, not buried in the monthly meeting packet." },
+        { title: "Legal Coordination", body: "When enforcement requires legal escalation, Edison coordinates with the association's attorney, full case file in hand." }
       ]
     },
     whyEdison: {
@@ -119,22 +119,22 @@ const SERVICES_CONTENT = {
       items: [
         { title: "Correction-First Protocol", body: "Most violations get resolved with a courtesy reminder. Fines are a last resort, not the opening move. Boards keep homeowner relationships." },
         { title: "Address-Not-Name Inspections", body: "Inspectors document addresses. Bias and 'selective enforcement' claims have a structural defense built into the workflow." },
-        { title: "Documented Workflow", body: "Every notice, every hearing, every decision — tracked through the Action Item List with timestamps and attachments." },
+        { title: "Documented Workflow", body: "Every notice, every hearing, every decision, tracked through the Action Item List with timestamps and attachments." },
         { title: "Separate from Management", body: "Your manager isn't the enforcer. That preserves the working relationship boards rely on for everything else." },
         { title: "Quarterly Board Reporting", body: "Enforcement summary delivered quarterly with trends, outliers, and recommendations. No surprises at the annual meeting." },
-        { title: "Florida Compliance Built In", body: "Notice timing, hearing rights, and statutory due-process steps are baked into the workflow — not added after a complaint." }
+        { title: "Florida Compliance Built In", body: "Notice timing, hearing rights, and statutory due-process steps are baked into the workflow, not added after a complaint." }
       ]
     },
     midCta: {
       title: "Enforcement causing more board headache than it should?",
-      lede: "Edison's first conversation is free. We'll look at your current enforcement workflow and tell you what's working — and what isn't."
+      lede: "Edison's first conversation is free. We'll look at your current enforcement workflow and tell you what's working, and what isn't."
     },
     process: {
       title: "How an enforcement cycle actually runs",
       sub: "Defined steps, documented at every stage.",
       steps: [
         { title: "Inspection", body: "Routine drive-through or report-based inspection. Address recorded, photographed, logged." },
-        { title: "Courtesy Notice", body: "First touch is a courtesy reminder — friendly, specific, with a clear cure window. Most violations resolve here." },
+        { title: "Courtesy Notice", body: "First touch is a courtesy reminder, friendly, specific, with a clear cure window. Most violations resolve here." },
         { title: "Formal Notice & Hearing", body: "If unresolved, formal notice follows with hearing rights per FL statute. Edison handles scheduling, minutes, and documentation." },
         { title: "Resolution or Escalation", body: "Most cases close at the hearing stage. Cases that don't are escalated to the association's attorney with the full file." }
       ]
@@ -146,15 +146,15 @@ const SERVICES_CONTENT = {
       community: "HOA · 228 units · Heritage Oaks"
     },
     faqs: [
-      { q: "Does this apply to condos as well as HOAs?", a: "Yes. Edison's enforcement department handles both — covenant enforcement under HOA governing documents (Ch. 720) and rule enforcement under condominium declarations (Ch. 718). The procedural specifics differ; the workflow discipline is the same." },
-      { q: "How are inspections scheduled?", a: "Most communities get monthly drive-throughs as a baseline, plus complaint-driven inspections when residents flag specific issues. The cadence is adjusted to the community's size and the board's enforcement appetite — boards have full control over the volume." },
-      { q: "What if a homeowner contests a violation?", a: "Edison handles the hearing process per FL statute — notice timing, hearing scheduling, hearing minutes, and the board's decision documentation. The board is the decision-maker; Edison handles the procedure." },
+      { q: "Does this apply to condos as well as HOAs?", a: "Yes. Edison's enforcement department handles both, covenant enforcement under HOA governing documents (Ch. 720) and rule enforcement under condominium declarations (Ch. 718). The procedural specifics differ; the workflow discipline is the same." },
+      { q: "How are inspections scheduled?", a: "Most communities get monthly drive-throughs as a baseline, plus complaint-driven inspections when residents flag specific issues. The cadence is adjusted to the community's size and the board's enforcement appetite, boards have full control over the volume." },
+      { q: "What if a homeowner contests a violation?", a: "Edison handles the hearing process per FL statute, notice timing, hearing scheduling, hearing minutes, and the board's decision documentation. The board is the decision-maker; Edison handles the procedure." },
       { q: "How do you avoid selective-enforcement claims?", a: "Address-not-name inspections, documented criteria for what triggers a notice, and a documented workflow that treats every violation the same way regardless of who owns the unit. Boards using Edison have a clean procedural defense built in." },
       { q: "Can the board override Edison's recommendations?", a: "Always. Edison's enforcement work runs the procedure and recommends action; the board makes every substantive decision. We document the recommendation and the board's decision separately so the record is clear." }
     ],
     cta: {
       title: "Covenant enforcement that protects property values and homeowner relationships.",
-      body: "Tell us about your community's current enforcement workflow. We'll respond with a written proposal sized for your governing documents and homeowner count — within one business day."
+      body: "Tell us about your community's current enforcement workflow. We'll respond with a written proposal sized for your governing documents and homeowner count, within one business day."
     }
   },
 
@@ -169,20 +169,20 @@ const SERVICES_CONTENT = {
     phone: "(407) 317-5252",
     hero: {
       title: "In-house collections that protect cash flow without sending every delinquency to a lawyer.",
-      lede: "Edison's collections department runs the delinquency process end-to-end — courtesy reminders, formal notices, intent-to-lien, payment plans, and attorney coordination when legally required. Most cases resolve before legal escalation. Your association's cash position stays healthy.",
+      lede: "Edison's collections department runs the delinquency process end-to-end, courtesy reminders, formal notices, intent-to-lien, payment plans, and attorney coordination when legally required. Most cases resolve before legal escalation. Your association's cash position stays healthy.",
       image: "/assets/img-resident-portal.jpg",
       applies: "HOA + Condo Associations"
     },
     stats: [
-      { value: "In-house", caption: "Collections handled by Edison's dedicated department — not outsourced to a collections agency." },
+      { value: "In-house", caption: "Collections handled by Edison's dedicated department, not outsourced to a collections agency." },
       { value: "Pre-legal", caption: "Most cases resolve before any attorney involvement, protecting cash flow and homeowner relationships." },
       { value: "Tracked", caption: "Every account aged, documented, and visible to the board through CINC dashboards." }
     ],
     included: {
       title: "Collections work that scales from one delinquent account to a portfolio",
-      sub: "Edison's collections department runs the workflow on a documented cadence — boards see the same process applied consistently across every account.",
+      sub: "Edison's collections department runs the workflow on a documented cadence, boards see the same process applied consistently across every account.",
       items: [
-        { title: "Courtesy Email Reminders", body: "Free, modern, and respectful — Edison replaces old-school coupon books with email reminders that nudge homeowners before delinquency hardens." },
+        { title: "Courtesy Email Reminders", body: "Free, modern, and respectful, Edison replaces old-school coupon books with email reminders that nudge homeowners before delinquency hardens." },
         { title: "Formal Notice Sequence", body: "30-day, 45-day, and 60-day notices on a documented schedule with FL-compliant language and certified-mail tracking when required." },
         { title: "Intent-to-Lien Processing", body: "Edison prepares intent-to-lien notices on the statutorily compliant timeline. Most homeowners resolve at this stage." },
         { title: "Payment Plan Coordination", body: "When homeowners can't pay in full, Edison negotiates board-approved payment plans with documented terms and CINC-tracked installments." },
@@ -193,12 +193,12 @@ const SERVICES_CONTENT = {
     whyEdison: {
       title: "Why Edison's collections model recovers more, faster",
       items: [
-        { title: "In-House Department", body: "Most management companies hand collections to an outside agency. Edison keeps it in-house — better continuity, better recovery, better homeowner experience." },
+        { title: "In-House Department", body: "Most management companies hand collections to an outside agency. Edison keeps it in-house, better continuity, better recovery, better homeowner experience." },
         { title: "Correction-Before-Escalation", body: "Most delinquencies resolve before legal escalation when the workflow uses courtesy reminders, payment plans, and clear notice timing." },
         { title: "Documented Process", body: "Every step timestamped and logged through the Action Item List. Boards have an audit trail for every account, every notice, every payment plan." },
         { title: "Cash Flow Discipline", body: "Aging tracked monthly. Outliers flagged before they become legal cases. Cash position protected without aggressive escalation." },
         { title: "Attorney Coordination, Not Substitution", body: "When legal action is genuinely required, Edison hands a complete file to your attorney. We don't bill attorney rates for paralegal work." },
-        { title: "FL Compliance Built In", body: "Florida collection statutes change. Notice timing, certified-mail requirements, and lien process specifics are baked into the workflow — not bolted on after a homeowner challenges a notice." }
+        { title: "FL Compliance Built In", body: "Florida collection statutes change. Notice timing, certified-mail requirements, and lien process specifics are baked into the workflow, not bolted on after a homeowner challenges a notice." }
       ]
     },
     midCta: {
@@ -209,10 +209,10 @@ const SERVICES_CONTENT = {
       title: "How an account moves through Edison's collections workflow",
       sub: "Predictable timing, documented at every step.",
       steps: [
-        { title: "Day 1–30 — Courtesy Email", body: "Free, friendly reminder. Most accounts pay within this window. No fees applied." },
-        { title: "Day 30–60 — Formal Notice", body: "First formal notice with statutorily compliant language. Late fees applied per governing documents." },
-        { title: "Day 60–90 — Intent to Lien", body: "Edison prepares and sends intent-to-lien on the FL-compliant timeline. Most remaining delinquencies resolve here." },
-        { title: "Day 90+ — Legal Coordination", body: "Accounts that haven't resolved are escalated to the association's attorney with a complete case file." }
+        { title: "Day 1–30, Courtesy Email", body: "Free, friendly reminder. Most accounts pay within this window. No fees applied." },
+        { title: "Day 30–60, Formal Notice", body: "First formal notice with statutorily compliant language. Late fees applied per governing documents." },
+        { title: "Day 60–90, Intent to Lien", body: "Edison prepares and sends intent-to-lien on the FL-compliant timeline. Most remaining delinquencies resolve here." },
+        { title: "Day 90+, Legal Coordination", body: "Accounts that haven't resolved are escalated to the association's attorney with a complete case file." }
       ]
     },
     quote: {
@@ -223,14 +223,14 @@ const SERVICES_CONTENT = {
     },
     faqs: [
       { q: "Does this apply to both HOAs and condo associations?", a: "Yes. The collections workflow is the same; the statutory specifics differ between Ch. 720 (HOA) and Ch. 718 (condo). Edison's department calibrates to each." },
-      { q: "What happens at intent-to-lien?", a: "Edison prepares a statutorily compliant intent-to-lien notice on the FL-required timeline. Most homeowners resolve at this stage rather than face an actual lien. If they don't, Edison coordinates with the association's attorney for the lien filing itself — which has to be done by counsel under FL statute." },
-      { q: "Do you handle the foreclosure process?", a: "Foreclosure is an attorney-led process under FL statute. Edison prepares the complete case file, supports the attorney through discovery, and coordinates with the board on every escalation decision — but the legal work itself is performed by counsel." },
+      { q: "What happens at intent-to-lien?", a: "Edison prepares a statutorily compliant intent-to-lien notice on the FL-required timeline. Most homeowners resolve at this stage rather than face an actual lien. If they don't, Edison coordinates with the association's attorney for the lien filing itself, which has to be done by counsel under FL statute." },
+      { q: "Do you handle the foreclosure process?", a: "Foreclosure is an attorney-led process under FL statute. Edison prepares the complete case file, supports the attorney through discovery, and coordinates with the board on every escalation decision, but the legal work itself is performed by counsel." },
       { q: "How do you protect homeowner relationships?", a: "Courtesy reminders before formal notices. Payment plans when homeowners hit hardship. Clear, plain-language communication throughout. Most homeowners don't realize Edison's collections department exists because they pay before it would." },
       { q: "Can the board approve payment plans?", a: "Yes. Edison negotiates payment plan terms with the homeowner; the board approves them. CINC tracks the installment schedule, and Edison flags deviations to the board the month they happen." }
     ],
     cta: {
       title: "Healthy cash flow without aggressive escalation.",
-      body: "Tell us about your association's current delinquency. We'll respond with a written proposal sized for your aging profile and governing documents — within one business day."
+      body: "Tell us about your association's current delinquency. We'll respond with a written proposal sized for your aging profile and governing documents, within one business day."
     }
   }
 };

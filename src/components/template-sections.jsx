@@ -2,7 +2,7 @@ import React, { useState as useTplState } from 'react';
 import { SectionHeading, InteriorButton, InteriorEyebrow } from './interior-components';
 
 /* ============================================================
-   Edison — Template-Specific Section Components
+   Edison, Template-Specific Section Components
    ----------------------------------------------------------------
    Reusable sections introduced for Solution, Geo, About,
    Contact, Testimonial, and other Phase 1 page templates.
@@ -314,7 +314,7 @@ function PullQuote({ quote, attribution, role, community, background = "#fff" })
   );
 }
 
-/* ---------- Geo Hero — city skyline / aerial focus ---------- */
+/* ---------- Geo Hero, city skyline / aerial focus ---------- */
 function GeoHeroLocal({ eyebrow, city, lede, primary, secondary, image }) {
   return (
     <section style={{
@@ -354,7 +354,7 @@ function GeoHeroLocal({ eyebrow, city, lede, primary, secondary, image }) {
   );
 }
 
-/* ---------- Geo Hero — service-first with city qualifier ---------- */
+/* ---------- Geo Hero, service-first with city qualifier ---------- */
 function GeoHeroService({ eyebrow, title, lede, city, locationStrip, primary, secondary }) {
   return (
     <section style={{ background: "#fff", padding: "88px 48px 56px" }}>
@@ -527,7 +527,7 @@ function AntiPatterns({
 }
 
 /* ============================================================
-   CROSS-PILLAR CARD — link from HOA Pillar to Condo Pillar
+   CROSS-PILLAR CARD, link from HOA Pillar to Condo Pillar
    (and vice versa). Required on both Main Pillar pages.
    ============================================================ */
 function CrossPillarCard({ eyebrow = "Different community type?",
@@ -584,7 +584,7 @@ function CrossPillarCard({ eyebrow = "Different community type?",
 }
 
 /* ============================================================
-   SUB-SERVICE NAV BLOCK — in-body grid linking to sub-services.
+   SUB-SERVICE NAV BLOCK, in-body grid linking to sub-services.
    Sub-services aren't in the top nav, so the parent pillar/service
    page is the only path to them. Required on Main Pillar pages
    and on Service pages with sub-services.
@@ -663,7 +663,7 @@ function SubServiceNav({ eyebrow = "Go deeper",
 }
 
 /* ============================================================
-   AUTHOR BYLINE BLOCK — reusable across /edison-education/,
+   AUTHOR BYLINE BLOCK, reusable across /edison-education/,
    every blog spoke, and About sections. Surfaces Tracy's PCAM
    + CAI Chapter President credentials prominently.
    ============================================================ */
@@ -671,7 +671,7 @@ function AuthorBylineBlock({
   name = "Tracy Durham",
   role = "Founder & Principal · Edison Association Management",
   credentials = ["PCAM", "2025 CAI Central Florida Chapter President"],
-  bio = "Tracy founded Edison with a deliberate alternative to volume-driven HOA management. PCAM-credentialed, 2025 Central Florida CAI Chapter President, and Orlando Business Journal 40 Under 40 — she personally onboards every new association.",
+  bio = "Tracy founded Edison with a deliberate alternative to volume-driven HOA management. PCAM-credentialed, 2025 Central Florida CAI Chapter President, and Orlando Business Journal 40 Under 40, she personally onboards every new association.",
   image,
   cta = { label: "Read more about Edison", href: "/about/" }
 }) {
@@ -737,7 +737,7 @@ function AuthorBylineBlock({
 export { AntiPatterns, CrossPillarCard, SubServiceNav, AuthorBylineBlock, BulletsWithImage };
 
 /* ============================================================
-   BULLETS + IMAGE — checklist with paired image. Used on Pillar
+   BULLETS + IMAGE, checklist with paired image. Used on Pillar
    pages, About variants, and originally homepage.
    ============================================================ */
 function BulletsWithImage({ eyebrow, title, bullets, image }) {

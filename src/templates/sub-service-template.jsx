@@ -20,7 +20,7 @@ import { NumberedSteps, PullQuote } from '../components/template-sections';
    ============================================================ */
 function SubServicePage({ content }) {
   return (
-    <main data-screen-label={`Sub-Service — ${content.serviceLabel}`}>
+    <main data-screen-label={`Sub-Service, ${content.serviceLabel}`}>
       <Breadcrumb trail={content.crumb}/>
 
       {/* Hero with statute chip */}
@@ -73,7 +73,7 @@ function SubServicePage({ content }) {
         </div>
       </section>
 
-      {/* Statutory Spec — quick-reference card row */}
+      {/* Statutory Spec, quick-reference card row */}
       <section style={{ background: "var(--edison-teal-pale)", padding: "48px" }}>
         <div style={{
           maxWidth: 1080, margin: "0 auto",
@@ -107,7 +107,7 @@ function SubServicePage({ content }) {
         paragraphs={content.context.paragraphs}
       />
 
-      {/* What's included — 3-up cards */}
+      {/* What's included, 3-up cards */}
       <section style={{ background: "var(--bg-3, #F5F7FA)", padding: "88px 48px" }}>
         <div style={{ maxWidth: 1200, margin: "0 auto" }}>
           <SectionHeading
@@ -174,7 +174,7 @@ function SubServicePage({ content }) {
         items={content.faqs}
       />
 
-      {/* Related — link back to parent + sibling sub-services */}
+      {/* Related, link back to parent + sibling sub-services */}
       {content.related && content.related.length > 0 && (
         <section style={{ background: "#fff", padding: "72px 48px" }}>
           <div style={{ maxWidth: 1200, margin: "0 auto" }}>
@@ -245,7 +245,7 @@ function SubServicePage({ content }) {
 }
 
 /* ============================================================
-   SAMPLE CONTENT — Structural Integrity Reserve Study (SIRS)
+   SAMPLE CONTENT, Structural Integrity Reserve Study (SIRS)
    Statute-heaviest of the 4 sub-services. Good FAQ stress test.
    ============================================================ */
 const SIRS_CONTENT = {
@@ -272,27 +272,27 @@ const SIRS_CONTENT = {
     { label: "Components", value: "8 mandated" }
   ],
   context: {
-    title: "What a SIRS actually is — and why it's different from a normal reserve study",
+    title: "What a SIRS actually is, and why it's different from a normal reserve study",
     paragraphs: [
-      "A Structural Integrity Reserve Study is a Florida-specific reserve assessment created by Senate Bill 4D after the Champlain Towers collapse. It applies to condominium and cooperative buildings three stories or more, and it requires a licensed engineer or architect to inventory and price the remaining useful life of eight specific structural and life-safety components — roof, load-bearing walls, floor, foundation, fireproofing, plumbing, electrical, and waterproofing.",
+      "A Structural Integrity Reserve Study is a Florida-specific reserve assessment created by Senate Bill 4D after the Champlain Towers collapse. It applies to condominium and cooperative buildings three stories or more, and it requires a licensed engineer or architect to inventory and price the remaining useful life of eight specific structural and life-safety components, roof, load-bearing walls, floor, foundation, fireproofing, plumbing, electrical, and waterproofing.",
       "A SIRS is not interchangeable with a traditional reserve study. The traditional reserve study covers a broader set of community assets (pools, paving, amenity replacements) but isn't sufficient on its own under FL Ch. 718. Most associations now need both: a SIRS for statutory compliance, and a comprehensive reserve study for full capital planning. Edison coordinates both, sequences them, and translates the engineering findings into a fundable plan your board can actually approve."
     ]
   },
   included: {
     title: "What Edison's SIRS coordination covers",
-    sub: "Edison doesn't perform the engineering — that's the job of a licensed professional. We handle everything around it: engineer selection, scope review, document coordination, board presentation, and the post-study funding plan.",
+    sub: "Edison doesn't perform the engineering, that's the job of a licensed professional. We handle everything around it: engineer selection, scope review, document coordination, board presentation, and the post-study funding plan.",
     items: [
-      { title: "Engineer Selection & Bid Review", body: "Edison sources 3+ qualified Florida-licensed structural engineers, reviews proposals, and helps the board select on scope and credentials — not just price." },
+      { title: "Engineer Selection & Bid Review", body: "Edison sources 3+ qualified Florida-licensed structural engineers, reviews proposals, and helps the board select on scope and credentials, not just price." },
       { title: "Document & Access Coordination", body: "We pull historical inspection records, building permits, prior reserve studies, and capital expenditure history. The engineer gets a clean record package on day one." },
-      { title: "Site Visit Logistics", body: "Resident notification, common-area access, vendor coordination, and roof/equipment access scheduling — handled so the engineer's site work doesn't drag." },
+      { title: "Site Visit Logistics", body: "Resident notification, common-area access, vendor coordination, and roof/equipment access scheduling, handled so the engineer's site work doesn't drag." },
       { title: "Draft Report Review", body: "Edison's accounting team reviews the draft report against the association's actual capital history and flags discrepancies for the engineer before the final is issued." },
-      { title: "Board Presentation Support", body: "We prepare a board-friendly summary of the SIRS findings — what's failing, what's funded, what's not — plus a recommended funding strategy your board can vote on." },
+      { title: "Board Presentation Support", body: "We prepare a board-friendly summary of the SIRS findings, what's failing, what's funded, what's not, plus a recommended funding strategy your board can vote on." },
       { title: "Funding Plan Integration", body: "Edison's accounting department integrates SIRS components into the annual budget, reserve banking strategy, and 5-year capital plan. Statutory compliance is just step one." }
     ]
   },
   process: {
     title: "How Edison runs a SIRS engagement",
-    sub: "From engineer selection through board adoption — usually 90–150 days end to end.",
+    sub: "From engineer selection through board adoption, usually 90–150 days end to end.",
     steps: [
       { title: "Discovery & Scoping", body: "Edison reviews your governing documents, building age, last reserve study, and SB-4D filing status. We confirm which statutory deadline applies and document the scope." },
       { title: "Engineer Sourcing", body: "Three competing bids from FL-licensed structural engineers. Board approves the engagement; Edison handles contracting and access setup." },
@@ -306,23 +306,23 @@ const SIRS_CONTENT = {
   },
   faqs: [
     { q: "Does our community need a SIRS?", a: "If your association governs a condominium or cooperative building three stories or more (counting habitable stories above grade), yes. The requirement comes from FL Statute § 718.112(2)(g) as amended by SB-4D in 2022. Buildings under three stories aren't subject to the SIRS requirement but typically still need a traditional reserve study." },
-    { q: "When is the SIRS due?", a: "The original SB-4D deadline was December 31, 2024 for existing buildings. Associations that missed the deadline are not absolved of the requirement — they're behind on a statutory obligation that the board has a fiduciary duty to remedy. Newly-built buildings have specific milestone-based deadlines tied to occupancy date. Edison's intake reviews your specific situation." },
-    { q: "What's the difference between a SIRS and a milestone inspection?", a: "The milestone inspection (Phase 1 visual, Phase 2 if deficiencies are found) is a structural condition assessment performed by a licensed engineer. The SIRS is a financial reserve study scoped specifically to the structural components identified by the milestone inspection and statute. Many associations need both, often sequenced — milestone first, SIRS second, so the reserve study reflects actual condition findings." },
+    { q: "When is the SIRS due?", a: "The original SB-4D deadline was December 31, 2024 for existing buildings. Associations that missed the deadline are not absolved of the requirement, they're behind on a statutory obligation that the board has a fiduciary duty to remedy. Newly-built buildings have specific milestone-based deadlines tied to occupancy date. Edison's intake reviews your specific situation." },
+    { q: "What's the difference between a SIRS and a milestone inspection?", a: "The milestone inspection (Phase 1 visual, Phase 2 if deficiencies are found) is a structural condition assessment performed by a licensed engineer. The SIRS is a financial reserve study scoped specifically to the structural components identified by the milestone inspection and statute. Many associations need both, often sequenced, milestone first, SIRS second, so the reserve study reflects actual condition findings." },
     { q: "What are the 8 components a SIRS must cover?", a: "Roof; load-bearing walls or other primary structural members; floor; foundation; fireproofing and fire protection systems; plumbing; electrical systems; and waterproofing and exterior painting (where related to structure). Any other items the engineer determines have a deferred maintenance expense or replacement cost over $10,000 that could affect structural integrity may also be included." },
-    { q: "Can our existing reserve study count?", a: "Usually no. A traditional reserve study isn't typically scoped to the SIRS-required components and doesn't follow the same engineering standard. Some studies completed after SB-4D's enactment may be SIRS-compliant if they were specifically scoped for it — Edison can review what you have and tell you whether you need a new engagement or just an addendum." },
-    { q: "How much does a SIRS cost?", a: "Fees vary widely by building size, age, and complexity — typical range is $8,000–$25,000 for the engineer's work. Edison's coordination is included in the management agreement; there's no separate fee for our role. We'll help you assess whether competing bids reflect appropriate scope for your specific building." },
+    { q: "Can our existing reserve study count?", a: "Usually no. A traditional reserve study isn't typically scoped to the SIRS-required components and doesn't follow the same engineering standard. Some studies completed after SB-4D's enactment may be SIRS-compliant if they were specifically scoped for it, Edison can review what you have and tell you whether you need a new engagement or just an addendum." },
+    { q: "How much does a SIRS cost?", a: "Fees vary widely by building size, age, and complexity, typical range is $8,000–$25,000 for the engineer's work. Edison's coordination is included in the management agreement; there's no separate fee for our role. We'll help you assess whether competing bids reflect appropriate scope for your specific building." },
     { q: "Does the SIRS require us to fully fund our reserves?", a: "The SIRS quantifies the funding need; FL Ch. 718 (as amended) requires associations to fund SIRS components on a pooled-or-component basis once the study is in place. Boards cannot waive the funding requirement for SIRS components the way they could for traditional reserves in some prior years. Edison's accounting team builds the funding plan that meets the mandate without triggering a punitive special assessment if it's avoidable." },
-    { q: "What happens if we don't comply?", a: "Non-compliance creates personal liability exposure for board members, can trigger statutory penalties, and is increasingly being scrutinized by buyer-side due diligence — meaning unit sales can stall when a SIRS is missing or outdated. The compliance risk and the unit-value risk are usually what motivate boards to act, regardless of the statutory pressure." },
-    { q: "How does Edison handle this differently?", a: "We treat the SIRS as a multi-year capital planning exercise, not a one-time filing. Engineer selection, document prep, board education, funding plan integration, and ongoing reserve banking strategy — all coordinated by the same accounting team responsible for your monthly financials. Statutory compliance is the floor; capital readiness is the goal." }
+    { q: "What happens if we don't comply?", a: "Non-compliance creates personal liability exposure for board members, can trigger statutory penalties, and is increasingly being scrutinized by buyer-side due diligence, meaning unit sales can stall when a SIRS is missing or outdated. The compliance risk and the unit-value risk are usually what motivate boards to act, regardless of the statutory pressure." },
+    { q: "How does Edison handle this differently?", a: "We treat the SIRS as a multi-year capital planning exercise, not a one-time filing. Engineer selection, document prep, board education, funding plan integration, and ongoing reserve banking strategy, all coordinated by the same accounting team responsible for your monthly financials. Statutory compliance is the floor; capital readiness is the goal." }
   ],
   related: [
     { kind: "Sibling Sub-Service", title: "Milestone Inspection Coordination", body: "The structural condition assessment that often precedes the SIRS. Required for condos 30+ years old (25+ in coastal counties).", href: "/services/condo-management/milestone-inspections/" },
     { kind: "Parent Pillar", title: "Condo Management", body: "Full-service management for Florida condominium associations under Ch. 718.", href: "/services/condo-management/" },
-    { kind: "Educational", title: "Florida HOA & Condo Laws Guide", body: "A board's guide to the FL statutes that govern community associations — Ch. 720, Ch. 718, and the legislative changes that keep arriving.", href: "/blog/florida-hoa-laws-guide/" }
+    { kind: "Educational", title: "Florida HOA & Condo Laws Guide", body: "A board's guide to the FL statutes that govern community associations, Ch. 720, Ch. 718, and the legislative changes that keep arriving.", href: "/blog/florida-hoa-laws-guide/" }
   ],
   cta: {
     title: "SIRS compliance is a project, not a panic.",
-    body: "Edison's first conversation is free and clarifying. Tell us what you know about your building's status — we'll tell you what's required, what it costs, and how to sequence it without disrupting your board's other priorities."
+    body: "Edison's first conversation is free and clarifying. Tell us what you know about your building's status, we'll tell you what's required, what it costs, and how to sequence it without disrupting your board's other priorities."
   }
 };
 

@@ -146,12 +146,12 @@ function ContactForm({ compact = false }) {
 }
 
 /* ============================================================
-   CONTACT PAGE — VARIANT A (Form-Forward / Two-Column)
+   CONTACT PAGE, VARIANT A (Form-Forward / Two-Column)
    Large form on the right, contact details + reassurance on the left.
    ============================================================ */
 function ContactPageA() {
   return (
-    <main data-screen-label="Contact — Variant A">
+    <main data-screen-label="Contact, Variant A">
       <Breadcrumb trail={[
         { label: "Home", href: "/" },
         { label: "Contact" }
@@ -268,14 +268,14 @@ function ContactPageA() {
 }
 
 /* ============================================================
-   CONTACT PAGE — VARIANT B (Multi-Channel Tiles + Form Below)
+   CONTACT PAGE, VARIANT B (Multi-Channel Tiles + Form Below)
    Phone / Office / Portal cards on top, large form below,
    then a map placeholder. Friendlier for people who want a quick
    answer, not a long form.
    ============================================================ */
 function ContactPageB() {
   return (
-    <main data-screen-label="Contact — Variant B">
+    <main data-screen-label="Contact, Variant B">
       <Breadcrumb trail={[
         { label: "Home", href: "/" },
         { label: "Contact" }

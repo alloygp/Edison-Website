@@ -1,7 +1,7 @@
 import React, { useState, useRef, useEffect } from 'react';
 
 /* ============================================================
-   Edison — Site Header v2 (Astro-ready React island)
+   Edison, Site Header v2 (Astro-ready React island)
    ============================================================ */
 
 const DEFAULT_NAV = [
@@ -96,7 +96,7 @@ const DEFAULT_NAV = [
             theme: "light",
             eyebrow: "Resource Library",
             title: "All Articles",
-            body: "Practical guides on Florida HOA law, finance, and governance — free for any board.",
+            body: "Practical guides on Florida HOA law, finance, and governance, free for any board.",
             cta: { label: "Browse articles", href: "/blog/" }
           }
         ]
@@ -518,7 +518,7 @@ function SiteHeader({
           </div>
         </div>
 
-        {/* Main nav row — glassmorphism on scroll */}
+        {/* Main nav row, glassmorphism on scroll */}
         <div style={{
           background: atTop ? "#fff" : "rgba(255,255,255,.82)",
           backdropFilter: atTop ? "none" : "blur(20px) saturate(180%)",

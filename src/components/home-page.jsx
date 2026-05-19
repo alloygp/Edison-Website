@@ -83,7 +83,7 @@ function HomeHero({ eyebrow, title, lede, primary, audienceCards }) {
         </div>
       </div>
 
-      {/* Audience cards — sit on top of the hero, overlap into next section */}
+      {/* Audience cards, sit on top of the hero, overlap into next section */}
       <div style={{
         maxWidth: 1200, margin: "72px auto -100px", width: "100%",
         display: "grid", gridTemplateColumns: "1fr 1fr", gap: 20,
@@ -391,7 +391,7 @@ function EducationBand({ title, sub, posts }) {
 
 /* ============================================================
    PAGE COMPOSITION
-   Edit the data below to change copy — leave the components alone.
+   Edit the data below to change copy, leave the components alone.
    ============================================================ */
 function HomePage() {
   return (
@@ -490,7 +490,7 @@ function HomePage() {
 
       <EducationBand
         title="HOA Board Education & Resources"
-        sub="Serving on a board is easier when you have the right information. Explore our guides and articles on HOA governance, compliance, and best practices — written specifically for Florida community leaders."
+        sub="Serving on a board is easier when you have the right information. Explore our guides and articles on HOA governance, compliance, and best practices, written specifically for Florida community leaders."
         posts={[
           {
             category: "Finance & Audit",
@@ -502,7 +502,7 @@ function HomePage() {
           {
             category: "Governance",
             title: "HOA Bylaws vs CC&Rs: Key Differences Explained",
-            excerpt: "Board members often reach for the wrong document when a decision needs to be made quickly. Understanding the difference between HOA bylaws and CC&Rs — and knowing which one governs your situation — is how volunteer leaders make confident, defensible decisions.",
+            excerpt: "Board members often reach for the wrong document when a decision needs to be made quickly. Understanding the difference between HOA bylaws and CC&Rs, and knowing which one governs your situation, is how volunteer leaders make confident, defensible decisions.",
             image: "/assets/img-17.jpg",
             href: "/blog/hoa-bylaws-vs-ccrs/"
           }
@@ -512,7 +512,7 @@ function HomePage() {
       <ServiceArea
         eyebrow="Service Area"
         title="Serving Associations Throughout Central Florida"
-        body="Based in Orlando, Edison proudly manages homeowner and condominium associations across Central Florida — from Orange and Seminole counties to Osceola, Lake, and beyond."
+        body="Based in Orlando, Edison proudly manages homeowner and condominium associations across Central Florida, from Orange and Seminole counties to Osceola, Lake, and beyond."
         cities={[
           "Orange County", "Seminole County", "Osceola County", "Lake County",
           "Orlando", "Winter Garden", "Clermont", "Kissimmee", "Lake Mary",

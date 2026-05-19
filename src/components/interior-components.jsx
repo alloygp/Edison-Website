@@ -2,7 +2,7 @@ import React, { useState, Suspense } from 'react';
 import { ServiceAreaMap } from './ServiceAreaMap.jsx';
 
 /* ============================================================
-   ATOMS — small reusable pieces (Edison brand tokens only)
+   ATOMS, small reusable pieces (Edison brand tokens only)
    ============================================================ */
 
 function InteriorEyebrow({ children, color = "var(--edison-teal-dark)" }) {
@@ -50,7 +50,7 @@ function InteriorButton({ variant = "primary", size = "md", children, href, type
     ...sizes, ...base, ...(hovered ? hover : {})
   };
 
-  /* Shine span — sweeps across on hover */
+  /* Shine span, sweeps across on hover */
   const shine = (
     <span aria-hidden="true" style={{
       position: "absolute", top: 0, bottom: 0,
@@ -132,7 +132,7 @@ function Breadcrumb({ trail }) {
 }
 
 /* ============================================================
-   PAGE TITLE BLOCK — H1 + intro paragraph
+   PAGE TITLE BLOCK, H1 + intro paragraph
    ============================================================ */
 function PageTitle({ title, intro }) {
   return (
@@ -156,7 +156,7 @@ function PageTitle({ title, intro }) {
 }
 
 /* ============================================================
-   SECTION HEADING — H2 + optional subhead (teal underline)
+   SECTION HEADING, H2 + optional subhead (teal underline)
    ============================================================ */
 function SectionHeading({ eyebrow, title, sub, align = "left", color = "var(--edison-navy)" }) {
   return (
@@ -188,7 +188,7 @@ function SectionHeading({ eyebrow, title, sub, align = "left", color = "var(--ed
 }
 
 /* ============================================================
-   BODY PROSE BLOCK — H2 + long-form paragraphs (with optional H3s)
+   BODY PROSE BLOCK, H2 + long-form paragraphs (with optional H3s)
    ============================================================ */
 function BodyProse({ eyebrow, title, paragraphs = [], background = "#fff" }) {
   return (
@@ -211,7 +211,7 @@ function BodyProse({ eyebrow, title, paragraphs = [], background = "#fff" }) {
 }
 
 /* ============================================================
-   FEATURE GRID — N differentiator cards with bulb icon + H3 + body
+   FEATURE GRID, N differentiator cards with bulb icon + H3 + body
    ============================================================ */
 function FeatureGrid({ eyebrow, title, sub, items, background = "var(--edison-teal-pale)",
                        columns = 3 }) {
@@ -269,7 +269,7 @@ function FeatureGrid({ eyebrow, title, sub, items, background = "var(--edison-te
 }
 
 /* ============================================================
-   MID CTA BANNER — short title, lede, primary + call link
+   MID CTA BANNER, short title, lede, primary + call link
    ============================================================ */
 function MidCTA({ title, lede, primary, secondary, variant = "navy" }) {
   const isNavy = variant === "navy";
@@ -313,7 +313,7 @@ function MidCTA({ title, lede, primary, secondary, variant = "navy" }) {
 }
 
 /* ============================================================
-   LINKED DETAIL CARDS — title + body + arrow link (the "In Detail" pattern)
+   LINKED DETAIL CARDS, title + body + arrow link (the "In Detail" pattern)
    ============================================================ */
 function DetailLinkCards({ eyebrow, title, sub, items, columns = 3 }) {
   return (
@@ -374,7 +374,7 @@ function DetailLinkCards({ eyebrow, title, sub, items, columns = 3 }) {
 }
 
 /* ============================================================
-   TRUST / CREDENTIAL BADGES (drawn placeholders — swap with real art)
+   TRUST / CREDENTIAL BADGES (drawn placeholders, swap with real art)
    ============================================================ */
 function TrustBadges({ eyebrow, title, sub, badges }) {
   return (
@@ -482,7 +482,7 @@ function FAQ({ eyebrow, title, sub, items, background = "#fff" }) {
 }
 
 /* ============================================================
-   SERVICE AREA — text + map placeholder
+   SERVICE AREA, text + map placeholder
    ============================================================ */
 function ServiceArea({ eyebrow, title, body, cities, mapImg, mapEmbed = false }) {
   return (
@@ -523,7 +523,7 @@ function ServiceArea({ eyebrow, title, body, cities, mapImg, mapEmbed = false })
 }
 
 /* ============================================================
-   FINAL CTA — full-width navy panel with closing message
+   FINAL CTA, full-width navy panel with closing message
    ============================================================ */
 function FinalCTA({ eyebrow, title, body, primary, secondary }) {
   return (

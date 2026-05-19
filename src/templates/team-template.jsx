@@ -29,7 +29,7 @@ function Avatar({ name, image, size = 96 }) {
 }
 
 /* ============================================================
-   TEAM PAGE — VARIANT A (Featured Leadership + Departments)
+   TEAM PAGE, VARIANT A (Featured Leadership + Departments)
    Tracy + leadership get big bio cards. Rest of the team is
    broken into department sections (Management / Accounting /
    Enforcement / Collections) as compact grids.
@@ -39,7 +39,7 @@ function TeamPageA({ content }) {
   const departments = [...new Set(content.team.filter(p => !p.featured).map(p => p.department))];
 
   return (
-    <main data-screen-label="Team — Variant A">
+    <main data-screen-label="Team, Variant A">
       <Breadcrumb trail={[
         { label: "Home", href: "/" },
         { label: "About", href: "/about/" },
@@ -68,7 +68,7 @@ function TeamPageA({ content }) {
       {/* Leadership */}
       <section style={{ background: "var(--edison-teal-pale)", padding: "64px 48px" }}>
         <div style={{ maxWidth: 1200, margin: "0 auto" }}>
-          <SectionHeading eyebrow="Leadership" title="Who's at the top — and why it matters"/>
+          <SectionHeading eyebrow="Leadership" title="Who's at the top, and why it matters"/>
           <div style={{
             marginTop: 36,
             display: "grid",
@@ -203,7 +203,7 @@ function TeamPageA({ content }) {
       <FinalCTA
         eyebrow="Let's talk"
         title="Want to know who you'd actually be working with?"
-        body="Request a proposal and we'll introduce you to the specific manager who'd run your community — not just a sales rep."
+        body="Request a proposal and we'll introduce you to the specific manager who'd run your community, not just a sales rep."
         primary={{ label: "Request a Proposal", href: "/request-a-proposal/" }}
         secondary={{ label: "Read About Edison", href: "/about/" }}
       />
@@ -212,7 +212,7 @@ function TeamPageA({ content }) {
 }
 
 /* ============================================================
-   TEAM PAGE — VARIANT B (Single Grid · Egalitarian)
+   TEAM PAGE, VARIANT B (Single Grid · Egalitarian)
    No leadership distinction. Everyone gets the same card.
    Filters at top by department. Reads as "this is the team."
    ============================================================ */
@@ -226,7 +226,7 @@ function TeamPageB({ content }) {
   });
 
   return (
-    <main data-screen-label="Team — Variant B">
+    <main data-screen-label="Team, Variant B">
       <Breadcrumb trail={[
         { label: "Home", href: "/" },
         { label: "About", href: "/about/" },
@@ -339,7 +339,7 @@ function TeamPageB({ content }) {
       <FinalCTA
         eyebrow="Let's talk"
         title="Want to know who you'd actually be working with?"
-        body="Request a proposal and we'll introduce you to the specific manager who'd run your community — not just a sales rep."
+        body="Request a proposal and we'll introduce you to the specific manager who'd run your community, not just a sales rep."
         primary={{ label: "Request a Proposal", href: "/request-a-proposal/" }}
         secondary={{ label: "Read About Edison", href: "/about/" }}
       />
@@ -348,7 +348,7 @@ function TeamPageB({ content }) {
 }
 
 /* ============================================================
-   SAMPLE CONTENT — Placeholder team
+   SAMPLE CONTENT, Placeholder team
    ============================================================ */
 const TEAM_CONTENT = {
   intro: "Edison is small on purpose. The manager who learns your community in year one is the same one you'll work with in year three. Our back-office departments are specialists, not pinch-hitters. Photos shown are placeholders until real headshots are sourced.",
@@ -359,7 +359,7 @@ const TEAM_CONTENT = {
       department: "Leadership",
       featured: true,
       credentials: ["PCAM", "2025 CAI Chapter President"],
-      bio: "Tracy founded Edison in 2001 with a deliberate alternative to volume-driven HOA management. PCAM-credentialed and the 2025 Central Florida CAI Chapter President — she personally onboards every new association."
+      bio: "Tracy founded Edison in 2001 with a deliberate alternative to volume-driven HOA management. PCAM-credentialed and the 2025 Central Florida CAI Chapter President, she personally onboards every new association."
     },
     {
       name: "Sabrina Stephan",
@@ -375,7 +375,7 @@ const TEAM_CONTENT = {
       department: "Leadership",
       featured: true,
       credentials: ["CPA"],
-      bio: "Jordan leads Edison's accounting department — monthly financials, reserve banking, audit prep, and the discipline that keeps boards out of trouble with their CPAs."
+      bio: "Jordan leads Edison's accounting department, monthly financials, reserve banking, audit prep, and the discipline that keeps boards out of trouble with their CPAs."
     },
     /* Management */
     { name: "Maya Henderson", role: "Senior Association Manager", department: "Management" },

@@ -1,7 +1,7 @@
 import React from 'react';
 
 /* ============================================================
-   Edison — Site Footer v2 (Astro-ready React island)
+   Edison, Site Footer v2 (Astro-ready React island)
    ----------------------------------------------------------------
    Columns per /uploads/edison-sitemap-v3.html footer spec:
 

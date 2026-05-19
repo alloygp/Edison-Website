@@ -2,7 +2,7 @@ import React from 'react';
 import { Breadcrumb, FAQ, FinalCTA, SectionHeading } from '../components/interior-components';
 
 /* ============================================================
-   /faq/ — Frequently Asked Questions
+   /faq/, Frequently Asked Questions
    Categorized accordion mirroring the questions boards ask
    Edison most. Each category surfaces the page-level FAQs
    organized into Switching, Services, Pricing, Transition,
@@ -67,16 +67,16 @@ const FAQ_CONTENT = {
       items: [
         { q: "How long does switching to Edison take?", a: "Most transitions are complete within 60–90 days from contract signing. The first 30 days focus on records and vendor migration; the second 30 on the Meet Your Management event and homeowner communication; the final stretch on cutover and the live handoff to your dedicated manager." },
         { q: "What if we're mid-contract with our current company?", a: "Most management agreements include a 30–90 day termination provision. Edison's transition team reviews your current contract to identify the right window and coordinates timing so there's no gap in service." },
-        { q: "Will homeowners be confused during the change?", a: "Not when it's handled right. Edison runs a Meet Your Management event before the official cutover — your homeowners meet the manager, accounting specialist, and back-office team in person. By cutover day, everyone knows who to call." }
+        { q: "Will homeowners be confused during the change?", a: "Not when it's handled right. Edison runs a Meet Your Management event before the official cutover, your homeowners meet the manager, accounting specialist, and back-office team in person. By cutover day, everyone knows who to call." }
       ]
     },
     {
       eyebrow: "Services", title: "What Edison actually does",
       items: [
-        { q: "Do you handle HOAs and condos differently?", a: "Yes. Florida governs them under different statutes — Chapter 720 for HOAs, Chapter 718 for condos. Edison runs both as distinct practices with statute-aware managers, accounting specialists, and compliance tracking." },
-        { q: "Is accounting included or extra?", a: "Included. Every Edison management agreement covers monthly statements, reserve banking, audit prep, and tax filing — handled by a dedicated specialist supported by our CPA-led Director of Accounting." },
+        { q: "Do you handle HOAs and condos differently?", a: "Yes. Florida governs them under different statutes, Chapter 720 for HOAs, Chapter 718 for condos. Edison runs both as distinct practices with statute-aware managers, accounting specialists, and compliance tracking." },
+        { q: "Is accounting included or extra?", a: "Included. Every Edison management agreement covers monthly statements, reserve banking, audit prep, and tax filing, handled by a dedicated specialist supported by our CPA-led Director of Accounting." },
         { q: "How is covenant enforcement handled?", a: "By a dedicated enforcement department, not your manager wearing another hat. Address-not-name inspections, correction-first protocols, quarterly board reporting." },
-        { q: "Do you provide collections work?", a: "Yes — in-house. Edison's collections department runs the delinquency workflow from courtesy reminders through intent-to-lien, coordinating with your association's attorney only when legal escalation is genuinely required." }
+        { q: "Do you provide collections work?", a: "Yes, in-house. Edison's collections department runs the delinquency workflow from courtesy reminders through intent-to-lien, coordinating with your association's attorney only when legal escalation is genuinely required." }
       ]
     },
     {
@@ -90,7 +90,7 @@ const FAQ_CONTENT = {
     {
       eyebrow: "Transition", title: "The first 90 days",
       items: [
-        { q: "Who runs the transition — sales or my manager?", a: "Neither. The Edison Transition Experience is run by a dedicated transition team with active COO supervision. Your manager joins for relationship continuity; the team handles the operational work." },
+        { q: "Who runs the transition, sales or my manager?", a: "Neither. The Edison Transition Experience is run by a dedicated transition team with active COO supervision. Your manager joins for relationship continuity; the team handles the operational work." },
         { q: "What records get migrated?", a: "Governing documents, financials, vendor contracts, insurance certificates, ARC history, enforcement records, and homeowner communications. Edison digitizes physical records in parallel rather than after the fact." },
         { q: "What happens to our existing vendors?", a: "Edison reviews each vendor relationship, confirms insurance and W-9 documentation, and identifies any that should be re-bid. The board approves any changes." }
       ]
@@ -98,15 +98,15 @@ const FAQ_CONTENT = {
     {
       eyebrow: "Technology", title: "Tools and portals",
       items: [
-        { q: "What software does Edison use?", a: "CINC Systems for financials, board dashboards, and homeowner portals. The Action Item List for live project tracking. WATTSON AI (launching 2026) for 24/7 resident questions. Plaud AI for board meeting minute drafting. All included — no per-resident or per-feature fees." },
+        { q: "What software does Edison use?", a: "CINC Systems for financials, board dashboards, and homeowner portals. The Action Item List for live project tracking. WATTSON AI (launching 2026) for 24/7 resident questions. Plaud AI for board meeting minute drafting. All included, no per-resident or per-feature fees." },
         { q: "Is there a homeowner portal?", a: "Yes. CINC Connect gives homeowners 24/7 access to account information, payment, documents, and maintenance requests. Architects and vendors get their own scoped access." },
-        { q: "What is WATTSON?", a: "Edison's branded AI assistant — named for watts and the light bulb. Launching 2026, WATTSON will answer resident questions 24/7 inside the portal, grounded in your governing documents and management calendar. A real person still answers when you call." }
+        { q: "What is WATTSON?", a: "Edison's branded AI assistant, named for watts and the light bulb. Launching 2026, WATTSON will answer resident questions 24/7 inside the portal, grounded in your governing documents and management calendar. A real person still answers when you call." }
       ]
     },
     {
       eyebrow: "Edison Education", title: "Board education program",
       items: [
-        { q: "What is Edison Education?", a: "Our free library of articles, guides, and FL compliance updates written specifically for HOA and condo boards. Available at /edison-education/ — no login, no email gate." },
+        { q: "What is Edison Education?", a: "Our free library of articles, guides, and FL compliance updates written specifically for HOA and condo boards. Available at /edison-education/, no login, no email gate." },
         { q: "Do you offer board certification training?", a: "Edison reimburses our managers for industry designations and partners with Strength in Partnerships (SIP) to deliver free education content to boards. FL statutory board certification is supported and tracked centrally for client communities." },
         { q: "How often is content published?", a: "New articles every month, prioritized by what boards are asking us about in real time. FL legislative changes get covered the day they pass." }
       ]

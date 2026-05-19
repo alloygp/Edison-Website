@@ -2,14 +2,14 @@ import React, { useState as useEdState } from 'react';
 import { Breadcrumb, FinalCTA, InteriorButton, MidCTA, SectionHeading } from '../components/interior-components';
 
 /* ============================================================
-   EDISON EDUCATION HUB — VARIANT A (Topic-First / Category Grid)
+   EDISON EDUCATION HUB, VARIANT A (Topic-First / Category Grid)
    Hero, three big topic-category cards (Florida Compliance / For
    Boards / Financial Management) each with the spokes underneath,
    then a featured article band.
    ============================================================ */
 function EducationHubA({ content }) {
   return (
-    <main data-screen-label="Edison Education — Variant A">
+    <main data-screen-label="Edison Education, Variant A">
       <Breadcrumb trail={[
         { label: "Home", href: "/" },
         { label: "Edison Education" }
@@ -178,7 +178,7 @@ function EducationHubA({ content }) {
 }
 
 /* ============================================================
-   EDISON EDUCATION HUB — VARIANT B (Chronological Index + Sidebar)
+   EDISON EDUCATION HUB, VARIANT B (Chronological Index + Sidebar)
    Search bar, big article list (newest first), sidebar with
    categories and trending. More like a content publication.
    ============================================================ */
@@ -187,7 +187,7 @@ function EducationHubB({ content }) {
     t.articles.map(a => ({ ...a, category: t.label }))
   );
   return (
-    <main data-screen-label="Edison Education — Variant B">
+    <main data-screen-label="Edison Education, Variant B">
       <Breadcrumb trail={[
         { label: "Home", href: "/" },
         { label: "Edison Education" }
@@ -216,7 +216,7 @@ function EducationHubB({ content }) {
             padding: 4, maxWidth: 540,
             boxShadow: "var(--shadow-md)"
           }}>
-            <input type="text" placeholder="Search articles — milestone, reserve, audit, switching..."
+            <input type="text" placeholder="Search articles, milestone, reserve, audit, switching..."
                    style={{
                      flex: 1, border: 0, outline: 0,
                      padding: "12px 16px",
@@ -348,7 +348,7 @@ function EducationHubB({ content }) {
    SAMPLE CONTENT
    ============================================================ */
 const EDUCATION_CONTENT = {
-  intro: "Edison Education is our free library of articles, guides, and Florida compliance updates — written specifically for HOA, condo, and townhome board members. Every piece is grounded in the actual statute, the actual board pain point, and the actual decision boards have to make.",
+  intro: "Edison Education is our free library of articles, guides, and Florida compliance updates, written specifically for HOA, condo, and townhome board members. Every piece is grounded in the actual statute, the actual board pain point, and the actual decision boards have to make.",
   topics: [
     {
       label: "Florida Compliance",
@@ -370,7 +370,7 @@ const EDUCATION_CONTENT = {
         { title: "HOA Board Member Responsibilities", readTime: "11 min", href: "/blog/hoa-board-member-responsibilities/" },
         { title: "HOA Bylaws vs CC&Rs Explained", readTime: "7 min", href: "/blog/hoa-bylaws-vs-ccrs/" },
         { title: "Unenforceable HOA Rules in Florida", readTime: "8 min", href: "/blog/unenforceable-hoa-rules-florida/" },
-        { title: "Condo Association vs HOA — Which Are You?", readTime: "6 min", href: "/blog/condo-association-vs-hoa/" }
+        { title: "Condo Association vs HOA, Which Are You?", readTime: "6 min", href: "/blog/condo-association-vs-hoa/" }
       ]
     },
     {
@@ -380,7 +380,7 @@ const EDUCATION_CONTENT = {
       color: "#EEF4FF",
       articles: [
         { title: "HOA Audit Guide", readTime: "9 min", href: "/blog/hoa-audit/" },
-        { title: "HOA Management Fees — What Boards Actually Pay", readTime: "10 min", href: "/blog/hoa-management-fees/" },
+        { title: "HOA Management Fees, What Boards Actually Pay", readTime: "10 min", href: "/blog/hoa-management-fees/" },
         { title: "HOA Special Assessment Guide", readTime: "8 min", href: "/blog/hoa-special-assessment/" }
       ]
     }

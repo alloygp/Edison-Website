@@ -3,13 +3,13 @@ import { BodyProse, Breadcrumb, DetailLinkCards, FeatureGrid, FinalCTA, Interior
 import { BulletsWithImage, PullQuote, StatsBand } from '../components/template-sections';
 
 /* ============================================================
-   ABOUT PAGE TEMPLATE — VARIANT A (Narrative / Story-Driven)
+   ABOUT PAGE TEMPLATE, VARIANT A (Narrative / Story-Driven)
    The page leads with the company's story, the founder's "why,"
    and weaves values + team into a single readable flow.
    ============================================================ */
 function AboutPageA({ content }) {
   return (
-    <main data-screen-label="About — Variant A">
+    <main data-screen-label="About, Variant A">
       <Breadcrumb trail={[
         { label: "Home", href: "/" },
         { label: "About" }
@@ -86,7 +86,7 @@ function AboutPageA({ content }) {
       <FinalCTA
         eyebrow="Let's talk"
         title="Curious what working with Edison feels like?"
-        body="Boards we serve don't switch companies on impulse — they switch because the difference is measurable. Request a proposal and see what that looks like for your community."
+        body="Boards we serve don't switch companies on impulse, they switch because the difference is measurable. Request a proposal and see what that looks like for your community."
         primary={{ label: "Request a Proposal", href: "/request-a-proposal/" }}
         secondary={{ label: "Schedule a Consultation", href: "/contact/" }}
       />
@@ -95,14 +95,14 @@ function AboutPageA({ content }) {
 }
 
 /* ============================================================
-   ABOUT PAGE TEMPLATE — VARIANT B (Modular Hub)
+   ABOUT PAGE TEMPLATE, VARIANT B (Modular Hub)
    Clean sectional layout. Each block of "about" surfaces as
    its own card or row, with prominent links out to the related
    sub-pages (Meet Our Team, WATTSON, Testimonials, etc.)
    ============================================================ */
 function AboutPageB({ content }) {
   return (
-    <main data-screen-label="About — Variant B">
+    <main data-screen-label="About, Variant B">
       <Breadcrumb trail={[
         { label: "Home", href: "/" },
         { label: "About" }
@@ -198,7 +198,7 @@ function AboutPageB({ content }) {
                   fontFamily: "var(--font-body)", fontSize: 14.5, lineHeight: 1.55,
                   color: "rgba(255,255,255,.85)"
                 }}>
-                  <span style={{ color: "var(--edison-teal)", fontWeight: 800, flexShrink: 0 }}>—</span>
+                  <span style={{ color: "var(--edison-teal)", fontWeight: 800, flexShrink: 0 }}>•</span>
                   {a}
                 </li>
               ))}
@@ -210,7 +210,7 @@ function AboutPageB({ content }) {
       <FinalCTA
         eyebrow="Let's talk"
         title="Curious what working with Edison feels like?"
-        body="Boards we serve don't switch companies on impulse — they switch because the difference is measurable. Request a proposal and see what that looks like for your community."
+        body="Boards we serve don't switch companies on impulse, they switch because the difference is measurable. Request a proposal and see what that looks like for your community."
         primary={{ label: "Request a Proposal", href: "/request-a-proposal/" }}
         secondary={{ label: "Schedule a Consultation", href: "/contact/" }}
       />
@@ -224,24 +224,24 @@ function AboutPageB({ content }) {
 const ABOUT_CONTENT = {
   hero: {
     title: "A boutique HOA management firm, built around the boards we serve.",
-    lede: "Edison Association Management is an Orlando-based, PCAM-led HOA, condominium, and townhome management firm. We were founded on the belief that volunteer boards deserve a partner who treats their community like the only one in the portfolio — because we deliberately keep our portfolios small enough that it can be.",
+    lede: "Edison Association Management is an Orlando-based, PCAM-led HOA, condominium, and townhome management firm. We were founded on the belief that volunteer boards deserve a partner who treats their community like the only one in the portfolio, because we deliberately keep our portfolios small enough that it can be.",
     image: "/assets/img-community-aerial.jpg"
   },
   story: {
     title: "Why Edison exists",
     paragraphs: [
-      "Edison was founded in 2021 because the Central Florida HOA management market had a pattern: large firms growing larger, manager portfolios stretching past 15 communities, and boards quietly accepting that their phone calls would be returned eventually — if at all. Tracy Durham, PCAM and the 2025 CAI Central Florida Chapter President, started Edison with the opposite premise: build a firm small enough to know every community by name, with the back-office depth to handle real complexity. She brought 15+ years of association-industry experience into the launch.",
-      "Four years later that premise still drives the day-to-day. Edison's portfolios are sized for stability, not volume. Managers carry 8–10 communities — half the industry standard. There are no non-competes, no per-violation enforcement quotas, and no managers covering coverage as an afterthought. The boards who switch to Edison tend to stay. And the managers who join tend to stay even longer.",
+      "Edison was founded in 2021 because the Central Florida HOA management market had a pattern: large firms growing larger, manager portfolios stretching past 15 communities, and boards quietly accepting that their phone calls would be returned eventually, if at all. Tracy Durham, PCAM and the 2025 CAI Central Florida Chapter President, started Edison with the opposite premise: build a firm small enough to know every community by name, with the back-office depth to handle real complexity. She brought 15+ years of association-industry experience into the launch.",
+      "Four years later that premise still drives the day-to-day. Edison's portfolios are sized for stability, not volume. Managers carry 8–10 communities, half the industry standard. There are no non-competes, no per-violation enforcement quotas, and no managers covering coverage as an afterthought. The boards who switch to Edison tend to stay. And the managers who join tend to stay even longer.",
       "What boards get is straightforward: a manager who actually knows the community, accounting handled by a dedicated specialist, enforcement run by a separate department, and a leadership team that personally onboards every new association. What homeowners get is responsiveness, transparency, and a portal that works. What the board's lawyer doesn't get is a panicked phone call at 9pm. That's the whole pitch."
     ]
   },
   values: [
-    "Partnership over transactions — boards are partners, not account numbers",
-    "Transparency and trust — clear finances, open communication, no surprises",
-    "Education and empowerment — informed boards make better decisions",
-    "People-first culture — manageable portfolios, real PTO, no non-competes",
-    "Stability and continuity — industry-low manager turnover",
-    "Innovation with a human touch — modern tools, real people answer the phone"
+    "Partnership over transactions, boards are partners, not account numbers",
+    "Transparency and trust, clear finances, open communication, no surprises",
+    "Education and empowerment, informed boards make better decisions",
+    "People-first culture, manageable portfolios, real PTO, no non-competes",
+    "Stability and continuity, industry-low manager turnover",
+    "Innovation with a human touch, modern tools, real people answer the phone"
   ],
   valueCards: [
     { title: "Partnership Over Transactions", body: "Boards are partners, not account numbers. Every interaction is rooted in collaboration." },
@@ -252,16 +252,16 @@ const ABOUT_CONTENT = {
     { title: "Modern, Human Service", body: "Technology should make life easier without replacing the human connection that builds trust." }
   ],
   antiPatterns: [
-    "Coupon books — replaced by free, modern courtesy email reminders",
-    "Non-competes — we earn loyalty through investment, not fear",
-    "Volume-chasing — portfolio growth is opt-in, never forced",
-    "Manager reports — replaced by the live Action Item List",
-    "Punitive fine culture — correction first, fines as a last resort",
-    "Overloaded managers — 8–10 communities maximum, no exceptions"
+    "Coupon books, replaced by free, modern courtesy email reminders",
+    "Non-competes, we earn loyalty through investment, not fear",
+    "Volume-chasing, portfolio growth is opt-in, never forced",
+    "Manager reports, replaced by the live Action Item List",
+    "Punitive fine culture, correction first, fines as a last resort",
+    "Overloaded managers, 8–10 communities maximum, no exceptions"
   ],
   valuesImage: "/assets/img-11.jpg",
   teamIntro: [
-    "Edison's organizational model treats the manager as one node on a network — not the single point of failure. A manager is paired with a dedicated accounting specialist, an enforcement coordinator, a collections specialist, and an ARC reviewer. The back-office handles what isn't community-facing so the manager can be present where it counts.",
+    "Edison's organizational model treats the manager as one node on a network, not the single point of failure. A manager is paired with a dedicated accounting specialist, an enforcement coordinator, a collections specialist, and an ARC reviewer. The back-office handles what isn't community-facing so the manager can be present where it counts.",
     "Leadership stays close. Tracy Durham personally onboards every new association and remains accessible to every board, not just the largest. The COO supervises transitions. The CAI Chapter Presidency role keeps Edison plugged into Florida legislative changes the day they happen."
   ],
   stats: [
@@ -271,9 +271,9 @@ const ABOUT_CONTENT = {
     { value: "PCAM", caption: "Leadership credential plus 2025 CAI Chapter President" }
   ],
   subPages: [
-    { title: "Meet Our Team", body: "Edison's managers, specialists, and leadership — the people who actually do the work for your board.", href: "/about/meet-our-team/" },
-    { title: "Testimonials", body: "What current Edison boards say about working with us — quoted, attributed, and verifiable.", href: "/testimonials/" },
-    { title: "Case Studies", body: "Specific transitions and turnarounds we've led for Central Florida communities — sized, dated, and outcome-tracked.", href: "/case-studies/" },
+    { title: "Meet Our Team", body: "Edison's managers, specialists, and leadership, the people who actually do the work for your board.", href: "/about/meet-our-team/" },
+    { title: "Testimonials", body: "What current Edison boards say about working with us, quoted, attributed, and verifiable.", href: "/testimonials/" },
+    { title: "Case Studies", body: "Specific transitions and turnarounds we've led for Central Florida communities, sized, dated, and outcome-tracked.", href: "/case-studies/" },
     { title: "Meet Your Management", body: "The community-wide event Edison runs before every new contract starts. Why it matters and how it works.", href: "/about/meet-your-management/" },
     { title: "Contact", body: "Office address, phone, email, and the people who answer when you call. Same-day for board members, 24-hour for homeowners.", href: "/contact/" }
   ],

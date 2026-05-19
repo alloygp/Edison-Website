@@ -62,13 +62,13 @@ function EmailCapture({ variant = "light", placeholder = "board@yourcommunity.or
 }
 
 /* ============================================================
-   WATTSON FEATURE PAGE — VARIANT A (Product Teaser · Coming 2026)
+   WATTSON FEATURE PAGE, VARIANT A (Product Teaser · Coming 2026)
    Big branded hero with launch badge, what-it-does grid, email
    capture inline. Hero-led, marketing-forward.
    ============================================================ */
 function WattsonPageA() {
   return (
-    <main data-screen-label="WATTSON — Variant A">
+    <main data-screen-label="WATTSON, Variant A">
       <Breadcrumb trail={[
         { label: "Home", href: "/" },
         { label: "About", href: "/about/" },
@@ -113,7 +113,7 @@ function WattsonPageA() {
             <p style={{
               fontFamily: "var(--font-body)", fontSize: 19, lineHeight: 1.55,
               color: "rgba(255,255,255,.85)", margin: "0 0 32px", maxWidth: 620
-            }}>Named for watts and the light bulb. WATTSON answers homeowner questions 24/7 inside Edison's resident portal — surfacing governing documents, drafting maintenance requests, and routing the rest to a human. But when you call Edison, a person still answers.</p>
+            }}>Named for watts and the light bulb. WATTSON answers homeowner questions 24/7 inside Edison's resident portal, surfacing governing documents, drafting maintenance requests, and routing the rest to a human. But when you call Edison, a person still answers.</p>
             <div style={{ marginBottom: 14 }}>
               <EmailCapture variant="dark"/>
             </div>
@@ -170,15 +170,15 @@ function WattsonPageA() {
         background="#fff"
         eyebrow="What WATTSON does"
         title="A resident assistant that actually understands your community"
-        sub="WATTSON is grounded in your governing documents, your management calendar, and your homeowner records. It's not a generic chatbot — it knows your community's rules, deadlines, and the difference between an HOA and a condo association."
+        sub="WATTSON is grounded in your governing documents, your management calendar, and your homeowner records. It's not a generic chatbot, it knows your community's rules, deadlines, and the difference between an HOA and a condo association."
         columns={3}
         items={[
           { title: "24/7 Document Lookup", body: "Residents ask in plain English. WATTSON pulls the right CC&R section, bylaw, or rule and quotes it." },
           { title: "Maintenance Requests", body: "Drafts the request, routes it to your management team, and copies the maintenance log automatically." },
           { title: "Compliance Reminders", body: "Surfaces upcoming inspections, certifications, and FL statutory deadlines before they become emergencies." },
-          { title: "Multilingual Support", body: "Answers in English and Spanish — important in Central Florida's communities." },
+          { title: "Multilingual Support", body: "Answers in English and Spanish, important in Central Florida's communities." },
           { title: "Human Escalation", body: "Knows when to stop talking and pass to your manager. Routes complex issues with full context attached." },
-          { title: "Board Insights", body: "Quarterly reports on what residents are asking about most — so boards can address issues at the source." }
+          { title: "Board Insights", body: "Quarterly reports on what residents are asking about most, so boards can address issues at the source." }
         ]}
       />
 
@@ -194,14 +194,14 @@ function WattsonPageA() {
 }
 
 /* ============================================================
-   WATTSON FEATURE PAGE — VARIANT B (Conversation-Forward)
+   WATTSON FEATURE PAGE, VARIANT B (Conversation-Forward)
    Centered hero, large chat mockup as the centerpiece, then
    technical details and email capture at the end. Quieter brand,
    demo-led.
    ============================================================ */
 function WattsonPageB() {
   return (
-    <main data-screen-label="WATTSON — Variant B">
+    <main data-screen-label="WATTSON, Variant B">
       <Breadcrumb trail={[
         { label: "Home", href: "/" },
         { label: "About", href: "/about/" },
@@ -232,7 +232,7 @@ function WattsonPageB() {
           <p style={{
             fontFamily: "var(--font-body)", fontSize: 19, lineHeight: 1.55,
             color: "var(--edison-text-body)", margin: 0, maxWidth: 720
-          }}>Edison's branded resident AI. Named for watts and the light bulb. WATTSON answers homeowner questions 24/7 inside the resident portal — grounded in your governing documents, your community calendar, and your actual rules.</p>
+          }}>Edison's branded resident AI. Named for watts and the light bulb. WATTSON answers homeowner questions 24/7 inside the resident portal, grounded in your governing documents, your community calendar, and your actual rules.</p>
         </div>
       </section>
 
@@ -267,7 +267,7 @@ function WattsonPageB() {
             { from: "Resident", msg: "Can I install a satellite dish on my roof?" },
             { from: "WATTSON", msg: "Your CC&Rs (Article 7, Section 7.4) allow satellite dishes under 1 meter on residential structures, subject to ARC review for placement. The ARC review form takes about 5 minutes. Want me to start one?" },
             { from: "Resident", msg: "Yes please. And what's the timeline?" },
-            { from: "WATTSON", msg: "ARC reviews for minor installations like this typically return a decision within 14 days. I'm drafting your request now — I'll send you a confirmation once it's submitted, and your ARC reviewer will be in touch." }
+            { from: "WATTSON", msg: "ARC reviews for minor installations like this typically return a decision within 14 days. I'm drafting your request now, I'll send you a confirmation once it's submitted, and your ARC reviewer will be in touch." }
           ].map((m, i) => (
             <div key={i} style={{
               marginBottom: 12,
@@ -296,7 +296,7 @@ function WattsonPageB() {
         title="Grounded in your community, not the internet"
         columns={3}
         items={[
-          { title: "Document-Grounded", body: "WATTSON reads your governing documents directly. Answers are quoted from your CC&Rs and bylaws — not generic AI guesses." },
+          { title: "Document-Grounded", body: "WATTSON reads your governing documents directly. Answers are quoted from your CC&Rs and bylaws, not generic AI guesses." },
           { title: "Community-Aware", body: "Knows your management calendar, board meeting schedule, vendor contacts, and FL statutory deadlines." },
           { title: "Human Handoff", body: "Knows when to escalate. Routes complex or sensitive issues to your manager with full conversation context." }
         ]}

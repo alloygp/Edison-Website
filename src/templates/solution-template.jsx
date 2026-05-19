@@ -3,12 +3,12 @@ import { BodyProse, Breadcrumb, DetailLinkCards, FAQ, FeatureGrid, FinalCTA, Int
 import { ComparisonTable, EmpathyHero, NumberedSteps, PullQuote, StatHero, StatsBand } from '../components/template-sections';
 
 /* ============================================================
-   SOLUTION PAGE TEMPLATE — VARIANT A (Empathetic Narrative)
+   SOLUTION PAGE TEMPLATE, VARIANT A (Empathetic Narrative)
    Sample content: Switch HOA Management Company
    ============================================================ */
 function SolutionPageA({ content }) {
   return (
-    <main data-screen-label="Solution — Variant A">
+    <main data-screen-label="Solution, Variant A">
       <Breadcrumb trail={[
         { label: "Home", href: "/" },
         { label: "Solutions", href: "/solutions/" },
@@ -34,7 +34,7 @@ function SolutionPageA({ content }) {
         background="var(--edison-teal-pale)"
         eyebrow="The Edison Transition Experience"
         title="What switching actually looks like, with Edison handling it"
-        sub="Most boards expect a switch to mean disruption, lost records, and angry homeowners. The Edison Transition Experience is built to remove the burden — not move it onto the board."
+        sub="Most boards expect a switch to mean disruption, lost records, and angry homeowners. The Edison Transition Experience is built to remove the burden, not move it onto the board."
         steps={content.steps}
         variant="horizontal"
       />
@@ -66,11 +66,11 @@ function SolutionPageA({ content }) {
 }
 
 /* ============================================================
-   SOLUTION PAGE TEMPLATE — VARIANT B (Comparison + Proof)
+   SOLUTION PAGE TEMPLATE, VARIANT B (Comparison + Proof)
    ============================================================ */
 function SolutionPageB({ content }) {
   return (
-    <main data-screen-label="Solution — Variant B">
+    <main data-screen-label="Solution, Variant B">
       <Breadcrumb trail={[
         { label: "Home", href: "/" },
         { label: "Solutions", href: "/solutions/" },
@@ -90,7 +90,7 @@ function SolutionPageB({ content }) {
       <ComparisonTable
         eyebrow="What changes"
         title="Two ways this can go"
-        sub="Most management transitions fail because the new company has the same structural problems as the old one. Edison's model is different — and it shows up in the day-to-day, not just the pitch deck."
+        sub="Most management transitions fail because the new company has the same structural problems as the old one. Edison's model is different, and it shows up in the day-to-day, not just the pitch deck."
         leftLabel="Typical Transition"
         rightLabel="The Edison Way"
         rows={content.comparison}
@@ -131,14 +131,14 @@ function SolutionPageB({ content }) {
 }
 
 /* ============================================================
-   SAMPLE CONTENT — "Switch HOA Management Company"
+   SAMPLE CONTENT, "Switch HOA Management Company"
    ============================================================ */
 const SWITCH_CONTENT = {
   crumb: "Switch HOA Management Company",
   eyebrow: "Solutions · For boards considering a change",
   hero: {
     title: "Thinking about switching HOA management companies?",
-    lede: "If your manager doesn't return calls, your financials feel opaque, or your board is tired of doing the management company's job — you're not alone. Most boards know they need a change long before they make one. Here's how to make it the easier decision.",
+    lede: "If your manager doesn't return calls, your financials feel opaque, or your board is tired of doing the management company's job, you're not alone. Most boards know they need a change long before they make one. Here's how to make it the easier decision.",
     image: "/assets/img-inspector.jpg"
   },
   heroStat: {
@@ -149,22 +149,22 @@ const SWITCH_CONTENT = {
   story: {
     title: "Why most boards wait too long",
     paragraphs: [
-      "Switching management companies feels like a mountain. Records to transfer, vendors to re-credential, homeowners to inform, bank accounts to re-route — and the constant worry that the next company will be just as unresponsive as the last one. So boards wait. They wait through another season of unanswered emails, another budget that arrives late, another covenant violation that gets botched. Until something breaks badly enough to force the move.",
-      "It doesn't have to work that way. The reason most transitions feel disruptive is that most management companies treat onboarding as a checkbox — sign the contract, hand the community to whichever manager has the lightest portfolio, and hope the rough edges smooth out. Edison built a different model from day one. Transitions are run by a dedicated team, not the manager who's about to inherit your community. Your records, vendors, and homeowner communications are handled in parallel, not sequentially. And the manager who learns your community in the first 90 days is the same one still there in year three — because Edison's portfolios are sized for stability, not volume."
+      "Switching management companies feels like a mountain. Records to transfer, vendors to re-credential, homeowners to inform, bank accounts to re-route, and the constant worry that the next company will be just as unresponsive as the last one. So boards wait. They wait through another season of unanswered emails, another budget that arrives late, another covenant violation that gets botched. Until something breaks badly enough to force the move.",
+      "It doesn't have to work that way. The reason most transitions feel disruptive is that most management companies treat onboarding as a checkbox, sign the contract, hand the community to whichever manager has the lightest portfolio, and hope the rough edges smooth out. Edison built a different model from day one. Transitions are run by a dedicated team, not the manager who's about to inherit your community. Your records, vendors, and homeowner communications are handled in parallel, not sequentially. And the manager who learns your community in the first 90 days is the same one still there in year three, because Edison's portfolios are sized for stability, not volume."
     ]
   },
   steps: [
     {
       title: "Discovery & Proposal",
-      body: "Tracy or a senior manager meets with your board to understand the current pain points, governing documents, and capital pipeline — then delivers a written, fixed-scope proposal."
+      body: "Tracy or a senior manager meets with your board to understand the current pain points, governing documents, and capital pipeline, then delivers a written, fixed-scope proposal."
     },
     {
       title: "Records & Vendor Cutover",
-      body: "Edison's transition team digitizes physical records, re-credentials your vendors, and coordinates bank account migration and insurance certificates — without disrupting daily operations."
+      body: "Edison's transition team digitizes physical records, re-credentials your vendors, and coordinates bank account migration and insurance certificates, without disrupting daily operations."
     },
     {
       title: "Meet Your Management Event",
-      body: "A community-wide event introduces your new Edison manager and back-office team to homeowners before the official cutover — so day one feels like continuity, not chaos."
+      body: "A community-wide event introduces your new Edison manager and back-office team to homeowners before the official cutover, so day one feels like continuity, not chaos."
     },
     {
       title: "Day 1 & Beyond",
@@ -184,7 +184,7 @@ const SWITCH_CONTENT = {
     },
     {
       label: "Manager portfolio size",
-      left: "15+ communities per manager — yours is one of many.",
+      left: "15+ communities per manager, yours is one of many.",
       right: "8–10 communities per manager. Yours actually gets attention."
     },
     {
@@ -201,7 +201,7 @@ const SWITCH_CONTENT = {
   stats: [
     { value: "60–90", caption: "Days from contract signing to full cutover, end-to-end" },
     { value: "8–10", caption: "Communities per Edison manager (industry average is 15+)" },
-    { value: "4.9★", caption: "Google Business rating — highest in the Central Florida market" },
+    { value: "4.9★", caption: "Google Business rating, highest in the Central Florida market" },
     { value: "PCAM", caption: "Leadership credential held by Edison's principal, plus 2025 CAI Chapter President" }
   ],
   quote: {
@@ -221,20 +221,20 @@ const SWITCH_CONTENT = {
     },
     {
       q: "Will homeowners be confused?",
-      a: "Not if it's handled right. Edison runs a Meet Your Management event before the official cutover — your homeowners meet the new manager, the accounting specialist, and the back-office team in person. By cutover day, everyone knows who to call."
+      a: "Not if it's handled right. Edison runs a Meet Your Management event before the official cutover, your homeowners meet the new manager, the accounting specialist, and the back-office team in person. By cutover day, everyone knows who to call."
     },
     {
       q: "What does the transition cost?",
-      a: "Transition coordination is included in Edison's management agreement — there's no separate onboarding fee, no records digitization charge, and no setup cost beyond the standard monthly management rate quoted in your proposal."
+      a: "Transition coordination is included in Edison's management agreement, there's no separate onboarding fee, no records digitization charge, and no setup cost beyond the standard monthly management rate quoted in your proposal."
     },
     {
       q: "What if Edison isn't the right fit?",
-      a: "Our agreements are 12-month terms with clear termination provisions. We don't believe in trapping boards — if Edison isn't a fit at the end of year one, you walk free with your records, your vendor list, and your processes intact."
+      a: "Our agreements are 12-month terms with clear termination provisions. We don't believe in trapping boards, if Edison isn't a fit at the end of year one, you walk free with your records, your vendor list, and your processes intact."
     }
   ],
   cta: {
     title: "Switching companies doesn't have to be the year's biggest project.",
-    body: "Tracy and the Edison team handle the burden — the records, the homeowners, the vendor cutover — so your board can stay focused on the community. Request a proposal and see exactly what that looks like for your association."
+    body: "Tracy and the Edison team handle the burden, the records, the homeowners, the vendor cutover, so your board can stay focused on the community. Request a proposal and see exactly what that looks like for your association."
   }
 };
 

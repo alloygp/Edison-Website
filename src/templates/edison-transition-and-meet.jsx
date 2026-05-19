@@ -11,7 +11,7 @@ import { NumberedSteps, ComparisonTable, StatsBand, PullQuote } from '../compone
 /* ============================================================
    THE EDISON TRANSITION EXPERIENCE
    /about/the-edison-transition/
-   Custom layout — branded transition program, not a standard
+   Custom layout, branded transition program, not a standard
    solution. Uses About-template-style sections but emphasizes
    the process timeline.
    ============================================================ */
@@ -61,7 +61,7 @@ function EdisonTransitionPage() {
       <StatsBand background="var(--edison-teal-pale)" stats={[
         { value: "60–90", caption: "Days, end-to-end. Defined timeline." },
         { value: "COO-led", caption: "Sabrina Stephan supervises every transition personally." },
-        { value: "1 event", caption: "Meet Your Management — before cutover, not after." },
+        { value: "1 event", caption: "Meet Your Management, before cutover, not after." },
         { value: "$0", caption: "Separate transition or onboarding fees. Coordination included." }
       ]}/>
 
@@ -109,8 +109,8 @@ function EdisonTransitionPage() {
         items={[
           { q: "How long does the transition actually take?", a: "Most transitions are complete within 60–90 days from contract signing. The first 30 days focus on records and vendor migration; the second 30 on the Meet Your Management event and homeowner communication; the final stretch on cutover and the live handoff to your dedicated manager." },
           { q: "What if we're mid-contract with our current company?", a: "Most management agreements have a termination clause with 30–90 days notice. Edison's transition team reviews your current contract to identify the right termination window and coordinate timing so there's no gap in service." },
-          { q: "Will homeowners be confused?", a: "Not if it's handled right. Edison runs a Meet Your Management event before cutover — homeowners meet the new manager, accounting specialist, and back-office team in person. By cutover day, everyone knows who to call." },
-          { q: "What does it cost?", a: "Transition coordination is included in Edison's management agreement — no separate onboarding fee, no records digitization charge, no setup cost beyond the standard monthly rate quoted in your proposal." }
+          { q: "Will homeowners be confused?", a: "Not if it's handled right. Edison runs a Meet Your Management event before cutover, homeowners meet the new manager, accounting specialist, and back-office team in person. By cutover day, everyone knows who to call." },
+          { q: "What does it cost?", a: "Transition coordination is included in Edison's management agreement, no separate onboarding fee, no records digitization charge, no setup cost beyond the standard monthly rate quoted in your proposal." }
         ]}
       />
 
@@ -128,7 +128,7 @@ function EdisonTransitionPage() {
 /* ============================================================
    MEET YOUR MANAGEMENT EVENT
    /about/meet-your-management/
-   Branded transition event page — the event story for boards
+   Branded transition event page, the event story for boards
    already in conversation. Uses Edison's "ice cream truck"
    visual cue from brand brief.
    ============================================================ */
@@ -173,7 +173,7 @@ function MeetYourManagementPage() {
         <div style={{ maxWidth: 1080, margin: "0 auto",
                       display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 18 }}>
           {[
-            { title: "Meet the People", body: "Homeowners see the actual humans running their community — names, faces, direct extensions. Not 'our team.'" },
+            { title: "Meet the People", body: "Homeowners see the actual humans running their community, names, faces, direct extensions. Not 'our team.'" },
             { title: "Ask Anything", body: "Q&A on the spot, with the manager, the accounting lead, and the enforcement coordinator all in the room." },
             { title: "Set the Tone", body: "The event signals Edison's standard: a real person answers, communication is open, the board has nothing to hide." }
           ].map((c, i) => (
@@ -200,9 +200,9 @@ function MeetYourManagementPage() {
         background="#fff"
         title="Why Edison does this"
         paragraphs={[
-          "Most management company transitions fail at the homeowner layer. The board signs a contract. Records get transferred. The accounting cuts over. And then a form letter goes out to homeowners — 'your management company is now ABC' — and the questions and confusion start showing up at the new company's front desk for the next six months.",
+          "Most management company transitions fail at the homeowner layer. The board signs a contract. Records get transferred. The accounting cuts over. And then a form letter goes out to homeowners, 'your management company is now ABC', and the questions and confusion start showing up at the new company's front desk for the next six months.",
           "Edison handles the cutover differently. The Meet Your Management event is held in the community, typically in a clubhouse or common area, two to four weeks before the official cutover. Tracy attends. The dedicated manager attends. The accounting specialist and enforcement coordinator attend. Homeowners come, ask their questions, see the people, and leave knowing who to call. By cutover day, the new is already familiar.",
-          "Often there's an ice cream truck. It's the most Edison signature detail of an Edison signature program — warm, casual, anti-corporate, and intentional. Boards remember the event. Homeowners remember the event. Anyone considering whether Edison runs a transition seriously can stop wondering."
+          "Often there's an ice cream truck. It's the most Edison signature detail of an Edison signature program, warm, casual, anti-corporate, and intentional. Boards remember the event. Homeowners remember the event. Anyone considering whether Edison runs a transition seriously can stop wondering."
         ]}
       />
 

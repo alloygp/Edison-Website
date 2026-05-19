@@ -2,14 +2,14 @@ import React from 'react';
 import { Breadcrumb, InteriorButton, SectionHeading } from '../components/interior-components';
 
 /* ============================================================
-   Legal pages — Privacy Policy + Terms of Service
+   Legal pages, Privacy Policy + Terms of Service
    Plain-spoken, accurate, lightly-templated. Reviewed by counsel
    before publication. Dates updated automatically.
    ============================================================ */
 
 function LegalShell({ eyebrow, title, lastUpdated, sections, children }) {
   return (
-    <main data-screen-label={`Legal — ${title}`}>
+    <main data-screen-label={`Legal, ${title}`}>
       <Breadcrumb trail={[
         { label: "Home", href: "/" },
         { label: title }
@@ -97,8 +97,8 @@ function PrivacyPolicyPage() {
       lastUpdated="May 2026"
       sections={[
         { heading: "Who we are", body: ["Edison Association Management, LLC (\"Edison,\" \"we,\" \"our\") is a Florida-based HOA, condominium, and townhome management firm headquartered in Orlando. This privacy policy describes how we collect, use, and protect personal information through our website and management operations."] },
-        { heading: "Information we collect", body: ["We collect information you provide directly — through contact forms, proposal requests, the resident portal, payment systems, and the Edison Education newsletter signup."], list: ["Identity and contact details (name, role, email, phone, mailing address)", "Community details (association name, unit count, governing documents shared with us)", "Account and payment information (handled through CINC Systems and credit-card processors; we don't store full card numbers)", "Communications you send to us (email, phone, portal messages)", "Browser and device information through standard website analytics"] },
-        { heading: "How we use it", body: ["Personal information is used to deliver the management services we contract to provide and to operate the Edison website. We don't sell personal information."], list: ["Responding to proposal requests and contact form submissions", "Managing your association — accounting, communication, compliance, vendor coordination", "Operating the resident portal and homeowner payment systems", "Sending Edison Education content if you've opted in", "Improving the website and our operational service through analytics"] },
+        { heading: "Information we collect", body: ["We collect information you provide directly, through contact forms, proposal requests, the resident portal, payment systems, and the Edison Education newsletter signup."], list: ["Identity and contact details (name, role, email, phone, mailing address)", "Community details (association name, unit count, governing documents shared with us)", "Account and payment information (handled through CINC Systems and credit-card processors; we don't store full card numbers)", "Communications you send to us (email, phone, portal messages)", "Browser and device information through standard website analytics"] },
+        { heading: "How we use it", body: ["Personal information is used to deliver the management services we contract to provide and to operate the Edison website. We don't sell personal information."], list: ["Responding to proposal requests and contact form submissions", "Managing your association, accounting, communication, compliance, vendor coordination", "Operating the resident portal and homeowner payment systems", "Sending Edison Education content if you've opted in", "Improving the website and our operational service through analytics"] },
         { heading: "Who has access", body: ["Internally, Edison employees access personal information only when needed to perform their role. Externally, we share information with service providers (CINC Systems, payment processors, our independent CPA on audit work, the association's attorneys when escalation requires it). Service providers are contractually required to protect your information."] },
         { heading: "Cookies and analytics", body: ["The Edison website uses cookies for session management and standard analytics (Google Analytics or comparable). You can configure your browser to refuse cookies; some features of the resident portal may not function without them."] },
         { heading: "Florida resident rights", body: ["Florida residents have specific rights regarding their personal information under FL statute. You can request to know what information we hold, correct inaccuracies, and request deletion (subject to recordkeeping obligations under FL Ch. 720 / 718). Send requests to the contact details below."] },
@@ -118,7 +118,7 @@ function TermsOfServicePage() {
       sections={[
         { heading: "Scope", body: ["These terms govern your use of edisonassociationmanagement.com and the publicly accessible portions of Edison Association Management's online services. Management services delivered to client associations are governed by separate written management agreements; if those terms conflict with these, the management agreement controls."] },
         { heading: "Use of the website", body: ["The Edison website is provided for informational purposes. You may browse, read, and share linked pages. You may not scrape the site systematically, attempt to access non-public areas, or use the site to send unsolicited communications."] },
-        { heading: "Edison Education content", body: ["Articles published under Edison Education and the Edison Blog are written for educational purposes. They are not legal, accounting, or engineering advice — they're plain-language explanations of issues Florida boards face. For your community's specific situation, consult a licensed professional. Edison is happy to help you find one."] },
+        { heading: "Edison Education content", body: ["Articles published under Edison Education and the Edison Blog are written for educational purposes. They are not legal, accounting, or engineering advice, they're plain-language explanations of issues Florida boards face. For your community's specific situation, consult a licensed professional. Edison is happy to help you find one."] },
         { heading: "Third-party links and tools", body: ["The Edison website links to third-party services we use (CINC Systems portal, HomeWise Docs for estoppels, VIVE login, etc.). Those services have their own terms; we don't control them. We link to them for your convenience."] },
         { heading: "Proposal requests and intake", body: ["Submitting a proposal request through this site doesn't create a management relationship. A management relationship begins only when Edison and an authorized board representative sign a written management agreement."] },
         { heading: "Disclaimer of warranties", body: ["The website is provided \"as is.\" Edison makes no warranty about the accuracy of educational content, the availability of the website, or the suitability of any specific page for your situation. We do our best to keep content current; Florida statute changes more often than the website does."] },

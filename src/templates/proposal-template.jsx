@@ -3,7 +3,7 @@ import { Breadcrumb, FinalCTA, InteriorButton, SectionHeading } from '../compone
 import { PullQuote } from '../components/template-sections';
 
 /* ============================================================
-   REQUEST A PROPOSAL — VARIANT A (Multi-Step Structured Form)
+   REQUEST A PROPOSAL, VARIANT A (Multi-Step Structured Form)
    Conversion-focused. Form is split into 3 visible stages so the
    board sees scope before committing. Trust sidebar on the right.
    ============================================================ */
@@ -71,7 +71,7 @@ function ProposalPageA() {
 
   if (submitted) {
     return (
-      <main data-screen-label="Proposal — Variant A · Submitted">
+      <main data-screen-label="Proposal, Variant A · Submitted">
         <section style={{ padding: "120px 48px", background: "#fff" }}>
           <div style={{ maxWidth: 640, margin: "0 auto", textAlign: "center" }}>
             <div style={{
@@ -88,7 +88,7 @@ function ProposalPageA() {
             <p style={{
               fontFamily: "var(--font-body)", fontSize: 17.5, lineHeight: 1.6,
               color: "var(--edison-text-body)", margin: "0 0 32px"
-            }}>We've received your information. Tracy or a member of the Edison team will be in touch within one business day. Same-day for board members, 24-hour for homeowners — non-negotiable.</p>
+            }}>We've received your information. Tracy or a member of the Edison team will be in touch within one business day. Same-day for board members, 24-hour for homeowners, non-negotiable.</p>
             <div style={{ display: "flex", gap: 12, justifyContent: "center", flexWrap: "wrap" }}>
               <InteriorButton variant="ghost" href="/">Back to home</InteriorButton>
               <InteriorButton variant="primary" href="/about/">Read more about Edison</InteriorButton>
@@ -100,7 +100,7 @@ function ProposalPageA() {
   }
 
   return (
-    <main data-screen-label="Proposal — Variant A">
+    <main data-screen-label="Proposal, Variant A">
       <Breadcrumb trail={[
         { label: "Home", href: "/" },
         { label: "Request a Proposal" }
@@ -117,11 +117,11 @@ function ProposalPageA() {
             fontFamily: "var(--font-display)", fontWeight: 800,
             fontSize: 52, lineHeight: 1.06, letterSpacing: "-0.02em",
             color: "var(--edison-navy)", margin: "0 0 22px", maxWidth: 880
-          }}>Tell us about your community — we'll get back within one business day.</h1>
+          }}>Tell us about your community, we'll get back within one business day.</h1>
           <p style={{
             fontFamily: "var(--font-body)", fontSize: 18, lineHeight: 1.6,
             color: "var(--edison-text-body)", margin: "0 0 56px", maxWidth: 720
-          }}>This intake takes about 3 minutes. We use it to deliver a written, fixed-scope proposal sized for your governing documents, capital plan, and homeowner count — not a generic template.</p>
+          }}>This intake takes about 3 minutes. We use it to deliver a written, fixed-scope proposal sized for your governing documents, capital plan, and homeowner count, not a generic template.</p>
 
           <div style={{ display: "grid", gridTemplateColumns: "1.45fr 1fr", gap: 56, alignItems: "start" }}>
             <form onSubmit={handleSubmit}
@@ -249,7 +249,7 @@ function ProposalPageA() {
                       <option>Within 60 days</option>
                       <option>Within 90 days</option>
                       <option>This budget cycle</option>
-                      <option>Urgent — current situation untenable</option>
+                      <option>Urgent, current situation untenable</option>
                     </select>
                   </div>
                   <div>
@@ -361,7 +361,7 @@ function ProposalPageA() {
 }
 
 /* ============================================================
-   REQUEST A PROPOSAL — VARIANT B (Single-Screen, Visual Hero)
+   REQUEST A PROPOSAL, VARIANT B (Single-Screen, Visual Hero)
    One generous form, no steps, with a dark image hero up top and
    trust signals as a strip below the form. For boards who'd
    rather just fill it in once.
@@ -382,7 +382,7 @@ function ProposalPageB() {
   };
 
   return (
-    <main data-screen-label="Proposal — Variant B">
+    <main data-screen-label="Proposal, Variant B">
       <Breadcrumb trail={[
         { label: "Home", href: "/" },
         { label: "Request a Proposal" }

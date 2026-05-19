@@ -15,10 +15,10 @@ import { NumberedSteps, PullQuote, StatsBand } from '../components/template-sect
    ============================================================ */
 function ServicePage({ content }) {
   return (
-    <main data-screen-label={`Service — ${content.serviceLabel}`}>
+    <main data-screen-label={`Service, ${content.serviceLabel}`}>
       <Breadcrumb trail={content.crumb}/>
 
-      {/* Split hero — same pattern as Pillar */}
+      {/* Split hero, same pattern as Pillar */}
       <section style={{ background: "#fff", padding: "72px 48px 64px" }}>
         <div style={{ maxWidth: 1200, margin: "0 auto",
                       display: "grid", gridTemplateColumns: "1.15fr 1fr", gap: 56,
@@ -71,7 +71,7 @@ function ServicePage({ content }) {
 
       <StatsBand background="var(--edison-teal-pale)" stats={content.stats}/>
 
-      {/* What's included — 3-up cards with icon */}
+      {/* What's included, 3-up cards with icon */}
       <section style={{ background: "#fff", padding: "88px 48px" }}>
         <div style={{ maxWidth: 1200, margin: "0 auto" }}>
           <SectionHeading
@@ -167,7 +167,7 @@ function ServicePage({ content }) {
 }
 
 /* ============================================================
-   SAMPLE CONTENT — HOA Accounting & Financial Management
+   SAMPLE CONTENT, HOA Accounting & Financial Management
    ============================================================ */
 const HOA_ACCOUNTING_CONTENT = {
   serviceLabel: "HOA Accounting",
@@ -179,22 +179,22 @@ const HOA_ACCOUNTING_CONTENT = {
   eyebrow: "HOA Accounting & Financial Management",
   phone: "(407) 317-5252",
   hero: {
-    title: "HOA accounting handled by a dedicated specialist — not your manager's spare time.",
+    title: "HOA accounting handled by a dedicated specialist, not your manager's spare time.",
     lede: "Florida community associations carry compliance obligations, transparency requirements, and reserve funding responsibilities that a generalist bookkeeper isn't built to handle. Edison's accounting department keeps your books audit-ready year-round.",
     image: "/assets/img-accounting.jpg",
     applies: "HOA + Condo Associations"
   },
   stats: [
-    { value: "15th", caption: "Monthly statements delivered by the 15th — balance sheet, P&L, budget-to-actual." },
+    { value: "15th", caption: "Monthly statements delivered by the 15th, balance sheet, P&L, budget-to-actual." },
     { value: "Accrual", caption: "Audit-ready accrual-basis books. Not cash-basis approximations." },
     { value: "CPA-Led", caption: "Director of Accounting oversees every association's financials." }
   ],
   included: {
     title: "Full-service HOA accounting for Florida communities",
-    sub: "Every Edison management agreement includes the full financial operations workstream — handled by a dedicated specialist supported by Edison's CPA-led Director of Accounting.",
+    sub: "Every Edison management agreement includes the full financial operations workstream, handled by a dedicated specialist supported by Edison's CPA-led Director of Accounting.",
     items: [
       { title: "Monthly Financial Reporting", body: "Balance sheet, income statement, and budget-to-actual comparisons by the 15th of every month. Invoice backup attached, audit-ready format." },
-      { title: "Budget Preparation & Planning", body: "Annual budgets built from real operating data, reserve study recommendations, and capital pipeline — not last year's plus inflation." },
+      { title: "Budget Preparation & Planning", body: "Annual budgets built from real operating data, reserve study recommendations, and capital pipeline, not last year's plus inflation." },
       { title: "Reserve Banking & Strategy", body: "Reserve funds tracked against the most recent study. Banking optimized for yield without sacrificing FDIC coverage limits." },
       { title: "Accounts Payable & Vendor Pay", body: "W-9s on file, invoice documentation required, rapid vendor pay. Year-end 1099 prep handled in-house." },
       { title: "Collections & Delinquency", body: "Coordinated with Edison's in-house collections department. Clean ledger. Cash flow protected without escalating to attorneys prematurely." },
@@ -203,13 +203,13 @@ const HOA_ACCOUNTING_CONTENT = {
   },
   whyEdison: {
     title: "Why boards switch to Edison's accounting model",
-    sub: "Most management companies treat accounting as overhead. Edison built it as a dedicated department with its own director — because it's the work that protects board members from personal liability.",
+    sub: "Most management companies treat accounting as overhead. Edison built it as a dedicated department with its own director, because it's the work that protects board members from personal liability.",
     items: [
       { title: "Dedicated Accounting Specialist", body: "Not your manager wearing two hats. A specialist who knows accrual accounting, FL Ch. 720/718 requirements, and your association's specific history." },
-      { title: "CPA-Led Director of Accounting", body: "Every association's financials are overseen by Edison's Director of Accounting, a credentialed CPA — not just a senior bookkeeper." },
+      { title: "CPA-Led Director of Accounting", body: "Every association's financials are overseen by Edison's Director of Accounting, a credentialed CPA, not just a senior bookkeeper." },
       { title: "Audit-Ready Year-Round", body: "Books are kept audit-ready every month, not crammed into shape in April. Most Edison audits finish 20–40% faster than the industry norm." },
       { title: "Reserve Funding Discipline", body: "Reserve banking strategy reviewed annually against current study. We catch underfunding before it requires a special assessment." },
-      { title: "Live Financial Access", body: "CINC Systems dashboards give the treasurer real-time balances, AR aging, and budget pacing — not a PDF mailed monthly." },
+      { title: "Live Financial Access", body: "CINC Systems dashboards give the treasurer real-time balances, AR aging, and budget pacing, not a PDF mailed monthly." },
       { title: "Transparent Vendor Payment", body: "Every payment documented with invoice and W-9. No mystery line items. No surprise reconciliations." }
     ]
   },
@@ -221,14 +221,14 @@ const HOA_ACCOUNTING_CONTENT = {
     title: "How Edison's accounting works in practice",
     sub: "Defined cadence, predictable deliverables, year-round audit readiness.",
     steps: [
-      { title: "Day 1 — Onboarding", body: "Your accounting specialist inherits records, reconciles opening balances, builds the audit-ready ledger, and identifies any clean-up work needed from prior management." },
-      { title: "Month 1–12 — Monthly Reporting", body: "By the 15th of every month: balance sheet, income statement, budget-to-actual, AR aging, and a brief narrative. Invoice documentation attached. Always." },
-      { title: "Q4 — Budget Season", body: "August–October: draft budget built from operating data and reserve study recommendations, presented to the board with scenarios — not a single take-it-or-leave-it number." },
-      { title: "Year-End — Audit & Tax", body: "Year-end binder delivered to the auditor by mid-January. Tax filings coordinated. Audit closed out in weeks, not quarters." }
+      { title: "Day 1, Onboarding", body: "Your accounting specialist inherits records, reconciles opening balances, builds the audit-ready ledger, and identifies any clean-up work needed from prior management." },
+      { title: "Month 1–12, Monthly Reporting", body: "By the 15th of every month: balance sheet, income statement, budget-to-actual, AR aging, and a brief narrative. Invoice documentation attached. Always." },
+      { title: "Q4, Budget Season", body: "August–October: draft budget built from operating data and reserve study recommendations, presented to the board with scenarios, not a single take-it-or-leave-it number." },
+      { title: "Year-End, Audit & Tax", body: "Year-end binder delivered to the auditor by mid-January. Tax filings coordinated. Audit closed out in weeks, not quarters." }
     ]
   },
   quote: {
-    quote: "Our previous manager couldn't tell us what was in the reserve fund without a week of digging. Edison sends monthly statements with invoice backup — we know what we're looking at, and so does our auditor.",
+    quote: "Our previous manager couldn't tell us what was in the reserve fund without a week of digging. Edison sends monthly statements with invoice backup, we know what we're looking at, and so does our auditor.",
     attribution: "James R.",
     role: "Treasurer",
     community: "Condo Association · 184 units"
@@ -236,14 +236,14 @@ const HOA_ACCOUNTING_CONTENT = {
   faqs: [
     { q: "Does this apply to both HOAs and condo associations?", a: "Yes. Edison's accounting department handles HOAs under FL Chapter 720 and condominium associations under FL Chapter 718. The reporting cadence, audit prep, and reserve discipline are identical; the regulatory specifics differ by community type and we calibrate to each." },
     { q: "How quickly will we get monthly statements?", a: "By the 15th of every month. Balance sheet, income statement, budget-to-actual, AR aging, and a brief narrative on any unusual activity. Invoice documentation is always attached. Real-time financial data is also available 24/7 through CINC dashboards." },
-    { q: "What if our books are a mess right now?", a: "That's common — especially for self-managed communities or boards switching from a less rigorous firm. Edison's onboarding includes a clean-up phase: opening balance reconciliation, vendor recredentialing, and audit-ready ledger reconstruction. Most cleanups are complete within the first 60 days." },
-    { q: "Do you handle the audit directly?", a: "We coordinate with your independent CPA — Florida statute requires external audits be performed by independent auditors, not the management company. Edison prepares the year-end binder, sits with the auditor through fieldwork, and handles every follow-up question. Most Edison audits close 20–40% faster than the industry norm because the books are already audit-ready." },
+    { q: "What if our books are a mess right now?", a: "That's common, especially for self-managed communities or boards switching from a less rigorous firm. Edison's onboarding includes a clean-up phase: opening balance reconciliation, vendor recredentialing, and audit-ready ledger reconstruction. Most cleanups are complete within the first 60 days." },
+    { q: "Do you handle the audit directly?", a: "We coordinate with your independent CPA, Florida statute requires external audits be performed by independent auditors, not the management company. Edison prepares the year-end binder, sits with the auditor through fieldwork, and handles every follow-up question. Most Edison audits close 20–40% faster than the industry norm because the books are already audit-ready." },
     { q: "What about HOA tax filings?", a: "Edison coordinates Form 1120-H or 1120 filings for each association annually. We work with your CPA on the optimal filing choice based on revenue mix and prior-year filings. Deadlines are tracked centrally; we don't let extensions become a recurring pattern." },
-    { q: "Can we keep our current CPA / auditor?", a: "Yes. Most boards do. Edison's accounting department works with whichever independent CPA your association has historically used — we don't bundle audit work, and we don't push boards toward a preferred provider." }
+    { q: "Can we keep our current CPA / auditor?", a: "Yes. Most boards do. Edison's accounting department works with whichever independent CPA your association has historically used, we don't bundle audit work, and we don't push boards toward a preferred provider." }
   ],
   cta: {
     title: "Ready for accounting your board can actually defend?",
-    body: "Tell us about your association — current size, current state of the books, what's worrying you. We'll respond with a written proposal sized for your community, within one business day."
+    body: "Tell us about your association, current size, current state of the books, what's worrying you. We'll respond with a written proposal sized for your community, within one business day."
   }
 };
 

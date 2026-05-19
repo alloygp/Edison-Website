@@ -2,7 +2,7 @@ import React, { useState as useCsState } from 'react';
 import { Breadcrumb, FinalCTA, InteriorButton, SectionHeading } from '../components/interior-components';
 
 /* ============================================================
-   CASE STUDIES HUB — VARIANT A (Editorial Cards · Story-Led)
+   CASE STUDIES HUB, VARIANT A (Editorial Cards · Story-Led)
    One large featured case study, then a grid of supporting
    case study cards. Each card shows the situation, outcome,
    and a single quantitative result.
@@ -11,7 +11,7 @@ function CaseStudiesPageA({ content }) {
   const featured = content.cases[0];
   const rest = content.cases.slice(1);
   return (
-    <main data-screen-label="Case Studies — Variant A">
+    <main data-screen-label="Case Studies, Variant A">
       <Breadcrumb trail={[
         { label: "Home", href: "/" },
         { label: "About", href: "/about/" },
@@ -202,7 +202,7 @@ function CaseStudiesPageA({ content }) {
 }
 
 /* ============================================================
-   CASE STUDIES HUB — VARIANT B (Filterable Index · Data-Forward)
+   CASE STUDIES HUB, VARIANT B (Filterable Index · Data-Forward)
    List view with category + community type filters. Each row
    shows headline, community, metric, and a "Read" link. Lets
    boards drill quickly by their use case.
@@ -213,7 +213,7 @@ function CaseStudiesPageB({ content }) {
   const filtered = filter === "All" ? content.cases : content.cases.filter(c => c.category === filter);
 
   return (
-    <main data-screen-label="Case Studies — Variant B">
+    <main data-screen-label="Case Studies, Variant B">
       <Breadcrumb trail={[
         { label: "Home", href: "/" },
         { label: "About", href: "/about/" },
@@ -346,7 +346,7 @@ function CaseStudiesPageB({ content }) {
    SAMPLE CONTENT
    ============================================================ */
 const CASES_CONTENT = {
-  intro: "Each Edison case study documents a specific community, the situation we inherited, the work performed, and the measurable outcome — with sizes, dates, and dollar figures the board signed off on. Community names are anonymized; details aren't.",
+  intro: "Each Edison case study documents a specific community, the situation we inherited, the work performed, and the measurable outcome, with sizes, dates, and dollar figures the board signed off on. Community names are anonymized; details aren't.",
   cases: [
     {
       title: "Mid-transition rescue after a failed company switch",
@@ -354,7 +354,7 @@ const CASES_CONTENT = {
       community: "Sunset Lakes HOA",
       units: 412,
       location: "Lake Nona, Orlando",
-      summary: "Inherited a community three weeks into a botched transition from a competitor — records incomplete, vendor relationships ambiguous, four months of delinquent assessments unbilled. Edison's transition team restored a clean ledger and homeowner confidence in 60 days.",
+      summary: "Inherited a community three weeks into a botched transition from a competitor, records incomplete, vendor relationships ambiguous, four months of delinquent assessments unbilled. Edison's transition team restored a clean ledger and homeowner confidence in 60 days.",
       metrics: [
         { value: "60 days", label: "To full operational baseline" },
         { value: "$214K", label: "Delinquent assessments recovered" },
@@ -383,7 +383,7 @@ const CASES_CONTENT = {
       community: "Stonebrook Townhomes",
       units: 142,
       location: "Winter Garden",
-      summary: "Switched to Edison after their fourth manager in five years at their previous company. The Edison manager who learned the community in year one is still there at year three — same accounting specialist, same enforcement coordinator.",
+      summary: "Switched to Edison after their fourth manager in five years at their previous company. The Edison manager who learned the community in year one is still there at year three, same accounting specialist, same enforcement coordinator.",
       metrics: [
         { value: "0", label: "Manager changes in 3 years" },
         { value: "1 day", label: "Avg. board-call response time" }

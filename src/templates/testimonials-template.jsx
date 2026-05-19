@@ -17,7 +17,7 @@ function Stars({ n = 5, size = 16 }) {
 }
 
 /* ============================================================
-   TESTIMONIALS — VARIANT A (Grid Wall · masonry-style)
+   TESTIMONIALS, VARIANT A (Grid Wall · masonry-style)
    Dense visual presentation of many reviews. Filter chips
    at top for category. Best when there are 20+ quotes.
    ============================================================ */
@@ -29,7 +29,7 @@ function TestimonialsPageA({ content }) {
     : content.testimonials.filter(t => t.category === filter);
 
   return (
-    <main data-screen-label="Testimonials — Variant A">
+    <main data-screen-label="Testimonials, Variant A">
       <Breadcrumb trail={[
         { label: "Home", href: "/" },
         { label: "About", href: "/about/" },
@@ -141,7 +141,7 @@ function TestimonialsPageA({ content }) {
 }
 
 /* ============================================================
-   TESTIMONIALS — VARIANT B (Featured + Highlights · editorial)
+   TESTIMONIALS, VARIANT B (Featured + Highlights · editorial)
    Big featured quote at top with photo treatment, then 6
    curated reviews in cards below. Cleaner, less wall-of-text.
    ============================================================ */
@@ -149,7 +149,7 @@ function TestimonialsPageB({ content }) {
   const featured = content.testimonials[0];
   const rest = content.testimonials.slice(1, 7);
   return (
-    <main data-screen-label="Testimonials — Variant B">
+    <main data-screen-label="Testimonials, Variant B">
       <Breadcrumb trail={[
         { label: "Home", href: "/" },
         { label: "About", href: "/about/" },
@@ -183,7 +183,7 @@ function TestimonialsPageB({ content }) {
         </div>
       </section>
 
-      {/* Featured quote — large */}
+      {/* Featured quote, large */}
       <section style={{ background: "var(--edison-teal-pale)", padding: "72px 48px" }}>
         <div style={{ maxWidth: 1080, margin: "0 auto",
                       display: "grid", gridTemplateColumns: "1.4fr 1fr", gap: 56,
@@ -264,7 +264,7 @@ function TestimonialsPageB({ content }) {
       <FinalCTA
         eyebrow="Read deeper"
         title="See the full story behind these results."
-        body="Our case studies document specific transitions, capital project rescues, and financial turnarounds we've led — with the numbers and the timelines."
+        body="Our case studies document specific transitions, capital project rescues, and financial turnarounds we've led, with the numbers and the timelines."
         primary={{ label: "Read Case Studies", href: "/case-studies/" }}
         secondary={{ label: "Request a Proposal", href: "/request-a-proposal/" }}
       />
@@ -273,7 +273,7 @@ function TestimonialsPageB({ content }) {
 }
 
 /* ============================================================
-   SAMPLE CONTENT — moved to content/testimonials-content.jsx
+   SAMPLE CONTENT, moved to content/testimonials-content.jsx
    ============================================================ */
 
 export { TestimonialsPageA, TestimonialsPageB };

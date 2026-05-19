@@ -1,5 +1,5 @@
 /* ============================================================
-   Pillar Page Content — both Main Pillars
+   Pillar Page Content, both Main Pillars
    Used by PillarPageA template.
    ============================================================ */
 
@@ -15,20 +15,20 @@ const PILLAR_CONTENT = {
     phone: "(407) 317-5252",
     hero: {
       title: "HOA management built around the board, not the company growth chart.",
-      lede: "Full-service management for single-family and townhome HOAs across Central Florida. Dedicated managers carrying 8–10 communities — half the industry average. Back-office departments handling what isn't community-facing. Boards stop starting over.",
+      lede: "Full-service management for single-family and townhome HOAs across Central Florida. Dedicated managers carrying 8–10 communities, half the industry average. Back-office departments handling what isn't community-facing. Boards stop starting over.",
       image: "/assets/img-community-aerial.jpg"
     },
     stats: [
       { value: "8–10", caption: "Communities per manager (industry average is 15+)" },
       { value: "1 day", caption: "Same-day board response. 24-hour homeowner. Non-negotiable." },
       { value: "PCAM", caption: "Leadership credential plus 2025 CAI Chapter President" },
-      { value: "4.9★", caption: "Google rating — highest in Central Florida" }
+      { value: "4.9★", caption: "Google rating, highest in Central Florida" }
     ],
     context: {
       title: "Why most HOA management leaves boards burned out",
       paragraphs: [
-        "Most management companies size their portfolios for company growth — 15 to 20 communities per manager, sometimes more. The math works on the company's spreadsheet. It doesn't work in your community. Your manager is reactive instead of proactive. Calls go to voicemail. Vendor coordination slips. The board ends up doing the management company's job.",
-        "Edison was built deliberately differently. Portfolios are sized for the manager's actual capacity — 8 to 10 communities. Back-office departments handle accounting, enforcement, collections, and ARC review so the manager isn't wearing six hats. Leadership stays close: Tracy Durham, PCAM and 2025 CAI Chapter President, personally onboards every new association."
+        "Most management companies size their portfolios for company growth, 15 to 20 communities per manager, sometimes more. The math works on the company's spreadsheet. It doesn't work in your community. Your manager is reactive instead of proactive. Calls go to voicemail. Vendor coordination slips. The board ends up doing the management company's job.",
+        "Edison was built deliberately differently. Portfolios are sized for the manager's actual capacity, 8 to 10 communities. Back-office departments handle accounting, enforcement, collections, and ARC review so the manager isn't wearing six hats. Leadership stays close: Tracy Durham, PCAM and 2025 CAI Chapter President, personally onboards every new association."
       ]
     },
     included: {
@@ -39,12 +39,12 @@ const PILLAR_CONTENT = {
         { title: "Dedicated Association Manager", body: "Carries 8–10 communities maximum. Visits the property monthly. Attends every board meeting. Knows your governing documents and your homeowners by name." },
         { title: "Monthly Property Inspections", body: "Documented walks of common areas, capital assets, and vendor work. Reported back to the board with photos and recommendations." },
         { title: "Vendor Sourcing & Management", body: "Three competing bids on capital projects above board-set thresholds. Insurance certificates on file. Updated contracts." },
-        { title: "Action Item List", body: "Edison's live project tracker. Every active community item — its owner, status, target date — visible to the board in real time." },
-        { title: "ARC & Compliance Coordination", body: "Architectural Review Committee support, governing document interpretation, and FL Chapter 720 compliance — handled by Edison's dedicated departments." },
+        { title: "Action Item List", body: "Edison's live project tracker. Every active community item, its owner, status, target date, visible to the board in real time." },
+        { title: "ARC & Compliance Coordination", body: "Architectural Review Committee support, governing document interpretation, and FL Chapter 720 compliance, handled by Edison's dedicated departments." },
         { title: "Reserve Study Guidance", body: "Coordination with reserve study engineers, funding plan support, and capital project sequencing." }
       ],
       bullets: [
-        "Dedicated manager carrying only 8–10 communities — half the industry average",
+        "Dedicated manager carrying only 8–10 communities, half the industry average",
         "Monthly property inspections with photo documentation",
         "Vendor sourcing requiring 3+ competing bids on capital projects",
         "Live Action Item List replaces stale manager reports",
@@ -54,19 +54,19 @@ const PILLAR_CONTENT = {
     },
     subServices: {
       title: "Sub-services under HOA Management",
-      sub: "Two property-type sub-services live one URL level below this pillar. They're reachable from here — not from the top nav — because most boards land on the pillar page first and route from there.",
+      sub: "Two property-type sub-services live one URL level below this pillar. They're reachable from here, not from the top nav, because most boards land on the pillar page first and route from there.",
       items: [
-        { title: "Single-Family HOA Management", body: "Tailored management for single-family neighborhood HOAs across Central Florida — Ch. 720 compliance, ARC support, common-area planning.", href: "/services/hoa-management/single-family/" },
-        { title: "Townhome Association Management", body: "Townhome-specific challenges handled — shared roofs, common insurance, party-wall maintenance.", href: "/services/hoa-management/townhome/" }
+        { title: "Single-Family HOA Management", body: "Tailored management for single-family neighborhood HOAs across Central Florida, Ch. 720 compliance, ARC support, common-area planning.", href: "/services/hoa-management/single-family/" },
+        { title: "Townhome Association Management", body: "Townhome-specific challenges handled, shared roofs, common insurance, party-wall maintenance.", href: "/services/hoa-management/townhome/" }
       ]
     },
     whyEdison: {
       title: "What sets Edison apart, structurally",
-      sub: "Boards switch to Edison because the differences aren't slogans — they're how the company is built.",
+      sub: "Boards switch to Edison because the differences aren't slogans, they're how the company is built.",
       items: [
         { title: "Industry-Low Manager Turnover", body: "Most firms see 30–40% annual manager turnover. Edison's is a fraction of that. The manager who learns your community in year one is still there in year three." },
-        { title: "Dedicated Back-Office Departments", body: "Enforcement, accounting, collections, and ARC are separate departments — not your manager's overtime work." },
-        { title: "Manageable Portfolio Sizes", body: "8–10 communities per manager — half the industry average. Yours isn't lost in a portfolio of hundreds." },
+        { title: "Dedicated Back-Office Departments", body: "Enforcement, accounting, collections, and ARC are separate departments, not your manager's overtime work." },
+        { title: "Manageable Portfolio Sizes", body: "8–10 communities per manager, half the industry average. Yours isn't lost in a portfolio of hundreds." },
         { title: "Leadership That Stays Involved", body: "Tracy Durham, PCAM, personally onboards every new association and remains accessible to every board." },
         { title: "Modern Tools, Human Touch", body: "CINC Systems for portals and financials. WATTSON AI for 24/7 resident questions (2026). The Action Item List for live project tracking. A real person still answers the phone." },
         { title: "Education-First Philosophy", body: "Informed boards make better decisions. Edison invests in teaching board members the statutes, the financial fundamentals, and the governance frameworks." }
@@ -82,12 +82,12 @@ const PILLAR_CONTENT = {
     ],
     process: {
       title: "How working with Edison actually works",
-      sub: "From first conversation to operating partner — a defined timeline, not an open-ended onboarding.",
+      sub: "From first conversation to operating partner, a defined timeline, not an open-ended onboarding.",
       steps: [
         { title: "Discovery & Proposal", body: "Tracy or a senior manager meets with your board. Written, fixed-scope proposal within 5–7 days." },
-        { title: "Transition Experience", body: "If switching, the 60–90 day Edison Transition Experience runs in parallel — records, vendors, Meet Your Management event." },
+        { title: "Transition Experience", body: "If switching, the 60–90 day Edison Transition Experience runs in parallel, records, vendors, Meet Your Management event." },
         { title: "Day 1 & First 90 Days", body: "Your dedicated manager on the ground. Action Item List live. Monthly inspections. COO supervises the first 90 days." },
-        { title: "Ongoing Partnership", body: "Regular board meetings, monthly inspections, transparent financials, proactive compliance. Annual renewal — you walk free anytime." }
+        { title: "Ongoing Partnership", body: "Regular board meetings, monthly inspections, transparent financials, proactive compliance. Annual renewal, you walk free anytime." }
       ]
     },
     midCta: {
@@ -104,26 +104,26 @@ const PILLAR_CONTENT = {
     crossPillar: {
       eyebrow: "Different community type?",
       title: "Manage a condominium association?",
-      body: "Florida governs condos under Ch. 718 — different statutes, different reserve study requirements, milestone inspection compliance under SB-4D. Edison's Condo Management pillar covers that side of the practice.",
+      body: "Florida governs condos under Ch. 718, different statutes, different reserve study requirements, milestone inspection compliance under SB-4D. Edison's Condo Management pillar covers that side of the practice.",
       ctaLabel: "See Condo Management",
       href: "/services/condo-management/"
     },
     quote: {
-      quote: "We interviewed four companies. Edison was the only one whose principal showed up to the interview personally. A year in, that wasn't just sales — that's how they actually run.",
+      quote: "We interviewed four companies. Edison was the only one whose principal showed up to the interview personally. A year in, that wasn't just sales, that's how they actually run.",
       attribution: "Angela P.",
       role: "Board President",
       community: "HOA · 228 units · Dr. Phillips, Orlando"
     },
     faqs: [
-      { q: "How many communities will our manager have?", a: "Edison managers carry 8–10 communities — half the industry average. We've structured portfolios this way deliberately: managers can actually know your community, not just file your community away." },
+      { q: "How many communities will our manager have?", a: "Edison managers carry 8–10 communities, half the industry average. We've structured portfolios this way deliberately: managers can actually know your community, not just file your community away." },
       { q: "How quickly will calls get returned?", a: "Same-day for board members. 24-hour for homeowners. Non-negotiable, and a real person answers when you call Edison's office between 9am and 5pm Monday through Friday." },
       { q: "Do you handle our financials and accounting too?", a: "Yes. Edison's accounting department is dedicated and CPA-supported. Monthly statements with invoice backup, reserve banking strategy, audit prep, and tax filing. See our HOA Accounting page for detail." },
       { q: "What technology do you use?", a: "CINC Systems for financials and homeowner portals. The Action Item List for live project tracking. WATTSON AI (launching 2026) for 24/7 resident questions. Plaud for meeting minute automation. All included." },
-      { q: "How long are your management agreements?", a: "12-month terms with clear termination provisions. We don't believe in trapping boards — if Edison isn't a fit at the end of year one, you walk free with your records intact." }
+      { q: "How long are your management agreements?", a: "12-month terms with clear termination provisions. We don't believe in trapping boards, if Edison isn't a fit at the end of year one, you walk free with your records intact." }
     ],
     cta: {
       title: "Ready for HOA management that scales with your community, not the portfolio.",
-      body: "Tell us about your association. We'll deliver a written proposal sized for your governing documents, capital plan, and homeowner count — within one business day."
+      body: "Tell us about your association. We'll deliver a written proposal sized for your governing documents, capital plan, and homeowner count, within one business day."
     }
   },
 
@@ -136,12 +136,12 @@ const PILLAR_CONTENT = {
     eyebrow: "Condo Management Services",
     phone: "(407) 317-5252",
     hero: {
-      title: "Florida condo management built for Chapter 718 — and SB-4D reality.",
-      lede: "Condo boards face a different statutory landscape than HOAs — milestone inspections, structural integrity reserve studies, and reserve funding mandates that weren't there five years ago. Edison's condo practice is built around that reality, with a dedicated accounting specialist and engineering coordination support.",
+      title: "Florida condo management built for Chapter 718, and SB-4D reality.",
+      lede: "Condo boards face a different statutory landscape than HOAs, milestone inspections, structural integrity reserve studies, and reserve funding mandates that weren't there five years ago. Edison's condo practice is built around that reality, with a dedicated accounting specialist and engineering coordination support.",
       image: "/assets/img-21.jpg"
     },
     stats: [
-      { value: "Ch. 718", caption: "Florida condominium statute — distinct from HOA Ch. 720" },
+      { value: "Ch. 718", caption: "Florida condominium statute, distinct from HOA Ch. 720" },
       { value: "SB-4D", caption: "Milestone inspection and SIRS compliance coordinated end-to-end" },
       { value: "8–10", caption: "Communities per manager. Half the industry average." },
       { value: "PCAM", caption: "Leadership credential plus 2025 CAI Chapter President" }
@@ -149,8 +149,8 @@ const PILLAR_CONTENT = {
     context: {
       title: "Condos aren't HOAs with extra paperwork",
       paragraphs: [
-        "Florida governs condominium associations under Chapter 718 — a separate statute with different reserve study requirements, different governing document conventions, and a different compliance calendar than the HOA Ch. 720 framework. After Senate Bill 4D, the gap widened: condo associations three stories or more now face mandatory milestone inspections and Structural Integrity Reserve Studies on statutory deadlines that didn't exist before 2022.",
-        "Most management companies treat condos as a side practice. Edison treats them as a dedicated pillar — same boutique manager-to-community ratio, but with an accounting specialist who understands SB-4D and a transition team that coordinates engineering work the way a general contractor coordinates trades."
+        "Florida governs condominium associations under Chapter 718, a separate statute with different reserve study requirements, different governing document conventions, and a different compliance calendar than the HOA Ch. 720 framework. After Senate Bill 4D, the gap widened: condo associations three stories or more now face mandatory milestone inspections and Structural Integrity Reserve Studies on statutory deadlines that didn't exist before 2022.",
+        "Most management companies treat condos as a side practice. Edison treats them as a dedicated pillar, same boutique manager-to-community ratio, but with an accounting specialist who understands SB-4D and a transition team that coordinates engineering work the way a general contractor coordinates trades."
       ]
     },
     included: {
@@ -161,12 +161,12 @@ const PILLAR_CONTENT = {
         { title: "Dedicated Association Manager", body: "8–10 communities maximum. Walks the property monthly. Attends every board meeting. Knows your governing documents and homeowners by name." },
         { title: "SB-4D Compliance Tracking", body: "Milestone inspection deadlines, SIRS triggers, and reserve funding obligations tracked centrally. No statutory deadline misses on Edison's watch." },
         { title: "Engineering Coordination", body: "Edison sources licensed engineers, coordinates site access, reviews draft reports, and integrates findings into the funding plan." },
-        { title: "Common-Element Maintenance", body: "Roof, structure, elevator, pool, garage — Edison coordinates vendors with the documentation and bidding discipline condo boards need." },
+        { title: "Common-Element Maintenance", body: "Roof, structure, elevator, pool, garage, Edison coordinates vendors with the documentation and bidding discipline condo boards need." },
         { title: "Reserve Banking & Strategy", body: "Reserve funds tracked against the most recent study with banking optimized for yield within FDIC coverage limits." },
         { title: "Insurance & Risk", body: "Master policy coordination, COI tracking on every vendor, claims advocacy when needed. Insurance is a workstream, not an afterthought." }
       ],
       bullets: [
-        "Dedicated manager carrying only 8–10 communities — half the industry average",
+        "Dedicated manager carrying only 8–10 communities, half the industry average",
         "SB-4D milestone inspection and SIRS compliance coordinated end-to-end",
         "Licensed engineer sourcing and engagement management",
         "Master insurance policy coordination and vendor COI tracking",
@@ -176,7 +176,7 @@ const PILLAR_CONTENT = {
     },
     subServices: {
       title: "Sub-services under Condo Management",
-      sub: "Two statute-specific sub-services live below this pillar. Reachable from here — not from the top nav — because most boards land on the pillar page first.",
+      sub: "Two statute-specific sub-services live below this pillar. Reachable from here, not from the top nav, because most boards land on the pillar page first.",
       items: [
         { title: "Milestone Inspection Coordination", body: "FL SB-4D compliance for condos 30+ years old (25+ coastal). Engineer sourcing, scope review, board reporting.", href: "/services/condo-management/milestone-inspections/" },
         { title: "Structural Integrity Reserve Study (SIRS)", body: "SIRS coordination for condos 3+ stories. Engineer engagement, draft review, funding plan integration.", href: "/services/condo-management/structural-integrity-reserve-study/" }
@@ -185,12 +185,12 @@ const PILLAR_CONTENT = {
     whyEdison: {
       title: "What makes Edison different for condo boards specifically",
       items: [
-        { title: "SB-4D Fluent", body: "Edison's team knows the statute cold. Milestone inspection triggers, SIRS components, reserve funding requirements — we won't be learning on your dime." },
+        { title: "SB-4D Fluent", body: "Edison's team knows the statute cold. Milestone inspection triggers, SIRS components, reserve funding requirements, we won't be learning on your dime." },
         { title: "Engineer Network", body: "Working relationships with FL-licensed structural engineers across Central Florida. Faster sourcing, vetted scope, competitive pricing." },
         { title: "Dedicated Accounting Specialist", body: "Condo reserves have a different funding cadence than HOAs. Your accounting specialist understands the difference." },
         { title: "Manageable Portfolio Sizes", body: "8–10 communities per manager. Your condo isn't lost in a 20-property portfolio." },
         { title: "Modern Communication", body: "Resident portal, CINC dashboards, WATTSON AI (2026). Owners get answers; boards get visibility." },
-        { title: "Crisis-Ready Operations", body: "When something fails — and in older buildings, something will — Edison's team has the contacts, the contracts, and the experience to act fast." }
+        { title: "Crisis-Ready Operations", body: "When something fails, and in older buildings, something will, Edison's team has the contacts, the contracts, and the experience to act fast." }
       ]
     },
     antiPatterns: [
@@ -225,7 +225,7 @@ const PILLAR_CONTENT = {
     crossPillar: {
       eyebrow: "Different community type?",
       title: "Manage a single-family or townhome HOA?",
-      body: "HOAs are governed under FL Ch. 720 — different from condominium Ch. 718. Edison's HOA Management pillar covers single-family neighborhoods and townhome associations.",
+      body: "HOAs are governed under FL Ch. 720, different from condominium Ch. 718. Edison's HOA Management pillar covers single-family neighborhoods and townhome associations.",
       ctaLabel: "See HOA Management",
       href: "/services/hoa-management/"
     },
@@ -237,14 +237,14 @@ const PILLAR_CONTENT = {
     },
     faqs: [
       { q: "Does my condo need a milestone inspection?", a: "If your condominium or cooperative is three stories or more and 30+ years old (25+ in coastal counties), yes. FL SB-4D mandates phased structural inspections by licensed engineers, with specific deadlines tied to building age and location." },
-      { q: "What's the difference between a milestone inspection and a SIRS?", a: "The milestone inspection is a physical structural assessment. The SIRS is a reserve study scoped to the structural components the inspection identifies. They're complementary — most associations need both, often sequenced." },
-      { q: "Do you handle the engineering work directly?", a: "No — Florida statute requires licensed independent engineers. Edison coordinates: sourcing, scope review, document prep, site access, draft review, and board presentation." },
+      { q: "What's the difference between a milestone inspection and a SIRS?", a: "The milestone inspection is a physical structural assessment. The SIRS is a reserve study scoped to the structural components the inspection identifies. They're complementary, most associations need both, often sequenced." },
+      { q: "Do you handle the engineering work directly?", a: "No, Florida statute requires licensed independent engineers. Edison coordinates: sourcing, scope review, document prep, site access, draft review, and board presentation." },
       { q: "What about Ch. 720 HOAs versus Ch. 718 condos?", a: "Different statutes, different reserve study requirements, different governing document conventions. Edison maintains a separate Condo Management practice precisely because the regulatory frameworks aren't interchangeable." },
       { q: "How long are your management agreements?", a: "12-month terms with clear termination provisions. You walk free at renewal with your records intact." }
     ],
     cta: {
       title: "Condo management for boards who can't afford a learning curve.",
-      body: "Tell us about your building. We'll deliver a written proposal sized for your governing documents, compliance status, and capital pipeline — within one business day."
+      body: "Tell us about your building. We'll deliver a written proposal sized for your governing documents, compliance status, and capital pipeline, within one business day."
     }
   }
 };
