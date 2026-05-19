@@ -35,7 +35,51 @@ function HomeHero({ eyebrow, title, lede, primary, audienceCards }) {
             fontSize: 19, lineHeight: 1.55,
             color: "rgba(255,255,255,.9)", maxWidth: 680, margin: "0 0 32px"
           }}>{lede}</p>
+          <div style={{ display: "flex", flexDirection: "row", alignItems: "center", gap: 24 }}>
           <InteriorButton variant="onDark" size="lg" href={primary.href}>{primary.label}</InteriorButton>
+
+          {/* Google review badge */}
+          <a href="https://www.google.com/maps/place/Edison+Association+Management/@28.5489,-81.3583,17z"
+             target="_blank" rel="noopener noreferrer"
+             style={{
+               display: "inline-flex", alignItems: "center", gap: 12,
+               background: "rgba(255,255,255,.10)",
+               backdropFilter: "blur(10px)",
+               border: "1px solid rgba(255,255,255,.18)",
+               borderRadius: 10,
+               padding: "10px 16px 10px 12px",
+               textDecoration: "none", borderBottom: 0,
+               transition: "background 180ms"
+             }}
+             onMouseEnter={(e) => e.currentTarget.style.background = "rgba(255,255,255,.16)"}
+             onMouseLeave={(e) => e.currentTarget.style.background = "rgba(255,255,255,.10)"}>
+            {/* Google G */}
+            <svg width="20" height="20" viewBox="0 0 24 24" aria-label="Google" style={{ flexShrink: 0 }}>
+              <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/>
+              <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/>
+              <path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z" fill="#FBBC05"/>
+              <path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/>
+            </svg>
+            {/* Stars */}
+            <div style={{ display: "flex", gap: 1 }}>
+              {[1,2,3,4,5].map(i => (
+                <svg key={i} width="14" height="14" viewBox="0 0 24 24" fill="#FBBC05" aria-hidden="true">
+                  <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                </svg>
+              ))}
+            </div>
+            <div>
+              <span style={{
+                fontFamily: "var(--font-display)", fontWeight: 700, fontSize: 14.5,
+                color: "#fff", letterSpacing: "-0.01em"
+              }}>4.9</span>
+              <span style={{
+                fontFamily: "var(--font-body)", fontSize: 13,
+                color: "rgba(255,255,255,.72)", marginLeft: 6
+              }}>· 120 Google Reviews</span>
+            </div>
+          </a>
+          </div>
         </div>
       </div>
 
@@ -46,7 +90,10 @@ function HomeHero({ eyebrow, title, lede, primary, audienceCards }) {
         position: "relative", zIndex: 2
       }}>
         {audienceCards.map((c, i) => (
-          <a key={i} href={c.href} style={{
+          <a key={i} href={c.href}
+             target={c.href.startsWith('http') ? '_blank' : undefined}
+             rel={c.href.startsWith('http') ? 'noopener noreferrer' : undefined}
+             style={{
             display: "grid",
             gridTemplateColumns: "180px 1fr",
             textDecoration: "none",
@@ -66,22 +113,17 @@ function HomeHero({ eyebrow, title, lede, primary, audienceCards }) {
                 : `url(${c.image})`,
               backgroundSize: "cover", backgroundPosition: "center"
             }}/>
-            <div style={{ padding: "26px 30px",
-                          display: "flex", flexDirection: "column", justifyContent: "center" }}>
+            <div style={{ padding: "28px 30px",
+                          display: "flex", flexDirection: "column", justifyContent: "center", gap: 14 }}>
               <InteriorEyebrow color={i === 0 ? "var(--edison-teal)" : "var(--edison-teal-dark)"}>
                 {c.eyebrow}
               </InteriorEyebrow>
               <h3 style={{
                 fontFamily: "var(--font-display)", fontWeight: 700,
-                fontSize: 21, lineHeight: 1.25,
+                fontSize: 22, lineHeight: 1.25,
                 color: i === 0 ? "#fff" : "var(--edison-navy)",
-                margin: "10px 0 10px"
+                margin: 0
               }}>{c.title}</h3>
-              <p style={{
-                fontFamily: "var(--font-body)", fontSize: 14, lineHeight: 1.55,
-                color: i === 0 ? "rgba(255,255,255,.78)" : "var(--edison-text-body)",
-                margin: "0 0 16px"
-              }}>{c.body}</p>
               <span style={{
                 fontFamily: "var(--font-display)", fontWeight: 700, fontSize: 13.5,
                 color: i === 0 ? "var(--edison-teal)" : "var(--edison-teal-dark)",
@@ -148,30 +190,21 @@ function ServicesBand({ title, sub, services }) {
                 backgroundImage: `linear-gradient(180deg, rgba(15,29,51,0) 30%, rgba(15,29,51,.55) 100%), url(${s.image})`,
                 backgroundSize: "cover", backgroundPosition: "center"
               }}/>
-              <div style={{ padding: "26px 26px 28px", display: "flex", flexDirection: "column", gap: 12 }}>
-                <div style={{
-                  width: 42, height: 42, borderRadius: 10,
-                  background: "var(--edison-teal-pale)",
-                  display: "flex", alignItems: "center", justifyContent: "center",
-                  color: "var(--edison-teal-dark)", marginTop: -50,
-                  border: "4px solid #fff"
-                }}>
-                  <BulbMark size={22}/>
-                </div>
+              <div style={{ padding: "22px 24px 24px", display: "flex", flexDirection: "column", gap: 10 }}>
                 <h3 style={{
                   fontFamily: "var(--font-display)", fontWeight: 700,
-                  fontSize: 20, lineHeight: 1.3,
+                  fontSize: 19, lineHeight: 1.3,
                   color: "var(--edison-navy)", margin: 0
                 }}>{s.title}</h3>
                 <p style={{
-                  fontFamily: "var(--font-body)", fontSize: 14.5, lineHeight: 1.6,
-                  color: "var(--edison-text-body)", margin: 0, flex: 1
+                  fontFamily: "var(--font-body)", fontSize: 13.5, lineHeight: 1.5,
+                  color: "var(--edison-gray-mid)", margin: 0, flex: 1
                 }}>{s.body}</p>
                 <span style={{
-                  fontFamily: "var(--font-display)", fontWeight: 700, fontSize: 13.5,
+                  fontFamily: "var(--font-display)", fontWeight: 700, fontSize: 13,
                   color: "var(--edison-teal-dark)",
                   display: "inline-flex", alignItems: "center", gap: 6,
-                  marginTop: 6
+                  marginTop: 4
                 }}>
                   Learn more <span aria-hidden="true">→</span>
                 </span>
@@ -252,11 +285,12 @@ function EducationBand({ title, sub, posts }) {
     <section style={{ background: "var(--bg-3, #F5F7FA)", padding: "88px 48px" }}>
       <div style={{ maxWidth: 1200, margin: "0 auto" }}>
         <div style={{
-          display: "grid", gridTemplateColumns: "1fr 1fr", gap: 56,
+          display: "grid", gridTemplateColumns: "1.15fr 1fr", gap: 64,
           alignItems: "center"
         }}>
-          {/* Left column: 2 blog cards */}
-          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 20 }}>
+
+          {/* Left: 2 article cards side by side */}
+          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 18 }}>
             {posts.map((p, i) => (
               <a key={i} href={p.href} style={{
                 textDecoration: "none",
@@ -281,50 +315,74 @@ function EducationBand({ title, sub, posts }) {
                   backgroundSize: "cover", backgroundPosition: "center"
                 }}/>
                 <div style={{ padding: "18px 20px 20px",
-                              display: "flex", flexDirection: "column", gap: 10 }}>
+                              display: "flex", flexDirection: "column", gap: 8 }}>
                   <div style={{
-                    fontFamily: "var(--font-display)", fontWeight: 700, fontSize: 11,
+                    fontFamily: "var(--font-display)", fontWeight: 700, fontSize: 10.5,
                     letterSpacing: "0.12em", textTransform: "uppercase",
                     color: "var(--edison-teal-dark)"
                   }}>{p.category}</div>
                   <h3 style={{
                     fontFamily: "var(--font-display)", fontWeight: 700,
                     fontSize: 16, lineHeight: 1.3,
-                    color: "var(--edison-navy)", margin: 0
+                    color: "var(--edison-navy)", margin: 0, flex: 1
                   }}>{p.title}</h3>
                   <span style={{
-                    fontFamily: "var(--font-display)", fontWeight: 700, fontSize: 13,
+                    fontFamily: "var(--font-display)", fontWeight: 700, fontSize: 12.5,
                     color: "var(--edison-teal-dark)",
-                    display: "inline-flex", alignItems: "center", gap: 6
+                    display: "inline-flex", alignItems: "center", gap: 5,
+                    marginTop: 4
                   }}>
-                    Read more <span aria-hidden="true">→</span>
+                    Read article <span aria-hidden="true">→</span>
                   </span>
                 </div>
               </a>
             ))}
           </div>
 
-          {/* Right column: logo + heading + text + CTA */}
-          <div style={{ display: "flex", flexDirection: "column", gap: 0, alignItems: "flex-start" }}>
-            <img src="/assets/Edison-Education-Full-Color.svg" alt="Edison Education"
-                 style={{ height: 48, width: "auto", display: "block", marginBottom: 24 }}/>
+          {/* Right: logo + heading + text + CTA */}
+          <div style={{ display: "flex", flexDirection: "column", gap: 0 }}>
+            <img
+              src="/assets/Edison-Education-Full-Color.svg"
+              alt="Edison Education"
+              style={{ height: 48, width: "auto", display: "block", marginBottom: 24 }}
+            />
             <h2 style={{
               fontFamily: "var(--font-display)", fontWeight: 700,
-              fontSize: 34, lineHeight: 1.18, letterSpacing: "-0.01em",
-              color: "var(--edison-navy)", margin: "0 0 16px"
-            }}>{title}</h2>
+              fontSize: 30, lineHeight: 1.2, letterSpacing: "-0.01em",
+              color: "var(--edison-navy)", margin: "0 0 16px",
+              position: "relative", paddingBottom: 16, display: "inline-block"
+            }}>
+              {title}
+              <span style={{ position: "absolute", left: 0, bottom: 0,
+                             width: 52, height: 3,
+                             background: "var(--edison-teal)", borderRadius: 2 }}/>
+            </h2>
             <p style={{
-              fontFamily: "var(--font-body)", fontSize: 16.5, lineHeight: 1.65,
+              fontFamily: "var(--font-body)", fontSize: 16, lineHeight: 1.65,
               color: "var(--edison-text-body)", margin: "0 0 28px"
             }}>{sub}</p>
             <a href="/edison-education/" style={{
-              fontFamily: "var(--font-display)", fontWeight: 700, fontSize: 15,
-              color: "var(--edison-teal-dark)", textDecoration: "none",
-              display: "inline-flex", alignItems: "center", gap: 6
-            }}>
+              display: "inline-flex", alignItems: "center", gap: 8,
+              fontFamily: "var(--font-display)", fontWeight: 700, fontSize: 14,
+              color: "var(--edison-teal-dark)",
+              textDecoration: "none", borderBottom: 0,
+              padding: "11px 20px", borderRadius: 8,
+              border: "1.5px solid var(--edison-teal-dark)",
+              alignSelf: "flex-start",
+              transition: "background 160ms ease, color 160ms ease"
+            }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.background = "var(--edison-teal-dark)";
+                e.currentTarget.style.color = "#fff";
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.background = "transparent";
+                e.currentTarget.style.color = "var(--edison-teal-dark)";
+              }}>
               Explore Edison Education <span aria-hidden="true">→</span>
             </a>
           </div>
+
         </div>
       </div>
     </section>
@@ -343,23 +401,21 @@ function HomePage() {
         eyebrow="Orlando, Florida · Since 2021"
         title="HOA & Condominium Management Services"
         lede="Edison Association Management provides professional HOA and condominium management services designed to support boards, protect property values, and simplify day-to-day operations."
-        primary={{ label: "Request a Proposal", href: "#" }}
+        primary={{ label: "Request a Proposal", href: "/request-a-proposal/" }}
         audienceCards={[
           {
             eyebrow: "For HOA & Condo Boards",
-            title: "Request a management proposal, explore services, see property types we manage.",
-            body: "Tailored proposals, transparent reporting, and a dedicated manager who knows your community.",
-            cta: "Why Edison",
-            image: "assets/img-inspector.jpg",
-            href: "#"
+            title: "See why Central Florida boards switch to Edison.",
+            cta: "Learn more",
+            image: "/assets/img-inspector.jpg",
+            href: "/about/"
           },
           {
             eyebrow: "For Residents & Homeowners",
-            title: "Access account information, pay dues, and submit requests.",
-            body: "Sign in to the resident portal for documents, payments, and maintenance requests — 24/7.",
-            cta: "Resident Login",
-            image: "assets/img-resident-portal.jpg",
-            href: "#"
+            title: "Pay dues, submit requests, and access your documents.",
+            cta: "Resident portal",
+            image: "/assets/img-resident-portal.jpg",
+            href: "https://edison.cincwebaxis.com"
           }
         ]}
       />
@@ -370,21 +426,21 @@ function HomePage() {
         services={[
           {
             title: "HOA Management Services",
-            body: "Dedicated managers, transparent reporting, and proactive communication — so your board can focus on the community, not the paperwork.",
-            image: "assets/img-13.jpg",
-            href: "#"
+            body: "Dedicated managers. Transparent reporting. One point of contact.",
+            image: "/assets/img-13.jpg",
+            href: "/services/hoa-management/"
           },
           {
             title: "Accounting & Bookkeeping",
-            body: "Comprehensive monthly financials, accurate budgets, and streamlined collections — every dollar accounted for, every report on time.",
-            image: "assets/img-accounting.jpg",
-            href: "#"
+            body: "Monthly financials, accurate budgets, and on-time collections.",
+            image: "/assets/img-accounting.jpg",
+            href: "/services/hoa-accounting/"
           },
           {
-            title: "Covenant Enforcement & Compliance",
-            body: "Consistent inspections, fair enforcement, and full compliance tracking — protecting property values while keeping homeowners informed.",
-            image: "assets/img-inspector.jpg",
-            href: "#"
+            title: "Covenant Enforcement",
+            body: "Consistent inspections, fair enforcement, full compliance tracking.",
+            image: "/assets/img-inspector.jpg",
+            href: "/services/covenant-enforcement/"
           }
         ]}
       />
@@ -396,13 +452,13 @@ function HomePage() {
         options={[
           {
             title: "Condominium Management",
-            image: "assets/img-21.jpg",
-            href: "#"
+            image: "/assets/img-21.jpg",
+            href: "/services/condo-management/"
           },
           {
             title: "Single-Family HOA Management",
-            image: "assets/img-22.jpg",
-            href: "#"
+            image: "/assets/img-22.jpg",
+            href: "/services/hoa-management/single-family/"
           }
         ]}
       />
@@ -410,7 +466,7 @@ function HomePage() {
       <BulletsWithImage
         eyebrow="Why Boards Choose Edison"
         title="A Management Partner Boards Can Rely On"
-        image="assets/img-11.jpg"
+        image="/assets/img-11.jpg"
         bullets={[
           "Clear financial reporting and accountability",
           "Consistent communication with boards and residents",
@@ -424,11 +480,11 @@ function HomePage() {
         title="Credentials You Can Verify"
         sub="Edison's leadership and team are recognized by the Orlando Business Journal, the Community Associations Institute, the Florida Community Association Journal, and the Better Business Bureau."
         badges={[
-          { label: "OBJ",   sub: "Best Place to Work",  img: "/assets/badge-bptw.png" },
-          { label: "CAI",   sub: "Member Company",       img: "/assets/badge-cai.png" },
-          { label: "PCAM",  sub: "Designation",          img: "/assets/badge-pcam.png" },
-          { label: "FLCAJ", sub: "Featured Firm",        img: "/assets/badge-flcaj.png" },
-          { label: "BBB A+",sub: "Accredited Business",  img: "/assets/badge-bbb.png" }
+          { label: "CAI Member Company",            img: "/assets/badge-cai.png" },
+          { label: "Best Place to Work",             img: "/assets/badge-bptw.png" },
+          { label: "BBB Accredited Business",        img: "/assets/badge-bbb.png" },
+          { label: "FLCAJ Readers Choice Diamond",   img: "/assets/badge-flcaj.png" },
+          { label: "PCAM Designation",               img: "/assets/badge-pcam.png" }
         ]}
       />
 
@@ -440,15 +496,15 @@ function HomePage() {
             category: "Finance & Audit",
             title: "HOA Audit: What It Is, When It's Required, and How to Prepare",
             excerpt: "An HOA audit confirms your community's finances are accurate, transparent, and compliant with Florida law. Learn what's required based on your association's revenue, and how strong year-round financial management makes the process faster and less expensive for your board.",
-            image: "assets/img-accounting.jpg",
-            href: "#"
+            image: "/assets/img-accounting.jpg",
+            href: "/blog/hoa-audit/"
           },
           {
             category: "Governance",
             title: "HOA Bylaws vs CC&Rs: Key Differences Explained",
             excerpt: "Board members often reach for the wrong document when a decision needs to be made quickly. Understanding the difference between HOA bylaws and CC&Rs — and knowing which one governs your situation — is how volunteer leaders make confident, defensible decisions.",
-            image: "assets/img-17.jpg",
-            href: "#"
+            image: "/assets/img-17.jpg",
+            href: "/blog/hoa-bylaws-vs-ccrs/"
           }
         ]}
       />
@@ -462,15 +518,16 @@ function HomePage() {
           "Orlando", "Winter Garden", "Clermont", "Kissimmee", "Lake Mary",
           "Altamonte Springs", "Oviedo", "Apopka"
         ]}
-        mapImg="assets/img-neighborhood-aerial.jpg"
+        mapImg="/assets/img-neighborhood-aerial.jpg"
+        mapEmbed={true}
       />
 
       <FinalCTA
         eyebrow="Let's Talk"
         title="Ready for a Better Association Management Experience?"
         body="Tell us about your community and receive a customized management proposal tailored to your association's needs."
-        primary={{ label: "Request a Proposal", href: "#" }}
-        secondary={{ label: "Contact Us", href: "#" }}
+        primary={{ label: "Request a Proposal", href: "/request-a-proposal/" }}
+        secondary={{ label: "Contact Us", href: "/contact/" }}
       />
 
     </main>
