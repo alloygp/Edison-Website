@@ -34,8 +34,8 @@ function EducationHubA({ content }) {
           }}>Resources for Florida HOA & condo boards.</h1>
           <p style={{
             fontFamily: "var(--font-body)", fontSize: 18.5, lineHeight: 1.55,
-            color: "var(--edison-text-body)", margin: "0 auto", maxWidth: 720
-          textAlign: "center"
+            color: "var(--edison-text-body)", margin: "0 auto", maxWidth: 720,
+            textAlign: "center"
           }}>{content.intro}</p>
         </div>
       </section>
