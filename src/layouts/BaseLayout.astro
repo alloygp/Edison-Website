@@ -29,6 +29,10 @@ interface Props {
   robots?: string;
   /** Page-specific JSON-LD schema. Pass a single object or array. */
   pageSchema?: Record<string, unknown> | Record<string, unknown>[];
+  /** Twitter card label 1 — e.g. "Written by". Renders twitter:label1 + twitter:data1. */
+  twitterAuthor?: string;
+  /** Twitter card label 2 — e.g. "9 min". Renders twitter:label2 + twitter:data2. */
+  twitterReadTime?: string;
 }
 
 const {
@@ -38,6 +42,8 @@ const {
   ogImage: ogImageProp,
   robots,
   pageSchema,
+  twitterAuthor,
+  twitterReadTime,
 } = Astro.props;
 
 const canonicalUrl    = new URL(Astro.url.pathname, Astro.site ?? SITE.url).toString();
@@ -99,6 +105,10 @@ const gaMeasurementId = import.meta.env.GA_MEASUREMENT_ID;
     <meta name="twitter:description" content={description} />
     <meta name="twitter:image"       content={resolvedOgImage} />
     <meta name="twitter:image:alt"   content={SITE.name} />
+    {twitterAuthor   && <meta name="twitter:label1" content="Written by" />}
+    {twitterAuthor   && <meta name="twitter:data1"  content={twitterAuthor} />}
+    {twitterReadTime && <meta name="twitter:label2" content="Time to read" />}
+    {twitterReadTime && <meta name="twitter:data2"  content={twitterReadTime} />}
 
     <!-- Font preloads — update hrefs to match client's actual font files -->
     <!-- <link rel="preload" href="/fonts/ClientFont-Regular.woff2" as="font" type="font/woff2" crossorigin /> -->

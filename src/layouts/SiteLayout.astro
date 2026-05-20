@@ -19,9 +19,11 @@ interface Props {
   ogImage?: string;
   robots?: string;
   pageSchema?: Record<string, unknown> | Record<string, unknown>[];
+  twitterAuthor?: string;
+  twitterReadTime?: string;
 }
 
-const { title, description, ogType, ogImage, robots, pageSchema } = Astro.props;
+const { title, description, ogType, ogImage, robots, pageSchema, twitterAuthor, twitterReadTime } = Astro.props;
 ---
 
 <BaseLayout
@@ -31,6 +33,8 @@ const { title, description, ogType, ogImage, robots, pageSchema } = Astro.props;
   ogImage={ogImage}
   robots={robots}
   pageSchema={pageSchema}
+  twitterAuthor={twitterAuthor}
+  twitterReadTime={twitterReadTime}
 >
   <SiteHeader client:load />
   <main>

@@ -1,0 +1,42 @@
+---
+// src/layouts/BlogLayout.astro
+// Drop-in layout for every Edison blog post.
+// Automatically wires title, description, OG image, and Twitter
+// read-time meta from BLOG_CONTENT — no manual plumbing required.
+//
+// Usage (new posts):
+//   ---
+//   import BlogLayout from '../../../layouts/BlogLayout.astro';
+//   ---
+//   <BlogLayout contentKey="your-post-slug" />
+
+import SiteLayout from './SiteLayout.astro';
+import { BlogSpokeA } from '../templates/blog-template.jsx';
+import { BLOG_CONTENT } from '../content/blog-content.jsx';
+
+interface Props {
+  /** Key matching an entry in BLOG_CONTENT */
+  contentKey: string;
+}
+
+const { contentKey } = Astro.props;
+const content = BLOG_CONTENT[contentKey];
+
+if (!content) {
+  throw new Error(`BlogLayout: no BLOG_CONTENT entry found for key "${contentKey}"`);
+}
+
+const pageTitle       = `${content.title} | Edison`;
+const pageDescription = content.dek ?? content.title;
+---
+
+<SiteLayout
+  title={pageTitle}
+  description={pageDescription}
+  ogType="article"
+  ogImage={content.heroImage}
+  twitterAuthor={content.author}
+  twitterReadTime={content.readTime}
+>
+  <BlogSpokeA content={content} client:load />
+</SiteLayout>
