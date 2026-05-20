@@ -700,21 +700,15 @@ const AUDIT_CONTENT = {
   related: [
     {
       category: "Financial Management",
-      title: "HOA Reserve Study Guide (Florida)",
-      image: "/assets/img-21.jpg",
-      href: "/blog/hoa-reserve-study-guide-florida/"
+      title: "HOA Reserve Study Florida: What Boards Need to Know",
+      image: "/assets/blog/reserve-study-specialist.jpg",
+      href: "/blog/hoa-reserve-study-guide/"
     },
     {
-      category: "Financial Management",
-      title: "HOA Management Fees, What Boards Actually Pay",
-      image: "/assets/img-13.jpg",
-      href: "/blog/hoa-management-fees/"
-    },
-    {
-      category: "Florida Compliance",
-      title: "Florida HOA Laws Guide, Ch. 720 and Ch. 718",
-      image: "/assets/img-22.jpg",
-      href: "/blog/florida-hoa-laws-guide/"
+      category: "For Boards",
+      title: "HOA Bylaws vs CC&Rs: Key Differences Explained",
+      image: "/assets/blog/bylaws-vs-ccrs.jpg",
+      href: "/blog/hoa-bylaws-vs-ccrs/"
     }
   ]
 };

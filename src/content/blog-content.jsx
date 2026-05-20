@@ -131,8 +131,7 @@ const BLOG_CONTENT = {
     ],
     related: [
       { category: "For Boards", title: "HOA Bylaws vs CC&Rs: Key Differences Explained", image: "/assets/blog/bylaws-vs-ccrs.jpg", href: "/blog/hoa-bylaws-vs-ccrs/" },
-      { category: "Financial Management", title: "HOA Reserve Study Guide (Florida)", image: "/assets/img-21.jpg", href: "/blog/hoa-reserve-study-guide-florida/" },
-      { category: "Financial Management", title: "HOA Management Fees: What Boards Actually Pay", image: "/assets/img-13.jpg", href: "/blog/hoa-management-fees/" }
+      { category: "Financial Management", title: "HOA Reserve Study Florida: What Boards Need to Know", image: "/assets/blog/reserve-study-specialist.jpg", href: "/blog/hoa-reserve-study-guide/" }
     ]
   },
 
@@ -422,8 +421,7 @@ const BLOG_CONTENT = {
     ],
     related: [
       { category: "Financial Management", title: "HOA Audit: What It Is, When It's Required, and How to Prepare", image: "/assets/blog/hoa-board-members-reviewing-audit.jpg", href: "/blog/hoa-audit/" },
-      { category: "For Boards", title: "HOA Board Member Responsibilities", image: "/assets/img-11.jpg", href: "/blog/hoa-board-member-responsibilities/" },
-      { category: "Florida Compliance", title: "Florida HOA Laws Guide", image: "/assets/img-13.jpg", href: "/blog/florida-hoa-laws-guide/" }
+      { category: "Financial Management", title: "HOA Reserve Study Florida: What Boards Need to Know", image: "/assets/blog/reserve-study-specialist.jpg", href: "/blog/hoa-reserve-study-guide/" }
     ]
   },
 
@@ -694,8 +692,7 @@ const BLOG_CONTENT = {
     ],
     related: [
       { category: "Financial Management", title: "HOA Audit: What It Is, When It's Required, and How to Prepare", image: "/assets/blog/hoa-board-members-reviewing-audit.jpg", href: "/blog/hoa-audit/" },
-      { category: "For Boards", title: "HOA Bylaws vs CC&Rs: Key Differences Explained", image: "/assets/blog/bylaws-vs-ccrs.jpg", href: "/blog/hoa-bylaws-vs-ccrs/" },
-      { category: "Financial Management", title: "HOA Special Assessment Guide", image: "/assets/img-accounting.jpg", href: "/blog/hoa-special-assessment/" }
+      { category: "For Boards", title: "HOA Bylaws vs CC&Rs: Key Differences Explained", image: "/assets/blog/bylaws-vs-ccrs.jpg", href: "/blog/hoa-bylaws-vs-ccrs/" }
     ]
   },
 

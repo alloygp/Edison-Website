@@ -363,7 +363,7 @@ const SUB_SERVICES_CONTENT = {
     related: [
       { kind: "Parent Pillar", title: "Condo Management", body: "Full-service management for FL condominium associations under Ch. 718.", href: "/services/condo-management/" },
       { kind: "Sibling Sub-Service", title: "Structural Integrity Reserve Study (SIRS)", body: "The reserve study that pairs with the milestone inspection under SB-4D.", href: "/services/condo-management/structural-integrity-reserve-study/" },
-      { kind: "Educational", title: "Florida Milestone Inspection Guide", body: "A long-form board guide to the SB-4D inspection requirements.", href: "/blog/florida-milestone-inspection-guide/" }
+      { kind: "Educational", title: "HOA Reserve Study Florida: What Boards Need to Know", body: "How reserve studies work, what they cost, and how Edison coordinates the process.", href: "/blog/hoa-reserve-study-guide/" }
     ],
     cta: {
       title: "Milestone compliance, run by people who do this every month.",
@@ -441,7 +441,7 @@ const SUB_SERVICES_CONTENT = {
     related: [
       { kind: "Sibling Sub-Service", title: "Milestone Inspection Coordination", body: "The structural condition assessment that often precedes the SIRS.", href: "/services/condo-management/milestone-inspections/" },
       { kind: "Parent Pillar", title: "Condo Management", body: "Full-service management for Florida condominium associations under Ch. 718.", href: "/services/condo-management/" },
-      { kind: "Educational", title: "Florida HOA & Condo Laws Guide", body: "A board's guide to FL statutes governing community associations.", href: "/blog/florida-hoa-laws-guide/" }
+      { kind: "Educational", title: "HOA Reserve Study Florida: What Boards Need to Know", body: "How reserve studies work, what they cost, and how Edison coordinates the process.", href: "/blog/hoa-reserve-study-guide/" }
     ],
     cta: {
       title: "SIRS compliance is a project, not a panic.",

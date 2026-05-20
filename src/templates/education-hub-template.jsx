@@ -365,37 +365,22 @@ const EDUCATION_CONTENT = {
   intro: "Edison Education is our free library of articles, guides, and Florida compliance updates, written specifically for HOA, condo, and townhome board members. Every piece is grounded in the actual statute, the actual board pain point, and the actual decision boards have to make.",
   topics: [
     {
-      label: "Florida Compliance",
-      title: "Ch. 720, Ch. 718, and the laws that govern your board",
-      body: "Statutory requirements, milestone inspection deadlines, reserve study mandates, and what changed in the most recent legislative session.",
-      color: "var(--edison-teal-pale)",
-      articles: [
-        { title: "Florida HOA Laws Guide", readTime: "12 min", href: "/blog/florida-hoa-laws-guide/" },
-        { title: "Florida Milestone Inspection Guide", readTime: "9 min", href: "/blog/florida-milestone-inspection-guide/" },
-        { title: "HOA Reserve Study Guide (Florida)", readTime: "10 min", href: "/blog/hoa-reserve-study-guide-florida/" }
-      ]
-    },
-    {
       label: "For Boards",
       title: "Practical guides for volunteer board members",
       body: "Governance fundamentals, document hierarchy, enforcement boundaries, and decision-making frameworks for boards who didn't sign up to be lawyers.",
       color: "#FAF4ED",
       articles: [
-        { title: "HOA Board Member Responsibilities", readTime: "11 min", href: "/blog/hoa-board-member-responsibilities/" },
-        { title: "HOA Bylaws vs CC&Rs Explained", readTime: "7 min", href: "/blog/hoa-bylaws-vs-ccrs/" },
-        { title: "Unenforceable HOA Rules in Florida", readTime: "8 min", href: "/blog/unenforceable-hoa-rules-florida/" },
-        { title: "Condo Association vs HOA, Which Are You?", readTime: "6 min", href: "/blog/condo-association-vs-hoa/" }
+        { title: "HOA Bylaws vs CC&Rs: Key Differences Explained", readTime: "8 min", href: "/blog/hoa-bylaws-vs-ccrs/" }
       ]
     },
     {
       label: "Financial Management",
       title: "Audits, budgets, fees, and reserves",
-      body: "Reserve funding, audit prep, special assessments, and how to read financial statements your board can actually defend.",
+      body: "Reserve funding, audit prep, and how to read financial statements your board can actually defend.",
       color: "#EEF4FF",
       articles: [
-        { title: "HOA Audit Guide", readTime: "9 min", href: "/blog/hoa-audit/" },
-        { title: "HOA Management Fees, What Boards Actually Pay", readTime: "10 min", href: "/blog/hoa-management-fees/" },
-        { title: "HOA Special Assessment Guide", readTime: "8 min", href: "/blog/hoa-special-assessment/" }
+        { title: "HOA Audit: What It Is, When It's Required, and How to Prepare", readTime: "9 min", href: "/blog/hoa-audit/" },
+        { title: "HOA Reserve Study Florida: What Boards Need to Know", readTime: "10 min", href: "/blog/hoa-reserve-study-guide/" }
       ]
     }
   ],
@@ -403,7 +388,7 @@ const EDUCATION_CONTENT = {
     category: "Financial Management",
     title: "HOA Audit: What It Is, When It's Required, and How to Prepare",
     excerpt: "An HOA audit confirms your community's finances are accurate, transparent, and compliant with Florida law. Learn what's required based on your association's revenue, and how strong year-round financial management makes the process faster and less expensive.",
-    image: "/assets/img-accounting.jpg",
+    image: "/assets/blog/hoa-board-members-reviewing-audit.jpg",
     href: "/blog/hoa-audit/"
   }
 };

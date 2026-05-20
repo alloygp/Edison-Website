@@ -318,7 +318,7 @@ const SIRS_CONTENT = {
   related: [
     { kind: "Sibling Sub-Service", title: "Milestone Inspection Coordination", body: "The structural condition assessment that often precedes the SIRS. Required for condos 30+ years old (25+ in coastal counties).", href: "/services/condo-management/milestone-inspections/" },
     { kind: "Parent Pillar", title: "Condo Management", body: "Full-service management for Florida condominium associations under Ch. 718.", href: "/services/condo-management/" },
-    { kind: "Educational", title: "Florida HOA & Condo Laws Guide", body: "A board's guide to the FL statutes that govern community associations, Ch. 720, Ch. 718, and the legislative changes that keep arriving.", href: "/blog/florida-hoa-laws-guide/" }
+    { kind: "Educational", title: "HOA Reserve Study Florida: What Boards Need to Know", body: "How reserve studies work, what they cost, and how Edison coordinates the process.", href: "/blog/hoa-reserve-study-guide/" }
   ],
   cta: {
     title: "SIRS compliance is a project, not a panic.",

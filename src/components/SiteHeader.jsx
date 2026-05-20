@@ -60,28 +60,16 @@ const DEFAULT_NAV = [
     mega: true,
     columns: [
       {
-        title: "Florida Compliance",
-        items: [
-          { label: "Florida HOA Laws Guide", href: "/blog/florida-hoa-laws-guide/", desc: "Ch. 720 + Ch. 718 for boards" },
-          { label: "Milestone Inspection Guide", href: "/blog/florida-milestone-inspection-guide/", desc: "SB-4D requirements explained" },
-          { label: "Reserve Study Guide (Florida)", href: "/blog/hoa-reserve-study-guide-florida/", desc: "FL reserve study mandates" }
-        ]
-      },
-      {
         title: "For Boards",
         items: [
-          { label: "Board Member Responsibilities", href: "/blog/hoa-board-member-responsibilities/", desc: "Fiduciary duties & FL certification" },
-          { label: "HOA Bylaws vs CC&Rs", href: "/blog/hoa-bylaws-vs-ccrs/", desc: "Governing document hierarchy" },
-          { label: "Unenforceable HOA Rules", href: "/blog/unenforceable-hoa-rules-florida/", desc: "What boards can & can't enforce" },
-          { label: "Condo Association vs HOA", href: "/blog/condo-association-vs-hoa/", desc: "Which one are you?" }
+          { label: "HOA Bylaws vs CC&Rs", href: "/blog/hoa-bylaws-vs-ccrs/", desc: "Governing document hierarchy" }
         ]
       },
       {
         title: "Financial Management",
         items: [
           { label: "HOA Audit Guide", href: "/blog/hoa-audit/", desc: "Audit requirements + checklist" },
-          { label: "HOA Management Fees", href: "/blog/hoa-management-fees/", desc: "What boards actually pay" },
-          { label: "Special Assessment Guide", href: "/blog/hoa-special-assessment/", desc: "When & how boards use them" }
+          { label: "HOA Reserve Study Guide", href: "/blog/hoa-reserve-study-guide/", desc: "What boards need to know" }
         ]
       },
       {
