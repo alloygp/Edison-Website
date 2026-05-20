@@ -10,57 +10,129 @@ const BLOG_CONTENT = {
   "hoa-audit": {
     category: "Financial Management",
     title: "HOA Audit: What It Is, When It's Required, and How to Prepare",
-    dek: "An HOA audit confirms your community's finances are accurate and FL-compliant. Here's what's required by revenue, what documents to prepare, and how strong year-round bookkeeping makes the process faster and less expensive.",
-    author: "Edison Editorial",
-    date: "April 2026",
+    dek: "An HOA audit confirms your community's finances are accurate, transparent, and compliant with Florida law. Learn what's required based on your association's revenue, what documents to prepare, and how strong year-round financial management makes the process faster and less expensive for your board.",
+    author: "Edison Association Management",
+    date: "March 16, 2026",
     readTime: "9 min",
-    heroImage: "/assets/img-accounting.jpg",
-    summary: "If your Florida HOA collects $300,000 or more in annual revenue, you're likely required to commission an audited financial statement each year. Boards that prepare year-round, clean ledgers, documented vendor invoices, reconciled reserves, finish audits faster, cheaper, and without surprises.",
+    heroImage: "/assets/blog/hoa-board-members-reviewing-audit.jpg",
+    intro: [
+      "An HOA audit is one of those topics that sounds more intimidating than it needs to be. Your fiscal year has closed, the 90-day reporting deadline is on the horizon, and your board needs to figure out what level of financial report is actually required. The terminology alone can make a volunteer leader's head spin. Audit, review, compilation: which one does your community actually need? What documents should you have ready? And what happens if the records aren't in order?",
+      "The good news is that when your association's finances are well-managed throughout the year, the audit process becomes a straightforward confirmation of good governance. This guide covers what an HOA audit involves, how it differs from other reporting levels, what Florida law requires based on your community's revenue, and how to assemble everything your CPA will need."
+    ],
     sections: [
-      { id: "what-is-an-audit", heading: "What an HOA audit actually is",
+      {
+        id: "what-is-an-hoa-audit",
+        heading: "What Is an HOA Financial Audit?",
         body: [
-          "An HOA audit is an independent examination of the association's financial records by a licensed CPA. The auditor verifies that the financial statements fairly represent the association's actual financial position, assessments collected, expenses paid, reserves funded, obligations outstanding.",
-          "Florida statute distinguishes between three levels of financial reporting: compilation (least scrutiny), review (some scrutiny), and audit (independent examination with formal opinion). Which level your association needs depends on annual revenue."
+          "An HOA financial audit is a comprehensive, independent examination of an association's financial records performed by a licensed certified public accountant. It provides the highest level of assurance that the community's financial statements are accurate, complete, and free from material misstatement.",
+          "<strong>During the audit, the CPA reviews far more than a simple bank balance.</strong> The examination covers financial statements, balance sheets, bank reconciliations, vendor contracts, reserve fund records, and the association's internal controls. The CPA also verifies information directly with third parties, including banks, creditors, and debtors, and evaluates whether the association's reporting complies with generally accepted accounting principles (GAAP). At the end of the process, the CPA issues a formal audit report with an independent opinion on the accuracy of the association's finances.",
+          "This level of scrutiny exists for good reason. Board members carry a fiduciary responsibility to manage homeowner assessments properly. A completed HOA audit protects both the board and the community by providing documented, third-party verification that funds are being handled correctly."
         ]
       },
-      { id: "when-required", heading: "When Florida HOAs are required to audit",
-        body: ["Under FL Statute Ch. 720 (and Ch. 718 for condos), the reporting level tied to annual revenue is mandatory unless waived by a vote with specific procedural rules. A waiver covers one year only; next year's obligation returns."],
-        list: [
-          "Annual revenue under $150,000, report of cash receipts and expenditures",
-          "Annual revenue $150,000 to $300,000, compiled financial statements",
-          "Annual revenue $300,000 to $500,000, reviewed financial statements",
-          "Annual revenue $500,000 or more, audited financial statements"
+      {
+        id: "audit-vs-review-vs-compilation",
+        heading: "Audit vs. Review vs. Compilation: What's the Difference?",
+        body: [
+          "The three levels of financial reporting differ in depth, cost, and the degree of assurance they provide. An audit is the most thorough examination available. A compilation is the least."
         ],
-        callout: { label: "Important", text: "These thresholds apply to HOAs (Ch. 720). Condominium associations under Ch. 718 follow similar but distinct thresholds. Confirm with your governing documents and CPA." }
-      },
-      { id: "how-to-prepare", heading: "How to prepare for an HOA audit",
-        body: ["The audit itself takes weeks; preparation takes a year. Boards that finish audits cleanly maintain four things year-round: clean general ledgers, complete invoice documentation, reconciled reserve accounts, and well-organized minutes that show how the board authorized major spending."],
-        list: [
-          "Pull monthly bank statements, reserve account statements, and reconciliations",
-          "Gather all paid vendor invoices with W-9s on file for 1099-eligible vendors",
-          "Compile board meeting minutes that document authorization for capital expenditures",
-          "Provide the most recent reserve study and updated funding plan",
-          "Have prior-year audit and tax returns ready for the new auditor's review"
+        table: {
+          headers: ["", "Audit", "Financial Review", "Compilation"],
+          rows: [
+            ["<strong>What the CPA Does</strong>", "Full independent examination with third-party verification of records", "Analytical procedures and inquiries; no independent verification", "Organizes association-provided data into standard financial statement format"],
+            ["<strong>Level of Assurance</strong>", "Highest — reasonable assurance", "Moderate — limited assurance", "None — no assurance provided"],
+            ["<strong>Typical Cost Range</strong>", "$4,000–$6,000+", "$2,000–$4,000", "$1,000–$2,000"],
+            ["<strong>Best For</strong>", "Larger communities, those required by law, or boards seeking full verification", "Mid-size communities meeting Florida's $300K–$499K revenue tier", "Smaller communities with straightforward finances"]
+          ]
+        },
+        body3: [
+          "<strong>The right level depends on your community's size, financial complexity, and what Florida law requires for your revenue tier.</strong> Boards can always elect a higher level of reporting than the statutory minimum, and many do when they want additional assurance for their homeowners."
         ]
       },
-      { id: "what-it-costs", heading: "What an HOA audit typically costs",
+      {
+        id: "florida-hoa-audit-requirements",
+        heading: "Florida HOA Audit Requirements Under Section 720.303(7)",
         body: [
-          "Audit fees vary by association size, complexity, and the cleanliness of the books. A small association with audit-ready accrual books pays $3,500–$6,500. A larger or messier community can hit $12,000+. Most of that increase reflects the auditor's time untangling what should have been documented as the year unfolded.",
-          "The single biggest cost driver is records prep time. If books are on a cash basis with informal documentation, the CPA reconstructs a year of bookkeeping before the audit begins. Edison keeps accrual-basis books with invoice documentation required, which typically drops audit fees by 20–40%."
-        ]
-      },
-      { id: "how-edison-helps", heading: "How Edison's accounting model makes audits easier",
-        body: [
-          "Edison treats audit readiness as a year-round responsibility, not an April scramble. A dedicated accounting specialist, not the manager wearing two hats, maintains accrual books, requires invoice documentation, reconciles reserve banking against the most recent study, and packages a year-end binder the auditor can work from on day one.",
-          "The result for boards: shorter audit timelines, lower CPA fees, no panicked emails. For homeowners: published audited statements that reflect what the association actually did with their money."
+          "Florida law does not require every HOA to conduct a full audit. The required level of financial reporting depends on the association's total annual revenue, as defined in the <a href=\"https://www.flsenate.gov/laws/statutes/2023/720.303\" target=\"_blank\" rel=\"noopener\">Florida Homeowners' Association Act, Section 720.303(7)</a>."
         ],
-        callout: { label: "Talk to Edison", text: "If your association is preparing for an audit, switching companies, or just wants a cleaner financial picture, our accounting team can review your current setup and outline the gaps." }
+        table: {
+          headers: ["Annual Revenue Tier", "Required Financial Report"],
+          rows: [
+            ["$500,000 or more", "Audited financial statements"],
+            ["$300,000–$499,999", "Reviewed financial statements"],
+            ["$150,000–$299,999", "Compiled financial statements"],
+            ["Under $150,000", "Report of cash receipts and expenditures"]
+          ]
+        },
+        body3: [
+          "<strong>As of July 1, 2024, <a href=\"https://www.flsenate.gov/Session/Bill/2024/1243\" target=\"_blank\" rel=\"noopener\">HB 1243</a> added a critical new requirement: HOAs with 1,000 or more parcels must prepare audited financial statements regardless of revenue, and this requirement cannot be waived.</strong>",
+          "Several additional details matter for compliance. Financial reports must be completed within 90 days of fiscal year-end, and members must receive copies within 21 days of completion or no later than 120 days from fiscal year-end. Association members can vote by majority to waive down to a lower reporting level, but that option does not apply to the 1,000+ parcel mandate. On the other end, boards can always vote to prepare a higher level of reporting than the statute requires.",
+          "Knowing which tier applies to your community early in the fiscal year keeps the process predictable. Edison helps boards identify the correct reporting level and stay ahead of compliance deadlines so there's no scramble when year-end arrives."
+        ]
+      },
+      {
+        id: "hoa-audit-checklist",
+        heading: "HOA Audit Checklist: What Your Board Needs to Prepare",
+        body: [
+          "Before the CPA begins work, the board or its management company needs to assemble a complete set of financial and governance documents. <strong>Having these records organized and accessible before the auditor's first request is the single most effective way to reduce audit time and cost.</strong>",
+          "A thorough HOA audit checklist includes:"
+        ],
+        list: [
+          "<a href=\"/blog/hoa-bylaws-vs-ccrs/\">Governing documents</a> (declaration of covenants, bylaws, articles of incorporation)",
+          "Financial statements (balance sheet, income statement, statement of cash flows)",
+          "Bank statements and monthly reconciliations",
+          "Accounts receivable and accounts payable reports",
+          "Vendor contracts and payment records with supporting documentation",
+          "Reserve fund records and the most recent reserve study",
+          "Board meeting minutes from the fiscal year",
+          "Current insurance policies",
+          "Tax returns (Form 1120-H or applicable filing)",
+          "Collection and delinquency reports"
+        ],
+        callout: { label: "Edison's approach", text: "Edison's accounting approach through dedicated specialists means financial records are maintained with invoice documentation attached to every payment, creating a clean audit trail from day one. The Action Item List gives boards real-time visibility into outstanding financial tasks without requiring a separate audit-prep report. When audit season arrives, the records are already where they need to be." }
+      },
+      {
+        id: "how-management-company-helps",
+        heading: "How the Right Management Company Makes HOA Audits Easier",
+        body: [
+          "The quality of an association's day-to-day financial management directly determines how smooth and how affordable an HOA audit will be. Communities with organized, well-documented records give auditors exactly what they need upfront, which translates to fewer CPA hours and lower fees.",
+          "<strong>A management partner that treats financial accuracy as a year-round practice, not a year-end project, changes the entire audit experience for volunteer boards.</strong> At Edison, that principle is built into how we manage every community's finances. Here's what it looks like in practice:"
+        ],
+        list: [
+          "Financials managed by dedicated accounting specialists through CINC Systems, not a generalist association manager juggling multiple responsibilities. Electronic reports can be shared directly with the CPA.",
+          "Every invoice requires supporting documentation before payment is processed. No mystery line items. A complete audit trail exists from the moment a vendor is paid.",
+          "Rapid vendor payment processing creates clean, current accounts payable records instead of a backlog of outstanding obligations the auditor has to reconcile.",
+          "Reserve study support includes boots-on-the-ground property evaluation, providing practical context the auditor can verify against the association's reserve plan.",
+          "A banking partnership with One Florida Bank structures reserve investments with proper FDIC documentation, giving auditors clear records of how reserve funds are allocated and protected."
+        ],
+        callout: { label: "The bottom line", text: "When these practices are embedded in how a community's finances operate every day, the audit becomes a confirmation of what the board already knows: their community's money is being managed with care and transparency." }
+      },
+      {
+        id: "faq",
+        heading: "Frequently Asked Questions",
+        faq: [
+          {
+            q: "Do HOAs need to be audited?",
+            a: "Not necessarily. Whether a full HOA audit is required depends on state law, the association's annual revenue, and its governing documents. In Florida, audited financial statements are mandatory only for HOAs with annual revenues exceeding $500,000 or those with 1,000 or more parcels. Associations below those thresholds may be required to prepare a review, compilation, or cash receipts report depending on their revenue tier. Members can also vote to waive down to a lower level of reporting in most cases."
+          },
+          {
+            q: "How much does an HOA audit cost?",
+            a: "A full HOA audit typically costs between $4,000 and $6,000, though fees can be higher for larger communities or associations with complex finances. Reviews and compilations cost less. The single biggest factor in audit cost is how organized the association's financial records are. Poorly maintained records require more CPA hours, which increases the fee. Choosing a CPA with specific community association experience also helps ensure the process is efficient and the audit report reflects the nuances of association accounting."
+          },
+          {
+            q: "When is an HOA audit required in Florida?",
+            a: "Under Florida Statute 720.303(7), an HOA audit is required when the association's annual revenues reach $500,000 or more. As of July 2024, HOAs with 1,000 or more parcels must also prepare audited financial statements regardless of their revenue. The completed report must be delivered within 90 days of fiscal year-end, and copies must reach members within 21 days of completion. Boards may vote to adopt a higher reporting level than the statute requires."
+          },
+          {
+            q: "What is the difference between an HOA audit and a financial review?",
+            a: "An HOA audit is a full independent examination where the CPA verifies financial records with third parties such as banks and vendors, then issues a formal opinion providing reasonable assurance. A financial review is less extensive. The CPA performs analytical procedures and makes inquiries of management but does not independently verify information with outside parties. Reviews provide limited assurance at a lower cost."
+          }
+        ]
       }
     ],
     related: [
+      { category: "For Boards", title: "HOA Bylaws vs CC&Rs: Key Differences Explained", image: "/assets/blog/bylaws-vs-ccrs.jpg", href: "/blog/hoa-bylaws-vs-ccrs/" },
       { category: "Financial Management", title: "HOA Reserve Study Guide (Florida)", image: "/assets/img-21.jpg", href: "/blog/hoa-reserve-study-guide-florida/" },
-      { category: "Financial Management", title: "HOA Management Fees, What Boards Actually Pay", image: "/assets/img-13.jpg", href: "/blog/hoa-management-fees/" },
-      { category: "Florida Compliance", title: "Florida HOA Laws Guide, Ch. 720 and Ch. 718", image: "/assets/img-22.jpg", href: "/blog/florida-hoa-laws-guide/" }
+      { category: "Financial Management", title: "HOA Management Fees: What Boards Actually Pay", image: "/assets/img-13.jpg", href: "/blog/hoa-management-fees/" }
     ]
   },
 
@@ -228,39 +300,130 @@ const BLOG_CONTENT = {
   "hoa-bylaws-vs-ccrs": {
     category: "For Boards",
     title: "HOA Bylaws vs CC&Rs: Key Differences Explained",
-    dek: "Different documents, different authority, different processes for amendment. Knowing which one governs your situation is how boards make confident decisions.",
-    author: "Edison Editorial", date: "April 2026", readTime: "7 min",
-    heroImage: "/assets/img-17.jpg",
-    summary: "CC&Rs (Covenants, Conditions, and Restrictions) are the foundational governing document, they run with the land, bind every owner, and are hard to amend. Bylaws govern how the association operates as a corporate entity. Rules sit below both and are easier to change. The hierarchy matters when documents conflict.",
+    dek: "Board members often reach for the wrong document when a decision needs to be made quickly. Understanding the difference between HOA bylaws and CC&Rs — and knowing which one governs your situation — is how volunteer leaders make confident, defensible decisions.",
+    author: "Edison Association Management",
+    date: "February 4, 2026",
+    readTime: "8 min",
+    heroImage: "/assets/blog/bylaws-vs-ccrs.jpg",
+    intro: [
+      "You're sitting at a board meeting and the question on the table is whether the board can pass a new rental restriction with a simple majority vote, or whether it has to go to the full membership. Someone thinks it's covered in the bylaws. Someone else is pretty sure it's a CC&R issue. A third board member isn't confident there's even a difference between the two documents.",
+      "Understanding HOA bylaws vs CC&Rs isn't just useful background knowledge for Central Florida board members. It's how you make confident, defensible decisions when something actually comes up. This post breaks down what each document covers, how they interact, and which one to reach for depending on the situation."
+    ],
     sections: [
-      { id: "the-hierarchy", heading: "The governing document hierarchy",
-        body: ["Florida community associations are governed by a stack of documents, and when they conflict, the higher document wins. Top to bottom: state and federal law, then the Declaration / CC&Rs, then the Articles of Incorporation, then the Bylaws, then Rules and Regulations adopted by the board."]
-      },
-      { id: "ccrs", heading: "CC&Rs, Covenants, Conditions, and Restrictions",
-        body: ["CC&Rs are recorded in the public records and run with the land. Every owner is bound by them when they buy. They typically cover what owners can and can't do with their property (architectural changes, paint colors, fences, rentals), how assessments work, and the board's enforcement authority. Amending CC&Rs usually requires a high vote threshold, often 2/3 or 75% of all owners."]
-      },
-      { id: "bylaws", heading: "Bylaws, How the association operates",
-        body: ["Bylaws govern the association as a corporate entity, how directors are elected, how meetings are called, how committees are formed, how quorum is calculated, how votes are conducted. They cover internal operations rather than what individual owners can do. Amendment thresholds are typically lower than CC&Rs but higher than rules."]
-      },
-      { id: "rules", heading: "Rules and Regulations",
-        body: ["Rules are adopted by the board (sometimes ratified by the membership) and cover the day-to-day specifics, pool hours, parking rules, pet limits, guest policies, ARC submission procedures. They're the most flexible layer and the one boards change most often. Rules cannot contradict CC&Rs or bylaws."]
-      },
-      { id: "which-applies", heading: "Which document applies to your situation?",
-        list: [
-          "Architectural changes (paint, fences, additions), usually CC&Rs + ARC procedure in rules",
-          "Board elections and meetings, Bylaws",
-          "Pool hours and amenity use, Rules",
-          "Assessment authority and lien rights, CC&Rs",
-          "Quorum for an annual meeting, Bylaws",
-          "Pet weight limits, Could be CC&Rs or Rules; check both"
+      {
+        id: "what-are-governing-documents",
+        heading: "What Are HOA Governing Documents?",
+        note: "This post is for educational purposes only and should not be considered legal advice. Community-specific requirements, especially around membership voting, should always be reviewed by the association's legal counsel.",
+        body: [
+          "HOA governing documents are the legal framework that tells your community what the rules are and how decisions get made. In Florida, most homeowners associations operate under several governing documents: typically the Declaration of Covenants, Conditions, and Restrictions (CC&Rs), the Articles of Incorporation, the Bylaws, and the Rules & Regulations. These documents follow a clear hierarchy of authority: federal and state law first, followed by the CC&Rs, then the Articles of Incorporation, then the Bylaws, and finally the Rules & Regulations."
         ],
-        callout: { label: "Read both", text: "When in doubt, check the higher document. If CC&Rs say nothing about an issue, the bylaws govern. If the bylaws say nothing, the board has rule-making authority within the scope the documents allow." }
+        image: { src: "/assets/blog/hoa-governing-document-hierarchy.svg", alt: "HOA governing document hierarchy diagram" },
+        body2: [
+          "All are legally binding, but they serve different purposes and carry different levels of authority.",
+          "Florida's Chapter 720, the Florida Homeowners' Association Act, establishes many of the legal requirements governing HOA operations, including elections, meetings, records access, and certain amendment procedures. Boards in Central Florida are working within that specific legal framework, which is why generic national guidance on these HOA governing documents often falls short."
+        ]
+      },
+      {
+        id: "what-are-ccrs",
+        heading: "What Are CC&Rs?",
+        body: [
+          "CC&Rs — short for Covenants, Conditions, and Restrictions — are the foundational rules of community living, and they follow the property, not the owner. Think of them as the \"what\" of your association: the document that defines how the community looks, how property is used, and what obligations every homeowner carries. Boards can also adopt additional policies, as long as those policies don't conflict with the recorded documents or state statutes.",
+          "What makes CC&Rs distinct from other governing documents is that they are recorded with the county, meaning a record is kept on file and the property use restrictions are tied to the property itself, not the person who owns it. When a home sells, the CC&Rs transfer automatically to the new owner. Under Florida law, amendments to the Declaration of Covenants, Conditions, and Restrictions require a membership vote and must be re-recorded with the county, making changes deliberate and intentionally difficult to reverse. When Edison's <a href=\"/services/hoa-enforcement/\">covenant enforcement team</a> conducts property inspections, the CC&Rs are one of the governing standards they work from, alongside the Rules & Regulations and any other adopted community policies."
+        ],
+        subheading: "What CC&Rs Typically Cover",
+        list: [
+          "Property use restrictions (what can and can't be done with a lot or unit)",
+          "Architectural guidelines and exterior modification requirements",
+          "Homeowner maintenance obligations",
+          "<a href=\"/services/hoa-accounting/\">Assessment obligations and payment requirements</a>",
+          "Insurance obligations for homeowners and the association",
+          "Dispute resolution mechanisms",
+          "Lender protection provisions"
+        ]
+      },
+      {
+        id: "what-are-bylaws",
+        heading: "What Are HOA Bylaws?",
+        body: [
+          "Bylaws govern <a href=\"/services/hoa-management/\">how the HOA operates</a> as an organization — not what homeowners can do with their property, but how the board makes decisions, runs meetings, and fulfills the duties and responsibilities of board members. If the CC&Rs are the \"what,\" the bylaws are the \"how.\"",
+          "Unlike CC&Rs, bylaws do not need to be recorded with the county under Florida law, though amendments typically require a homeowner vote, with the exact process depending on the amendment provisions written in the bylaws themselves. The bylaws are also where Florida's board certification requirement lives in practice: boards must be certified within 90 days of election under state law, and understanding the governing documents is a core part of that process.",
+          "When a question comes up about whether something requires a vote or about the responsibilities of officers, the bylaws are almost always the right document to open first."
+        ],
+        subheading: "What Bylaws Typically Cover",
+        list: [
+          "The process for nominating and electing new board members",
+          "Length of board member service terms",
+          "Duties and responsibilities of board members and officers",
+          "How meetings are called, noticed, and conducted",
+          "Quorum requirements for valid votes",
+          "Voting rights and procedures",
+          "How the bylaws themselves can be amended"
+        ]
+      },
+      {
+        id: "rules-and-regulations",
+        heading: "What About Rules & Regulations?",
+        body: [
+          "Rules & Regulations are the most flexible layer of your HOA governing documents — operational details the board can update without a community-wide vote, as long as they stay consistent with the CC&Rs and bylaws. While CC&Rs and bylaws both require a membership vote to amend, in most communities the board can adopt or amend Rules & Regulations through a board vote alone. No community-wide vote and no re-recording with the county required.",
+          "This flexibility is intentional. A community's pool hours, for example, might need to shift seasonally or as more families move in, and it would be impractical to call a homeowner vote every time that change makes sense. Rules & Regulations allow the board to make those operational adjustments efficiently. The important caveat: no rule or regulation can contradict the covenants, conditions, and restrictions or the bylaws. When documents conflict, the hierarchy holds and the higher-ranking document always controls."
+        ]
+      },
+      {
+        id: "which-document-applies",
+        heading: "Which Document Applies to Your Situation?",
+        body: [
+          "The fastest way to use your governing documents well is to match the type of question to the right document. Property rules live in the CC&Rs, governance procedures live in the bylaws, and operational details live in the Rules & Regulations."
+        ],
+        table: {
+          headers: ["If you're dealing with...", "Start here"],
+          rows: [
+            ["Homeowner painted fence the wrong color", "CC&Rs"],
+            ["Upcoming board election procedures", "Bylaws"],
+            ["How long a director can serve", "Bylaws"],
+            ["Pool hours or guest policy", "Rules & Regulations"],
+            ["Insurance obligations for common areas", "CC&Rs"],
+            ["How to call a special meeting", "Bylaws"]
+          ]
+        },
+        body3: [
+          "When the documents conflict with one another, or when a board isn't sure which document governs a particular situation, that's exactly the kind of question a management partner should help you work through — alongside an association attorney who knows Florida law, where needed."
+        ]
+      },
+      {
+        id: "key-difference",
+        heading: "HOA Bylaws vs CC&Rs: The Key Difference",
+        body: [
+          "CC&Rs define the rules homeowners must follow as property owners. Bylaws define the rules the board must follow when governing the association. Both are legally binding, both are difficult to amend, and neither can override state or federal law — but they operate in entirely different lanes.",
+          "When a question is about what a homeowner can or can't do, start with the CC&Rs. When a question is about how the HOA operates or how a decision gets made, start with the bylaws. Rules & Regulations fill in the operational gaps that neither document addresses at the level of <a href=\"/services/hoa-management/\">detail day-to-day management</a> requires."
+        ]
+      },
+      {
+        id: "faq",
+        heading: "Frequently Asked Questions",
+        faq: [
+          {
+            q: "Are CC&Rs and bylaws the same thing?",
+            a: "No. CC&Rs and bylaws are two separate documents that serve different purposes. CC&Rs govern what homeowners can do with their property; bylaws govern how the association itself is run. Both are legally binding and both require a membership vote to amend, but they cover entirely different territory. Confusing them is one of the most common mistakes volunteer leaders make when they're new to the role, and it can lead to looking in the wrong place when a decision needs to be made quickly."
+          },
+          {
+            q: "What is the difference between HOA bylaws and CC&Rs?",
+            a: "CC&Rs cover the \"what\" — the rules for property use and community living — and bylaws cover the \"how\" — the rules for running the association. CC&Rs are recorded with the county and tied to the property itself, which means they transfer to every new owner automatically. Bylaws are the internal operating rules for the board and don't require county recording under Florida law. When you're asking a question about what a homeowner can or can't do, start with the CC&Rs. When you're asking about how the HOA operates, start with the bylaws."
+          },
+          {
+            q: "Which HOA governing document has more authority?",
+            a: "CC&Rs generally take precedence over bylaws, and both outrank Rules & Regulations. The full hierarchy in Florida runs from state and federal law first, then CC&Rs, then Articles of Incorporation, then Bylaws, then Rules & Regulations. When documents conflict, the higher-ranking document controls. Florida's <a href=\"https://www.flsenate.gov/Laws/Statutes/2024/Chapter720/All\" target=\"_blank\" rel=\"noopener\">Chapter 720, the Florida Homeowners' Association Act</a>, governs this hierarchy for HOAs throughout the state and should be the first reference when a board has questions about document authority or amendment procedures."
+          },
+          {
+            q: "Can HOA bylaws override CC&Rs?",
+            a: "No. Bylaws cannot override CC&Rs. If a bylaw provision conflicts with a CC&R provision, the CC&R controls. When there's uncertainty about which document governs a situation, the governing documents should be reviewed alongside Florida Chapter 720 and, if needed, in consultation with an HOA attorney. The <a href=\"https://www.caionline.org\" target=\"_blank\" rel=\"noopener\">Community Associations Institute</a> is also a strong resource for boards looking to deepen their governance knowledge."
+          }
+        ]
       }
     ],
     related: [
-      { category: "For Boards", title: "Unenforceable HOA Rules in Florida", image: "/assets/img-inspector.jpg", href: "/blog/unenforceable-hoa-rules-florida/" },
-      { category: "Florida Compliance", title: "Florida HOA Laws Guide", image: "/assets/img-13.jpg", href: "/blog/florida-hoa-laws-guide/" },
-      { category: "For Boards", title: "HOA Board Member Responsibilities", image: "/assets/img-11.jpg", href: "/blog/hoa-board-member-responsibilities/" }
+      { category: "Financial Management", title: "HOA Audit: What It Is, When It's Required, and How to Prepare", image: "/assets/blog/hoa-board-members-reviewing-audit.jpg", href: "/blog/hoa-audit/" },
+      { category: "For Boards", title: "HOA Board Member Responsibilities", image: "/assets/img-11.jpg", href: "/blog/hoa-board-member-responsibilities/" },
+      { category: "Florida Compliance", title: "Florida HOA Laws Guide", image: "/assets/img-13.jpg", href: "/blog/florida-hoa-laws-guide/" }
     ]
   },
 
@@ -418,6 +581,121 @@ const BLOG_CONTENT = {
       { category: "Financial Management", title: "HOA Reserve Study Guide (Florida)", image: "/assets/img-21.jpg", href: "/blog/hoa-reserve-study-guide-florida/" },
       { category: "Financial Management", title: "HOA Audit Guide", image: "/assets/img-accounting.jpg", href: "/blog/hoa-audit/" },
       { category: "Financial Management", title: "HOA Management Fees", image: "/assets/img-13.jpg", href: "/blog/hoa-management-fees/" }
+    ]
+  },
+
+  "hoa-reserve-study-guide": {
+    category: "Financial Management",
+    title: "HOA Reserve Study Florida: What Boards Need to Know",
+    dek: "What is an HOA reserve study and why does Florida law require one? Learn what boards need to know about reserve studies, costs, and funding requirements.",
+    author: "Edison Association Management",
+    date: "May 20, 2026",
+    readTime: "10 min",
+    heroImage: "/assets/blog/reserve-study-specialist.jpg",
+    intro: [
+      "You're staring at a line item in the budget labeled \"reserves,\" and you're not entirely sure the number is right. Maybe it was carried over from last year. Maybe it was set by a previous board. Maybe no one has looked at the actual condition of the roof, the pool deck, or the parking lot in years. If any of this sounds familiar, your community probably needs an HOA reserve study.",
+      "A reserve study is the financial planning tool that tells your board exactly where your community stands: what's aging, when it will need replacement, and whether the money is there to pay for it. In Florida, where hurricane exposure, humidity, and rapid development put constant pressure on shared infrastructure, reserve planning is not optional. It's how boards avoid the surprise special assessments that frustrate homeowners and erode trust.",
+      "This guide covers what a reserve study is, whether Florida law requires one for your community, what it costs, how often to update it, and how a professional management company supports the process from start to finish."
+    ],
+    sections: [
+      {
+        id: "what-is-an-hoa-reserve-study",
+        heading: "What Is an HOA Reserve Study?",
+        body: [
+          "A reserve study is a financial planning tool that inventories a community's major shared assets, estimates when each will need repair or replacement, and recommends how much the association should set aside each year to cover those future costs.",
+          "<strong>Every reserve study has two parts: a physical analysis and a financial analysis.</strong> The physical analysis is an on-site inspection of every major common-area component. A licensed engineer or reserve specialist walks the property and catalogs items like the roof, parking surfaces, pool and pool equipment, HVAC systems, exterior painting, fencing, drainage infrastructure, and landscaping hardscape. For each component, the specialist records its current condition, estimated useful life, remaining useful life, and estimated replacement cost.",
+          "The financial analysis takes those findings and measures them against the association's current reserve fund balance. It projects annual contributions, factors in interest earned, and produces a funding plan that shows how contributions need to change over time to keep pace with upcoming capital expenses. The output includes a percent-funded metric, which represents how much the association has saved relative to what it should have saved. The <a href=\"https://www.caionline.org/advocacy/public-policies/reserve-study-and-funding/\" target=\"_blank\" rel=\"noopener\">Community Associations Institute (CAI)</a> considers 70% or above to be adequately funded.",
+          "Think of a reserve study as the community's long-range financial roadmap. Without one, the board is making budget decisions based on assumptions instead of data."
+        ]
+      },
+      {
+        id: "florida-reserve-study-requirements",
+        heading: "Florida HOA Reserve Study Requirements: HOA vs. Condo",
+        body: [
+          "Florida law treats HOAs and condominiums differently when it comes to reserve studies, and this distinction is where many boards get confused."
+        ],
+        table: {
+          headers: ["Requirement", "HOAs (Chapter 720)", "Condominiums (Chapter 718)"],
+          rows: [
+            ["Formal reserve study mandate", "No statutory requirement as of 2026", "SIRS required for buildings 3+ stories"],
+            ["Reserve accounts required", "Yes — must be included in annual budget", "Yes — with full funding required for SIRS components"],
+            ["Owners can vote to waive reserves", "Yes — annually, by majority vote", "No — SIRS reserves cannot be waived"],
+            ["Update interval", "Best practice: every 3–5 years", "SIRS: every 10 years (statutory minimum)"]
+          ]
+        },
+        body3: [
+          "<strong>For HOAs governed under <a href=\"https://www.flsenate.gov/Laws/Statutes/2000/720.303\" target=\"_blank\" rel=\"noopener\">Florida Statute 720.303(6)</a>, there is no statutory mandate requiring a formal reserve study.</strong> The statute requires associations to include reserve accounts in their annual budget and disclose reserve balances to members, but boards may vote each year to waive or partially fund those reserves. That said, most community governing documents require a reserve study every three to five years. Lenders, insurance carriers, and prospective buyers are also increasingly looking for current reserve studies as a sign of responsible governance. Skipping a reserve study is the fastest path to a special assessment.",
+          "For condominiums under <a href=\"https://www.flsenate.gov/Laws/Statutes/2025/Chapter718/All\" target=\"_blank\" rel=\"noopener\">Chapter 718</a>, the requirements are significantly stricter. Florida now mandates a Structural Integrity Reserve Study (SIRS) for condominium buildings three stories or higher. The initial SIRS deadline was December 31, 2025, and studies must be updated at least every 10 years. SIRS covers eight mandatory structural components, and reserves for those components cannot be waived by a vote of the owners. It's important to note that SIRS addresses structural elements only. Condominium associations still benefit from a traditional reserve study for non-structural items like pool equipment, landscaping, and common-area finishes."
+        ]
+      },
+      {
+        id: "what-does-a-reserve-study-include",
+        heading: "What Does a Reserve Study Include?",
+        body: [
+          "A comprehensive reserve study includes a physical site inspection and a financial analysis that together produce a 20- to 30-year funding plan for the association.",
+          "During the physical analysis, a licensed engineer or reserve specialist conducts an on-site inspection of every major common-area component. The component inventory typically includes roofing, asphalt and concrete paving, pool and pool deck surfaces, exterior painting, HVAC systems, fencing, gates, drainage systems, clubhouse interiors, and landscaping infrastructure such as irrigation and retaining walls. For each item, the specialist records its current condition, total useful life, estimated remaining useful life, and projected replacement cost.",
+          "<strong>The financial analysis translates those physical findings into a funding strategy the board can act on.</strong> It compares the association's current reserve fund balance against projected capital expenses over the planning horizon, accounts for interest earned on reserves, and recommends an annual contribution schedule designed to keep the fund on track. The result is a clear picture of whether the association is adequately funded, underfunded, or on pace.",
+          "CAI recognizes four levels of reserve studies. A Level I study is the most comprehensive, including a full on-site inspection, and is recommended every five years. A Level II study is an update that includes a new site visit. A Level III study updates the financial projections without a new inspection. A Level IV study is for pre-construction communities. Most established communities need a Level I study every five years, with Level II updates in between to keep the data current."
+        ]
+      },
+      {
+        id: "how-much-does-a-reserve-study-cost",
+        heading: "How Much Does an HOA Reserve Study Cost?",
+        body: [
+          "A full HOA reserve study typically costs between $3,000 and $10,000 or more, depending on the size and complexity of the community.",
+          "Several factors influence the final price. Larger communities with more units naturally require more inspection time and a more detailed component inventory. Communities with multiple building types, pools, clubhouses, and extensive common-area infrastructure will land on the higher end of the range. Whether the study is a first-time engagement or an update to an existing study also affects cost, as does whether the community has condo SIRS requirements that add structural inspection components.",
+          "<strong>When evaluating reserve study providers, boards should look for the CAI Reserve Specialist (RS) credential, direct experience with Florida communities, and a commitment to a thorough on-site inspection rather than a desk review.</strong> Clarity of the final report matters too. A reserve study that boards can't interpret is a reserve study that doesn't get used. Some communities reduce costs by coordinating the reserve study with a required milestone inspection.",
+          "A good management company helps boards evaluate proposals and ensures the reserve study firm has practical context about the community's actual condition. At Edison, that means walking the property alongside the specialist and sharing real-world input on what's been recently replaced, what's showing early signs of wear, and which vendor quotes the board has already collected. That kind of context makes the study more accurate from the start."
+        ]
+      },
+      {
+        id: "how-often-to-update",
+        heading: "How Often Should a Board Update Its Reserve Study?",
+        body: [
+          "CAI recommends updating the reserve study at least every three years, with a full Level I study every five years. <strong>In Florida's construction cost environment, where hurricanes, inflation, and supply chain disruptions can shift replacement costs significantly in a short window, regular updates are especially important.</strong>",
+          "A reserve study is a living document, not a one-time checkbox. Components deteriorate faster or slower than projected. Boards make capital improvement decisions that shift the funding timeline. Construction material costs change. An HOA reserve study from five years ago may significantly underestimate what it actually costs to repave a parking lot or re-roof a clubhouse today.",
+          "For condominium associations subject to SIRS, the statutory update interval is every 10 years. That's a legal floor, not a best practice. Well-managed communities update their reserve studies more frequently than the statute requires, because waiting a decade between assessments invites costly surprises."
+        ]
+      },
+      {
+        id: "how-management-supports-the-process",
+        heading: "How a Management Company Supports the Reserve Study Process",
+        body: [
+          "A reserve study is only as useful as what the board does with it. That's where the management company matters.",
+          "<strong>Most management companies hand the reserve study off to a vendor, wait for the report, and drop it in a board packet. Edison's approach is different.</strong>",
+          "Before the study begins, Edison's team walks the property and provides the reserve specialist with practical, on-the-ground context. Which components were recently repaired or replaced? Which areas are showing early signs of failure that might not be obvious in a single-day inspection? What vendor quotes has the board already received for upcoming projects? This kind of input makes the reserve study more accurate and more useful.",
+          "During the study, Edison coordinates property access, provides historical maintenance records from CINC Systems, and ensures the specialist has accurate data on prior replacements and upgrades. Organized records and responsive management support mean the specialist spends their time inspecting, not chasing documentation.",
+          "After the study is complete, Edison translates the findings into the community's <a href=\"/services/hoa-accounting/\">annual budget</a>. Reserve contribution recommendations are adjusted, the funding plan is mapped against upcoming capital projects, and the board has a clear path forward. Edison's banking partnership with One Florida Bank also helps boards optimize how reserve dollars are held. CDs, sweep accounts, and FDIC coverage structuring ensure reserve funds earn interest while they wait, rather than sitting idle in a low-yield account.",
+          "This is what reserve planning looks like when the management company treats it as part of ongoing financial stewardship rather than a one-time vendor deliverable."
+        ]
+      },
+      {
+        id: "faq",
+        heading: "Frequently Asked Questions",
+        faq: [
+          {
+            q: "Is a reserve study legally required for Florida HOAs?",
+            a: "No. As of 2026, Florida Statute Chapter 720 does not mandate a formal reserve study for HOAs. The statute requires associations to maintain reserve accounts and disclose them in the annual budget, but boards can vote to waive or partially fund reserves each year. That said, most governing documents require a reserve study every three to five years, and lenders, insurers, and prospective buyers increasingly expect one. Condominiums under Chapter 718 face stricter rules: buildings three stories or higher must complete a Structural Integrity Reserve Study (SIRS), and those reserves cannot be waived."
+          },
+          {
+            q: "How much does an HOA reserve study cost in Florida?",
+            a: "Most Florida communities pay between $3,000 and $10,000 or more for a full reserve study. Cost depends on the number of units, the number of distinct building types, the complexity of common-area infrastructure, and whether the engagement is a first-time study or an update. Larger communities with pools, clubhouses, and multiple building styles will be on the higher end."
+          },
+          {
+            q: "What happens if an HOA doesn't have a reserve study?",
+            a: "Without a reserve study, the board is budgeting blind. When a major component fails and the reserve fund can't cover it, a special assessment becomes the default funding mechanism. Underfunded reserves erode property values, create homeowner frustration, and expose board members to fiduciary risk. A reserve study gives the board the data to plan ahead, fund responsibly, and avoid financial surprises."
+          },
+          {
+            q: "How often should an HOA update its reserve study?",
+            a: "CAI recommends updating at least every three years, with a full Level I study every five years. In Florida, where hurricane seasons, inflation, and supply chain volatility can rapidly change construction costs, regular updates are particularly important. A reserve study that's five years old may significantly underestimate current replacement costs for common components like roofing, paving, and pool resurfacing."
+          }
+        ]
+      }
+    ],
+    related: [
+      { category: "Financial Management", title: "HOA Audit: What It Is, When It's Required, and How to Prepare", image: "/assets/blog/hoa-board-members-reviewing-audit.jpg", href: "/blog/hoa-audit/" },
+      { category: "For Boards", title: "HOA Bylaws vs CC&Rs: Key Differences Explained", image: "/assets/blog/bylaws-vs-ccrs.jpg", href: "/blog/hoa-bylaws-vs-ccrs/" },
+      { category: "Financial Management", title: "HOA Special Assessment Guide", image: "/assets/img-accounting.jpg", href: "/blog/hoa-special-assessment/" }
     ]
   },
 

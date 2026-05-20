@@ -1,0 +1,15 @@
+---
+import SiteLayout from '../../../layouts/SiteLayout.astro';
+import { BlogSpokeA } from '../../../templates/blog-template.jsx';
+import { BLOG_CONTENT } from '../../../content/blog-content.jsx';
+
+const content = BLOG_CONTENT['hoa-reserve-study-guide'];
+---
+
+<SiteLayout
+  title="HOA Reserve Study Florida: What Boards Need to Know | Edison"
+  description="What is an HOA reserve study and why does Florida law require one? Learn what boards need to know about reserve studies, costs, and funding requirements."
+  ogType="article"
+>
+  <BlogSpokeA content={content} client:load />
+</SiteLayout>

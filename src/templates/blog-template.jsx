@@ -128,43 +128,199 @@ function BlogSpokeA({ content }) {
           </aside>
 
           <article style={{ maxWidth: 720, fontFamily: "var(--font-body)" }}>
+            {/* Intro paragraphs (before first section heading) */}
+            {content.intro && content.intro.map((para, j) =>
+              para.startsWith('<') ? (
+                <p key={j} dangerouslySetInnerHTML={{ __html: para }} style={{
+                  fontSize: 17, lineHeight: 1.7,
+                  color: "var(--edison-text-body)", margin: "0 0 18px"
+                }}/>
+              ) : (
+                <p key={j} style={{
+                  fontSize: 17, lineHeight: 1.7,
+                  color: "var(--edison-text-body)", margin: "0 0 18px"
+                }}>{para}</p>
+              )
+            )}
+
             {content.sections.map((s, i) => (
-              <section key={i} id={s.id} style={{ marginBottom: 44 }}>
+              <section key={i} id={s.id} style={{ marginBottom: 48 }}>
                 <h2 style={{
                   fontFamily: "var(--font-display)", fontWeight: 700,
                   fontSize: 30, lineHeight: 1.22, letterSpacing: "-0.01em",
                   color: "var(--edison-navy)", margin: "0 0 16px",
                   scrollMarginTop: 100
                 }}>{s.heading}</h2>
-                {s.body && s.body.map((para, j) => (
-                  <p key={j} style={{
-                    fontSize: 17, lineHeight: 1.7,
-                    color: "var(--edison-text-body)",
-                    margin: "0 0 18px"
-                  }}>{para}</p>
-                ))}
+
+                {/* Note / legal disclaimer — italic gray */}
+                {s.note && (
+                  <p style={{
+                    fontSize: 15, fontStyle: "italic", lineHeight: 1.65,
+                    color: "#6B7280", margin: "0 0 20px",
+                    borderLeft: "3px solid var(--border-hairline)", paddingLeft: 14
+                  }}>{s.note}</p>
+                )}
+
+                {/* Body paragraphs — support inline HTML via leading < */}
+                {s.body && s.body.map((para, j) =>
+                  para.startsWith('<') ? (
+                    <p key={j} dangerouslySetInnerHTML={{ __html: para }} style={{
+                      fontSize: 17, lineHeight: 1.7,
+                      color: "var(--edison-text-body)", margin: "0 0 18px"
+                    }}/>
+                  ) : (
+                    <p key={j} style={{
+                      fontSize: 17, lineHeight: 1.7,
+                      color: "var(--edison-text-body)", margin: "0 0 18px"
+                    }}>{para}</p>
+                  )
+                )}
+
+                {/* Inline image — diagram / infographic */}
+                {s.image && (
+                  <figure style={{ margin: "24px 0 28px" }}>
+                    <img src={s.image.src} alt={s.image.alt}
+                         style={{ width: "100%", borderRadius: 10, display: "block",
+                                  boxShadow: "var(--shadow-sm)" }}/>
+                    {s.image.caption && (
+                      <figcaption style={{
+                        fontFamily: "var(--font-body)", fontSize: 13, color: "#9CA3AF",
+                        marginTop: 8, textAlign: "center"
+                      }}>{s.image.caption}</figcaption>
+                    )}
+                  </figure>
+                )}
+
+                {/* Body paragraphs after image */}
+                {s.body2 && s.body2.map((para, j) =>
+                  para.startsWith('<') ? (
+                    <p key={j} dangerouslySetInnerHTML={{ __html: para }} style={{
+                      fontSize: 17, lineHeight: 1.7,
+                      color: "var(--edison-text-body)", margin: "0 0 18px"
+                    }}/>
+                  ) : (
+                    <p key={j} style={{
+                      fontSize: 17, lineHeight: 1.7,
+                      color: "var(--edison-text-body)", margin: "0 0 18px"
+                    }}>{para}</p>
+                  )
+                )}
+
+                {/* Comparison / data table */}
+                {s.table && (
+                  <div style={{ overflowX: "auto", margin: "24px 0 28px" }}>
+                    <table style={{
+                      width: "100%", borderCollapse: "collapse",
+                      fontFamily: "var(--font-body)", fontSize: 15
+                    }}>
+                      <thead>
+                        <tr>
+                          {s.table.headers.map((h, k) => (
+                            <th key={k} style={{
+                              background: "var(--edison-navy)",
+                              color: "#fff",
+                              fontFamily: "var(--font-display)", fontWeight: 700,
+                              fontSize: 13, padding: "12px 14px",
+                              textAlign: "left", whiteSpace: "nowrap"
+                            }} dangerouslySetInnerHTML={{ __html: h }}/>
+                          ))}
+                        </tr>
+                      </thead>
+                      <tbody>
+                        {s.table.rows.map((row, r) => (
+                          <tr key={r} style={{ background: r % 2 === 0 ? "#fff" : "var(--edison-teal-pale)" }}>
+                            {row.map((cell, c) => (
+                              <td key={c} style={{
+                                padding: "11px 14px",
+                                borderBottom: "1px solid var(--border-hairline)",
+                                lineHeight: 1.55, color: "var(--edison-text-body)",
+                                fontWeight: c === 0 ? 600 : 400
+                              }} dangerouslySetInnerHTML={{ __html: cell }}/>
+                            ))}
+                          </tr>
+                        ))}
+                      </tbody>
+                    </table>
+                  </div>
+                )}
+
+                {/* Body paragraphs after table */}
+                {s.body3 && s.body3.map((para, j) =>
+                  para.startsWith('<') ? (
+                    <p key={j} dangerouslySetInnerHTML={{ __html: para }} style={{
+                      fontSize: 17, lineHeight: 1.7,
+                      color: "var(--edison-text-body)", margin: "0 0 18px"
+                    }}/>
+                  ) : (
+                    <p key={j} style={{
+                      fontSize: 17, lineHeight: 1.7,
+                      color: "var(--edison-text-body)", margin: "0 0 18px"
+                    }}>{para}</p>
+                  )
+                )}
+
+                {/* Callout box */}
                 {s.callout && (
                   <div style={{
                     background: "var(--edison-teal-pale)",
                     borderLeft: "4px solid var(--edison-teal)",
-                    borderRadius: 8,
-                    padding: "18px 22px", margin: "22px 0",
-                    fontSize: 15.5, lineHeight: 1.6,
-                    color: "var(--edison-navy)"
+                    borderRadius: 8, padding: "18px 22px", margin: "22px 0",
+                    fontSize: 15.5, lineHeight: 1.6, color: "var(--edison-navy)"
                   }}>
                     <strong>{s.callout.label}:</strong> {s.callout.text}
                   </div>
                 )}
+
+                {/* Subheading (h3) */}
+                {s.subheading && (
+                  <h3 style={{
+                    fontFamily: "var(--font-display)", fontWeight: 700,
+                    fontSize: 22, lineHeight: 1.28, letterSpacing: "-0.01em",
+                    color: "var(--edison-navy)", margin: "28px 0 12px"
+                  }}>{s.subheading}</h3>
+                )}
+
+                {/* Bullet list */}
                 {s.list && (
                   <ul style={{ padding: "0 0 0 22px", margin: "0 0 18px",
                                display: "flex", flexDirection: "column", gap: 10 }}>
                     {s.list.map((li, k) => (
-                      <li key={k} style={{
-                        fontSize: 16.5, lineHeight: 1.65,
-                        color: "var(--edison-text-body)"
-                      }}>{li}</li>
+                      <li key={k} style={{ fontSize: 16.5, lineHeight: 1.65,
+                                           color: "var(--edison-text-body)" }}
+                          dangerouslySetInnerHTML={{ __html: li }}/>
                     ))}
                   </ul>
+                )}
+
+                {/* FAQ accordion */}
+                {s.faq && (
+                  <div style={{ display: "flex", flexDirection: "column", gap: 0, marginTop: 8 }}>
+                    {s.faq.map((item, k) => (
+                      <details key={k} style={{
+                        borderBottom: "1px solid var(--border-hairline)",
+                        paddingBottom: 0
+                      }}>
+                        <summary style={{
+                          fontFamily: "var(--font-display)", fontWeight: 700,
+                          fontSize: 18, lineHeight: 1.35, color: "var(--edison-navy)",
+                          padding: "18px 0", cursor: "pointer", listStyle: "none",
+                          display: "flex", justifyContent: "space-between", alignItems: "flex-start", gap: 12
+                        }}>
+                          <span>{item.q}</span>
+                          <span style={{
+                            flexShrink: 0, marginTop: 2,
+                            fontSize: 22, lineHeight: 1, color: "var(--edison-teal-dark)",
+                            fontWeight: 300
+                          }}>+</span>
+                        </summary>
+                        <div style={{
+                          fontFamily: "var(--font-body)", fontSize: 16, lineHeight: 1.7,
+                          color: "var(--edison-text-body)", padding: "0 0 20px",
+                          maxWidth: 660
+                        }} dangerouslySetInnerHTML={{ __html: item.a }}/>
+                      </details>
+                    ))}
+                  </div>
                 )}
               </section>
             ))}
