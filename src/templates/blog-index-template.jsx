@@ -142,23 +142,13 @@ function BlogIndexPage({ content }) {
 const BLOG_INDEX_CONTENT = {
   intro: "Long-form guides, statutory explainers, and board-education articles, written for Florida HOA and condo boards by Edison's team. New articles every month.",
   topics: [
-    { label: "Florida Compliance", count: 3 },
-    { label: "Board Governance", count: 4 },
     { label: "Financial Management", count: 3 },
-    { label: "Local Authority", count: 1 }
+    { label: "For Boards", count: 1 }
   ],
   articles: [
-    { category: "Financial Management", title: "HOA Audit: What It Is, When It's Required, and How to Prepare", dek: "Florida audit thresholds, prep checklist, and how strong year-round bookkeeping cuts cost and time.", readTime: "9 min", date: "April 2026", image: "/assets/img-accounting.jpg", href: "/blog/hoa-audit/" },
-    { category: "For Boards", title: "HOA Bylaws vs CC&Rs: Key Differences Explained", dek: "Which document governs your situation, and how to find out without calling a lawyer.", readTime: "7 min", date: "April 2026", image: "/assets/img-17.jpg", href: "/blog/hoa-bylaws-vs-ccrs/" },
-    { category: "Florida Compliance", title: "Florida Milestone Inspection Guide (SB-4D)", dek: "What SB-4D requires, who it applies to, and how Edison coordinates the work end-to-end.", readTime: "10 min", date: "April 2026", image: "/assets/img-22.jpg", href: "/blog/florida-milestone-inspection-guide/" },
-    { category: "Florida Compliance", title: "Florida HOA Laws Guide, Ch. 720 + Ch. 718", dek: "A board's plain-language overview of the two FL statutes that govern community associations.", readTime: "12 min", date: "March 2026", image: "/assets/img-13.jpg", href: "/blog/florida-hoa-laws-guide/" },
-    { category: "Financial Management", title: "HOA Reserve Study Guide (Florida)", dek: "Reserve study basics, FL-specific funding mandates, and how to read the report your engineer hands you.", readTime: "10 min", date: "March 2026", image: "/assets/img-21.jpg", href: "/blog/hoa-reserve-study-guide-florida/" },
-    { category: "For Boards", title: "HOA Board Member Responsibilities", dek: "Fiduciary duty, FL certification, and what board members actually owe their communities, and themselves.", readTime: "11 min", date: "March 2026", image: "/assets/img-11.jpg", href: "/blog/hoa-board-member-responsibilities/" },
-    { category: "For Boards", title: "Unenforceable HOA Rules in Florida", dek: "Just because a rule's on the books doesn't mean it sticks. What FL law says boards can and can't enforce.", readTime: "8 min", date: "February 2026", image: "/assets/img-inspector.jpg", href: "/blog/unenforceable-hoa-rules-florida/" },
-    { category: "Financial Management", title: "HOA Special Assessment Guide", dek: "When special assessments make sense, how they're approved, and the alternatives boards usually skip past.", readTime: "8 min", date: "February 2026", image: "/assets/img-accounting.jpg", href: "/blog/hoa-special-assessment/" },
-    { category: "For Boards", title: "Condo Association vs HOA: Which Are You?", dek: "Different statutes, different governing documents, different rules. A quick decision tree for confused boards.", readTime: "6 min", date: "January 2026", image: "/assets/img-21.jpg", href: "/blog/condo-association-vs-hoa/" },
-    { category: "Financial Management", title: "HOA Management Fees: What Boards Actually Pay", dek: "What's standard, what's a premium add-on, and how to read a management proposal without losing the plot.", readTime: "10 min", date: "January 2026", image: "/assets/img-13.jpg", href: "/blog/hoa-management-fees/" },
-    { category: "Local Authority", title: "Best HOA Management Companies in Orlando", dek: "Honest field guide, what to look for, what to avoid, and how Edison stacks up. Written for boards comparing options.", readTime: "11 min", date: "December 2025", image: "/assets/img-community-aerial.jpg", href: "/blog/best-hoa-management-companies-orlando/" }
+    { category: "Financial Management", title: "HOA Reserve Study Florida: What Boards Need to Know", dek: "What a reserve study covers, how Florida law treats HOAs vs condos, what it costs, and how Edison supports the process from start to finish.", readTime: "10 min", date: "May 20, 2026", image: "/assets/blog/reserve-study-specialist.jpg", href: "/blog/hoa-reserve-study-guide/" },
+    { category: "Financial Management", title: "HOA Audit: What It Is, When It's Required, and How to Prepare", dek: "Florida audit thresholds, prep checklist, and how strong year-round bookkeeping cuts cost and time.", readTime: "9 min", date: "March 16, 2026", image: "/assets/blog/hoa-board-members-reviewing-audit.jpg", href: "/blog/hoa-audit/" },
+    { category: "For Boards", title: "HOA Bylaws vs CC&Rs: Key Differences Explained", dek: "Which document governs your situation, and how to find out without calling a lawyer.", readTime: "8 min", date: "February 4, 2026", image: "/assets/blog/bylaws-vs-ccrs.jpg", href: "/blog/hoa-bylaws-vs-ccrs/" }
   ]
 };
 
