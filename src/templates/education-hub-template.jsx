@@ -31,6 +31,20 @@ function EducationHubA({ content }) {
             fontFamily: "var(--font-body)", fontSize: 18.5, lineHeight: 1.55,
             color: "var(--edison-text-body)", margin: "0 auto", maxWidth: 720, textAlign: "center"
           }}>{content.intro}</p>
+          <div style={{ display: "flex", justifyContent: "center", marginTop: 28 }}>
+            <a href="#insurance-videos" style={{
+              display: "inline-flex", alignItems: "center", gap: 8,
+              padding: "10px 18px", borderRadius: 999,
+              background: "var(--edison-navy)", color: "#fff",
+              fontFamily: "var(--font-display)", fontWeight: 700, fontSize: 13.5,
+              textDecoration: "none", letterSpacing: "0.01em",
+              boxShadow: "var(--shadow-sm)"
+            }}>
+              <svg width="11" height="11" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>
+              New: Insurance Video Library
+              <svg width="11" height="11" viewBox="0 0 24 24" fill="none" aria-hidden="true" style={{opacity: 0.7}}><path d="M6 9l6 6 6-6" stroke="currentColor" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round"/></svg>
+            </a>
+          </div>
         </div>
       </section>
 
@@ -389,7 +403,7 @@ const EDUCATION_CONTENT = {
     category: "Financial Management",
     title: "HOA Audit: What It Is, When It's Required, and How to Prepare",
     excerpt: "An HOA audit confirms your community's finances are accurate, transparent, and compliant with Florida law. Learn what's required based on your association's revenue, and how strong year-round financial management makes the process faster and less expensive.",
-    image: "assets/img-accounting.jpg",
+    image: "/assets/img-accounting.jpg",
     href: "/blog/hoa-audit/"
   }
 };

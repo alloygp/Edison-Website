@@ -1,0 +1,575 @@
+---
+/**
+ * InsuranceVideoLibrary.astro
+ *
+ * Self-contained Edison Education insurance module:
+ *   - Featured-expert video grid (1 large + 3 stacked + 1 callout card)
+ *   - Click any card to open an inline YouTube lightbox
+ *   - Escape, click-outside, or × button to close
+ *
+ * Drop anywhere on any page. The lightbox is implemented in plain vanilla JS
+ * at the bottom of this file — no React/Preact/Solid hydration needed.
+ *
+ * To swap videos, edit ../data/insuranceVideos.ts.
+ */
+
+import { INSURANCE_VIDEOS } from "../../data/insuranceVideos";
+
+const data = INSURANCE_VIDEOS;
+const thumb = (id: string) => `https://i.ytimg.com/vi/${id}/hqdefault.jpg`;
+---
+
+<section id="insurance-videos" class="ivl">
+  <div class="ivl__inner">
+
+    <header class="ivl__head">
+      <div class="ivl__head-text">
+        <div class="ivl__eyebrow">Featured Expert Series · Insurance</div>
+        <h2 class="ivl__title">Insurance, explained.</h2>
+        <p class="ivl__lede">
+          Practical guidance on HOA and condo insurance from
+          <strong>{data.hostName}</strong> on the{" "}
+          <a href={data.channelHref} target="_blank" rel="noopener noreferrer" class="ivl__link">{data.source}</a>.
+          Click any episode to watch.
+        </p>
+      </div>
+      <a href={data.channelHref} target="_blank" rel="noopener noreferrer" class="ivl__cta-outline">
+        Watch all episodes
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M9 6l6 6-6 6" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+    </header>
+
+    <div class="ivl__grid">
+
+      {/* Featured (most-watched) */}
+      <button
+        type="button"
+        class="ivl__featured"
+        data-video-id={data.featured.id}
+        data-video-title={data.featured.title}
+        aria-label={`Play: ${data.featured.title}`}
+      >
+        <div class="ivl__thumb ivl__thumb--big" style={`background-image: url(${thumb(data.featured.id)});`}>
+          <span class="ivl__thumb-overlay" aria-hidden="true"></span>
+          <span class="ivl__play ivl__play--big" aria-hidden="true">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+          </span>
+          <span class="ivl__duration ivl__duration--big">{data.featured.duration}</span>
+        </div>
+        <div class="ivl__featured-body">
+          <div class="ivl__featured-eyebrow">Most watched</div>
+          <h3 class="ivl__featured-title">{data.featured.title}</h3>
+          <p class="ivl__featured-desc">{data.featured.description}</p>
+          <div class="ivl__meta">
+            <span>{data.featured.views} views</span>
+            <span aria-hidden="true">·</span>
+            <span>{data.featured.posted}</span>
+          </div>
+        </div>
+      </button>
+
+      {/* Right column: 3 stacked cards + callout */}
+      <div class="ivl__sidebar">
+
+        {data.more.map((v) => (
+          <button
+            type="button"
+            class="ivl__row"
+            data-video-id={v.id}
+            data-video-title={v.title}
+            aria-label={`Play: ${v.title}`}
+          >
+            <div class="ivl__row-thumb">
+              <div class="ivl__thumb" style={`background-image: url(${thumb(v.id)});`}>
+                <span class="ivl__thumb-overlay" aria-hidden="true"></span>
+                <span class="ivl__play" aria-hidden="true">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+                </span>
+                <span class="ivl__duration">{v.duration}</span>
+              </div>
+            </div>
+            <div class="ivl__row-body">
+              <h4 class="ivl__row-title">{v.title}</h4>
+              <div class="ivl__meta ivl__meta--sm">
+                <span>{v.views} views</span>
+                <span aria-hidden="true">·</span>
+                <span>{v.posted}</span>
+              </div>
+            </div>
+          </button>
+        ))}
+
+        <div class="ivl__callout">
+          <div class="ivl__callout-eyebrow">Have a question about your coverage?</div>
+          <p class="ivl__callout-body">
+            Edison handles{" "}
+            <a href="/services/condo-management/" class="ivl__callout-inline">master policy coordination, COI tracking, and claims advocacy</a>{" "}
+            as part of every engagement.
+          </p>
+          <a href="/contact/" class="ivl__callout-cta">
+            Talk to your Edison manager
+            <svg width="11" height="11" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M9 6l6 6-6 6" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<style>
+  /* ---------- Section shell ---------- */
+  .ivl {
+    background: #fff;
+    padding: 96px 48px;
+    border-top: 1px solid var(--border-hairline);
+    scroll-margin-top: 24px;
+  }
+  .ivl__inner {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  /* ---------- Header row ---------- */
+  .ivl__head {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-bottom: 40px;
+  }
+  .ivl__head-text { max-width: 720px; }
+  .ivl__eyebrow {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 12.5px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--edison-teal-dark);
+    margin-bottom: 12px;
+  }
+  .ivl__title {
+    font-family: var(--font-display);
+    font-weight: 800;
+    font-size: 38px;
+    line-height: 1.12;
+    letter-spacing: -0.02em;
+    color: var(--edison-navy);
+    margin: 0 0 14px;
+  }
+  .ivl__lede {
+    font-family: var(--font-body);
+    font-size: 17px;
+    line-height: 1.6;
+    color: var(--edison-text-body);
+    margin: 0;
+  }
+  .ivl__lede strong { color: var(--edison-navy); }
+  .ivl__link {
+    color: var(--edison-teal-dark);
+    font-weight: 600;
+    text-decoration: none;
+    border-bottom: 1px solid var(--edison-teal-dark);
+  }
+  .ivl__cta-outline {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 14px;
+    color: var(--edison-teal-dark);
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 20px;
+    border-radius: 8px;
+    border: 1.5px solid var(--edison-teal-dark);
+    white-space: nowrap;
+    transition: background 180ms;
+  }
+  .ivl__cta-outline:hover { background: var(--edison-teal-pale); }
+
+  /* ---------- Main grid ---------- */
+  .ivl__grid {
+    display: grid;
+    grid-template-columns: 1.55fr 1fr;
+    gap: 24px;
+    align-items: start;
+  }
+
+  /* ---------- Featured card ---------- */
+  .ivl__featured {
+    all: unset;
+    display: block;
+    cursor: pointer;
+    background: #fff;
+    border: 1px solid var(--border-hairline);
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: var(--shadow-xs);
+    transition: transform 220ms, box-shadow 220ms;
+  }
+  .ivl__featured:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-md);
+  }
+  .ivl__featured-body { padding: 26px 28px 28px; }
+  .ivl__featured-eyebrow {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 11.5px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--edison-teal-dark);
+    margin-bottom: 10px;
+  }
+  .ivl__featured-title {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 26px;
+    line-height: 1.22;
+    letter-spacing: -0.01em;
+    color: var(--edison-navy);
+    margin: 0 0 12px;
+  }
+  .ivl__featured-desc {
+    font-family: var(--font-body);
+    font-size: 15px;
+    line-height: 1.6;
+    color: var(--edison-text-body);
+    margin: 0 0 16px;
+  }
+
+  /* ---------- Thumb (shared) ---------- */
+  .ivl__thumb {
+    position: relative;
+    width: 100%;
+    padding-top: 56.25%;
+    background-color: var(--edison-navy-dark);
+    background-size: cover;
+    background-position: center;
+    overflow: hidden;
+  }
+  .ivl__thumb-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(0,0,0,0) 55%, rgba(0,0,0,0.55) 100%);
+  }
+  .ivl__play {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 44px;
+    height: 44px;
+    border-radius: 22px;
+    background: var(--edison-teal);
+    color: var(--edison-navy);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.35);
+  }
+  .ivl__play--big {
+    width: 72px;
+    height: 72px;
+    border-radius: 36px;
+  }
+  .ivl__duration {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    background: rgba(0,0,0,0.85);
+    color: #fff;
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: 11.5px;
+    padding: 3px 6px;
+    border-radius: 4px;
+    letter-spacing: 0.01em;
+  }
+  .ivl__duration--big {
+    font-size: 13px;
+    padding: 4px 8px;
+  }
+
+  /* ---------- Meta row ---------- */
+  .ivl__meta {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-family: var(--font-body);
+    font-size: 13px;
+    color: var(--edison-gray-mid);
+  }
+  .ivl__meta--sm {
+    font-size: 11.5px;
+    gap: 6px;
+  }
+
+  /* ---------- Sidebar ---------- */
+  .ivl__sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  /* ---------- Sidebar row card ---------- */
+  .ivl__row {
+    all: unset;
+    cursor: pointer;
+    display: grid;
+    grid-template-columns: 150px 1fr;
+    gap: 14px;
+    align-items: center;
+    background: #fff;
+    border: 1px solid var(--border-hairline);
+    border-radius: 10px;
+    padding: 10px;
+    transition: background 180ms, border-color 180ms;
+  }
+  .ivl__row:hover {
+    background: var(--edison-teal-pale);
+    border-color: var(--edison-teal);
+  }
+  .ivl__row-thumb {
+    border-radius: 6px;
+    overflow: hidden;
+  }
+  .ivl__row-body {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    padding-right: 4px;
+  }
+  .ivl__row-title {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 1.32;
+    letter-spacing: -0.005em;
+    color: var(--edison-navy);
+    margin: 0;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  /* ---------- Callout card ---------- */
+  .ivl__callout {
+    margin-top: 4px;
+    background: var(--bg-3);
+    border: 1px solid var(--border-hairline);
+    border-radius: 10px;
+    padding: 20px 22px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .ivl__callout-eyebrow {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 11px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--edison-teal-dark);
+  }
+  .ivl__callout-body {
+    font-family: var(--font-body);
+    font-size: 13.5px;
+    line-height: 1.55;
+    color: var(--edison-text-body);
+    margin: 0;
+  }
+  .ivl__callout-inline {
+    color: var(--edison-teal-dark);
+    font-weight: 600;
+    text-decoration: none;
+    border-bottom: 1px solid var(--edison-teal-dark);
+  }
+  .ivl__callout-cta {
+    margin-top: 4px;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    align-self: flex-start;
+    padding: 10px 18px;
+    border-radius: 8px;
+    background: var(--edison-teal);
+    color: var(--edison-navy);
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 13.5px;
+    text-decoration: none;
+    transition: filter 180ms;
+  }
+  .ivl__callout-cta:hover { filter: brightness(0.95); }
+
+  /* ---------- Responsive ---------- */
+  @media (max-width: 900px) {
+    .ivl { padding: 64px 24px; }
+    .ivl__title { font-size: 32px; }
+    .ivl__grid { grid-template-columns: 1fr; }
+    .ivl__featured-title { font-size: 22px; }
+  }
+  @media (max-width: 520px) {
+    .ivl__row { grid-template-columns: 120px 1fr; }
+    .ivl__row-title { font-size: 13px; }
+  }
+</style>
+
+<script>
+  /**
+   * YouTube lightbox controller.
+   *
+   * Wires up every [data-video-id] button to open a fixed-position modal
+   * with an autoplaying YouTube iframe. The iframe is created on open and
+   * destroyed on close (most reliable way to stop playback without the
+   * YouTube Player API).
+   */
+  (function () {
+    const triggers = document.querySelectorAll<HTMLButtonElement>("[data-video-id]");
+    if (!triggers.length) return;
+
+    let overlay: HTMLDivElement | null = null;
+    let lastFocus: HTMLElement | null = null;
+    let prevOverflow = "";
+
+    const closeLightbox = () => {
+      if (!overlay) return;
+      overlay.remove();
+      overlay = null;
+      document.body.style.overflow = prevOverflow;
+      document.removeEventListener("keydown", onKey);
+      if (lastFocus) lastFocus.focus();
+    };
+
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === "Escape") closeLightbox();
+    };
+
+    const openLightbox = (videoId: string, title: string, trigger: HTMLElement) => {
+      lastFocus = trigger;
+      prevOverflow = document.body.style.overflow;
+      document.body.style.overflow = "hidden";
+
+      overlay = document.createElement("div");
+      overlay.className = "ivl-lightbox";
+      overlay.setAttribute("role", "dialog");
+      overlay.setAttribute("aria-modal", "true");
+      overlay.setAttribute("aria-label", title);
+
+      overlay.innerHTML = `
+        <button class="ivl-lightbox__close" type="button" aria-label="Close video">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+        </button>
+        <div class="ivl-lightbox__inner">
+          <div class="ivl-lightbox__frame">
+            <iframe
+              src="https://www.youtube.com/embed/${videoId}?autoplay=1&rel=0&modestbranding=1"
+              title="${title.replace(/"/g, "&quot;")}"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowfullscreen
+            ></iframe>
+          </div>
+          <div class="ivl-lightbox__caption">${title}</div>
+        </div>
+      `;
+
+      overlay.addEventListener("click", (e) => {
+        if (e.target === overlay) closeLightbox();
+      });
+      overlay.querySelector(".ivl-lightbox__close")!.addEventListener("click", closeLightbox);
+      document.addEventListener("keydown", onKey);
+      document.body.appendChild(overlay);
+
+      (overlay.querySelector(".ivl-lightbox__close") as HTMLButtonElement | null)?.focus();
+    };
+
+    triggers.forEach((btn) => {
+      btn.addEventListener("click", () => {
+        const id = btn.dataset.videoId;
+        const title = btn.dataset.videoTitle || "";
+        if (!id) return;
+        openLightbox(id, title, btn);
+      });
+    });
+  })();
+</script>
+
+<style is:global>
+  /* Lightbox styles are global because the overlay is appended to <body>,
+     outside of this component's scoped CSS scope. */
+  .ivl-lightbox {
+    position: fixed;
+    inset: 0;
+    z-index: 1000;
+    background: rgba(15, 29, 51, 0.92);
+    -webkit-backdrop-filter: blur(8px);
+            backdrop-filter: blur(8px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 32px;
+    animation: ivl-lightbox-in 180ms ease-out;
+  }
+  @keyframes ivl-lightbox-in {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+  }
+  .ivl-lightbox__close {
+    position: absolute;
+    top: 22px;
+    right: 26px;
+    background: rgba(255,255,255,0.1);
+    border: 1px solid rgba(255,255,255,0.2);
+    color: #fff;
+    width: 44px;
+    height: 44px;
+    border-radius: 22px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    padding: 0;
+    transition: background 180ms;
+  }
+  .ivl-lightbox__close:hover {
+    background: rgba(255,255,255,0.18);
+  }
+  .ivl-lightbox__inner {
+    width: min(1100px, 100%);
+  }
+  .ivl-lightbox__frame {
+    position: relative;
+    padding-top: 56.25%;
+    background: #000;
+    border-radius: 14px;
+    overflow: hidden;
+    box-shadow: 0 30px 80px rgba(0,0,0,0.5);
+  }
+  .ivl-lightbox__frame iframe {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+  }
+  .ivl-lightbox__caption {
+    margin-top: 16px;
+    font-family: var(--font-display), "Helvetica Neue", Arial, sans-serif;
+    font-weight: 600;
+    font-size: 16px;
+    color: #fff;
+    text-align: center;
+    letter-spacing: -0.005em;
+  }
+  @media (max-width: 520px) {
+    .ivl-lightbox { padding: 16px; }
+    .ivl-lightbox__close { top: 12px; right: 12px; }
+  }
+</style>
