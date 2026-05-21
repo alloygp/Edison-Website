@@ -98,9 +98,9 @@ const SERVICES_CONTENT = {
       applies: "HOA + Condo Associations"
     },
     stats: [
-      { value: "Dept", caption: "Dedicated covenant department, not the manager's overtime work." },
-      { value: "Address", caption: "Inspectors see addresses, not names. Bias-resistant by design." },
-      { value: "Quarterly", caption: "Board reporting cadence, not a buried line in the monthly minutes." }
+      { value: "Dedicated", caption: "Dedicated covenant department, not the manager's overtime work." },
+      { value: "Impartial", caption: "Inspectors see addresses, not names. Bias-resistant by design." },
+      { value: "Visible", caption: "Monthly reports in your board portal, not buried in meeting minutes." }
     ],
     included: {
       title: "Full-cycle covenant work with the documentation boards actually need",
@@ -135,7 +135,7 @@ const SERVICES_CONTENT = {
       steps: [
         { title: "Inspection", body: "Routine drive-through or report-based inspection. Address recorded, photographed, logged." },
         { title: "Courtesy Notice", body: "First touch is a courtesy reminder, friendly, specific, with a clear cure window. Most violations resolve here." },
-        { title: "Formal Notice & Hearing", body: "If unresolved, formal notice follows with hearing rights per FL statute. Edison handles scheduling, minutes, and documentation." },
+        { title: "Formal Notice", body: "If unresolved, a formal notice follows per FL statute. Edison handles the documentation, timeline, and board communication." },
         { title: "Resolution or Escalation", body: "Most cases close at the hearing stage. Cases that don't are escalated to the association's attorney with the full file." }
       ]
     },

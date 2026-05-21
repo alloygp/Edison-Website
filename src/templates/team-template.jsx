@@ -68,7 +68,7 @@ function TeamPageA({ content }) {
       {/* Leadership */}
       <section style={{ background: "var(--edison-teal-pale)", padding: "64px 48px" }}>
         <div style={{ maxWidth: 1200, margin: "0 auto" }}>
-          <SectionHeading eyebrow="Leadership" title="Who's at the top, and why it matters"/>
+          <SectionHeading eyebrow="Leadership" title="The people behind the partnership"/>
           <div className="team-leaders-grid" style={{
             marginTop: 36,
             display: "grid",
@@ -351,7 +351,7 @@ function TeamPageB({ content }) {
    SAMPLE CONTENT, Placeholder team
    ============================================================ */
 const TEAM_CONTENT = {
-  intro: "Edison is small on purpose. The manager who learns your community in year one is the same one you'll work with in year three. Our back-office departments are specialists, not pinch-hitters. Photos shown are placeholders until real headshots are sourced.",
+  intro: "Edison is small on purpose. The manager who learns your community in year one is the same one you'll work with in year three. Our back-office departments are dedicated specialists, not managers wearing another hat.",
   team: [
     {
       name: "Tracy Durham",

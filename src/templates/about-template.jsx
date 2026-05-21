@@ -257,7 +257,7 @@ const ABOUT_CONTENT = {
     "Volume-chasing, portfolio growth is opt-in, never forced",
     "Manager reports, replaced by the live Action Item List",
     "Punitive fine culture, correction first, fines as a last resort",
-    "Overloaded managers, 8–10 communities maximum, no exceptions"
+    "Overloaded managers. Edison's sweet spot is 8–10 communities per manager, not the 15+ industry standard."
   ],
   valuesImage: "/assets/img-11.jpg",
   teamIntro: [

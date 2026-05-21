@@ -306,7 +306,7 @@ const SUB_SERVICES_CONTENT = {
       { label: "Milestone Inspections" }
     ],
     parent: { label: "Condo Management", href: "/services/condo-management/" },
-    eyebrow: "Sub-Service · Condo Management",
+    eyebrow: "compliance · Condo Management",
     phone: "(407) 317-5252",
     hero: {
       title: "Milestone inspection coordination under Florida SB-4D.",
@@ -322,7 +322,7 @@ const SUB_SERVICES_CONTENT = {
     context: {
       title: "What the milestone inspection requirement actually is",
       paragraphs: [
-        "Florida Senate Bill 4D created the milestone inspection requirement in response to the Champlain Towers collapse. It applies to condominium and cooperative buildings three habitable stories or more. The inspection itself has two phases: Phase 1 is a visual structural assessment by a licensed engineer or architect. If Phase 1 identifies substantial structural deterioration, Phase 2 is a more invasive inspection.",
+        "Florida Senate Bill 4D created the milestone inspection requirement in response to the Champlain Towers collapse. It applies to condominium and cooperative buildings three habitable stories or more. The inspection itself has two phases: Phase 1 is a visual structural assessment by a licensed engineer or architect. If Phase 1 identifies substantial structural deterioration, Phase 2 requires what the statute calls a more invasive inspection, meaning a deeper, hands-on assessment of the affected areas.",
         "The original SB-4D deadlines have largely passed for existing buildings, but the requirement is recurring, every 10 years after the initial milestone inspection. New buildings face their first milestone inspection at the 30-year mark (25 in coastal counties). Edison's milestone inspection coordination is built to run this end-to-end without requiring board members to learn structural engineering."
       ]
     },
@@ -361,9 +361,9 @@ const SUB_SERVICES_CONTENT = {
       { q: "Who files the report?", a: "The engineer files with the local building department per statute; Edison coordinates the filing and tracks acknowledgment. The board receives a copy of the filed report and the building department's response." }
     ],
     related: [
-      { kind: "Parent Pillar", title: "Condo Management", body: "Full-service management for FL condominium associations under Ch. 718.", href: "/services/condo-management/" },
-      { kind: "Sibling Sub-Service", title: "Structural Integrity Reserve Study (SIRS)", body: "The reserve study that pairs with the milestone inspection under SB-4D.", href: "/services/condo-management/structural-integrity-reserve-study/" },
-      { kind: "Educational", title: "HOA Reserve Study Florida: What Boards Need to Know", body: "How reserve studies work, what they cost, and how Edison coordinates the process.", href: "/blog/hoa-reserve-study-guide/" }
+      { kind: "Full service", title: "Condo Management", body: "Full-service management for FL condominium associations under Ch. 718.", href: "/services/condo-management/" },
+      { kind: "also required", title: "Structural Integrity Reserve Study (SIRS)", body: "The reserve study that pairs with the milestone inspection under SB-4D.", href: "/services/condo-management/structural-integrity-reserve-study/" },
+      { kind: "guide", title: "HOA Reserve Study Florida: What Boards Need to Know", body: "How reserve studies work, what they cost, and how Edison coordinates the process.", href: "/blog/hoa-reserve-study-guide/" }
     ],
     cta: {
       title: "Milestone compliance, run by people who do this every month.",
@@ -380,7 +380,7 @@ const SUB_SERVICES_CONTENT = {
       { label: "Structural Integrity Reserve Study" }
     ],
     parent: { label: "Condo Management", href: "/services/condo-management/" },
-    eyebrow: "Sub-Service · Condo Management",
+    eyebrow: "compliance · Condo Management",
     phone: "(407) 317-5252",
     hero: {
       title: "Structural Integrity Reserve Study (SIRS) coordination.",
@@ -439,9 +439,9 @@ const SUB_SERVICES_CONTENT = {
       { q: "How does Edison handle this differently?", a: "We treat the SIRS as a multi-year capital planning exercise, not a one-time filing. Engineer selection, document prep, board education, funding plan integration, and ongoing reserve banking strategy are all coordinated by the same accounting team responsible for your monthly financials." }
     ],
     related: [
-      { kind: "Sibling Sub-Service", title: "Milestone Inspection Coordination", body: "The structural condition assessment that often precedes the SIRS.", href: "/services/condo-management/milestone-inspections/" },
-      { kind: "Parent Pillar", title: "Condo Management", body: "Full-service management for Florida condominium associations under Ch. 718.", href: "/services/condo-management/" },
-      { kind: "Educational", title: "HOA Reserve Study Florida: What Boards Need to Know", body: "How reserve studies work, what they cost, and how Edison coordinates the process.", href: "/blog/hoa-reserve-study-guide/" }
+      { kind: "also required", title: "Milestone Inspection Coordination", body: "The structural condition assessment that often precedes the SIRS.", href: "/services/condo-management/milestone-inspections/" },
+      { kind: "full service", title: "Condo Management", body: "Full-service management for Florida condominium associations under Ch. 718.", href: "/services/condo-management/" },
+      { kind: "guide", title: "HOA Reserve Study Florida: What Boards Need to Know", body: "How reserve studies work, what they cost, and how Edison coordinates the process.", href: "/blog/hoa-reserve-study-guide/" }
     ],
     cta: {
       title: "SIRS compliance is a project, not a panic.",

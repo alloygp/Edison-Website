@@ -365,7 +365,7 @@ const EDUCATION_CONTENT = {
   intro: "Edison Education is our free library of articles, guides, and Florida compliance updates, written specifically for HOA, condo, and townhome board members. Every piece is grounded in the actual statute, the actual board pain point, and the actual decision boards have to make.",
   topics: [
     {
-      label: "For Boards",
+      label: "Board governance",
       title: "Practical guides for volunteer board members",
       body: "Governance fundamentals, document hierarchy, enforcement boundaries, and decision-making frameworks for boards who didn't sign up to be lawyers.",
       color: "#FAF4ED",

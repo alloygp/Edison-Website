@@ -102,6 +102,7 @@ function PillarPageA({ content }) {
         title={content.subServices.title}
         sub={content.subServices.sub}
         items={content.subServices.items}
+        itemLabel={content.subServices.itemLabel}
       />
 
       <FeatureGrid
@@ -254,6 +255,7 @@ function PillarPageB({ content }) {
         title={content.subServices.title}
         sub={content.subServices.sub}
         items={content.subServices.items}
+        itemLabel={content.subServices.itemLabel}
       />
 
       <NumberedSteps

@@ -591,7 +591,7 @@ function CrossPillarCard({ eyebrow = "Different community type?",
    ============================================================ */
 function SubServiceNav({ eyebrow = "Go deeper",
                         title = "Sub-services under this pillar",
-                        sub, items, background = "#fff" }) {
+                        sub, items, background = "#fff", itemLabel = "Sub-Service" }) {
   return (
     <section className="ts-sub-service-nav" style={{ background, padding: "88px 48px" }}>
       <div style={{ maxWidth: 1200, margin: "0 auto" }}>
@@ -640,7 +640,7 @@ function SubServiceNav({ eyebrow = "Go deeper",
                 fontFamily: "var(--font-display)", fontWeight: 700, fontSize: 11,
                 letterSpacing: "0.14em", textTransform: "uppercase",
                 color: "var(--edison-teal-dark)"
-              }}>Sub-Service</div>
+              }}>{itemLabel}</div>
               <h3 style={{
                 fontFamily: "var(--font-display)", fontWeight: 700, fontSize: 19,
                 lineHeight: 1.3, color: "var(--edison-navy)", margin: 0

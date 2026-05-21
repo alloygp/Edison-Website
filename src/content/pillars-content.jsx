@@ -175,8 +175,9 @@ const PILLAR_CONTENT = {
       ]
     },
     subServices: {
-      title: "Sub-services under Condo Management",
-      sub: "Two statute-specific sub-services live below this pillar. Reachable from here, not from the top nav, because most boards land on the pillar page first.",
+      title: "Florida Condo Compliance",
+      sub: "Florida law requires specific inspections and reserve studies for condos 3+ stories. Edison coordinates both so your board stays compliant without managing the process alone.",
+      itemLabel: "Florida Statute",
       items: [
         { title: "Milestone Inspection Coordination", body: "FL SB-4D compliance for condos 30+ years old (25+ coastal). Engineer sourcing, scope review, board reporting.", href: "/services/condo-management/milestone-inspections/" },
         { title: "Structural Integrity Reserve Study (SIRS)", body: "SIRS coordination for condos 3+ stories. Engineer engagement, draft review, funding plan integration.", href: "/services/condo-management/structural-integrity-reserve-study/" }
@@ -206,9 +207,9 @@ const PILLAR_CONTENT = {
       sub: "From first conversation to a multi-year operating partnership, with statutory compliance front and center.",
       steps: [
         { title: "Discovery & Compliance Audit", body: "Edison reviews governing documents, current reserve study, SIRS status, milestone inspection history, and capital pipeline before we quote." },
-        { title: "Transition Experience", body: "60–90 day onboarding with COO supervision. Records, vendors, engineering relationships, and homeowner introduction." },
-        { title: "Day 1 & First 90 Days", body: "Your dedicated manager on the ground. SB-4D calendar populated. Reserve banking reviewed. Action Item List live." },
-        { title: "Ongoing Partnership", body: "Monthly financials, board meetings, statutory deadline tracking, capital project sequencing. Annual renewal." }
+        { title: "Transition Experience", body: "60–90 day onboarding with COO supervision. Records, vendors, engineering relationships, and the Meet Your Management event for homeowners." },
+        { title: "Day 1 & First 90 Days", body: "Your dedicated manager assigned and engaged. SB-4D calendar populated. Reserve banking reviewed. Action Item List live." },
+        { title: "Ongoing Partnership", body: "Monthly financials, board meetings, statutory deadline tracking, capital project sequencing." }
       ]
     },
     midCta: {

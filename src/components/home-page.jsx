@@ -499,7 +499,7 @@ function HomePage() {
       <SolutionsSplit
         eyebrow="Property Types"
         title="Customized Management Solutions"
-        sub="Every community is different. Whether you manage a single-family neighborhood or a high-rise condominium, Edison tailors its approach to match your association's unique needs, governing documents, and long-term goals."
+        sub="Every community is different. Whether yours is a single-family neighborhood or a high-rise condominium, Edison tailors its approach to match your association's unique needs, governing documents, and long-term goals."
         options={[
           {
             title: "Condominium Management",

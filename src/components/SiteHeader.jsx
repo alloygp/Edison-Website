@@ -60,7 +60,7 @@ const DEFAULT_NAV = [
     mega: true,
     columns: [
       {
-        title: "For Boards",
+        title: "Board governance",
         items: [
           { label: "HOA Bylaws vs CC&Rs", href: "/blog/hoa-bylaws-vs-ccrs/", desc: "Governing document hierarchy" }
         ]
@@ -633,7 +633,7 @@ function SiteHeader({
 
             {/* Desktop nav */}
             <nav aria-label="Primary" className="edison-desktop-nav"
-                 style={{ flex: 1, display: "flex", justifyContent: "center", gap: 2 }}>
+                 style={{ flex: 1, display: "flex", justifyContent: "center", alignItems: "center", gap: 2 }}>
               {nav.map((item, i) => {
                 const hasMenu = item.mega || (item.children && item.children.length);
                 const isOpen    = openIdx === i;

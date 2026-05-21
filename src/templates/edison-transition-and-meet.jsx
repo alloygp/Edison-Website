@@ -165,7 +165,7 @@ function MeetYourManagementPage() {
           <p style={{
             fontFamily: "var(--font-body)", fontSize: 19, lineHeight: 1.55,
             color: "var(--edison-text-body)", margin: "0 auto", maxWidth: 740
-          }}>Before every cutover from a previous management company, Edison hosts a community-wide event where homeowners meet the new manager, the accounting specialist, the enforcement coordinator, and the leadership team in person. Often with an ice cream truck. Always with answers.</p>
+          }}>Before every transition from a previous management company, Edison hosts a community-wide event where homeowners meet the new manager, the accounting specialist, the enforcement coordinator, and the leadership team in person. Often with an ice cream truck. Always with answers.</p>
         </div>
       </section>
 
@@ -174,8 +174,8 @@ function MeetYourManagementPage() {
                       display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 18 }}>
           {[
             { title: "Meet the People", body: "Homeowners see the actual humans running their community, names, faces, direct extensions. Not 'our team.'" },
-            { title: "Ask Anything", body: "Q&A on the spot, with the manager, the accounting lead, and the enforcement coordinator all in the room." },
-            { title: "Set the Tone", body: "The event signals Edison's standard: a real person answers, communication is open, the board has nothing to hide." }
+            { title: "Ask Anything", body: "Q&A on the spot, with the manager, the accounting lead, and the enforcement coordinator all face to face." },
+            { title: "Set the Tone", body: "The event signals Edison's standard: a real person answers, communication is open, and transparency starts on day one." }
           ].map((c, i) => (
             <article key={i} style={{
               background: "#fff", borderRadius: 14, padding: "28px 28px",
@@ -201,14 +201,14 @@ function MeetYourManagementPage() {
         title="Why Edison does this"
         paragraphs={[
           "Most management company transitions fail at the homeowner layer. The board signs a contract. Records get transferred. The accounting cuts over. And then a form letter goes out to homeowners, 'your management company is now ABC', and the questions and confusion start showing up at the new company's front desk for the next six months.",
-          "Edison handles the cutover differently. The Meet Your Management event is held in the community, typically in a clubhouse or common area, two to four weeks before the official cutover. Tracy attends. The dedicated manager attends. The accounting specialist and enforcement coordinator attend. Homeowners come, ask their questions, see the people, and leave knowing who to call. By cutover day, the new is already familiar.",
-          "Often there's an ice cream truck. It's the most Edison signature detail of an Edison signature program, warm, casual, anti-corporate, and intentional. Boards remember the event. Homeowners remember the event. Anyone considering whether Edison runs a transition seriously can stop wondering."
+          "Edison handles the transition differently. The Meet Your Management event is held in the community, typically in a clubhouse or common area, two to four weeks before the official transition. Tracy attends. The dedicated manager attends. The accounting specialist and enforcement coordinator attend. Homeowners come, ask their questions, see the people, and leave knowing who to call. By transition day, the new is already familiar.",
+          "Often there's an ice cream truck. It's the most Edison signature detail of an Edison signature program: warm, casual, anti-corporate, and intentional. Boards remember the event. Homeowners remember the event. If you're wondering whether Edison takes transitions seriously, this is your answer."
         ]}
       />
 
       <PullQuote
         background="var(--edison-teal-pale)"
-        quote="Edison's Meet Your Management event was the smartest thing we've seen any management company do. By cutover day everyone knew who to call, what changed, and what didn't."
+        quote="Edison's Meet Your Management event was the smartest thing we've seen any management company do. By transition day everyone knew who to call, what changed, and what didn't."
         attribution="Diane K."
         role="Board Member"
         community="Townhome HOA · 142 units · Stonebrook"
@@ -217,7 +217,7 @@ function MeetYourManagementPage() {
       <FinalCTA
         eyebrow="Part of every Edison transition"
         title="Switching to Edison? The event comes standard."
-        body="The Meet Your Management event is included in every Edison transition. No upcharge, no opt-out from the homeowners' side. It's how we set the tone for the partnership your board is buying into."
+        body="The Meet Your Management event is included in every Edison transition. No upcharge, no fine print. It's how we set the tone for the partnership ahead."
         primary={{ label: "Request a Proposal", href: "/request-a-proposal/" }}
         secondary={{ label: "Read about The Edison Transition", href: "/about/the-edison-transition/" }}
       />

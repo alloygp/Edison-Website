@@ -179,6 +179,7 @@ function ProposalPageA() {
                     <label style={labelStyle}>Role on Board</label>
                     <select style={inputStyle} value={form.role} onChange={(e) => set("role", e.target.value)}>
                       <option>Board President</option>
+                      <option>Board Vice President</option>
                       <option>Board Treasurer</option>
                       <option>Board Secretary</option>
                       <option>Board Member</option>
@@ -453,6 +454,7 @@ function ProposalPageB() {
                 <label style={labelStyle}>Role on Board</label>
                 <select style={inputStyle}>
                   <option>Board President</option>
+                  <option>Board Vice President</option>
                   <option>Board Treasurer</option>
                   <option>Board Secretary</option>
                   <option>Board Member</option>
