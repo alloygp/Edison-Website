@@ -657,14 +657,14 @@ function SiteHeader({
                        onMouseLeave={() => { setHoveredIdx(-1); if (hasMenu) scheduleClose(); }}>
                     <div style={{ position: "relative" }}>
                       {item.mega ? (
-                        <a href={item.href} aria-haspopup="true" aria-expanded={isOpen}
-                           onClick={(e) => { e.preventDefault(); isOpen ? scheduleClose() : openMenu(i); }}
+                        <button aria-haspopup="true" aria-expanded={isOpen}
+                           onClick={() => { isOpen ? scheduleClose() : openMenu(i); }}
                            style={{
                           display: "inline-flex", alignItems: "center", gap: 6,
                           padding: "26px 14px",
                           fontFamily: "var(--font-display)", fontWeight: 600, fontSize: 14.5,
                           color: isOpen || isActive || isHovered ? "var(--edison-teal-dark)" : "var(--edison-navy)",
-                          textDecoration: "none", borderBottom: 0, cursor: "pointer",
+                          background: "transparent", border: 0, cursor: "pointer",
                           transition: "color 140ms"
                         }}>
                           {item.label}
@@ -673,7 +673,7 @@ function SiteHeader({
                             transform: isOpen ? "rotate(180deg)" : "none",
                             transition: "transform 180ms", display: "inline-flex"
                           }}><IconChevronDown/></span>
-                        </a>
+                        </button>
                       ) : (
                         <a href={item.href}
                            aria-haspopup={hasMenu ? "true" : undefined}
