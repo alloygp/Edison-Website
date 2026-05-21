@@ -42,3 +42,45 @@ const { title, description, ogType, ogImage, robots, pageSchema, twitterAuthor, 
   </main>
   <SiteFooter client:idle />
 </BaseLayout>
+
+<script>
+  // Nav open/close — hoisted plain JS, runs independently of React hydration.
+  // This is what makes the mega menus work inside Pastel's proxy, where React
+  // hydration is broken. Mirrors the approach used by the Tidewater site.
+  function initEdisionNav() {
+    const allWrappers = document.querySelectorAll('[data-nav-idx]');
+    if (!allWrappers.length) return;
+
+    allWrappers.forEach(wrapper => {
+      const menu = wrapper.querySelector('[data-mega-menu], .edison-simple-dropdown');
+      let timer: ReturnType<typeof setTimeout>;
+
+      const open = () => {
+        clearTimeout(timer);
+        allWrappers.forEach(w => { if (w !== wrapper) w.classList.remove('nav-is-open'); });
+        wrapper.classList.add('nav-is-open');
+      };
+      const close = () => {
+        timer = setTimeout(() => wrapper.classList.remove('nav-is-open'), 150);
+      };
+
+      wrapper.addEventListener('mouseenter', open);
+      wrapper.addEventListener('mouseleave', close);
+      if (menu) {
+        menu.addEventListener('mouseenter', open);
+        menu.addEventListener('mouseleave', close);
+      }
+    });
+
+    document.addEventListener('mousedown', (e: MouseEvent) => {
+      const header = (e.target as Element)?.closest('header');
+      if (!header) allWrappers.forEach(w => w.classList.remove('nav-is-open'));
+    });
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initEdisionNav);
+  } else {
+    initEdisionNav();
+  }
+</script>
