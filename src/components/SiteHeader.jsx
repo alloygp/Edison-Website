@@ -216,7 +216,7 @@ function FeatureCard({ feature, compact = false }) {
 /* ---------- Mega menu (desktop) ---------- */
 function MegaMenu({ columns, open, onMouseEnter, onMouseLeave }) {
   return (
-    <div role="menu" aria-hidden={!open} onMouseEnter={onMouseEnter} onMouseLeave={onMouseLeave} style={{
+    <div role="menu" aria-hidden={!open} data-mega-menu onMouseEnter={onMouseEnter} onMouseLeave={onMouseLeave} style={{
       position: "absolute", top: "calc(100% + 1px)", left: "50%",
       transform: open ? "translateX(-50%) translateY(0)" : "translateX(-50%) translateY(-8px)",
       width: "min(1200px, calc(100vw - 32px))",
@@ -475,6 +475,35 @@ function SiteHeader({
     return () => document.removeEventListener("mousedown", onClickOutside);
   }, []);
 
+  /* Native mouseenter/mouseleave — bypasses Pastel's React event interception */
+  useEffect(() => {
+    if (!navRef.current) return;
+    const wrappers = navRef.current.querySelectorAll('[data-nav-idx]');
+    const cleanups = [];
+    wrappers.forEach(wrapper => {
+      const idx = parseInt(wrapper.dataset.navIdx, 10);
+      const mega = wrapper.querySelector('[data-mega-menu]');
+      let timer;
+      const enter = () => { clearTimeout(timer); clearTimeout(closeTimer.current); setOpenIdx(idx); setHoveredIdx(idx); };
+      const leave = () => { setHoveredIdx(-1); timer = setTimeout(() => setOpenIdx(i => i === idx ? -1 : i), 150); };
+      wrapper.addEventListener('mouseenter', enter);
+      wrapper.addEventListener('mouseleave', leave);
+      if (mega) {
+        mega.addEventListener('mouseenter', enter);
+        mega.addEventListener('mouseleave', leave);
+      }
+      cleanups.push(() => {
+        wrapper.removeEventListener('mouseenter', enter);
+        wrapper.removeEventListener('mouseleave', leave);
+        if (mega) {
+          mega.removeEventListener('mouseenter', enter);
+          mega.removeEventListener('mouseleave', leave);
+        }
+      });
+    });
+    return () => cleanups.forEach(c => c());
+  }, [mounted]);
+
   function openMenu(i)    { clearTimeout(closeTimer.current); setOpenIdx(i); }
   function scheduleClose(){ clearTimeout(closeTimer.current); closeTimer.current = setTimeout(() => setOpenIdx(-1), 140); }
 
@@ -652,9 +681,7 @@ function SiteHeader({
                   : currentPath.startsWith(item.href) ||
                     (item.href === "/edison-education/" && currentPath.startsWith("/blog/"));
                 return (
-                  <div key={i} style={{ position: "static" }}
-                       onMouseEnter={() => { setHoveredIdx(i); if (hasMenu) openMenu(i); }}
-                       onMouseLeave={() => { setHoveredIdx(-1); if (hasMenu) scheduleClose(); }}>
+                  <div key={i} data-nav-idx={i} style={{ position: "static" }}>
                     <div style={{ position: "relative" }}>
                       {item.mega ? (
                         <button aria-haspopup="true" aria-expanded={isOpen}
