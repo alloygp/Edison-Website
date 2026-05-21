@@ -440,6 +440,7 @@ function SiteHeader({
   const [mounted, setMounted]       = useState(false);
   const closeTimer  = useRef(null);
   const lastScrollY = useRef(0);
+  const navRef       = useRef(null);
 
   useEffect(() => { setMounted(true); }, []);
   useEffect(() => { setCurrentPath(window.location.pathname); }, []);
@@ -464,6 +465,14 @@ function SiteHeader({
     }
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
+  useEffect(() => {
+    function onClickOutside(e) {
+      if (navRef.current && !navRef.current.contains(e.target)) setOpenIdx(-1);
+    }
+    document.addEventListener("mousedown", onClickOutside);
+    return () => document.removeEventListener("mousedown", onClickOutside);
   }, []);
 
   function openMenu(i)    { clearTimeout(closeTimer.current); setOpenIdx(i); }
@@ -568,7 +577,7 @@ function SiteHeader({
       {/* Spacer */}
       <div aria-hidden="true" className="edison-header-spacer"/>
 
-      <header style={{
+      <header ref={navRef} style={{
         position: "fixed", top: 0, left: 0, right: 0, zIndex: 60,
         transform: hidden ? "translateY(-100%)" : "translateY(0)",
         transition: "transform 320ms cubic-bezier(.4,0,.2,1)"
@@ -648,7 +657,9 @@ function SiteHeader({
                        onMouseLeave={() => { setHoveredIdx(-1); if (hasMenu) scheduleClose(); }}>
                     <div style={{ position: "relative" }}>
                       {item.mega ? (
-                        <a href={item.href} aria-haspopup="true" aria-expanded={isOpen} style={{
+                        <a href={item.href} aria-haspopup="true" aria-expanded={isOpen}
+                           onClick={(e) => { e.preventDefault(); isOpen ? scheduleClose() : openMenu(i); }}
+                           style={{
                           display: "inline-flex", alignItems: "center", gap: 6,
                           padding: "26px 14px",
                           fontFamily: "var(--font-display)", fontWeight: 600, fontSize: 14.5,
@@ -667,12 +678,14 @@ function SiteHeader({
                         <a href={item.href}
                            aria-haspopup={hasMenu ? "true" : undefined}
                            aria-expanded={hasMenu ? isOpen : undefined}
+                           onClick={hasMenu ? (e) => { e.preventDefault(); isOpen ? scheduleClose() : openMenu(i); } : undefined}
                            style={{
                              display: "inline-flex", alignItems: "center", gap: 6,
                              padding: "26px 14px",
                              fontFamily: "var(--font-display)", fontWeight: 600, fontSize: 14.5,
                              color: isOpen || isActive || isHovered ? "var(--edison-teal-dark)" : "var(--edison-navy)",
                              textDecoration: "none", borderBottom: 0,
+                             cursor: hasMenu ? "pointer" : undefined,
                              transition: "color 140ms"
                            }}>
                           {item.label}
