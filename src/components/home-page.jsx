@@ -502,14 +502,14 @@ function HomePage() {
         sub="Every community is different. Whether yours is a single-family neighborhood or a high-rise condominium, Edison tailors its approach to match your association's unique needs, governing documents, and long-term goals."
         options={[
           {
-            title: "Condominium Management",
-            image: "/assets/img-21.jpg",
-            href: "/services/condo-management/"
-          },
-          {
             title: "Single-Family HOA Management",
             image: "/assets/img-22.jpg",
             href: "/services/hoa-management/single-family/"
+          },
+          {
+            title: "Condominium Management",
+            image: "/assets/img-21.jpg",
+            href: "/services/condo-management/"
           }
         ]}
       />
@@ -547,14 +547,14 @@ function HomePage() {
             category: "Finance & Audit",
             title: "HOA Audit: What It Is, When It's Required, and How to Prepare",
             excerpt: "An HOA audit confirms your community's finances are accurate, transparent, and compliant with Florida law.",
-            image: "/assets/img-accounting.jpg",
+            image: "/assets/blog/hoa-board-members-reviewing-audit.jpg",
             href: "/blog/hoa-audit/"
           },
           {
             category: "Governance",
             title: "HOA Bylaws vs CC&Rs: Key Differences Explained",
             excerpt: "Understanding the difference between HOA bylaws and CC&Rs helps boards make confident, defensible decisions.",
-            image: "/assets/img-17.jpg",
+            image: "/assets/blog/bylaws-vs-ccrs.jpg",
             href: "/blog/hoa-bylaws-vs-ccrs/"
           }
         ]}

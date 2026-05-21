@@ -41,9 +41,17 @@ const SOLUTIONS = {
       { q: "How long does the switch actually take?", a: "Most transitions are complete within 60–90 days from contract signing. The first 30 days focus on records and vendor migration; the second 30 on the Meet Your Management event and homeowner communication; the final stretch on cutover and the live handoff to your dedicated manager." },
       { q: "What if we're mid-contract with our current company?", a: "Most management agreements have a termination clause with 30–90 days notice. Edison's transition team can review your current contract to identify the right termination window and coordinate timing so there's no gap in service." },
       { q: "Will homeowners be confused?", a: "Not if it's handled right. Edison runs a Meet Your Management event before the official cutover, your homeowners meet the new manager, the accounting specialist, and the back-office team in person. By cutover day, everyone knows who to call." },
+      { q: "What is the Meet Your Management event?", a: "A community-wide event Edison hosts on-property before the official cutover — typically in the clubhouse or a common area. Tracy attends. Your dedicated manager attends. The accounting specialist and enforcement coordinator attend. Homeowners come, ask their questions, meet the people, and leave knowing who to call. By transition day, the new team is already familiar. It removes the 'who is this new company' confusion that wrecks most management switches." },
       { q: "What does the transition cost?", a: "Transition coordination is included in Edison's management agreement, no separate onboarding fee, no records digitization charge, and no setup cost beyond the monthly management rate quoted in your proposal." },
-      { q: "What if Edison isn't the right fit?", a: "Our agreements are 12-month terms with clear termination provisions. We don't believe in trapping boards, if Edison isn't a fit at the end of year one, you walk free with your records, your vendor list, and your processes intact." }
+      { q: "What if Edison isn't the right fit?", a: "Our agreements are 12-month terms with clear termination provisions. We don't believe in trapping boards, if Edison isn't a fit at the end of year one, you walk free with your records, your vendor list, and your processes intact." },
+      { q: "What if we're switching from a really difficult situation?", a: "That's exactly what the Edison Transition Experience is built for. We've handled mid-transition rescues from competitors, communities with missing records, communities with vendor disputes, and communities where homeowner trust was eroding. The harder the situation, the more a structured transition matters." }
     ],
+    quote: {
+      quote: "We'd been with our last company nine years and dreaded the switch. Tracy's team handled the records, the vendors, and the homeowner meeting before we even saw a transition invoice. Day one with Edison felt like we'd been with them for years.",
+      attribution: "Board President",
+      role: "HOA · 312 units",
+      community: "Winter Garden, FL"
+    },
     cta: {
       title: "Switching companies doesn't have to be the year's biggest project.",
       body: "Tracy and the Edison team handle the burden, the records, the homeowners, the vendor cutover, so your board stays focused on the community. Request a proposal and see exactly what that looks like for your association."

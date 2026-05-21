@@ -112,6 +112,16 @@ function SolutionPageB({ content }) {
         stats={content.stats}
       />
 
+      {content.quote && (
+        <PullQuote
+          quote={content.quote.quote}
+          attribution={content.quote.attribution}
+          role={content.quote.role}
+          community={content.quote.community}
+          background="#fff"
+        />
+      )}
+
       <FAQ
         eyebrow="FAQ"
         title="Switching questions, answered directly"

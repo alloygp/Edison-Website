@@ -40,7 +40,7 @@ const DEFAULT_NAV = [
           eyebrow: "Featured",
           title: "Switching companies?",
           body: "The Edison Transition Experience handles onboarding, vendor review, and records digitization in 60-90 days.",
-          cta: { label: "Learn more", href: "/about/the-edison-transition/" }
+          cta: { label: "Learn more", href: "/solutions/switch-hoa-management-company/" }
         }
       }
     ]
@@ -98,7 +98,7 @@ const DEFAULT_NAV = [
     children: [
       { label: "About Edison", href: "/about/" },
       { label: "Meet Our Team", href: "/about/meet-our-team/" },
-      { label: "The Edison Transition", href: "/about/the-edison-transition/" },
+      { label: "Switching Companies", href: "/solutions/switch-hoa-management-company/" },
       { label: "Meet Your Management", href: "/about/meet-your-management/" },
       { label: "Testimonials", href: "/testimonials/" },
       { label: "Case Studies", href: "/case-studies/" }

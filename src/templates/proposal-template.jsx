@@ -216,7 +216,7 @@ function ProposalPageA() {
                   </div>
                   <div>
                     <label style={labelStyle}>Number of Units</label>
-                    <input style={inputStyle} value={form.units} onChange={(e) => set("units", e.target.value)} placeholder="e.g. 320"/>
+                    <input style={inputStyle} value={form.units} onChange={(e) => set("units", e.target.value)} placeholder="e.g. 450"/>
                   </div>
                   <div style={{ gridColumn: "1/-1" }}>
                     <label style={labelStyle}>Current Management Company (optional)</label>
@@ -477,7 +477,7 @@ function ProposalPageB() {
               </div>
               <div>
                 <label style={labelStyle}>Number of Units</label>
-                <input style={inputStyle} placeholder="e.g. 320"/>
+                <input style={inputStyle} placeholder="e.g. 450"/>
               </div>
               <div>
                 <label style={labelStyle}>Email</label>

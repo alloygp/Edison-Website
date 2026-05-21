@@ -122,7 +122,7 @@ function ContactForm({ compact = false }) {
       </div>
       <div>
         <label style={labelStyle}>Units (approx)</label>
-        <input style={inputStyle} value={form.units} onChange={(e) => set("units", e.target.value)} placeholder="e.g. 320"/>
+        <input style={inputStyle} value={form.units} onChange={(e) => set("units", e.target.value)} placeholder="e.g. 450"/>
       </div>
       <div>
         <label style={labelStyle}>Email</label>
@@ -198,8 +198,13 @@ function ContactPageA() {
                   fontFamily: "var(--font-body)", fontSize: 14.5, lineHeight: 1.65,
                   color: "var(--edison-text-body)"
                 }}>
-                  Orlando, Florida 32801<br/>
-                  M–F 9am–5pm ET
+                  619 E Colonial Dr<br/>
+                  Orlando, Florida 32803<br/>
+                  M–F 9am–5pm ET<br/>
+                  <a href="/services/hoa-management/orlando/" style={{
+                    color: "var(--edison-teal-dark)", textDecoration: "none", borderBottom: 0,
+                    fontWeight: 600
+                  }}>Serving Orlando & Central Florida ↗</a>
                 </div>
               </div>
 

@@ -27,7 +27,7 @@ const GEO_CONTENT = {
       { title: "Covenant Enforcement", body: "Dedicated enforcement department. Fair, consistent, address-not-name based, protecting property values and homeowner relationships.", href: "/services/covenant-enforcement/" },
       { title: "Single-Family HOA", body: "Tailored management for single-family neighborhood HOAs across Orlando, Ch. 720 compliance, ARC support, common-area planning.", href: "/services/hoa-management/single-family/" },
       { title: "Townhome Associations", body: "Townhome-specific challenges handled, shared roofs, common insurance, party-wall maintenance.", href: "/services/hoa-management/townhome/" },
-      { title: "Switching Companies", body: "The Edison Transition Experience handles records, vendors, and homeowner communication, 60–90 days, end to end.", href: "/about/the-edison-transition/" }
+      { title: "Switching Companies", body: "The Edison Transition Experience handles records, vendors, and homeowner communication, 60–90 days, end to end.", href: "/solutions/switch-hoa-management-company/" }
     ],
     differentiators: [
       { title: "Industry-Low Manager Turnover", body: "Most firms see 30–40% annual turnover. Edison's is a fraction of that." },
@@ -68,7 +68,7 @@ const GEO_CONTENT = {
       { title: "Covenant Enforcement", body: "Dedicated enforcement department, correction-first protocol, address-not-name inspections.", href: "/services/covenant-enforcement/" },
       { title: "Single-Family HOA", body: "Tailored management for Winter Garden's single-family neighborhood HOAs.", href: "/services/hoa-management/single-family/" },
       { title: "Townhome Associations", body: "Building-envelope coordination and master-policy insurance tracking for townhome communities.", href: "/services/hoa-management/townhome/" },
-      { title: "Switching Companies", body: "The Edison Transition Experience runs the 60–90 day onboarding so your board doesn't have to.", href: "/about/the-edison-transition/" }
+      { title: "Switching Companies", body: "The Edison Transition Experience runs the 60–90 day onboarding so your board doesn't have to.", href: "/solutions/switch-hoa-management-company/" }
     ],
     differentiators: [
       { title: "Local Vendor Network", body: "Edison's Winter Garden vendor relationships span landscape, irrigation, pool, and roofing." },
@@ -104,7 +104,7 @@ const GEO_CONTENT = {
       { title: "Covenant Enforcement", body: "Dedicated enforcement department with correction-first protocols.", href: "/services/covenant-enforcement/" },
       { title: "55+ / Active Adult Coverage", body: "Manager portfolios sized for the aging-in-place capital cadence.", href: "/services/hoa-management/single-family/" },
       { title: "Townhome Associations", body: "Building-envelope coordination for Kissimmee's townhome communities.", href: "/services/hoa-management/townhome/" },
-      { title: "Switching Companies", body: "The Edison Transition Experience, 60–90 days, end to end.", href: "/about/the-edison-transition/" }
+      { title: "Switching Companies", body: "The Edison Transition Experience, 60–90 days, end to end.", href: "/solutions/switch-hoa-management-company/" }
     ],
     differentiators: [
       { title: "55+ Community Experience", body: "Edison manages active-adult HOAs with the capital cadence and resident-communication style they require." },
@@ -140,7 +140,7 @@ const GEO_CONTENT = {
       { title: "Covenant Enforcement", body: "Dedicated enforcement department, documented ARC workflow, correction-first.", href: "/services/covenant-enforcement/" },
       { title: "Single-Family HOA", body: "Tailored management for Clermont's single-family communities.", href: "/services/hoa-management/single-family/" },
       { title: "Townhome Associations", body: "Building-envelope coordination for Clermont's townhome developments.", href: "/services/hoa-management/townhome/" },
-      { title: "Switching Companies", body: "The Edison Transition Experience, records, vendors, homeowners.", href: "/about/the-edison-transition/" }
+      { title: "Switching Companies", body: "The Edison Transition Experience, records, vendors, homeowners.", href: "/solutions/switch-hoa-management-company/" }
     ],
     differentiators: [
       { title: "Terrain-Aware Vendor Coordination", body: "Edison adjusts landscape, stormwater, and capital scope for Clermont's actual operating realities." },
@@ -176,7 +176,7 @@ const GEO_CONTENT = {
       { title: "Covenant Enforcement", body: "Documented enforcement workflow, correction-first protocols.", href: "/services/covenant-enforcement/" },
       { title: "Single-Family HOA", body: "Calibrated for established neighborhoods with mature capital plans.", href: "/services/hoa-management/single-family/" },
       { title: "Reserve Study Support", body: "Engineer coordination and funding plan integration for capital-aware boards.", href: "/services/hoa-accounting/reserve-study-support/" },
-      { title: "Switching Companies", body: "The Edison Transition Experience for boards changing management.", href: "/about/the-edison-transition/" }
+      { title: "Switching Companies", body: "The Edison Transition Experience for boards changing management.", href: "/solutions/switch-hoa-management-company/" }
     ],
     differentiators: [
       { title: "Financial Discipline as Default", body: "Reserve banking strategy, audit prep, and budget rigor are standard, not premium add-ons." },
@@ -212,7 +212,7 @@ const GEO_CONTENT = {
       { title: "Reserve Study Support", body: "Engineer coordination and funding plan integration.", href: "/services/hoa-accounting/reserve-study-support/" },
       { title: "Covenant Enforcement", body: "Dedicated enforcement department, documented workflow.", href: "/services/covenant-enforcement/" },
       { title: "HOA Collections", body: "In-house collections to protect cash flow during capital cycles.", href: "/services/hoa-collections/" },
-      { title: "Switching Companies", body: "The Edison Transition Experience, 60–90 days end to end.", href: "/about/the-edison-transition/" }
+      { title: "Switching Companies", body: "The Edison Transition Experience, 60–90 days end to end.", href: "/solutions/switch-hoa-management-company/" }
     ],
     differentiators: [
       { title: "Capital Sequencing Discipline", body: "Edison's accounting team sequences capital against reserve cash flow, no special-assessment surprises." },
@@ -248,7 +248,7 @@ const GEO_CONTENT = {
       { title: "Covenant Enforcement", body: "Dedicated enforcement department with documented workflow.", href: "/services/covenant-enforcement/" },
       { title: "Single-Family HOA", body: "Tailored management for Oviedo single-family communities.", href: "/services/hoa-management/single-family/" },
       { title: "Townhome Associations", body: "Building-envelope coordination for Oviedo townhome communities.", href: "/services/hoa-management/townhome/" },
-      { title: "Switching Companies", body: "The Edison Transition Experience for boards changing companies.", href: "/about/the-edison-transition/" }
+      { title: "Switching Companies", body: "The Edison Transition Experience for boards changing companies.", href: "/solutions/switch-hoa-management-company/" }
     ],
     differentiators: [
       { title: "Responsiveness as Standard", body: "Same-day board returns, monthly inspections, predictable financial cadence." },
@@ -284,7 +284,7 @@ const GEO_CONTENT = {
       { title: "SIRS Coordination", body: "Structural Integrity Reserve Study engineer engagement and funding plan integration.", href: "/services/condo-management/structural-integrity-reserve-study/" },
       { title: "HOA Management", body: "Inland Brevard County HOAs get the same full-service HOA management as the rest of Central Florida.", href: "/services/hoa-management/" },
       { title: "HOA Accounting", body: "Reserve banking and audit-ready books for both condo and HOA communities.", href: "/services/hoa-accounting/" },
-      { title: "Switching Companies", body: "The Edison Transition Experience, 60–90 days end to end.", href: "/about/the-edison-transition/" }
+      { title: "Switching Companies", body: "The Edison Transition Experience, 60–90 days end to end.", href: "/solutions/switch-hoa-management-company/" }
     ],
     differentiators: [
       { title: "Coastal Condo Specialization", body: "SB-4D fluent. Milestone inspection engineer network. SIRS coordination experience." },

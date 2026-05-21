@@ -219,7 +219,7 @@ function MeetYourManagementPage() {
         title="Switching to Edison? The event comes standard."
         body="The Meet Your Management event is included in every Edison transition. No upcharge, no fine print. It's how we set the tone for the partnership ahead."
         primary={{ label: "Request a Proposal", href: "/request-a-proposal/" }}
-        secondary={{ label: "Read about The Edison Transition", href: "/about/the-edison-transition/" }}
+        secondary={{ label: "How switching works", href: "/solutions/switch-hoa-management-company/" }}
       />
     </main>
   );
