@@ -166,8 +166,14 @@ function NumberedSteps({ eyebrow, title, sub, steps, background = "#fff", varian
                 }}>{s.title}</h3>
                 <p style={{
                   fontFamily: "var(--font-body)", fontSize: 14.5, lineHeight: 1.6,
-                  color: "var(--edison-text-body)", margin: 0
+                  color: "var(--edison-text-body)", margin: s.href ? "0 0 10px" : 0
                 }}>{s.body}</p>
+                {s.href && (
+                  <a href={s.href} style={{
+                    fontFamily: "var(--font-display)", fontWeight: 600, fontSize: 13.5,
+                    color: "var(--edison-teal-dark)", textDecoration: "none", borderBottom: 0
+                  }}>Learn more →</a>
+                )}
               </div>
             </article>
           ))}

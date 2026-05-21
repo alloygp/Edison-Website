@@ -207,7 +207,7 @@ const PILLAR_CONTENT = {
       sub: "From first conversation to a multi-year operating partnership, with statutory compliance front and center.",
       steps: [
         { title: "Discovery & Compliance Audit", body: "Edison reviews governing documents, current reserve study, SIRS status, milestone inspection history, and capital pipeline before we quote." },
-        { title: "Transition Experience", body: "60–90 day onboarding with COO supervision. Records, vendors, engineering relationships, and the Meet Your Management event for homeowners." },
+        { title: "Transition Experience", body: "60–90 day onboarding with COO supervision. Records, vendors, engineering relationships, and the Meet Your Management event for homeowners.", href: "/solutions/switch-hoa-management-company/" },
         { title: "Day 1 & First 90 Days", body: "Your dedicated manager assigned and engaged. SB-4D calendar populated. Reserve banking reviewed. Action Item List live." },
         { title: "Ongoing Partnership", body: "Monthly financials, board meetings, statutory deadline tracking, capital project sequencing." }
       ]
