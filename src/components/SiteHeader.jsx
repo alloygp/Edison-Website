@@ -214,9 +214,9 @@ function FeatureCard({ feature, compact = false }) {
 }
 
 /* ---------- Mega menu (desktop) ---------- */
-function MegaMenu({ columns, open }) {
+function MegaMenu({ columns, open, onMouseEnter, onMouseLeave }) {
   return (
-    <div role="menu" aria-hidden={!open} style={{
+    <div role="menu" aria-hidden={!open} onMouseEnter={onMouseEnter} onMouseLeave={onMouseLeave} style={{
       position: "absolute", top: "calc(100% + 1px)", left: "50%",
       transform: open ? "translateX(-50%) translateY(0)" : "translateX(-50%) translateY(-8px)",
       width: "min(1200px, calc(100vw - 32px))",
@@ -687,7 +687,7 @@ function SiteHeader({
                       )}
                       {item.children && !item.mega && <SimpleDropdown items={item.children} open={isOpen}/>}
                     </div>
-                    {item.mega && <MegaMenu columns={item.columns} open={isOpen}/>}
+                    {item.mega && <MegaMenu columns={item.columns} open={isOpen} onMouseEnter={() => openMenu(i)} onMouseLeave={() => scheduleClose()}/>}
                   </div>
                 );
               })}

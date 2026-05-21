@@ -383,8 +383,9 @@ function TrustBadges({ eyebrow, title, sub, badges }) {
         <SectionHeading eyebrow={eyebrow} title={title} sub={sub} align="center"/>
         <div className="ic-trust-badges-grid" style={{
           marginTop: 48,
-          display: "grid",
-          gridTemplateColumns: "repeat(auto-fill, minmax(160px, 1fr))",
+          display: "flex",
+          flexWrap: "wrap",
+          justifyContent: "center",
           gap: 20, alignItems: "center"
         }}>
           {badges.map((b, i) => (
@@ -392,7 +393,7 @@ function TrustBadges({ eyebrow, title, sub, badges }) {
               background: "#fff",
               border: "1px solid var(--border-hairline)",
               borderRadius: 12,
-              width: "100%", height: 100,
+              width: 180, height: 100,
               display: "flex",
               alignItems: "center", justifyContent: "center",
               padding: "14px 18px",
@@ -511,8 +512,7 @@ function ServiceArea({ eyebrow, title, body, cities, mapImg, mapEmbed = false })
           )}
         </div>
         <div style={{
-          width: "100%", aspectRatio: "4 / 3",
-          minHeight: 280,
+          width: "100%", height: 380,
           borderRadius: 16, overflow: "hidden",
           boxShadow: "var(--shadow-md)",
           position: "relative"

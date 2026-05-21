@@ -226,4 +226,4 @@ function MeetYourManagementPage() {
 }
 
 
-export { EdisonTransitionPage, MeetYourManagementPage };
+export { MeetYourManagementPage };

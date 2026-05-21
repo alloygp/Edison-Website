@@ -10,6 +10,10 @@ const PHASE_1_PAGES = [
   { url: "/contact/",                      label: "Contact",                    template: "ContactPageA",  group: "Core" },
   { url: "/request-a-proposal/",           label: "Request a Proposal",         template: "ProposalPageA", group: "Core" },
 
+  /* LANDING HUBS */
+  { url: "/services/",   label: "Services Landing",   template: "ServicesLandingPage",  group: "Core" },
+  { url: "/solutions/",  label: "Solutions Landing",  template: "SolutionsLandingPage", group: "Core" },
+
   /* MAIN PILLARS */
   { url: "/services/hoa-management/",      label: "HOA Management",             template: "PillarPageA",   contentKey: "hoa-management",   group: "Pillars" },
   { url: "/services/condo-management/",    label: "Condo Management",           template: "PillarPageA",   contentKey: "condo-management", group: "Pillars" },
@@ -48,9 +52,7 @@ const PHASE_1_PAGES = [
   { url: "/testimonials/",                  label: "Testimonials",            template: "TestimonialsPageB", group: "Trust & Branded" },
   { url: "/case-studies/",                  label: "Case Studies",            template: "CaseStudiesPageA",  group: "Trust & Branded" },
   { url: "/edison-education/",              label: "Edison Education",        template: "EducationHubA",     group: "Trust & Branded" },
-  { url: "/about/wattson/",                 label: "WATTSON AI",              template: "WattsonPageA",      group: "Trust & Branded" },
   { url: "/about/meet-our-team/",           label: "Meet Our Team",           template: "TeamPageA",         group: "Trust & Branded" },
-  { url: "/about/the-edison-transition/",   label: "The Edison Transition",   template: "EdisonTransitionPage", group: "Trust & Branded" },
   { url: "/about/meet-your-management/",    label: "Meet Your Management",    template: "MeetYourManagementPage", group: "Trust & Branded" },
 
   /* RESOURCES */
