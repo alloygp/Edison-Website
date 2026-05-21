@@ -214,11 +214,10 @@ function FeatureCard({ feature, compact = false }) {
 }
 
 /* ---------- Mega menu (desktop) ---------- */
-function MegaMenu({ columns, open, onMouseEnter, onMouseLeave }) {
+function MegaMenu({ columns }) {
   return (
-    <div role="menu" aria-hidden={!open} data-mega-menu onMouseEnter={onMouseEnter} onMouseLeave={onMouseLeave} style={{
+    <div role="menu" data-mega-menu className="edison-mega-menu" style={{
       position: "absolute", top: "calc(100% + 1px)", left: "50%",
-      transform: open ? "translateX(-50%) translateY(0)" : "translateX(-50%) translateY(-8px)",
       width: "min(1200px, calc(100vw - 32px))",
       background: "#fff",
       border: "1px solid var(--border-hairline)",
@@ -227,9 +226,7 @@ function MegaMenu({ columns, open, onMouseEnter, onMouseLeave }) {
       boxShadow: "0 18px 48px rgba(15,29,51,.14)",
       padding: "32px 36px",
       display: "grid", gridTemplateColumns: `repeat(${columns.length}, 1fr)`,
-      gap: 28, zIndex: 70,
-      opacity: open ? 1 : 0, pointerEvents: open ? "auto" : "none",
-      transition: "opacity 220ms cubic-bezier(.2,.8,.2,1), transform 240ms cubic-bezier(.2,.8,.2,1)"
+      gap: 28, zIndex: 70
     }}>
       {columns.map((col, i) => col.feature ? (
         <FeatureCard key={i} feature={col.feature}/>
@@ -282,17 +279,14 @@ function MegaItem({ item }) {
 }
 
 /* ---------- Simple dropdown (desktop) ---------- */
-function SimpleDropdown({ items, open }) {
+function SimpleDropdown({ items }) {
   return (
-    <ul role="menu" aria-hidden={!open} style={{
+    <ul role="menu" className="edison-simple-dropdown" style={{
       listStyle: "none", margin: 0, padding: "6px", minWidth: 260,
       background: "#fff", border: "1px solid var(--border-hairline)",
       borderTop: "2px solid var(--edison-teal)", borderRadius: "0 0 10px 10px",
       boxShadow: "0 14px 40px rgba(15,29,51,.14)",
-      position: "absolute", top: "calc(100% + 1px)", left: 0, zIndex: 70,
-      opacity: open ? 1 : 0, transform: open ? "translateY(0)" : "translateY(-8px)",
-      pointerEvents: open ? "auto" : "none",
-      transition: "opacity 200ms cubic-bezier(.2,.8,.2,1), transform 220ms cubic-bezier(.2,.8,.2,1)"
+      position: "absolute", top: "calc(100% + 1px)", left: 0, zIndex: 70
     }}>
       {items.map((it, i) => <SimpleItem key={i} item={it}/>)}
     </ul>
@@ -459,7 +453,7 @@ function SiteHeader({
       const delta = y - lastScrollY.current;
       setAtTop(y < 8);
       if (y < 8) setHidden(false);
-      else if (delta > 8)  { setHidden(true); setOpenIdx(-1); setMobileOpen(false); }
+      else if (delta > 8)  { setHidden(true); setOpenIdx(-1); setMobileOpen(false); if (navRef.current) navRef.current.querySelectorAll('[data-nav-idx]').forEach(w => w.classList.remove('nav-is-open')); }
       else if (delta < -4) setHidden(false);
       lastScrollY.current = y;
     }
@@ -469,43 +463,72 @@ function SiteHeader({
 
   useEffect(() => {
     function onClickOutside(e) {
-      if (navRef.current && !navRef.current.contains(e.target)) setOpenIdx(-1);
+      if (navRef.current && !navRef.current.contains(e.target)) {
+        setOpenIdx(-1);
+        navRef.current.querySelectorAll('[data-nav-idx]').forEach(w => w.classList.remove('nav-is-open'));
+      }
     }
     document.addEventListener("mousedown", onClickOutside);
     return () => document.removeEventListener("mousedown", onClickOutside);
   }, []);
 
-  /* Native mouseenter/mouseleave — bypasses Pastel's React event interception */
+  /* Native mouseenter/mouseleave — direct DOM class manipulation bypasses Pastel proxy */
   useEffect(() => {
     if (!navRef.current) return;
-    const wrappers = navRef.current.querySelectorAll('[data-nav-idx]');
+    const allWrappers = navRef.current.querySelectorAll('[data-nav-idx]');
     const cleanups = [];
-    wrappers.forEach(wrapper => {
+    allWrappers.forEach(wrapper => {
       const idx = parseInt(wrapper.dataset.navIdx, 10);
       const mega = wrapper.querySelector('[data-mega-menu]');
       let timer;
-      const enter = () => { clearTimeout(timer); clearTimeout(closeTimer.current); setOpenIdx(idx); setHoveredIdx(idx); };
-      const leave = () => { setHoveredIdx(-1); timer = setTimeout(() => setOpenIdx(i => i === idx ? -1 : i), 150); };
-      wrapper.addEventListener('mouseenter', enter);
-      wrapper.addEventListener('mouseleave', leave);
+
+      const openNav = () => {
+        clearTimeout(timer);
+        clearTimeout(closeTimer.current);
+        // Close all others, open this — pure DOM, no React state needed
+        allWrappers.forEach(w => { if (w !== wrapper) w.classList.remove('nav-is-open'); });
+        wrapper.classList.add('nav-is-open');
+        setHoveredIdx(idx); // keep for trigger highlight color
+      };
+      const closeNav = () => {
+        setHoveredIdx(-1);
+        timer = setTimeout(() => wrapper.classList.remove('nav-is-open'), 150);
+      };
+
+      wrapper.addEventListener('mouseenter', openNav);
+      wrapper.addEventListener('mouseleave', closeNav);
       if (mega) {
-        mega.addEventListener('mouseenter', enter);
-        mega.addEventListener('mouseleave', leave);
+        mega.addEventListener('mouseenter', openNav);
+        mega.addEventListener('mouseleave', closeNav);
       }
       cleanups.push(() => {
-        wrapper.removeEventListener('mouseenter', enter);
-        wrapper.removeEventListener('mouseleave', leave);
+        wrapper.removeEventListener('mouseenter', openNav);
+        wrapper.removeEventListener('mouseleave', closeNav);
         if (mega) {
-          mega.removeEventListener('mouseenter', enter);
-          mega.removeEventListener('mouseleave', leave);
+          mega.removeEventListener('mouseenter', openNav);
+          mega.removeEventListener('mouseleave', closeNav);
         }
       });
     });
     return () => cleanups.forEach(c => c());
   }, [mounted]);
 
-  function openMenu(i)    { clearTimeout(closeTimer.current); setOpenIdx(i); }
-  function scheduleClose(){ clearTimeout(closeTimer.current); closeTimer.current = setTimeout(() => setOpenIdx(-1), 140); }
+  function openMenu(i) {
+    clearTimeout(closeTimer.current);
+    setOpenIdx(i);
+    if (navRef.current) {
+      navRef.current.querySelectorAll('[data-nav-idx]').forEach(w => {
+        w.classList.toggle('nav-is-open', parseInt(w.dataset.navIdx) === i);
+      });
+    }
+  }
+  function scheduleClose() {
+    clearTimeout(closeTimer.current);
+    closeTimer.current = setTimeout(() => {
+      setOpenIdx(-1);
+      if (navRef.current) navRef.current.querySelectorAll('[data-nav-idx]').forEach(w => w.classList.remove('nav-is-open'));
+    }, 140);
+  }
 
   /* ---- Mobile full-width dropdown panel (portal) ---- */
   const mobilePanel = mounted ? createPortal(
@@ -725,9 +748,9 @@ function SiteHeader({
                           )}
                         </a>
                       )}
-                      {item.children && !item.mega && <SimpleDropdown items={item.children} open={isOpen}/>}
+                      {item.children && !item.mega && <SimpleDropdown items={item.children}/>}
                     </div>
-                    {item.mega && <MegaMenu columns={item.columns} open={isOpen} onMouseEnter={() => openMenu(i)} onMouseLeave={() => scheduleClose()}/>}
+                    {item.mega && <MegaMenu columns={item.columns}/>}
                   </div>
                 );
               })}
@@ -761,6 +784,30 @@ function SiteHeader({
 
       <style>{`
         .edison-header-spacer { height: 110px; }
+        /* Mega menu — hidden by default, shown via parent .nav-is-open class */
+        .edison-mega-menu {
+          opacity: 0;
+          pointer-events: none;
+          transform: translateX(-50%) translateY(-8px);
+          transition: opacity 220ms cubic-bezier(.2,.8,.2,1), transform 240ms cubic-bezier(.2,.8,.2,1);
+        }
+        [data-nav-idx].nav-is-open .edison-mega-menu {
+          opacity: 1;
+          pointer-events: auto;
+          transform: translateX(-50%) translateY(0);
+        }
+        /* Simple dropdown — same pattern */
+        .edison-simple-dropdown {
+          opacity: 0;
+          pointer-events: none;
+          transform: translateY(-8px);
+          transition: opacity 200ms cubic-bezier(.2,.8,.2,1), transform 220ms cubic-bezier(.2,.8,.2,1);
+        }
+        [data-nav-idx].nav-is-open .edison-simple-dropdown {
+          opacity: 1;
+          pointer-events: auto;
+          transform: translateY(0);
+        }
         @media (max-width: 1040px) {
           .edison-desktop-nav, .edison-desktop-cta { display: none !important; }
           .edison-mobile-trigger { display: inline-flex !important; }
