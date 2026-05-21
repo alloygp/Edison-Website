@@ -84,7 +84,7 @@ const PILLAR_CONTENT = {
       title: "How working with Edison actually works",
       sub: "From first conversation to operating partner, a defined timeline, not an open-ended onboarding.",
       steps: [
-        { title: "Discovery & Proposal", body: "Tracy or a senior manager meets with your board. Written, fixed-scope proposal within 5–7 days." },
+        { title: "Discovery & Proposal", body: "A senior Edison manager meets with your board. Written, fixed-scope proposal within 5–7 days." },
         { title: "Transition Experience", body: "If switching, the 60–90 day Edison Transition Experience runs in parallel, records, vendors, Meet Your Management event." },
         { title: "Day 1 & First 90 Days", body: "Your dedicated manager on the ground. Action Item List live. Monthly inspections. COO supervises the first 90 days." },
         { title: "Ongoing Partnership", body: "Regular board meetings, monthly inspections, transparent financials, proactive compliance. Annual renewal, you walk free anytime." }

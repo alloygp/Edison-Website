@@ -73,7 +73,7 @@ function ContactForm({ compact = false }) {
         <p style={{
           fontFamily: "var(--font-body)", fontSize: 15, lineHeight: 1.6,
           color: "var(--edison-text-body)", margin: 0
-        }}>We've received your message. Tracy or a member of our team will be in touch within one business day.</p>
+        }}>We've received your message. The Edison team will be in touch within one business day.</p>
       </div>
     );
   }

@@ -20,7 +20,7 @@ function SolutionPageA({ content }) {
         title={content.hero.title}
         lede={content.hero.lede}
         primary={{ label: "Request a Proposal", href: "/request-a-proposal/" }}
-        secondary={{ label: "Talk to Tracy", href: "/contact/" }}
+        secondary={{ label: "Schedule a Consultation", href: "/contact/" }}
         image={content.hero.image}
       />
 
@@ -83,7 +83,7 @@ function SolutionPageB({ content }) {
         lede={content.hero.lede}
         stat={content.heroStat}
         primary={{ label: "Request a Proposal", href: "/request-a-proposal/" }}
-        secondary={{ label: "Talk to Tracy", href: "/contact/" }}
+        secondary={{ label: "Schedule a Consultation", href: "/contact/" }}
         bg={content.hero.image}
       />
 

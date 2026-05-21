@@ -89,7 +89,7 @@ function ProposalPageA() {
             <p style={{
               fontFamily: "var(--font-body)", fontSize: 17.5, lineHeight: 1.6,
               color: "var(--edison-text-body)", margin: "0 0 32px"
-            }}>We've received your information. Tracy or a member of the Edison team will be in touch within one business day. Same-day for board members, 24-hour for homeowners, non-negotiable.</p>
+            }}>We've received your information. The Edison team will be in touch within one business day. Same-day for board members, 24-hour for homeowners, non-negotiable.</p>
             <div style={{ display: "flex", gap: 12, justifyContent: "center", flexWrap: "wrap" }}>
               <InteriorButton variant="ghost" href="/">Back to home</InteriorButton>
               <InteriorButton variant="primary" href="/about/">Read more about Edison</InteriorButton>
@@ -440,7 +440,7 @@ function ProposalPageB() {
                 color: "var(--edison-navy)", margin: "0 0 10px"
               }}>Thanks, {form.name || "friend"}.</h3>
               <p style={{ fontSize: 16, color: "var(--edison-text-body)", margin: 0 }}>
-                We've received your request. Tracy or a member of the team will be in touch within one business day.
+                We've received your request. The Edison team will be in touch within one business day.
               </p>
             </div>
           ) : (

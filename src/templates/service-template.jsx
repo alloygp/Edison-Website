@@ -425,7 +425,7 @@ const HOA_MGMT_CONTENT = {
     title: "How working with Edison actually works",
     sub: "From first conversation to operating partner, a defined timeline, not an open-ended onboarding.",
     steps: [
-      { title: "Discovery & Proposal", body: "Tracy or a senior manager meets with your board to understand governing documents, pain points, and capital pipeline. We deliver a written, fixed-scope proposal within 5–7 days." },
+      { title: "Discovery & Proposal", body: "A senior Edison manager meets with your board to understand governing documents, pain points, and capital pipeline. We deliver a written, fixed-scope proposal within 5–7 days." },
       { title: "Transition Experience", body: "If you're switching from another company, the 60–90 day Edison Transition Experience runs in parallel, records digitization, vendor recredentialing, Meet Your Management event." },
       { title: "Day 1 & First 90 Days", body: "Your dedicated manager is on the ground. The Action Item List is live. Monthly inspections start. Accounting is current. The COO supervises the first 90 days." },
       { title: "Ongoing Partnership", body: "Regular board meetings, monthly inspections, transparent financials, proactive compliance. Annual agreement renewal, you walk free with your records anytime." }

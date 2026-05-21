@@ -26,7 +26,7 @@ const SOLUTIONS = {
       { label: "Manager turnover", left: "Industry average is 30–40% annually. Boards start over every year.", right: "A fraction of industry average. The manager who learns your community stays." }
     ],
     steps: [
-      { title: "Discovery & Proposal", body: "Tracy or a senior manager meets with your board to understand current pain points, governing documents, and capital pipeline, then delivers a written, fixed-scope proposal." },
+      { title: "Discovery & Proposal", body: "A senior Edison manager meets with your board to understand current pain points, governing documents, and capital pipeline, then delivers a written, fixed-scope proposal." },
       { title: "Records & Vendor Cutover", body: "Edison's transition team digitizes physical records, re-credentials vendors, and coordinates bank account migration and insurance certificates, without disrupting daily operations." },
       { title: "Meet Your Management Event", body: "A community-wide event introduces your new Edison manager and back-office team to homeowners before the official cutover, so day one feels like continuity." },
       { title: "Day 1 & Beyond", body: "Your dedicated manager and accounting specialist are on the ground. The Action Item List is live. WATTSON is answering homeowner questions 24/7. One phone number for everything." }
@@ -54,7 +54,7 @@ const SOLUTIONS = {
     },
     cta: {
       title: "Switching companies doesn't have to be the year's biggest project.",
-      body: "Tracy and the Edison team handle the burden, the records, the homeowners, the vendor cutover, so your board stays focused on the community. Request a proposal and see exactly what that looks like for your association."
+      body: "Edison handles the burden, the records, the homeowners, the vendor cutover, so your board stays focused on the community. Request a proposal and see exactly what that looks like for your association."
     }
   },
 
