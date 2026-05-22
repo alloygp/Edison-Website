@@ -142,15 +142,7 @@ function ServicePage({ content }) {
                 );
               }
               return (
-                <article key={i} style={{ ...sharedCardStyle, transition: "all 220ms cubic-bezier(.2,0,.1,1)" }}
-                  onMouseEnter={(e) => {
-                    e.currentTarget.style.boxShadow = "var(--shadow-md)";
-                    e.currentTarget.style.transform = "translateY(-2px)";
-                  }}
-                  onMouseLeave={(e) => {
-                    e.currentTarget.style.boxShadow = "var(--shadow-xs)";
-                    e.currentTarget.style.transform = "translateY(0)";
-                  }}>
+                <article key={i} style={sharedCardStyle}>
                   {icon}{heading}{body}
                 </article>
               );
