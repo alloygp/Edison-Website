@@ -70,7 +70,9 @@ const orgLd = {
 };
 
 const gaMeasurementId = import.meta.env.GA_MEASUREMENT_ID;
-const iconUrl = Astro.url.origin + '/assets/alloy-icon.png';
+const _fwdProto = Astro.request.headers.get('x-forwarded-proto') ?? 'https';
+const _fwdHost  = Astro.request.headers.get('x-forwarded-host');
+const iconUrl   = (_fwdHost ? `${_fwdProto}://${_fwdHost}` : (Astro.site?.toString().replace(/\/$/, '') ?? SITE.url)) + '/assets/alloy-icon.png';
 ---
 
 <!DOCTYPE html>
