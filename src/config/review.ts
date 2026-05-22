@@ -1,5 +1,5 @@
-export const PASTEL_BASE = 'https://usepastel.com/link/4rdqpv73/#'; // ← Pastel share base URL
-export const TICKET_ID   = '';                    // ← set by skill each review
+export const PASTEL_BASE = 'https://usepastel.com/link/4rdqpv73/#';
+export const TICKET_ID   = 'TEST';
 
 export interface ReviewItem {
   label: string;
@@ -8,5 +8,5 @@ export interface ReviewItem {
 }
 
 export const REVIEW_ITEMS: ReviewItem[] = [
-  // Pages will be set by the review-widget-setup skill each session
+  { label: 'Homepage', path: '/', review: true },
 ];
