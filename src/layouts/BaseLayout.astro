@@ -151,7 +151,7 @@ const gaMeasurementId = import.meta.env.GA_MEASUREMENT_ID;
          Vanilla JS — no framework deps, works inside Pastel proxy.
          Config comes from src/config/review.ts via define:vars.
     ──────────────────────────────────────────────────────────────────────── -->
-    <script is:inline define:vars={{ reviewItems: REVIEW_ITEMS, pastelBase: PASTEL_BASE, ticketIdFromConfig: TICKET_ID, iconUrl: _origin + '/assets/alloy-icon.png' }}>
+    <script is:inline define:vars={{ reviewItems: REVIEW_ITEMS, pastelBase: PASTEL_BASE, ticketIdFromConfig: TICKET_ID, iconUrl }}>
     (function() {
       var items = (reviewItems || []).filter(function(i) { return i.review; });
       if (!items.length) return;
