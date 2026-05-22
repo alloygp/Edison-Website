@@ -27,23 +27,23 @@ const SERVICES_CONTENT = {
     ],
     included: {
       title: "Full-service HOA accounting for Florida communities",
-      sub: "Every Edison management agreement includes the full financial operations workstream, handled by a dedicated specialist supported by Edison's CPA-led Director of Accounting.",
+      sub: "Every Edison management agreement includes the full financial operations workstream, handled by a dedicated accounting specialist with oversight from Edison's leadership team.",
       items: [
         { title: "Monthly Financial Reporting", body: "Balance sheet, income statement, and budget-to-actual comparisons by the 15th of every month. Invoice backup attached, audit-ready format." },
-        { title: "Budget Preparation & Planning", body: "Annual budgets built from real operating data, reserve study recommendations, and capital pipeline." },
-        { title: "Reserve Banking & Strategy", body: "Reserve funds tracked against the most recent study. Banking optimized for yield without sacrificing FDIC coverage limits." },
+        { title: "Budget Preparation & Planning", href: "/services/hoa-accounting/budget-preparation/", body: "Annual budgets built from real operating data, reserve study recommendations, and capital pipeline." },
+        { title: "Reserve Banking & Strategy", href: "/services/hoa-accounting/reserve-study-support/", body: "Reserve funds tracked against the most recent study. Banking optimized for yield without sacrificing FDIC coverage limits." },
         { title: "Accounts Payable & Vendor Pay", body: "W-9s on file, invoice documentation required, rapid vendor pay. Year-end 1099 prep handled in-house." },
-        { title: "Collections & Delinquency", body: "Coordinated with Edison's in-house collections department. Clean ledger. Cash flow protected." },
-        { title: "Audit & Tax Preparation", body: "Year-end binder ready on day one for your CPA. HOA tax filings (Form 1120-H or 1120) coordinated and filed on time." }
+        { title: "Collections & Delinquency", href: "/services/hoa-collections/", body: "Coordinated with Edison's in-house collections department. Clean ledger. Cash flow protected." },
+        { title: "Compliance & Filing", body: "Board certification tracking, statutory deadline monitoring, and documentation support to keep your association in good standing." }
       ]
     },
     whyEdison: {
       title: "Why boards switch to Edison's accounting model",
       sub: "Most management companies treat accounting as overhead. Edison built it as a dedicated department with its own director, because it's the work that protects board members from personal liability.",
       items: [
-        { title: "Dedicated Accounting Specialist", body: "Not your manager wearing two hats. A specialist who knows accrual accounting, FL Ch. 720/718 requirements, and your association's specific history." },
-        { title: "CPA-Led Director of Accounting", body: "Every association's financials are overseen by Edison's Director of Accounting, not just a senior bookkeeper." },
-        { title: "Audit-Ready Year-Round", body: "Books are kept audit-ready every month. Most Edison audits finish 20–40% faster than the industry norm." },
+        { title: "Dedicated Accounting Specialist", body: "Not your manager wearing two hats. A dedicated specialist who knows your association's financial history, governing documents, and reporting needs." },
+        { title: "Leadership Oversight", body: "Every association's financials are reviewed by Edison's leadership team, not just processed and filed." },
+        { title: "Audit-Ready Year-Round", body: "Every invoice requires backup documentation attached. Clean books month to month, not a scramble at year-end." },
         { title: "Reserve Funding Discipline", body: "Reserve banking strategy reviewed annually against current study. We catch underfunding before it requires a special assessment." },
         { title: "Live Financial Access", body: "CINC Systems dashboards give the treasurer real-time balances, AR aging, and budget pacing." },
         { title: "Transparent Vendor Payment", body: "Every payment documented with invoice and W-9. No mystery line items." }
@@ -60,7 +60,7 @@ const SERVICES_CONTENT = {
         { title: "Day 1, Onboarding", body: "Your accounting specialist inherits records, reconciles opening balances, builds the audit-ready ledger." },
         { title: "Month 1–12, Monthly Reporting", body: "By the 15th of every month: balance sheet, income statement, budget-to-actual, AR aging, narrative. Invoice docs attached." },
         { title: "Q4, Budget Season", body: "August–October: draft budget built from operating data and reserve study, presented with scenarios, not a take-it-or-leave-it number." },
-        { title: "Year-End, Audit & Tax", body: "Year-end binder delivered to the auditor by mid-January. Tax filings coordinated. Audit closes in weeks." }
+        { title: "Year-End, Audit & Review", body: "Clean books and documented invoices all year mean your audit prep is already done. No scramble, no surprises at year-end." }
       ]
     },
     quote: {

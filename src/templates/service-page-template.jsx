@@ -1,5 +1,5 @@
 import React from 'react';
-import { Breadcrumb, BulbMark, FAQ, FeatureGrid, FinalCTA, InteriorButton, MidCTA, SectionHeading } from '../components/interior-components';
+import { Breadcrumb, BulbMark, FAQ, FeatureGrid, FinalCTA, InteriorButton, MidCTA, SectionHeading, DetailLinkCards } from '../components/interior-components';
 import { NumberedSteps, PullQuote, StatsBand } from '../components/template-sections';
 
 /* ============================================================
@@ -71,7 +71,7 @@ function ServicePage({ content }) {
 
       <StatsBand background="var(--edison-teal-pale)" stats={content.stats}/>
 
-      {/* What's included, 3-up cards with icon */}
+      {/* What's included, 3-up cards with icon — linked variant if item has href */}
       <section style={{ background: "#fff", padding: "88px 48px" }}>
         <div style={{ maxWidth: 1200, margin: "0 auto" }}>
           <SectionHeading
@@ -83,14 +83,15 @@ function ServicePage({ content }) {
             marginTop: 48,
             display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 18
           }}>
-            {content.included.items.map((it, i) => (
-              <article key={i} style={{
+            {content.included.items.map((it, i) => {
+              const sharedCardStyle = {
                 background: "#fff",
                 border: "1px solid var(--border-hairline)",
                 borderRadius: 12, padding: "28px 26px",
                 boxShadow: "var(--shadow-xs)",
                 display: "flex", flexDirection: "column", gap: 14
-              }}>
+              };
+              const icon = (
                 <div style={{
                   width: 44, height: 44, borderRadius: 10,
                   background: "var(--edison-teal-pale)",
@@ -99,17 +100,53 @@ function ServicePage({ content }) {
                 }}>
                   <BulbMark size={22}/>
                 </div>
+              );
+              const heading = (
                 <h3 style={{
                   fontFamily: "var(--font-display)", fontWeight: 700,
                   fontSize: 18, lineHeight: 1.3,
                   color: "var(--edison-navy)", margin: 0
                 }}>{it.title}</h3>
+              );
+              const body = (
                 <p style={{
                   fontFamily: "var(--font-body)", fontSize: 14.5, lineHeight: 1.6,
-                  color: "var(--edison-text-body)", margin: 0
+                  color: "var(--edison-text-body)", margin: 0, flex: 1
                 }}>{it.body}</p>
-              </article>
-            ))}
+              );
+              if (it.href) {
+                return (
+                  <a key={i} href={it.href} style={{ textDecoration: "none", ...sharedCardStyle,
+                    transition: "all 220ms cubic-bezier(.2,0,.1,1)"
+                  }}
+                    onMouseEnter={(e) => {
+                      e.currentTarget.style.boxShadow = "var(--shadow-md)";
+                      e.currentTarget.style.borderColor = "var(--edison-teal)";
+                      e.currentTarget.style.transform = "translateY(-2px)";
+                    }}
+                    onMouseLeave={(e) => {
+                      e.currentTarget.style.boxShadow = "var(--shadow-xs)";
+                      e.currentTarget.style.borderColor = "var(--border-hairline)";
+                      e.currentTarget.style.transform = "translateY(0)";
+                    }}>
+                    {icon}{heading}{body}
+                    <span style={{
+                      fontFamily: "var(--font-display)", fontWeight: 700, fontSize: 13.5,
+                      color: "var(--edison-teal-dark)",
+                      display: "inline-flex", alignItems: "center", gap: 6,
+                      marginTop: 4
+                    }}>
+                      Learn more <span aria-hidden="true">→</span>
+                    </span>
+                  </a>
+                );
+              }
+              return (
+                <article key={i} style={sharedCardStyle}>
+                  {icon}{heading}{body}
+                </article>
+              );
+            })}
           </div>
         </div>
       </section>
