@@ -151,7 +151,7 @@ const gaMeasurementId = import.meta.env.GA_MEASUREMENT_ID;
          Vanilla JS — no framework deps, works inside Pastel proxy.
          Config comes from src/config/review.ts via define:vars.
     ──────────────────────────────────────────────────────────────────────── -->
-    <script is:inline define:vars={{ reviewItems: REVIEW_ITEMS, pastelBase: PASTEL_BASE, ticketIdFromConfig: TICKET_ID }}>
+    <script is:inline define:vars={{ reviewItems: REVIEW_ITEMS, pastelBase: PASTEL_BASE, ticketIdFromConfig: TICKET_ID, iconUrl: _origin + '/assets/alloy-icon.png' }}>
     (function() {
       var items = (reviewItems || []).filter(function(i) { return i.review; });
       if (!items.length) return;
@@ -262,7 +262,7 @@ const gaMeasurementId = import.meta.env.GA_MEASUREMENT_ID;
             'padding:10px 16px;cursor:pointer;font-weight:700;font-size:13px;display:flex;align-items:center;' +
             'gap:8px;box-shadow:0 4px 20px rgba(56,28,79,.35);letter-spacing:.01em;font-family:' + FONT + ';' +
             'transition:background 150ms,box-shadow 150ms;">' +
-              '<img src="/assets/alloy-icon.png" alt="" style="width:20px;height:20px;display:block;flex-shrink:0;" />' +
+              '<img src="' + iconUrl + '" alt="" style="width:20px;height:20px;display:block;flex-shrink:0;" />' +
               '<span>Review Checklist</span>' +
               '<span style="background:' + PK + ';color:#fff;border-radius:20px;padding:1px 7px;' +
               'font-size:11px;font-weight:800;">' + n + '/' + tot + '</span>' +
@@ -282,7 +282,7 @@ const gaMeasurementId = import.meta.env.GA_MEASUREMENT_ID;
           '<div style="background:' + P + ';color:#fff;padding:13px 16px;display:flex;' +
           'align-items:center;justify-content:space-between;">' +
             '<div style="display:flex;align-items:center;gap:10px;">' +
-              '<img src="/assets/alloy-icon.png" alt="" style="width:28px;height:28px;border-radius:6px;background:rgba(255,255,255,.15);padding:3px;display:block;flex-shrink:0;" />' +
+              '<img src="' + iconUrl + '" alt="" style="width:28px;height:28px;border-radius:6px;background:rgba(255,255,255,.15);padding:3px;display:block;flex-shrink:0;" />' +
               '<div>' +
                 '<div style="font-weight:700;font-size:14px;line-height:1.2;">Review Checklist</div>' +
                 '<div style="font-size:10px;opacity:.7;font-weight:400;letter-spacing:.01em;">Check off each page as you review it</div>' +
