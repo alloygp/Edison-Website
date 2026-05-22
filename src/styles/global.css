@@ -94,6 +94,16 @@ h1, h2, h3, h4, h5, h6 {
   .ic-mid-cta h2 { font-size: 26px !important; }
 }
 
+/* ---- Included section linked cards ---- */
+.svc-included-link-card {
+  transition: box-shadow 220ms cubic-bezier(.2,0,.1,1), border-color 220ms cubic-bezier(.2,0,.1,1), transform 220ms cubic-bezier(.2,0,.1,1);
+}
+.svc-included-link-card:hover {
+  box-shadow: var(--shadow-md) !important;
+  border-color: var(--edison-teal) !important;
+  transform: translateY(-2px);
+}
+
 /* ---- DetailLinkCards ---- */
 @media (max-width: 768px) {
   .ic-detail-cards { padding: 56px 20px !important; }

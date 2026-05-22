@@ -116,19 +116,7 @@ function ServicePage({ content }) {
               );
               if (it.href) {
                 return (
-                  <a key={i} href={it.href} style={{ textDecoration: "none", ...sharedCardStyle,
-                    transition: "all 220ms cubic-bezier(.2,0,.1,1)"
-                  }}
-                    onMouseEnter={(e) => {
-                      e.currentTarget.style.boxShadow = "var(--shadow-md)";
-                      e.currentTarget.style.borderColor = "var(--edison-teal)";
-                      e.currentTarget.style.transform = "translateY(-2px)";
-                    }}
-                    onMouseLeave={(e) => {
-                      e.currentTarget.style.boxShadow = "var(--shadow-xs)";
-                      e.currentTarget.style.borderColor = "var(--border-hairline)";
-                      e.currentTarget.style.transform = "translateY(0)";
-                    }}>
+                  <a key={i} href={it.href} className="svc-included-link-card" style={{ textDecoration: "none", ...sharedCardStyle }}>
                     {icon}{heading}{body}
                     <span style={{
                       fontFamily: "var(--font-display)", fontWeight: 700, fontSize: 13.5,
