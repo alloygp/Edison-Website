@@ -29,7 +29,7 @@ const SOLUTIONS = {
       { title: "Discovery & Proposal", body: "A senior Edison manager meets with your board to understand current pain points, governing documents, and capital pipeline, then delivers a written, fixed-scope proposal." },
       { title: "Records & Vendor Cutover", body: "Edison's transition team digitizes physical records, re-credentials vendors, and coordinates bank account migration and insurance certificates, without disrupting daily operations." },
       { title: "Meet Your Management Event", body: "A community-wide event introduces your new Edison manager and back-office team to homeowners before the official cutover, so day one feels like continuity." },
-      { title: "Day 1 & Beyond", body: "Your dedicated manager and accounting specialist are on the ground. The Action Item List is live. WATTSON is answering homeowner questions 24/7. One phone number for everything." }
+      { title: "Day 1 & Beyond", body: "Your dedicated manager and accounting specialist are in place. The Action Item List is live. Residents get 24/7 answers through the portal. One phone number for everything." }
     ],
     stats: [
       { value: "60–90", caption: "Days from contract signing to full cutover, end-to-end" },
@@ -72,7 +72,7 @@ const SOLUTIONS = {
       caption: "Most self-managed associations rely on a single volunteer treasurer or president. When that person steps back, the gaps get expensive fast, legal exposure, audit issues, missed compliance deadlines."
     },
     comparison: [
-      { label: "Who handles the books", left: "Volunteer treasurer with personal laptop and a spreadsheet.", right: "Dedicated CPA-supported accounting specialist with audit-ready accrual books." },
+      { label: "Who handles the books", left: "Volunteer treasurer with personal laptop and a spreadsheet.", right: "Dedicated accounting specialist with documented invoices and clean monthly reporting." },
       { label: "Compliance tracking", left: "Whoever remembers, usually no one, until something breaks.", right: "Edison tracks every FL statutory deadline (milestone inspections, reserves, filings) proactively." },
       { label: "Homeowner communication", left: "Personal phone numbers, blurred boundaries, burnout.", right: "Resident portal, WATTSON 24/7, plus a real manager line. Volunteers stop being on call." },
       { label: "Legal exposure", left: "Board members personally exposed on enforcement and finance decisions.", right: "Professional protocols, documented enforcement, insurance-ready operations." },
@@ -85,9 +85,9 @@ const SOLUTIONS = {
       { title: "Day 1 & Volunteer Handoff", body: "Your volunteer treasurer or president stops being on call. Edison's team takes over the operational work. The board can focus on leadership instead of paperwork." }
     ],
     stats: [
-      { value: "20+", caption: "Years of experience working with self-managed transitions in Central Florida" },
+      { value: "20+", caption: "20+ years of leadership experience in Central Florida community management" },
       { value: "Hybrid", caption: "Custom agreements available, full-service, accounting-only, or compliance-only" },
-      { value: "0", caption: "Required transition fees beyond the monthly management rate quoted in your proposal" },
+      { value: "48 hrs", caption: "From first conversation to a custom proposal for your community" },
       { value: "1 day", caption: "Reply guarantee for self-managed boards exploring options" }
     ],
     faqs: [
@@ -108,42 +108,41 @@ const SOLUTIONS = {
     eyebrow: "Solutions · For boards tired of yesterday's management",
     hero: {
       title: "Modern HOA management means a person still answers the phone.",
-      lede: "There's a lot of HOA management software. There's not a lot of HOA management that actually uses it well. Edison's stack, CINC Systems, the Action Item List, WATTSON AI, and Plaud for meeting minutes, solves the problems boards keep flagging without removing the human relationship that makes management work.",
+      lede: "There's a lot of HOA management software. There's not a lot of HOA management that actually uses it well. Edison's technology handles the repetitive work so your manager can focus on your community, not data entry, not chasing documents, not drafting minutes from memory.",
       image: "/assets/img-resident-portal.jpg"
     },
     heroStat: {
       eyebrow: "The shift",
       value: "24 / 7",
-      caption: "Homeowner questions don't keep business hours. Edison's stack handles them when your manager is asleep, and routes the rest to a real person the next morning."
+      caption: "Homeowners' questions don't keep business hours. Residents get answers around the clock, and anything that needs a human gets routed to a real person the next morning."
     },
     comparison: [
-      { label: "How residents get information", left: "Email the manager. Wait days. Maybe get a reply.", right: "Resident portal + WATTSON AI surface CC&R answers and policy info 24/7." },
+      { label: "How residents get information", left: "Email the manager. Wait days. Maybe get a reply.", right: "Resident portal surfaces documents and answers 24/7. Most questions resolved without a phone call." },
       { label: "How boards see project status", left: "Monthly manager report, already stale when it arrives.", right: "Live Action Item List with every open item, owner, and target date. Real-time access." },
-      { label: "How meeting minutes get done", left: "Manager scribbles notes, sends draft a week later, board edits twice.", right: "Plaud AI captures meeting audio; Edison delivers polished draft minutes within 48 hours." },
-      { label: "How financials are accessed", left: "PDF emailed monthly. Treasurer prints and files." },
+      { label: "How meeting minutes get done", left: "Manager scribbles notes, sends draft a week later, board edits twice.", right: "Meeting audio captured automatically. Edison delivers polished draft minutes within 48 hours." },
       { label: "How financials are accessed", left: "PDF emailed monthly. Treasurer prints and files.", right: "CINC dashboards with real-time balances. Treasurer logs in anytime, anywhere." }
     ],
     steps: [
-      { title: "Audit Your Current Stack", body: "Edison reviews how your current management company handles communication, financials, project tracking, and meeting minutes. We identify the gaps." },
+      { title: "Audit Your Current Stack", body: "Edison reviews how your current management company handles communication, financials, project tracking, and meeting minutes. We identify what's working and what's not." },
       { title: "Migrate to CINC Systems", body: "We move your financials, governing documents, and homeowner records into CINC, a purpose-built community association platform with portals for everyone." },
-      { title: "Activate the Action Item List", body: "Every active item your board cares about, capital projects, enforcement letters, vendor disputes, gets logged with owner and target date. Updated daily. Visible to every board member, always." },
-      { title: "Onboard WATTSON & Plaud", body: "WATTSON handles 24/7 resident questions inside the portal. Plaud captures board meeting audio and produces draft minutes. You stop waiting for things." }
+      { title: "Activate the Action Item List", body: "Every active item your board cares about gets logged with an owner and target date. Updated daily. Visible to every board member. No more asking your manager for a status update." },
+      { title: "Activate 24/7 Support & Auto-Minutes", body: "Residents get 24/7 answers through the portal. Board meeting audio is captured and draft minutes are delivered within 48 hours. You stop waiting for things." }
     ],
     stats: [
-      { value: "24/7", caption: "Resident question coverage with WATTSON AI (launching 2026)" },
-      { value: "48 hrs", caption: "From meeting end to polished draft minutes with Plaud AI" },
-      { value: "Live", caption: "Action Item List replaces stale monthly manager reports" },
+      { value: "24/7", caption: "Resident support coverage, even when your manager is off the clock" },
+      { value: "48 hrs", caption: "From meeting end to polished draft minutes, automatically" },
+      { value: "Live", caption: "Project tracking replaces stale monthly manager reports" },
       { value: "Real", caption: "Person still answers when you call Edison. Every time." }
     ],
     faqs: [
       { q: "Is this all AI? Are you replacing managers?", a: "No. Edison's manager-to-community ratio is still 8–10, and a real person still answers the phone every time. The tech handles the things that don't need a human, document lookup, project tracking, minutes drafting, so the manager can spend time on the work that does." },
       { q: "What if our board isn't comfortable with technology?", a: "Edison's model accommodates both ends. Boards that love the dashboards can live in CINC and the Action Item List. Boards that prefer email and phone get the same level of service without being forced into a portal. The tech is a tool, not a requirement." },
-      { q: "Is WATTSON live right now?", a: "WATTSON is in development with a 2026 launch targeting Edison's existing communities first. Everything else in this section, CINC, Action Item List, Plaud, is live and in production for current Edison clients." },
+      { q: "Is WATTSON live right now?", a: "WATTSON is live for Edison communities. CINC, the Action Item List, and Plaud are also live and in production for current Edison clients." },
       { q: "Does this cost extra?", a: "No. Edison's technology stack is included in the monthly management agreement. There's no separate technology fee, no per-resident charge, and no setup cost for activating any of these tools." }
     ],
     cta: {
       title: "Modern doesn't have to mean impersonal.",
-      body: "Edison's stack handles the operational drag so the manager can be present where it counts. Request a proposal and see what modern HOA management actually looks like."
+      body: "Modern doesn't have to mean impersonal. Technology handles the operational drag so your manager can be present where it counts. Request a proposal and see what modern HOA management actually looks like."
     }
   },
 

@@ -53,8 +53,9 @@ const PILLAR_CONTENT = {
       ]
     },
     subServices: {
-      title: "Sub-services under HOA Management",
-      sub: "Two property-type sub-services live one URL level below this pillar. They're reachable from here, not from the top nav, because most boards land on the pillar page first and route from there.",
+      title: "Community-Specific Management",
+      sub: "Every community type has its own operational needs. Edison tailors its approach based on your association's structure, governing documents, and common-area responsibilities.",
+      itemLabel: "By Community Type",
       items: [
         { title: "Single-Family HOA Management", body: "Tailored management for single-family neighborhood HOAs across Central Florida, Ch. 720 compliance, ARC support, common-area planning.", href: "/services/hoa-management/single-family/" },
         { title: "Townhome Association Management", body: "Townhome-specific challenges handled, shared roofs, common insurance, party-wall maintenance.", href: "/services/hoa-management/townhome/" }
@@ -67,8 +68,8 @@ const PILLAR_CONTENT = {
         { title: "Industry-Low Manager Turnover", body: "Most firms see 30–40% annual manager turnover. Edison's is a fraction of that. The manager who learns your community in year one is still there in year three." },
         { title: "Dedicated Back-Office Departments", body: "Enforcement, accounting, collections, and ARC are separate departments, not your manager's overtime work." },
         { title: "Manageable Portfolio Sizes", body: "8–10 communities per manager, half the industry average. Yours isn't lost in a portfolio of hundreds." },
-        { title: "Leadership That Stays Involved", body: "Tracy Durham, PCAM, personally onboards every new association and remains accessible to every board." },
-        { title: "Modern Tools, Human Touch", body: "CINC Systems for portals and financials. WATTSON AI for 24/7 resident questions (2026). The Action Item List for live project tracking. A real person still answers the phone." },
+        { title: "Leadership That Stays Involved", body: "Edison's senior leadership personally onboards every new association and remains accessible to every board." },
+        { title: "Modern Tools, Human Touch", body: "CINC Systems for portals and financials. WATTSON AI for 24/7 resident questions. The Action Item List for live project tracking. A real person still answers the phone." },
         { title: "Education-First Philosophy", body: "Informed boards make better decisions. Edison invests in teaching board members the statutes, the financial fundamentals, and the governance frameworks." }
       ]
     },
@@ -103,8 +104,8 @@ const PILLAR_CONTENT = {
     },
     crossPillar: {
       eyebrow: "Different community type?",
-      title: "Manage a condominium association?",
-      body: "Florida governs condos under Ch. 718, different statutes, different reserve study requirements, milestone inspection compliance under SB-4D. Edison's Condo Management pillar covers that side of the practice.",
+      title: "Serve on a condominium board?",
+      body: "Florida governs condos under Ch. 718 with different statutes, reserve study requirements, and milestone inspection compliance under SB-4D. Edison's Condo Management team handles all of it.",
       ctaLabel: "See Condo Management",
       href: "/services/condo-management/"
     },
@@ -118,7 +119,7 @@ const PILLAR_CONTENT = {
       { q: "How many communities will our manager have?", a: "Edison managers carry 8–10 communities, half the industry average. We've structured portfolios this way deliberately: managers can actually know your community, not just file your community away." },
       { q: "How quickly will calls get returned?", a: "Same-day for board members. 24-hour for homeowners. Non-negotiable, and a real person answers when you call Edison's office between 9am and 5pm Monday through Friday." },
       { q: "Do you handle our financials and accounting too?", a: "Yes. Edison's accounting department is dedicated and CPA-supported. Monthly statements with invoice backup, reserve banking strategy, audit prep, and tax filing. See our HOA Accounting page for detail." },
-      { q: "What technology do you use?", a: "CINC Systems for financials and homeowner portals. The Action Item List for live project tracking. WATTSON AI (launching 2026) for 24/7 resident questions. Plaud for meeting minute automation. All included." },
+      { q: "What technology do you use?", a: "CINC Systems for financials and homeowner portals. The Action Item List for live project tracking. WATTSON AI for 24/7 resident questions. Plaud for meeting minute automation. All included." },
       { q: "How long are your management agreements?", a: "12-month terms with clear termination provisions. We don't believe in trapping boards, if Edison isn't a fit at the end of year one, you walk free with your records intact." }
     ],
     cta: {
@@ -190,7 +191,7 @@ const PILLAR_CONTENT = {
         { title: "Engineer Network", body: "Working relationships with FL-licensed structural engineers across Central Florida. Faster sourcing, vetted scope, competitive pricing." },
         { title: "Dedicated Accounting Specialist", body: "Condo reserves have a different funding cadence than HOAs. Your accounting specialist understands the difference." },
         { title: "Manageable Portfolio Sizes", body: "8–10 communities per manager. Your condo isn't lost in a 20-property portfolio." },
-        { title: "Modern Communication", body: "Resident portal, CINC dashboards, WATTSON AI (2026). Owners get answers; boards get visibility." },
+        { title: "Modern Communication", body: "Resident portal, CINC dashboards, WATTSON AI. Owners get answers; boards get visibility." },
         { title: "Crisis-Ready Operations", body: "When something fails, and in older buildings, something will, Edison's team has the contacts, the contracts, and the experience to act fast." }
       ]
     },

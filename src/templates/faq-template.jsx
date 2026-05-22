@@ -98,7 +98,7 @@ const FAQ_CONTENT = {
     {
       eyebrow: "Technology", title: "Tools and portals",
       items: [
-        { q: "What software does Edison use?", a: "CINC Systems for financials, board dashboards, and homeowner portals. The Action Item List for live project tracking. WATTSON AI (launching 2026) for 24/7 resident questions. Plaud AI for board meeting minute drafting. All included, no per-resident or per-feature fees." },
+        { q: "What software does Edison use?", a: "CINC Systems for financials, board dashboards, and homeowner portals. The Action Item List for live project tracking. WATTSON AI for 24/7 resident questions. Plaud AI for board meeting minute drafting. All included, no per-resident or per-feature fees." },
         { q: "Is there a homeowner portal?", a: "Yes. CINC Connect gives homeowners 24/7 access to account information, payment, documents, and maintenance requests. Architects and vendors get their own scoped access." },
         { q: "What is WATTSON?", a: "Edison's branded AI assistant, named for watts and the light bulb. Launching 2026, WATTSON will answer resident questions 24/7 inside the portal, grounded in your governing documents and management calendar. A real person still answers when you call." }
       ]

@@ -27,14 +27,14 @@ const GEO_CONTENT = {
       { title: "Covenant Enforcement", body: "Dedicated enforcement department. Fair, consistent, address-not-name based, protecting property values and homeowner relationships.", href: "/services/covenant-enforcement/" },
       { title: "Single-Family HOA", body: "Tailored management for single-family neighborhood HOAs across Orlando, Ch. 720 compliance, ARC support, common-area planning.", href: "/services/hoa-management/single-family/" },
       { title: "Townhome Associations", body: "Townhome-specific challenges handled, shared roofs, common insurance, party-wall maintenance.", href: "/services/hoa-management/townhome/" },
-      { title: "Switching Companies", body: "The Edison Transition Experience handles records, vendors, and homeowner communication, 60–90 days, end to end.", href: "/solutions/switch-hoa-management-company/" }
+      { title: "Management Transition", body: "The Edison Transition Experience handles records, vendors, and homeowner communication, 60–90 days, end to end.", href: "/solutions/switch-hoa-management-company/" }
     ],
     differentiators: [
       { title: "Industry-Low Manager Turnover", body: "Most firms see 30–40% annual turnover. Edison's is a fraction of that." },
       { title: "Dedicated Back-Office Departments", body: "Enforcement, ARC, accounting, and collections are separate departments, not your manager's overtime work." },
       { title: "Boutique Portfolio Sizes", body: "8–10 communities per manager, half the industry average." },
       { title: "Leadership Credibility", body: "Edison's principal is a PCAM and the 2025 CAI Central Florida Chapter President." },
-      { title: "Modern Technology, Human Touch", body: "WATTSON AI for 24/7 resident questions (2026). CINC for portals and financials. A human still answers when you call the office." },
+      { title: "Modern Technology, Human Touch", body: "WATTSON AI for 24/7 resident questions. CINC for portals and financials. A human still answers when you call the office." },
       { title: "The Edison Transition Experience", body: "Switching is the burden Edison absorbs, records, vendors, banking, homeowner communication." }
     ],
     neighborhoods: [
@@ -68,14 +68,14 @@ const GEO_CONTENT = {
       { title: "Covenant Enforcement", body: "Dedicated enforcement department, correction-first protocol, address-not-name inspections.", href: "/services/covenant-enforcement/" },
       { title: "Single-Family HOA", body: "Tailored management for Winter Garden's single-family neighborhood HOAs.", href: "/services/hoa-management/single-family/" },
       { title: "Townhome Associations", body: "Building-envelope coordination and master-policy insurance tracking for townhome communities.", href: "/services/hoa-management/townhome/" },
-      { title: "Switching Companies", body: "The Edison Transition Experience runs the 60–90 day onboarding so your board doesn't have to.", href: "/solutions/switch-hoa-management-company/" }
+      { title: "Management Transition", body: "The Edison Transition Experience runs the 60–90 day onboarding so your board doesn't have to.", href: "/solutions/switch-hoa-management-company/" }
     ],
     differentiators: [
       { title: "Local Vendor Network", body: "Edison's Winter Garden vendor relationships span landscape, irrigation, pool, and roofing." },
       { title: "New-Construction Transition Experience", body: "We've onboarded multiple post-developer-transition communities and know the inherited-vendor risks." },
       { title: "Dedicated Back-Office Departments", body: "Enforcement, ARC, accounting, collections, separate departments, not your manager's overtime." },
       { title: "Industry-Low Manager Turnover", body: "The Edison manager who learns your community stays for years, not months." },
-      { title: "Modern Communication Stack", body: "CINC dashboards, resident portal, WATTSON AI (2026), Plaud-supported meeting minutes." },
+      { title: "Modern Communication Stack", body: "CINC dashboards, resident portal, WATTSON AI, Plaud-supported meeting minutes." },
       { title: "PCAM Leadership", body: "Tracy Durham, PCAM, personally onboards every new Edison community." }
     ],
     neighborhoods: ["Horizon West", "Bradford Creek", "Independence", "Stoneybrook West", "Black Lake Park", "Winter Garden Village", "Hamlin", "Hickory Hammock", "Verandahs", "Crown Point"],
@@ -104,7 +104,7 @@ const GEO_CONTENT = {
       { title: "Covenant Enforcement", body: "Dedicated enforcement department with correction-first protocols.", href: "/services/covenant-enforcement/" },
       { title: "55+ / Active Adult Coverage", body: "Manager portfolios sized for the aging-in-place capital cadence.", href: "/services/hoa-management/single-family/" },
       { title: "Townhome Associations", body: "Building-envelope coordination for Kissimmee's townhome communities.", href: "/services/hoa-management/townhome/" },
-      { title: "Switching Companies", body: "The Edison Transition Experience, 60–90 days, end to end.", href: "/solutions/switch-hoa-management-company/" }
+      { title: "Management Transition", body: "The Edison Transition Experience, 60–90 days, end to end.", href: "/solutions/switch-hoa-management-company/" }
     ],
     differentiators: [
       { title: "55+ Community Experience", body: "Edison manages active-adult HOAs with the capital cadence and resident-communication style they require." },
@@ -140,14 +140,14 @@ const GEO_CONTENT = {
       { title: "Covenant Enforcement", body: "Dedicated enforcement department, documented ARC workflow, correction-first.", href: "/services/covenant-enforcement/" },
       { title: "Single-Family HOA", body: "Tailored management for Clermont's single-family communities.", href: "/services/hoa-management/single-family/" },
       { title: "Townhome Associations", body: "Building-envelope coordination for Clermont's townhome developments.", href: "/services/hoa-management/townhome/" },
-      { title: "Switching Companies", body: "The Edison Transition Experience, records, vendors, homeowners.", href: "/solutions/switch-hoa-management-company/" }
+      { title: "Management Transition", body: "The Edison Transition Experience, records, vendors, homeowners.", href: "/solutions/switch-hoa-management-company/" }
     ],
     differentiators: [
       { title: "Terrain-Aware Vendor Coordination", body: "Edison adjusts landscape, stormwater, and capital scope for Clermont's actual operating realities." },
       { title: "Documented ARC Workflow", body: "Higher ARC volume handled through a documented enforcement department workflow, not ad hoc decisions." },
       { title: "Industry-Low Manager Turnover", body: "The Edison manager who learns your community stays." },
       { title: "Dedicated Back-Office Departments", body: "Enforcement, accounting, collections, separate departments." },
-      { title: "Modern Communication Stack", body: "CINC, resident portal, WATTSON (2026), Plaud minutes." },
+      { title: "Modern Communication Stack", body: "CINC, resident portal, WATTSON, Plaud minutes." },
       { title: "Local Vendor Network", body: "Edison's Clermont vendor relationships span the trades that this terrain actually needs." }
     ],
     neighborhoods: ["Lost Lake Reserve", "Heritage Hills", "Sawgrass Bay", "Greater Hills", "Vistas at Sawgrass", "Indian Hills", "Magnolia Park", "Tradd's Landing", "Highland Lakes", "Kings Ridge"],
@@ -176,7 +176,7 @@ const GEO_CONTENT = {
       { title: "Covenant Enforcement", body: "Documented enforcement workflow, correction-first protocols.", href: "/services/covenant-enforcement/" },
       { title: "Single-Family HOA", body: "Calibrated for established neighborhoods with mature capital plans.", href: "/services/hoa-management/single-family/" },
       { title: "Reserve Study Support", body: "Engineer coordination and funding plan integration for capital-aware boards.", href: "/services/hoa-accounting/reserve-study-support/" },
-      { title: "Switching Companies", body: "The Edison Transition Experience for boards changing management.", href: "/solutions/switch-hoa-management-company/" }
+      { title: "Management Transition", body: "The Edison Transition Experience for boards changing management.", href: "/solutions/switch-hoa-management-company/" }
     ],
     differentiators: [
       { title: "Financial Discipline as Default", body: "Reserve banking strategy, audit prep, and budget rigor are standard, not premium add-ons." },
@@ -184,7 +184,7 @@ const GEO_CONTENT = {
       { title: "Dedicated Accounting Specialist", body: "CPA-led department, not a manager wearing two hats." },
       { title: "PCAM Leadership", body: "Tracy Durham, PCAM and 2025 CAI Chapter President, personally onboards every community." },
       { title: "Action Item List", body: "Real-time project tracking. Lake Mary boards expect transparency; Edison delivers it." },
-      { title: "Modern Stack, Human Touch", body: "CINC, WATTSON (2026), Plaud, plus a real person who answers the phone." }
+      { title: "Modern Stack, Human Touch", body: "CINC, WATTSON, Plaud, plus a real person who answers the phone." }
     ],
     neighborhoods: ["Heathrow", "Magnolia Plantation", "Greenwood Lakes", "Lake Forest", "Timacuan", "Sweetwater Oaks", "Cardinal Pointe", "Lake Mary Woods", "Sanford Farms", "Markham Woods"],
     nearbyCities: ["Sanford", "Heathrow", "Longwood", "Altamonte Springs", "Winter Springs", "Casselberry", "Oviedo"]
@@ -212,7 +212,7 @@ const GEO_CONTENT = {
       { title: "Reserve Study Support", body: "Engineer coordination and funding plan integration.", href: "/services/hoa-accounting/reserve-study-support/" },
       { title: "Covenant Enforcement", body: "Dedicated enforcement department, documented workflow.", href: "/services/covenant-enforcement/" },
       { title: "HOA Collections", body: "In-house collections to protect cash flow during capital cycles.", href: "/services/hoa-collections/" },
-      { title: "Switching Companies", body: "The Edison Transition Experience, 60–90 days end to end.", href: "/solutions/switch-hoa-management-company/" }
+      { title: "Management Transition", body: "The Edison Transition Experience, 60–90 days end to end.", href: "/solutions/switch-hoa-management-company/" }
     ],
     differentiators: [
       { title: "Capital Sequencing Discipline", body: "Edison's accounting team sequences capital against reserve cash flow, no special-assessment surprises." },
@@ -248,13 +248,13 @@ const GEO_CONTENT = {
       { title: "Covenant Enforcement", body: "Dedicated enforcement department with documented workflow.", href: "/services/covenant-enforcement/" },
       { title: "Single-Family HOA", body: "Tailored management for Oviedo single-family communities.", href: "/services/hoa-management/single-family/" },
       { title: "Townhome Associations", body: "Building-envelope coordination for Oviedo townhome communities.", href: "/services/hoa-management/townhome/" },
-      { title: "Switching Companies", body: "The Edison Transition Experience for boards changing companies.", href: "/solutions/switch-hoa-management-company/" }
+      { title: "Management Transition", body: "The Edison Transition Experience for boards changing companies.", href: "/solutions/switch-hoa-management-company/" }
     ],
     differentiators: [
       { title: "Responsiveness as Standard", body: "Same-day board returns, monthly inspections, predictable financial cadence." },
       { title: "Industry-Low Manager Turnover", body: "The Edison manager who learns your community stays for years." },
       { title: "Dedicated Back-Office Departments", body: "Enforcement, accounting, collections, separate departments, specialist quality." },
-      { title: "Modern Stack, Human Touch", body: "CINC, resident portal, WATTSON (2026), plus a real person on the phone." },
+      { title: "Modern Stack, Human Touch", body: "CINC, resident portal, WATTSON, plus a real person on the phone." },
       { title: "PCAM Leadership", body: "Tracy Durham, PCAM, personally onboards every Edison community." },
       { title: "Local Vendor Network", body: "Edison's Seminole County vendor relationships span the trades Oviedo communities need." }
     ],
@@ -284,7 +284,7 @@ const GEO_CONTENT = {
       { title: "SIRS Coordination", body: "Structural Integrity Reserve Study engineer engagement and funding plan integration.", href: "/services/condo-management/structural-integrity-reserve-study/" },
       { title: "HOA Management", body: "Inland Brevard County HOAs get the same full-service HOA management as the rest of Central Florida.", href: "/services/hoa-management/" },
       { title: "HOA Accounting", body: "Reserve banking and audit-ready books for both condo and HOA communities.", href: "/services/hoa-accounting/" },
-      { title: "Switching Companies", body: "The Edison Transition Experience, 60–90 days end to end.", href: "/solutions/switch-hoa-management-company/" }
+      { title: "Management Transition", body: "The Edison Transition Experience, 60–90 days end to end.", href: "/solutions/switch-hoa-management-company/" }
     ],
     differentiators: [
       { title: "Coastal Condo Specialization", body: "SB-4D fluent. Milestone inspection engineer network. SIRS coordination experience." },

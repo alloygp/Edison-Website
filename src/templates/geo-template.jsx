@@ -193,7 +193,7 @@ const ORLANDO_CONTENT = {
     { title: "Covenant Enforcement", body: "Dedicated enforcement department. Fair, consistent, and address-not-name based, protecting property values and homeowner relationships.", href: "/services/covenant-enforcement/" },
     { title: "Single-Family HOA", body: "Tailored management for single-family neighborhood HOAs across Orlando, Ch. 720 compliance, ARC support, common-area planning.", href: "/services/hoa-management/single-family/" },
     { title: "Townhome Associations", body: "Townhome-specific challenges handled, shared roofs, common insurance, party-wall maintenance, and homeowner expectations.", href: "/services/hoa-management/townhome/" },
-    { title: "Switching Companies", body: "The Edison Transition Experience handles records, vendors, and homeowner communication, 60–90 days, end to end.", href: "/solutions/switch-hoa-management-company/" }
+    { title: "Management Transition", body: "The Edison Transition Experience handles records, vendors, and homeowner communication, 60–90 days, end to end.", href: "/solutions/switch-hoa-management-company/" }
   ],
   differentiators: [
     { title: "Industry-Low Manager Turnover", body: "Most firms see 30–40% annual turnover. Edison's is a fraction of that. The manager who learns your community in year one is still there in year three." },

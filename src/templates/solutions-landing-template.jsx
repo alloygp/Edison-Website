@@ -418,7 +418,7 @@ const SOLUTIONS_LANDING_CONTENT = {
         bullets: [
           "Live Action Item List replaces stale monthly manager reports",
           "CINC portals + real-time financial dashboards for the treasurer",
-          "WATTSON AI answers 24/7 resident questions (launching 2026)",
+          "WATTSON AI answers 24/7 resident questions",
           "Plaud delivers polished draft meeting minutes within 48 hours"
         ],
         signal: {

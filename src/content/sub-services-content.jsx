@@ -14,7 +14,7 @@ const SUB_SERVICES_CONTENT = {
       { label: "Single-Family" }
     ],
     parent: { label: "HOA Management", href: "/services/hoa-management/" },
-    eyebrow: "Sub-Service · HOA Management",
+    eyebrow: "COMMUNITY TYPE · SINGLE-FAMILY",
     phone: "(407) 317-5252",
     hero: {
       title: "HOA management built for single-family neighborhoods.",
@@ -23,9 +23,9 @@ const SUB_SERVICES_CONTENT = {
       statute: "Florida Statute Ch. 720"
     },
     spec: [
-      { label: "Statute", value: "Ch. 720" },
-      { label: "Typical size", value: "60–500 units" },
-      { label: "Key workstreams", value: "ARC + common-area" }
+      { label: "90%", value: "Back-office resolves 90% of homeowner requests without involving your manager" },
+      { label: "3+ bids", value: "Vendor contracts competitively sourced with comparison spreadsheets" },
+      { label: "ARC", value: "Dedicated architectural review, not your manager's side task" }
     ],
     context: {
       title: "What makes single-family HOA management distinct",
@@ -41,8 +41,8 @@ const SUB_SERVICES_CONTENT = {
         { title: "ARC Submission Workflow", body: "Inbound architectural review submissions sorted, decisioned, and tracked through the Action Item List on the board's defined timelines." },
         { title: "Landscape & Irrigation Vendor Management", body: "Three competing bids on annual contracts. Insurance certificates current. Performance documented." },
         { title: "Common-Area Inspections", body: "Pool, clubhouse, playground, signage, entry features, inspected monthly with photo documentation." },
-        { title: "Covenant Enforcement", body: "Address-not-name inspections. Courtesy-first protocol. Quarterly board reporting on enforcement trends." },
-        { title: "Resident Communication", body: "CINC portal for documents and payments. WATTSON AI (2026) for 24/7 questions. Real-person phone coverage M–F." },
+        { title: "Covenant Enforcement", body: "Address-not-name inspections. Courtesy-first protocol. Monthly enforcement reporting in your board portal." },
+        { title: "Resident Communication", body: "CINC portal for documents and payments. WATTSON AI for 24/7 questions. Real-person phone coverage M–F." },
         { title: "Reserve & Budget Planning", body: "Annual budget built around real operating data and community reserve study recommendations." }
       ]
     },
@@ -52,13 +52,13 @@ const SUB_SERVICES_CONTENT = {
       steps: [
         { title: "Monthly Inspection", body: "Full property walk-through with photo documentation. Findings routed into the Action Item List for tracking." },
         { title: "ARC & Enforcement Cycle", body: "ARC submissions processed weekly. Enforcement on a documented monthly cycle." },
-        { title: "Board Reporting", body: "Monthly financial package + Action Item List update. Quarterly enforcement summary." },
+        { title: "Board Reporting", body: "Monthly financial package + Action Item List update. Monthly enforcement report in the board portal." },
         { title: "Annual Cycle", body: "Budget cycle Aug–Oct. Annual meeting support. Reserve study coordination on the schedule the study itself sets." }
       ]
     },
     midCta: {
       title: "Single-family board exploring better management?",
-      lede: "Edison's first conversation is free. We'll review your current setup and tell you what changes would actually move the needle."
+      lede: "Let's talk. Edison can walk your board through how we'd approach your community."
     },
     faqs: [
       { q: "Does Edison work with smaller HOAs?", a: "Yes. Edison manages single-family HOAs from roughly 60 units up through 500+. Smaller communities don't get a smaller manager, they get the same boutique-portfolio model, just with proportionally smaller scope." },
@@ -87,7 +87,7 @@ const SUB_SERVICES_CONTENT = {
       { label: "Townhome" }
     ],
     parent: { label: "HOA Management", href: "/services/hoa-management/" },
-    eyebrow: "Sub-Service · HOA Management",
+    eyebrow: "COMMUNITY TYPE · TOWNHOME",
     phone: "(407) 317-5252",
     hero: {
       title: "Townhome association management, attached housing, shared building elements.",
@@ -96,9 +96,9 @@ const SUB_SERVICES_CONTENT = {
       statute: "Florida Statute Ch. 720"
     },
     spec: [
-      { label: "Statute", value: "Ch. 720" },
-      { label: "Typical size", value: "40–300 units" },
-      { label: "Key workstream", value: "Building envelope" }
+      { label: "90%", value: "Back-office resolves routine requests without involving your manager" },
+      { label: "Shared", value: "Building envelope, roofs, and party walls managed as community assets" },
+      { label: "ARC", value: "Architectural review tuned for attached housing modifications" }
     ],
     context: {
       title: "Why townhome management isn't single-family management",
@@ -116,7 +116,7 @@ const SUB_SERVICES_CONTENT = {
         { title: "Party-Wall & Common-Element Protocols", body: "Defined handling for issues that span multiple units, water intrusion, pest, structural questions." },
         { title: "ARC for Attached Housing", body: "ARC workflow tuned for the changes townhome residents actually request, windows, doors, patios, fencing." },
         { title: "Reserve Study for Building Components", body: "Reserve scope includes roof, building envelope, and amenities, not just amenities." },
-        { title: "Resident Communication", body: "CINC portal. WATTSON AI (2026). Phone coverage M–F. Same standard as the rest of Edison's practice." }
+        { title: "Resident Communication", body: "CINC portal. WATTSON AI. Phone coverage M–F. Same access every Edison community receives." }
       ]
     },
     process: {
@@ -124,14 +124,14 @@ const SUB_SERVICES_CONTENT = {
       sub: "Cadence is similar; vendor mix and reserve scope are not.",
       steps: [
         { title: "Onboarding & Audit", body: "Edison audits the master policy, current vendor contracts, and reserve study against the actual building inventory." },
-        { title: "Monthly Operations", body: "Property inspection, ARC processing, enforcement cycle, financial reporting. Same Edison cadence." },
+        { title: "Monthly Operations", body: "Property inspection, ARC processing, enforcement cycle, financial reporting. Consistent and predictable." },
         { title: "Capital Project Cycle", body: "Edison sources, sequences, and coordinates building-envelope projects, typically roof, paint, gutters, soffit, on rolling schedules." },
         { title: "Annual Cycle", body: "Budget season Aug–Oct, with building-component capital pacing built in. Reserve study refreshed on the study's schedule." }
       ]
     },
     midCta: {
       title: "Townhome board frustrated by generic HOA management?",
-      lede: "Edison's first conversation is free. We'll review your current setup against your community's actual building inventory and tell you where the gaps are."
+      lede: "Let's talk. Edison can walk your board through how we'd approach your community's building inventory and vendor relationships."
     },
     faqs: [
       { q: "Are townhomes governed under Ch. 720 or Ch. 718?", a: "Almost always Ch. 720 (HOA). Townhomes are residential subdivisions even when units are attached, and they're typically declared under HOA documents rather than condominium documents. If your community is a 'townhome condominium' (rare but possible), it's under Ch. 718 and Edison's Condo Management pillar applies." },
@@ -214,9 +214,9 @@ const SUB_SERVICES_CONTENT = {
       { q: "Can the board still customize the budget?", a: "Always. Edison drafts scenarios; the board approves the version it wants. We'll document the board's modifications and reflect them in the final package. The board's decisions are the binding ones." }
     ],
     related: [
-      { kind: "Parent Service", title: "HOA Accounting", body: "Full financial management, monthly reporting, reserve banking, audit prep, tax filing.", href: "/services/hoa-accounting/" },
-      { kind: "Sibling Sub-Service", title: "Reserve Study Support", body: "Coordination with reserve study engineers and funding plan integration.", href: "/services/hoa-accounting/reserve-study-support/" },
-      { kind: "Educational", title: "HOA Audit Guide", body: "When audits are required and how to prepare, written for FL boards.", href: "/blog/hoa-audit/" }
+      { kind: "Full service", title: "HOA Accounting", body: "Full financial management, monthly reporting, reserve banking, audit prep, tax filing.", href: "/services/hoa-accounting/" },
+      { kind: "Also included", title: "Reserve Study Support", body: "Coordination with reserve study engineers and funding plan integration.", href: "/services/hoa-accounting/reserve-study-support/" },
+      { kind: "Guide", title: "HOA Audit Guide", body: "When audits are required and how to prepare, written for FL boards.", href: "/blog/hoa-audit/" }
     ],
     cta: {
       title: "A budget your board can defend, with the work that builds it.",
@@ -287,9 +287,9 @@ const SUB_SERVICES_CONTENT = {
       { q: "What does a reserve study cost?", a: "Typical full studies for HOAs run $4,000–$9,000 depending on community size and capital inventory complexity. SIRS engagements for condos run $8,000–$25,000+ given the structural engineering involved. Edison sources 3 competing bids and the board selects." }
     ],
     related: [
-      { kind: "Parent Service", title: "HOA Accounting", body: "Monthly financial management with reserve banking strategy.", href: "/services/hoa-accounting/" },
-      { kind: "Sibling Sub-Service", title: "Budget Preparation", body: "Annual budget cycle that integrates the reserve study findings.", href: "/services/hoa-accounting/budget-preparation/" },
-      { kind: "Related Sub-Service", title: "SIRS (for condos 3+ stories)", body: "Structural Integrity Reserve Study coordination under FL SB-4D.", href: "/services/condo-management/structural-integrity-reserve-study/" }
+      { kind: "Full Service", title: "HOA Accounting", body: "Monthly financial management with reserve banking strategy.", href: "/services/hoa-accounting/" },
+      { kind: "Also Included", title: "Budget Preparation", body: "Annual budget cycle that integrates the reserve study findings.", href: "/services/hoa-accounting/budget-preparation/" },
+      { kind: "Also Included", title: "SIRS (for condos 3+ stories)", body: "Structural Integrity Reserve Study coordination under FL SB-4D.", href: "/services/condo-management/structural-integrity-reserve-study/" }
     ],
     cta: {
       title: "A reserve study that actually produces a funding plan.",

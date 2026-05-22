@@ -417,7 +417,7 @@ const HOA_MGMT_CONTENT = {
       { title: "Dedicated Back-Office Departments", body: "Enforcement, accounting, collections, and ARC are separate departments, not your manager's overtime work. Boards get specialist quality on every workstream." },
       { title: "Manageable Portfolio Sizes", body: "8–10 communities per manager, half the industry average. Yours isn't lost in a portfolio of hundreds." },
       { title: "Leadership That Stays Involved", body: "Tracy Durham, PCAM, personally onboards every new association and remains accessible to every board, not just the largest." },
-      { title: "Modern Tools, Human Touch", body: "CINC Systems for portals and financials. WATTSON AI for 24/7 resident questions (launching 2026). The Action Item List for live project tracking. A real person still answers the phone." },
+      { title: "Modern Tools, Human Touch", body: "CINC Systems for portals and financials. WATTSON AI for 24/7 resident questions. The Action Item List for live project tracking. A real person still answers the phone." },
       { title: "Education-First Philosophy", body: "Informed boards make better decisions. Edison invests in teaching board members the statutes, the financial fundamentals, and the governance frameworks, not just executing tasks." }
     ]
   },
@@ -445,7 +445,7 @@ const HOA_MGMT_CONTENT = {
     { q: "How many communities will our manager have?", a: "Edison managers carry 8–10 communities, half the industry average. Some managers carry fewer when they're early in their tenure or onboarding a particularly complex community. We've structured portfolios this way deliberately: managers can actually know your community, not just file your community away." },
     { q: "How quickly will calls get returned?", a: "Same-day for board members. 24-hour for homeowners. Non-negotiable, and a real person answers when you call Edison's office between 9am and 5pm Monday through Friday. The standard isn't \"we'll get back to you\", it's that we already did." },
     { q: "Do you handle our financials and accounting too?", a: "Yes. Edison's accounting department is dedicated and CPA-supported. Monthly statements with invoice backup, reserve banking strategy, audit prep, and tax filing, handled by an accounting specialist, not your manager's spare time. See our HOA Accounting page for detail." },
-    { q: "What technology do you use?", a: "CINC Systems for financials and homeowner portals. The Action Item List for live project tracking. WATTSON AI (launching 2026) for 24/7 resident questions. Plaud for meeting minute automation. All included, no per-resident technology fees." },
+    { q: "What technology do you use?", a: "CINC Systems for financials and homeowner portals. The Action Item List for live project tracking. WATTSON AI for 24/7 resident questions. Plaud for meeting minute automation. All included, no per-resident technology fees." },
     { q: "How long are your management agreements?", a: "12-month terms with clear termination provisions. We don't believe in trapping boards, if Edison isn't a fit at the end of year one, you walk free with your records, your vendor list, and your processes intact." }
   ],
   cta: {

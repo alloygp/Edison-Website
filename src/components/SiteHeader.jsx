@@ -14,7 +14,7 @@ const DEFAULT_NAV = [
       {
         title: "HOA Management",
         items: [
-          { label: "HOA Management", href: "/services/hoa-management/", desc: "Single-family + townhome HOAs (Ch. 720)", parent: true },
+          { label: "HOA Management", href: "/services/hoa-management/", desc: "Single-family + townhome HOAs", parent: true },
           { label: "Single-Family HOA", href: "/services/hoa-management/single-family/", desc: "Single-family communities" },
           { label: "Townhome Associations", href: "/services/hoa-management/townhome/", desc: "Townhome HOA management" }
         ]
@@ -22,7 +22,7 @@ const DEFAULT_NAV = [
       {
         title: "Condo Management",
         items: [
-          { label: "Condo Management", href: "/services/condo-management/", desc: "Florida condo associations (Ch. 718)", parent: true },
+          { label: "Condo Management", href: "/services/condo-management/", desc: "Florida condo associations", parent: true },
           { label: "Milestone Inspections", href: "/services/condo-management/milestone-inspections/", desc: "FL SB-4D compliance" },
           { label: "Structural Integrity Reserve Study", href: "/services/condo-management/structural-integrity-reserve-study/", desc: "SIRS support & engineer coordination" }
         ]
@@ -98,7 +98,6 @@ const DEFAULT_NAV = [
     children: [
       { label: "About Edison", href: "/about/" },
       { label: "Meet Our Team", href: "/about/meet-our-team/" },
-      { label: "Switching Companies", href: "/solutions/switch-hoa-management-company/" },
       { label: "Meet Your Management", href: "/about/meet-your-management/" },
       { label: "Testimonials", href: "/testimonials/" },
       { label: "Case Studies", href: "/case-studies/" }

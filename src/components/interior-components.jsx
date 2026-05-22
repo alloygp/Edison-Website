@@ -486,7 +486,37 @@ function FAQ({ eyebrow, title, sub, items, background = "#fff" }) {
 /* ============================================================
    SERVICE AREA, text + map placeholder
    ============================================================ */
+/* City → county lookup for hover-to-highlight */
+const CITY_COUNTY = {
+  // Orange County
+  'Orlando': 'Orange County', 'Winter Garden': 'Orange County',
+  'Ocoee': 'Orange County', 'Windermere': 'Orange County',
+  'Apopka': 'Orange County', 'Oakland': 'Orange County',
+  'Maitland': 'Orange County', 'Winter Park': 'Orange County',
+  'Lake Buena Vista': 'Orange County',
+  // Seminole County
+  'Lake Mary': 'Seminole County', 'Altamonte Springs': 'Seminole County',
+  'Oviedo': 'Seminole County', 'Sanford': 'Seminole County',
+  'Heathrow': 'Seminole County', 'Longwood': 'Seminole County',
+  'Winter Springs': 'Seminole County', 'Casselberry': 'Seminole County',
+  'Geneva': 'Seminole County', 'Chuluota': 'Seminole County',
+  // Osceola County
+  'Kissimmee': 'Osceola County', 'St. Cloud': 'Osceola County',
+  'Celebration': 'Osceola County', 'Poinciana': 'Osceola County',
+  // Lake County
+  'Clermont': 'Lake County', 'Minneola': 'Lake County',
+  'Mascotte': 'Lake County', 'Groveland': 'Lake County',
+  'Howey-in-the-Hills': 'Lake County', 'Mt. Dora': 'Lake County',
+  // Brevard County
+  'Brevard County': 'Brevard County', 'Cocoa': 'Brevard County',
+  'Rockledge': 'Brevard County', 'Melbourne': 'Brevard County',
+  'Palm Bay': 'Brevard County', 'Titusville': 'Brevard County',
+  'Vero Beach': 'Brevard County', 'Sebastian Inlet': 'Brevard County',
+};
+
 function ServiceArea({ eyebrow, title, body, cities, mapImg, mapEmbed = false }) {
+  const [hoveredCounty, setHoveredCounty] = useState(null);
+
   return (
     <section className="ic-service-area" style={{ background: "#fff", padding: "88px 48px" }}>
       <div className="ic-service-area-grid" style={{ maxWidth: 1200, margin: "0 auto",
@@ -500,14 +530,25 @@ function ServiceArea({ eyebrow, title, body, cities, mapImg, mapEmbed = false })
           }}>{body}</p>
           {cities && (
             <div style={{ display: "flex", flexWrap: "wrap", gap: 8, marginTop: 12 }}>
-              {cities.map(c => (
-                <span key={c} style={{
-                  fontFamily: "var(--font-body)", fontSize: 13,
-                  color: "var(--edison-navy)",
-                  background: "var(--edison-teal-pale)",
-                  padding: "6px 12px", borderRadius: 999
-                }}>{c}</span>
-              ))}
+              {cities.map(c => {
+                const county = CITY_COUNTY[c] || null;
+                const isActive = hoveredCounty && county === hoveredCounty;
+                return (
+                  <span
+                    key={c}
+                    onMouseEnter={() => county && setHoveredCounty(county)}
+                    onMouseLeave={() => setHoveredCounty(null)}
+                    style={{
+                      fontFamily: "var(--font-body)", fontSize: 13,
+                      color: isActive ? "#fff" : "var(--edison-navy)",
+                      background: isActive ? "var(--edison-teal-dark)" : "var(--edison-teal-pale)",
+                      padding: "6px 12px", borderRadius: 999,
+                      cursor: county ? "default" : "default",
+                      transition: "background 180ms ease, color 180ms ease"
+                    }}
+                  >{c}</span>
+                );
+              })}
             </div>
           )}
         </div>
@@ -517,7 +558,7 @@ function ServiceArea({ eyebrow, title, body, cities, mapImg, mapEmbed = false })
           boxShadow: "var(--shadow-md)",
           position: "relative"
         }}>
-          <ServiceAreaMap />
+          <ServiceAreaMap highlightedCounty={hoveredCounty} />
         </div>
       </div>
     </section>

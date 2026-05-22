@@ -4,15 +4,24 @@ import { useEffect, useRef } from 'react';
    ServiceAreaMap — Leaflet island (client:load)
    Renders a styled map with the 5 Central Florida counties
    highlighted in Edison brand colors.
+   Props:
+     highlightedCounty — e.g. "Orange County" | null
+       When set, that county brightens and all others dim.
    ============================================================ */
-export function ServiceAreaMap() {
-  const containerRef = useRef(null);
-  const mapRef = useRef(null);
 
+const STYLE_DEFAULT  = { fillColor: '#1B2A4A', fillOpacity: 0.14, color: '#3CC8C8', weight: 2.5, opacity: 1 };
+const STYLE_ACTIVE   = { fillColor: '#3CC8C8', fillOpacity: 0.32, color: '#2BA8A8', weight: 3,   opacity: 1 };
+const STYLE_DIMMED   = { fillColor: '#1B2A4A', fillOpacity: 0.06, color: '#3CC8C8', weight: 1.5, opacity: 0.4 };
+
+export function ServiceAreaMap({ highlightedCounty = null }) {
+  const containerRef = useRef(null);
+  const mapRef       = useRef(null);
+  const layersRef    = useRef({});   // { "Orange County": LeafletLayer, ... }
+
+  /* ── Build map once ─────────────────────────────────────── */
   useEffect(() => {
     if (!containerRef.current || mapRef.current) return;
 
-    // Inject Leaflet CSS
     if (!document.getElementById('leaflet-css')) {
       const link = document.createElement('link');
       link.id = 'leaflet-css';
@@ -33,43 +42,48 @@ export function ServiceAreaMap() {
         attributionControl: true
       });
 
-      // CartoDB Positron — clean, minimal basemap
       L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
         attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>',
         subdomains: 'abcd',
         maxZoom: 20
       }).addTo(map);
 
-      // County highlight layer
       fetch('/assets/service-area.geojson')
         .then(r => r.json())
         .then(data => {
-          const layer = L.geoJSON(data, {
-            style: () => ({
-              fillColor: '#1B2A4A',
-              fillOpacity: 0.14,
-              color: '#3CC8C8',
-              weight: 2.5,
-              opacity: 1
-            }),
+          L.geoJSON(data, {
+            style: () => ({ ...STYLE_DEFAULT }),
             onEachFeature(feature, lyr) {
               const name = feature.properties?.NAME || feature.properties?.name || '';
+              layersRef.current[name] = lyr;
+
+              // Direct map hover (independent of tag hover)
               lyr.on('mouseover', function () {
-                this.setStyle({ fillOpacity: 0.28, color: '#2BA8A8', weight: 3 });
+                this.setStyle({ ...STYLE_ACTIVE });
                 this.bindTooltip(
-                  `<strong style="font-family:var(--font-display,sans-serif);color:#1B2A4A">${name} County</strong>`,
+                  `<strong style="font-family:var(--font-display,sans-serif);color:#1B2A4A">${name}</strong>`,
                   { sticky: true, className: 'edison-map-tip' }
                 ).openTooltip();
               });
               lyr.on('mouseout', function () {
-                layer.resetStyle(this);
+                // Restore to whatever the current highlight state dictates
+                const current = highlightedCountyRef.current;
+                if (!current) {
+                  this.setStyle({ ...STYLE_DEFAULT });
+                } else if (name === current) {
+                  this.setStyle({ ...STYLE_ACTIVE });
+                } else {
+                  this.setStyle({ ...STYLE_DIMMED });
+                }
                 this.closeTooltip();
               });
             }
           }).addTo(map);
 
-          // Fit view to the county bounds with slight padding
-          map.fitBounds(layer.getBounds(), { padding: [24, 24] });
+          map.fitBounds(
+            L.geoJSON(data).getBounds(),
+            { padding: [24, 24] }
+          );
         })
         .catch(() => {});
 
@@ -104,7 +118,6 @@ export function ServiceAreaMap() {
       mapRef.current = map;
     }
 
-    // Load Leaflet script if not already loaded
     if (window.L) {
       initMap();
     } else if (!document.getElementById('leaflet-js')) {
@@ -114,7 +127,6 @@ export function ServiceAreaMap() {
       script.onload = initMap;
       document.head.appendChild(script);
     } else {
-      // Script tag exists but may still be loading
       const poll = setInterval(() => {
         if (window.L) { clearInterval(poll); initMap(); }
       }, 50);
@@ -124,6 +136,28 @@ export function ServiceAreaMap() {
       if (mapRef.current) { mapRef.current.remove(); mapRef.current = null; }
     };
   }, []);
+
+  /* ── Keep a ref in sync so the mouseout handler can read it ─ */
+  const highlightedCountyRef = useRef(highlightedCounty);
+  useEffect(() => {
+    highlightedCountyRef.current = highlightedCounty;
+  }, [highlightedCounty]);
+
+  /* ── React to tag hover: restyle all county layers ──────── */
+  useEffect(() => {
+    const layers = layersRef.current;
+    if (!Object.keys(layers).length) return;
+
+    if (!highlightedCounty) {
+      // No tag hovered — reset all to default
+      Object.values(layers).forEach(lyr => lyr.setStyle({ ...STYLE_DEFAULT }));
+    } else {
+      // Highlight matching county, dim the rest
+      Object.entries(layers).forEach(([name, lyr]) => {
+        lyr.setStyle(name === highlightedCounty ? { ...STYLE_ACTIVE } : { ...STYLE_DIMMED });
+      });
+    }
+  }, [highlightedCounty]);
 
   return (
     <>

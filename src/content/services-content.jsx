@@ -182,12 +182,12 @@ const SERVICES_CONTENT = {
       title: "Collections work that scales from one delinquent account to a portfolio",
       sub: "Edison's collections department runs the workflow on a documented cadence, boards see the same process applied consistently across every account.",
       items: [
-        { title: "Courtesy Email Reminders", body: "Free, modern, and respectful, Edison replaces old-school coupon books with email reminders that nudge homeowners before delinquency hardens." },
+        { title: "Courtesy Email Reminders", body: "Free, friendly email reminders that nudge homeowners before a balance becomes a problem. Most accounts resolve at this stage." },
         { title: "Formal Notice Sequence", body: "30-day, 45-day, and 60-day notices on a documented schedule with FL-compliant language and certified-mail tracking when required." },
         { title: "Intent-to-Lien Processing", body: "Edison prepares intent-to-lien notices on the statutorily compliant timeline. Most homeowners resolve at this stage." },
         { title: "Payment Plan Coordination", body: "When homeowners can't pay in full, Edison negotiates board-approved payment plans with documented terms and CINC-tracked installments." },
         { title: "Attorney Coordination", body: "For accounts that require legal action, Edison hands off a complete case file to the association's attorney with every notice and acknowledgment documented." },
-        { title: "Board Reporting", body: "Monthly aging summary with trend lines. Quarterly collections review identifying outliers and procedural improvements." }
+        { title: "Board Reporting", body: "Monthly aging summary with trend lines. Outliers flagged early so your board can act before accounts escalate." }
       ]
     },
     whyEdison: {
@@ -197,7 +197,7 @@ const SERVICES_CONTENT = {
         { title: "Correction-Before-Escalation", body: "Most delinquencies resolve before legal escalation when the workflow uses courtesy reminders, payment plans, and clear notice timing." },
         { title: "Documented Process", body: "Every step timestamped and logged through the Action Item List. Boards have an audit trail for every account, every notice, every payment plan." },
         { title: "Cash Flow Discipline", body: "Aging tracked monthly. Outliers flagged before they become legal cases. Cash position protected without aggressive escalation." },
-        { title: "Attorney Coordination, Not Substitution", body: "When legal action is genuinely required, Edison hands a complete file to your attorney. We don't bill attorney rates for paralegal work." },
+        { title: "Attorney Coordination, Not Substitution", body: "When legal action is genuinely required, Edison hands a complete case file to your association's attorney. Clean handoff, no gaps." },
         { title: "FL Compliance Built In", body: "Florida collection statutes change. Notice timing, certified-mail requirements, and lien process specifics are baked into the workflow, not bolted on after a homeowner challenges a notice." }
       ]
     },
