@@ -1,5 +1,5 @@
 export const PASTEL_BASE = 'https://usepastel.com/link/4rdqpv73/#';
-export const TICKET_ID   = '';
+export const TICKET_ID   = '10214';
 
 export interface ReviewItem {
   label: string;
@@ -7,4 +7,8 @@ export interface ReviewItem {
   review: boolean;
 }
 
-export const REVIEW_ITEMS: ReviewItem[] = [];
+export const REVIEW_ITEMS: ReviewItem[] = [
+  { label: 'Homepage', path: '/', review: true },
+  { label: 'HOA Audit', path: '/blog/hoa-audit/', review: true },
+  { label: 'Condo Management', path: '/services/condo-management/', review: true },
+];
